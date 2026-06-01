@@ -1,0 +1,44 @@
+% %--------------------------
+% %	CONFIGURATION
+% %--------------------------
+\documentclass[11pt,a4paper]{moderncv}
+\moderncvstyle{classic}
+\moderncvcolor{black}
+\definecolor{firstnamecolor}{rgb}{0,0,0}
+
+% Basic packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[scale=0.7]{geometry}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{DarkBlue}{RGB}{0, 0, 150}
+\usepackage[colorlinks=true, urlcolor=DarkBlue, linkcolor=DarkBlue]{hyperref}
+
+\usepackage{microtype}
+
+% Configure font settings
+\renewcommand{\rmdefault}{ppl}
+\renewcommand{\sfdefault}{phv}
+\renewcommand*{\namefont}{\fontsize{26}{18}\mdseries}
+
+% Configure microtype
+\microtypesetup{expansion=false}
+
+% Load sensitive information
+\input{../../other_material/personal_info.tex}
+
+% Title document
+\title{Curriculum Vitae}
+
+% %--------------------------
+
+\begin{document}
+\section*{References}
+
+\begin{itemize}
+    \item \textbf{Laura Hortvath-Perge:} Laura is a manager from a previous workplace. She and I worked extremely well together and still keep in touch. She can provide information about how I am to work together with in a fast paced work setting. She can be reached on \href{mailto:laurahp@google.com}{laurahp@google.com}.
+    \item \textbf{Tianfang Zhang:} Tian was my thesis supervisor for my Master's thesis at KTH Royal Institute of Technology. He is a good reference to learn about my ability to work independently on advanced research projects. He can be reached on \href{mailto:tianfang@kth.se}{tianfang@kth.se}.
+    \item \textbf{Morten Mørup:} Morten and I have formulated a research project we are currently trying to get funding for. The project is to use graph representation learning to find new innovative uses for existing pharmaceuticals. Morten is a good reference to learn about me in an academic research setting. He can be reached on \href{mailto:mmor@dtu.dk}{mmor@dtu.dk}.
+\end{itemize}
+
+\end{document}

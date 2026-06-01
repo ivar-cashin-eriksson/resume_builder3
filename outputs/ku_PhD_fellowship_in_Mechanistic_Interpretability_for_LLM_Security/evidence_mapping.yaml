@@ -1,0 +1,110 @@
+listing_slug: ku_PhD_fellowship_in_Mechanistic_Interpretability_for_LLM_Security
+listing_file: job_listings/ku_PhD fellowship in Mechanistic Interpretability for LLM Security.md
+
+sources_reviewed:
+  - profile/profile.yaml
+  - profile/education.yaml
+  - profile/experience.yaml
+  - profile/skills.yaml
+  - profile/projects.yaml
+  - profile/courses.yaml
+  - profile/claims.yaml
+  - profile/writing_style/style.yaml
+  - profile/writing_style/cover_letter_style.yaml
+  - profile/writing_style/core_narrative.yaml
+  - templates/README.md
+  - templates/cv.tex
+  - templates/cover_letter.tex
+
+major_claims:
+  - claim: "Ivar has seven years of hands-on machine-learning experience."
+    used_in:
+      - cv.tex introduction
+      - cover_letter.tex paragraph 1
+    evidence:
+      - "profile/experience.yaml lists ML/data science roles beginning at RaySearch Laboratories in 2019 and continuing through the present."
+
+  - claim: "Ivar has an MSc specialisation in Statistical Learning and Data Analytics and a BSc in Engineering Physics from KTH."
+    used_in:
+      - cv.tex education
+      - cover_letter.tex paragraphs 1 and 2
+    evidence:
+      - "profile/education.yaml: Royal Institute of Technology (KTH), programme Data Science and Engineering, degrees MSc Statistical Learning and Data Analytics and BSc Engineering Physics."
+
+  - claim: "Ivar has a 5.0 / 5.0 GPA in the KTH profile source."
+    used_in:
+      - cv.tex education
+      - cover_letter.tex paragraph 2
+    evidence:
+      - "profile/education.yaml lists gpa: 5.0 / 5.0 for the KTH MSc and BSc."
+
+  - claim: "Ivar studied Applied Mathematics at ETH Zurich as an exchange student."
+    used_in:
+      - cv.tex education
+      - cover_letter.tex paragraph 2
+    evidence:
+      - "profile/education.yaml lists Swiss Federal Institute of Technology (ETH), Applied Mathematics, Exchange, 2019."
+
+  - claim: "Ivar has relevant coursework in Statistical Machine Learning, Modern Methods of Statistical Learning, and Reinforcement Learning."
+    used_in:
+      - cv.tex education
+      - cover_letter.tex paragraph 2
+    evidence:
+      - "profile/courses.yaml lists SF2957 Statistical Machine Learning, SF2935 Modern Methods of Statistical Learning, and EL2805 Reinforcement Learning."
+
+  - claim: "Ivar has research experience using representation learning, probabilistic modelling, and optimisation in medical AI."
+    used_in:
+      - cv.tex selected and detailed RaySearch sections
+      - cover_letter.tex paragraph 3
+    evidence:
+      - "profile/experience.yaml RaySearch responsibilities include autoencoders on segmented 3D CT scans, learned similarity metrics, sparse Gaussian processes, and lexicographic optimisation."
+      - "profile/claims.yaml includes research experience in medical AI and probabilistic modelling."
+
+  - claim: "Ivar worked with explainable AI at Valcon and Signum."
+    used_in:
+      - cv.tex selected Valcon and Signum sections
+      - cover_letter.tex paragraph 4
+    evidence:
+      - "profile/experience.yaml Valcon responsibilities include explainable AI training sessions."
+      - "profile/experience.yaml Signum responsibilities include extending Kwarts with explainable AI features."
+
+  - claim: "Ivar led a real-time neural-network production pipeline involving natural-language inputs and high-dimensional labels."
+    used_in:
+      - cv.tex selected and detailed Valcon sections
+      - cover_letter.tex paragraph 4
+    evidence:
+      - "profile/experience.yaml Valcon responsibilities include architecting an end-to-end production pipeline for a real-time deep neural network and systems involving natural-language inputs and high-dimensional multi-class labels."
+
+  - claim: "Ivar previously worked on Kwarts, a next-best-action engine for pharmaceutical sales."
+    used_in:
+      - cv.tex selected and detailed Signum sections
+      - cover_letter.tex paragraph 4
+    evidence:
+      - "profile/experience.yaml Signum summary and responsibilities describe owning and developing Kwarts."
+      - "User update on 2026-05-31 clarified that this is no longer current work."
+
+  - claim: "Ivar is building an end-to-end forecasting platform for pharmaceutical price and demand forecasting."
+    used_in:
+      - cv.tex selected and detailed Signum sections
+      - cover_letter.tex paragraph 4
+    evidence:
+      - "profile/experience.yaml Signum responsibilities include building an end-to-end forecasting platform for pharmaceutical price and demand forecasting."
+      - "User update on 2026-05-31 clarified that the forecasting solution is the current work."
+
+  - claim: "Ivar has practical ML engineering experience with embeddings, vector search, and OpenCLIP."
+    used_in:
+      - cv.tex detailed Project Iris section
+    evidence:
+      - "profile/projects.yaml describes Project Iris using OpenCLIP embeddings, Qdrant vector search, FastAPI, MongoDB, and a Chromium extension."
+
+  - claim: "Ivar has native English and Swedish, and intermediate Danish."
+    used_in:
+      - cv.tex skills and other
+    evidence:
+      - "profile/profile.yaml lists English native, Swedish native, and Danish intermediate."
+
+explicit_non_claims:
+  - "The materials do not claim prior mechanistic interpretability experience."
+  - "The materials do not claim prior LLM security experience."
+  - "The materials do not claim publications."
+  - "The materials do not claim transformer, LLM fine-tuning, or formal NLP research experience beyond the natural-language production task listed in profile/experience.yaml."

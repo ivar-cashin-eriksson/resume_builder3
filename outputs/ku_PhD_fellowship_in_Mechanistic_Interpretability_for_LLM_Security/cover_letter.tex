@@ -1,0 +1,56 @@
+% %--------------------------
+% %	CONFIGURATION
+% %--------------------------
+\documentclass[11pt,a4paper]{moderncv}
+\moderncvstyle{classic}
+\moderncvcolor{black}
+\definecolor{firstnamecolor}{rgb}{0,0,0}
+
+% Basic packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[hscale=0.7, top=2cm, bottom=2cm]{geometry}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{DarkBlue}{RGB}{0, 0, 150}
+\usepackage[colorlinks=true, urlcolor=DarkBlue, linkcolor=DarkBlue]{hyperref}
+
+\usepackage{microtype}
+
+% Configure font settings
+\renewcommand{\rmdefault}{ppl}
+\renewcommand{\sfdefault}{phv}
+\renewcommand*{\namefont}{\fontsize{26}{18}\mdseries}
+
+% Configure microtype
+\microtypesetup{expansion=false}
+
+% Load sensitive information
+\input{../../personal_info.tex}
+
+% %--------------------------
+\begin{document}
+\makecvtitle
+Hello Prof. Augenstein and Pepa Atanasova,
+
+\vspace*{2em}
+I am writing to apply for the PhD fellowship in Mechanistic Interpretability for LLM Security. I have a Master's specialisation in Statistical Learning and Data Analytics from KTH, a background in Engineering Physics, and seven years of hands-on experience working with machine learning. After some time in industry, I would like to return to academia to work on models at a deeper level: how they represent information, when they absorb false information, and how their behaviour can be evaluated and made more reliable sounds extremely interesting.
+
+\hspace*{2em}
+At KTH, I specialised in Statistical Learning and Data Analytics and graduated with a 5.0/5.0 GPA. The programme gave me a strong mathematical foundation in machine learning, with coursework including Statistical Machine Learning, Modern Methods of Statistical Learning, and Reinforcement Learning. I also studied Applied Mathematics at ETH Zurich as an exchange student. I have always enjoyed understanding why a method works, not only whether it performs well on a benchmark.
+
+\hspace*{2em}
+My research experience comes from RaySearch, where I worked on automating radiotherapy planning and completed my master's thesis. I developed probabilistic and computer vision-based ML methods using autoencoders, sparse Gaussian processes, and lexicographic optimisation. In one pipeline, autoencoders extracted latent anatomical structure from 3D CT scans, which was then used to identify similar patients and support personalised dose estimation. The work was not NLP, but it gave me practical experience with representation learning, probabilistic modelling, and the need to understand model behaviour before using it in a high-stakes setting.
+
+\hspace*{2em}
+Since moving to Copenhagen, I have worked as a data scientist across several applied domains. At Valcon, I led the development of a real-time deep neural network with a custom training pipeline for a natural-language, multi-label prediction task, and I held internal trainings in explainable AI. At Signum Life Science, I previously worked on a next-best-action engine for pharmaceutical sales, including explainable AI features, and I am now building an end-to-end forecasting platform for pharmaceutical price and demand forecasting. These roles have made the limits of black-box prediction concrete for me, especially when systems need to be explained to users or trusted in practice.
+
+\hspace*{2em}
+I am drawn to CopeNLU's work on accountable NLP, interpretability, explainability, bias detection, fact checking, and transparent AI development. I have not worked directly on mechanistic interpretability or LLM security before, but the project is close to the kind of research direction I want to pursue. The focus on mechanistic interpretability methods, false-information attacks, and evaluation protocols fits my background in representation learning, explainable AI, and production ML systems where reliability matters.
+
+\vspace*{2em}
+I hope to hear back from you soon. Regards,
+
+\vspace*{1em}
+Ivar Cashin Eriksson.
+
+\end{document}

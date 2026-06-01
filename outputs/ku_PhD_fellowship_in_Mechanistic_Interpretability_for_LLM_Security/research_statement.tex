@@ -1,0 +1,113 @@
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[scale=0.7]{geometry}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[colorlinks=true, urlcolor=DarkBlue, linkcolor=DarkBlue, citecolor=DarkBlue]{hyperref}
+\usepackage{microtype}
+\usepackage{multicol}
+
+\definecolor{DarkBlue}{RGB}{0, 0, 150}
+
+% Keep the same serif/sans pairing as the CV and cover letter.
+\renewcommand{\rmdefault}{ppl}
+\renewcommand{\sfdefault}{phv}
+\microtypesetup{expansion=false}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.25em}
+
+\newcommand{\statementtitle}[1]{%
+  \begin{center}
+    {\Large\bfseries #1}
+  \end{center}
+}
+
+\newcommand{\statementsubtitle}[1]{%
+  \begin{center}
+    {\normalsize #1}
+  \end{center}
+  \vspace{0.5em}
+}
+
+\newcommand{\source}[2]{\href{#2}{#1}}
+
+\begin{document}
+
+\statementtitle{Research Statement}
+\statementsubtitle{Mechanistic Detection and Early Identification of False Information Learning in Large Language Models}
+
+\section{Motivation}
+Large language models are increasingly used as information systems, but their mechanisms for storing and updating factual associations remain difficult to inspect. The advertised KU project asks for mechanistic interpretability methods that reduce the effects of false-information attacks across the LLM lifecycle \cite{ku2026mechanisticllmsecurity}. Recent work shows that web-scale and LLM training pipelines can be affected by poisoning attacks \cite{carlini2023poisoning,souly2025poisoning}, while TruthfulQA shows that output-level factuality tests still expose systematic false answers learned from human text \cite{lin2022truthfulqa}. My proposed direction is to connect these concerns by studying false information as a training-time mechanistic phenomenon.
+
+\hspace*{2em}
+The working hypothesis is deliberately testable rather than assumed: false information may leave identifiable internal signatures before it is visible in generated text. I would analyse this through three stages: latent acquisition, where the model internally represents a false association; causal integration, where that association begins to affect downstream computation; and behavioural expression, where the model produces the false claim. The aim is to test whether these stages can be separated empirically, and whether mechanistic measurements give earlier warning than output-only evaluation.
+
+\section{Research Questions}
+The project would ask three linked questions: how true and false factual associations are represented differently inside transformer language models; whether false information learning can be detected during training before it appears in model outputs; and whether mechanistic signals can be converted into practical security evaluations or interventions.
+
+\section{Method and Evaluation}
+I would start with controlled training and fine-tuning experiments, using open transformer models where checkpoints can be saved densely. The data would include synthetic relational domains with known ground truth and factuality-style prompts where true and false claims can be matched. False facts or poisoned documents could then be injected with controlled timing, frequency, and semantic plausibility. This makes the main question measurable: not only whether a model later repeats a false statement, but when and where the false association becomes represented internally.
+
+\hspace*{2em}
+The mechanistic analysis would combine several methods. Work on transformer feed-forward layers as memory-like components and on locating factual associations motivates studying whether factual and false associations concentrate in particular layers, residual-stream directions, or MLP activations \cite{geva2021transformer,meng2022locating}. I would use activation patching and causal tracing to test whether these components are necessary for particular outputs, while treating choices of corruption, metric, and intervention target as part of the experimental design rather than fixed defaults \cite{meng2022locating,zhang2024activationpatching}.
+
+\hspace*{2em}
+Alongside causal analysis, I would use representation probing and truth-direction approaches to test whether relevant directions emerge before behaviour changes \cite{burns2022discovering}. Sparse autoencoders could search for interpretable features linked to factual associations, poisoned information, uncertainty, or source reliability, with the caveat that such features are tools for analysis rather than complete explanations \cite{templeton2026scaling}. At each checkpoint, I would compare output-level factuality, probe accuracy, causal effect sizes, and sparse-feature activation. If reliable signals are found, I would test whether they can support training-time alerts, targeted data auditing, activation-level monitoring, localised model editing, or activation interventions \cite{li2023inference,meng2022locating}. The evaluation would compare mechanistic monitoring with output-only tests on held-out false facts, paraphrases, and benign factual queries. A useful contribution would already be evidence that some internal signals consistently precede output failures under controlled conditions.
+
+\section{Fit and Expected Contribution}
+My fit for this project is not that I have already worked in mechanistic interpretability. It is that I have a quantitative ML background and experience building models whose internal behaviour matters. At KTH, I specialised in Statistical Learning and Data Analytics after Engineering Physics. At RaySearch, I worked on representation learning and probabilistic modelling for radiotherapy planning, including autoencoders on segmented 3D CT scans and sparse Gaussian processes for dose prediction. At Valcon, I built a production real-time neural network using natural-language inputs and high-dimensional labels, and led explainable AI training. At Signum Life Science, I am now building an end-to-end forecasting platform for pharmaceutical price and demand forecasting.
+
+\hspace*{2em}
+My interest is in understanding and controlling complex machine learning systems rather than treating them only as black boxes. CopeNLU's work on accountable NLP, explainable fact checking, and evidence sufficiency is a natural environment for this question \cite{atanasova2020generating,atanasova2022fact}. The proposed project turns a related problem inward: not only whether a claim is supported by external evidence, but when a model's internal computation has begun to use a false association. The expected contribution is a framework for moving from reactive factuality evaluation to proactive mechanistic monitoring: detecting and mitigating false information before it becomes visible in deployed model behaviour.
+
+\begingroup
+\scriptsize
+\setlength{\parskip}{0pt}
+\setlength{\columnsep}{1.2em}
+\begin{multicols}{2}
+\begin{thebibliography}{99}
+\setlength{\itemsep}{0.05em}
+\setlength{\parsep}{0pt}
+\raggedright
+\bibitem{ku2026mechanisticllmsecurity}
+University of Copenhagen, \href{https://jobportal.ku.dk/phd/?show=160571}{``PhD fellowship in Mechanistic Interpretability for LLM Security,''} KU Job Portal, 2026.
+
+\bibitem{carlini2023poisoning}
+N. Carlini \textit{et al.}, \href{https://arxiv.org/abs/2302.10149}{``Poisoning Web-Scale Training Datasets is Practical,''} \textit{arXiv:2302.10149}, 2024.
+
+\bibitem{souly2025poisoning}
+A. Souly \textit{et al.}, \href{https://arxiv.org/abs/2510.07192}{``Poisoning Attacks on LLMs Require a Near-constant Number of Poison Samples,''} \textit{arXiv:2510.07192}, 2025.
+
+\bibitem{lin2022truthfulqa}
+S. Lin, J. Hilton, and O. Evans, \href{https://aclanthology.org/2022.acl-long.229/}{``TruthfulQA: Measuring How Models Mimic Human Falsehoods,''} ACL, 2022.
+
+\bibitem{geva2021transformer}
+M. Geva, R. Schuster, J. Berant, and O. Levy, \href{https://aclanthology.org/2021.emnlp-main.446/}{``Transformer Feed-Forward Layers Are Key-Value Memories,''} EMNLP, 2021.
+
+\bibitem{meng2022locating}
+K. Meng, D. Bau, A. Andonian, and Y. Belinkov, \href{https://arxiv.org/abs/2202.05262}{``Locating and Editing Factual Associations in GPT,''} NeurIPS, 2022.
+
+\bibitem{burns2022discovering}
+C. Burns, H. Ye, D. Klein, and J. Steinhardt, \href{https://arxiv.org/abs/2212.03827}{``Discovering Latent Knowledge in Language Models Without Supervision,''} \textit{arXiv:2212.03827}, 2022.
+
+\bibitem{li2023inference}
+K. Li, O. Patel, F. Viegas, H. Pfister, and M. Wattenberg, \href{https://proceedings.neurips.cc/paper_files/paper/2023/hash/81b8390039b7302c909cb769f8b6cd93-Abstract-Conference.html}{``Inference-Time Intervention: Eliciting Truthful Answers from a Language Model,''} NeurIPS, 2023.
+
+\bibitem{templeton2026scaling}
+A. Templeton \textit{et al.}, \href{https://arxiv.org/abs/2605.29358}{``Scaling Monosemanticity: Extracting Interpretable Features from Claude 3 Sonnet,''} \textit{arXiv:2605.29358}, 2026.
+
+\bibitem{zhang2024activationpatching}
+F. Zhang and N. Nanda, \href{https://openreview.net/forum?id=Hf17y6u9BC}{``Towards Best Practices of Activation Patching in Language Models: Metrics and Methods,''} ICLR, 2024.
+
+\bibitem{atanasova2020generating}
+P. Atanasova, J. G. Simonsen, C. Lioma, and I. Augenstein, \href{https://aclanthology.org/2020.acl-main.656/}{``Generating Fact Checking Explanations,''} ACL, 2020.
+
+\bibitem{atanasova2022fact}
+P. Atanasova, J. G. Simonsen, C. Lioma, and I. Augenstein, \href{https://aclanthology.org/2022.tacl-1.43/}{``Fact Checking with Insufficient Evidence,''} TACL, vol. 10, pp. 746--763, 2022.
+\end{thebibliography}
+\end{multicols}
+\endgroup
+
+\end{document}

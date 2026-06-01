@@ -1,0 +1,27 @@
+education:
+- institution: Royal Institute of Technology (KTH)
+  location: Stockholm, Sweden
+  period: 2015--2020
+  programme: Data Science and Engineering
+  degrees:
+  - level: MSc
+    field: Statistical Learning and Data Analytics
+    gpa: 5.0 / 5.0
+  - level: BSc
+    field: Engineering Physics
+    gpa: 5.0 / 5.0
+  thesis_url: https://kth.diva-portal.org/smash/get/diva2:1431327/FULLTEXT02.pdf
+  notes:
+  - Relevant coursework listed in LaTeX source via \coursework macro.
+
+- institution: Stockholm University (SU)
+  location: Stockholm, Sweden
+  period: 2017--2022
+  programme: Economics
+  degree_type: Supplementary Bachelor's Degree
+  
+- institution: Swiss Federal Institute of Technology (ETH)
+  location: Zurich, Switzerland
+  period: '2019'
+  programme: Applied Mathematics
+  type: Exchange

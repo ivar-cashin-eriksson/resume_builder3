@@ -1,0 +1,65 @@
+claims:
+- claim: Strong quantitative and interdisciplinary academic background.
+  evidence:
+  - MSc in Statistical Learning and Data Analytics from KTH.
+  - BSc in Engineering Physics from KTH.
+  - Supplementary Bachelor's degree in Economics from Stockholm University.
+  - Applied Mathematics exchange at ETH.
+  - GPA 5.0 / 5.0 at KTH.
+  use_for:
+  - PhD applications
+  - research roles
+  - quantitative data science roles
+
+- claim: Experience building production-grade machine learning systems.
+  evidence:
+  - Owned and extended Kwarts at Signum.
+  - Implemented an end-to-end production pipeline for a real-time deep neural network at Valcon.
+  - Built FastAPI, MongoDB, Qdrant, and Chromium extension architecture for Project Iris.
+  use_for:
+  - ML engineering roles
+  - applied research roles
+  - industry PhD applications
+
+- claim: Research experience in medical AI and probabilistic modelling.
+  evidence:
+  - Worked on automated radiotherapy planning at RaySearch.
+  - Used autoencoders on segmented 3D CT scans.
+  - Predicted dose-volume histograms and spatial dose distributions using sparse Gaussian processes.
+  - Collaborated with medical physicists and clinicians.
+  use_for:
+  - medical AI PhDs
+  - healthcare data science
+  - clinical ML research
+
+- claim: Able to translate complex technical work for stakeholders.
+  evidence:
+  - Presented regularly to non-technical stakeholders at Valcon.
+  - Worked with business stakeholders at Valtech.
+  - Supported sales representatives with commercialisation at Signum.
+  - Collaborated with clinicians and medical physicists at RaySearch.
+  use_for:
+  - consulting roles
+  - project management
+  - interdisciplinary PhD projects
+
+- claim: Leadership experience without relying only on formal authority.
+  evidence:
+  - Mentored junior colleagues at Valcon.
+  - Led xAI and Git trainings.
+  - Organised a week-long internal hackathon with up to 40 participants at Signum.
+  - Won Valcon People's Choice Award for leadership, team spirit, and scientific curiosity.
+  use_for:
+  - senior data science roles
+  - team-oriented PhD environments
+  
+- claim: Hands-on computer vision and multimodal retrieval experience.
+  evidence:
+  - Built Project Iris using YOLOv8 for object detection.
+  - Used OpenCLIP embeddings for semantic item representation.
+  - Implemented vector search with Qdrant.
+  - Worked with CT image analysis using CNNs and autoencoders at RaySearch.
+  use_for:
+  - computer vision PhDs
+  - ML research engineering
+  - multimodal AI roles

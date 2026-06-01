@@ -1,0 +1,30 @@
+research_focus:
+  emphasise:
+    - methodology
+    - modelling
+    - mathematical_foundations
+    - practical_impact
+
+project_descriptions:
+  pattern:
+    - problem
+    - hypothesis
+    - methodology
+    - expected_outcome
+
+technical_depth:
+  level: high
+
+research_identity:
+  themes:
+    - graph_representation_learning
+    - machine_learning
+    - statistical_modelling
+    - healthcare_applications
+    - biological_systems
+
+career_narrative: >
+  Strong quantitative background,
+  successful transition to industry,
+  now returning to academia to pursue
+  deeper methodological research.

@@ -1,0 +1,100 @@
+experience:
+- organisation: Signum Life Science
+  location: Copenhagen, Denmark
+  period: 2024--Present
+  title: Full-Stack Data Scientist and Project Manager
+  summary: Maintains and leads development on Kwarts, a next-best-action engine for pharmaceutical sales,
+    and improves pharmaceutical price forecasting products.
+  responsibilities:
+  - Building end-to-end, production ready, flexible, forecasting platform for pharmaceutical price and demand forecasting.
+  - Owned and developed Kwarts, originally built externally.
+  - Extended Kwarts with explainable AI features in collaboration with UX designers.
+  - Supports commercialisation by aiding sales representatives.
+  - Maintains and improves a pharmaceutical price forecasting model for Denmark's fortnightly blind auctions.
+  - Stabilised an XGBoost-based forecasting system and is driving a more robust modern implementation.
+  - Organised an internal week-long hackathon with up to 40 participants.
+  technologies:
+  - Databricks
+  - AWS
+  - XGBoost
+  - explainable AI
+  - deep learning
+  - rule-based systems
+  domains:
+  - pharmaceutical sales
+  - price forecasting
+  - commercial analytics
+
+- organisation: Valcon
+  location: Copenhagen, Denmark
+  period: 2022--2024
+  title: Principal Data Scientist
+  summary: Led data science projects across pharma, energy, IoT, and manufacturing; mentored colleagues
+    and shaped internal data science practices.
+  responsibilities:
+  - Led data science projects across pharmaceuticals, energy, IoT, and manufacturing.
+  - Mentored junior colleagues in software architecture and data science best practices.
+  - Led explainable AI and Git training sessions.
+  - Presented complex technical topics to non-technical stakeholders.
+  - Architected and implemented an end-to-end production pipeline for a real-time deep neural network.
+  - Built systems involving natural-language inputs and high-dimensional multi-class labels.
+  - Developed IoT manufacturing analytics, including clustering algorithms for operator productivity patterns.
+  recognition:
+  - Valcon People's Choice Award for exemplary work, leadership, team spirit, and scientific curiosity.
+  technologies:
+  - deep neural networks
+  - clustering
+  - explainable AI
+  - Git
+  domains:
+  - pharma
+  - energy
+  - IoT
+  - manufacturing
+  
+- organisation: Valtech
+  location: Copenhagen, Denmark
+  period: 2021--2022
+  title: Data Scientist
+  summary: Delivered machine learning solutions in e-commerce, including forecasting and behavioural clustering
+    for personalisation.
+  responsibilities:
+  - Built time series forecasts using Facebook Prophet.
+  - Applied clustering to behavioural data to support personalisation.
+  - Worked closely with business stakeholders to ensure actionable outputs.
+  technologies:
+  - Facebook Prophet
+  - clustering
+  - time series forecasting
+  domains:
+  - e-commerce
+  - personalisation
+
+- organisation: RaySearch Laboratories
+  location: Stockholm, Sweden
+  period: 2019--2021
+  title: Researcher within Data Science
+  summary: Worked on automating radiotherapy planning using deep learning, probabilistic modelling, and
+    multi-objective optimisation.
+  responsibilities:
+  - Developed pipelines for extracting latent anatomical features from segmented 3D CT scans using autoencoders.
+  - Built learned similarity metrics to identify similar patients from anatomical representations.
+  - Predicted dose-volume histograms and spatial dose distributions using sparse Gaussian processes.
+  - Designed probabilistic frameworks for dose planning conditioned on patient geometry.
+  - Redesigned lexicographic optimisation algorithms to better reflect clinical decision hierarchies.
+  - Collaborated with medical physicists and clinicians to align models with oncological standards and
+    practical workflows.
+  - Implemented CNNs and autoencoders for medical image analysis.
+  - Designed and optimised treatment planning algorithms used in production.
+  technologies:
+  - deep learning
+  - autoencoders
+  - CNNs
+  - sparse Gaussian processes
+  - multi-objective optimisation
+  - lexicographic optimisation
+  - 3D CT scans
+  domains:
+  - radiotherapy planning
+  - medical imaging
+  - clinical decision support

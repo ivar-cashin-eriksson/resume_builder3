@@ -1,0 +1,31 @@
+projects:
+- name: Project Iris
+  period: 2025--2025
+  type: Solo project
+  summary: End-to-end computer vision system for making product images on e-commerce sites interactive.
+  description: Detects individual items in e-commerce imagery, embeds them semantically, and links similar
+    products across a web store through a real-time browser overlay.
+  components:
+  - YOLOv8 model for item detection.
+  - OpenCLIP embeddings for semantic item representation.
+  - FastAPI backend.
+  - MongoDB persistence layer.
+  - Qdrant vector index for similarity search.
+  - Custom Chromium plug-in overlaying clickable links on web shop imagery in real time.
+  - Dynamic scraping and indexing pipeline for arbitrary e-commerce sites.
+  learning_goals:
+  - fine-tuning deep learning models
+  - practical ML engineering
+  technologies:
+  - YOLOv8
+  - OpenCLIP
+  - FastAPI
+  - MongoDB
+  - Qdrant
+  - Chromium extension
+  - web scraping
+  - vector search
+  domains:
+  - computer vision
+  - e-commerce
+  - recommendation/linking systems

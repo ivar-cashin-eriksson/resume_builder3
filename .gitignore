@@ -1,0 +1,10 @@
+other_material/**
+
+# Ignore generated outputs by default, but keep final source/PDF artifacts trackable.
+outputs/**
+!outputs/
+!outputs/**/
+!outputs/**/*.tex
+!outputs/**/*.pdf
+!outputs/**/*.md
+!outputs/**/*.yaml

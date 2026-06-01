@@ -1,0 +1,56 @@
+% %--------------------------
+% %	CONFIGURATION
+% %--------------------------
+\documentclass[11pt,a4paper]{moderncv}
+\moderncvstyle{classic}
+\moderncvcolor{black}
+\definecolor{firstnamecolor}{rgb}{0,0,0}
+
+% Basic packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[Hscale=0.7, top=2cm, bottom=2cm]{geometry}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{DarkBlue}{RGB}{0, 0, 150}
+\usepackage[colorlinks=true, urlcolor=DarkBlue, linkcolor=DarkBlue]{hyperref}
+
+\usepackage{microtype}
+
+% Configure font settings
+\renewcommand{\rmdefault}{ppl}
+\renewcommand{\sfdefault}{phv}
+\renewcommand*{\namefont}{\fontsize{26}{18}\mdseries}
+
+% Configure microtype
+\microtypesetup{expansion=false}
+
+% Load sensitive information
+\input{../../other_material/personal_info.tex}
+
+% %--------------------------
+\begin{document}
+\makecvtitle
+Hello <<CONTACT_OR_COMMITTEE>>, 
+
+\vspace*{2em}
+I am writing to apply for the <<POSITION_TITLE>>. With a Master's degree in data science and applied mathematics, and <<YEARS_OF_EXPERIENCE>> years of hands-on experience working with machine learning, I am excited to return to academia. I wish to pursue deep, curiosity-driven research, and your project on <<PROJECT_TOPIC_OR_GOAL>> sounds like a strong fit for me.
+
+\hspace*{2em}
+I hold a degree in Engineering Physics from KTH Royal Institute of Technology in Stockholm, where I specialised in Statistical Learning and Data Analytics and graduated with a perfect GPA of 5.0/5.0. The programme gave me a strong mathematical foundation in machine learning and deep learning. I thoroughly enjoyed understanding how ML models work under the hood, and this intellectual curiosity is what initially led me to pursue a career in data science.
+
+\hspace*{2em}
+I began my career at RaySearch Laboratories in Stockholm, where I also completed my master's thesis. As a Data Science Researcher, I developed probabilistic and computer vision-based ML methods for radiotherapy planning, including autoencoders, sparse Gaussian processes, and lexicographic optimisation. I used autoencoders to extract latent anatomical structure from 3D CT scans, then used these representations to identify similar patients and support personalised dose estimation. This work left a strong impression on me because the models had to be understood and validated with medical physicists and clinicians.
+
+\hspace*{2em}
+Since moving to Copenhagen, I have worked as a Data Scientist across industries, designing real-time ML systems and mentoring junior colleagues. At Valcon, I led the development of a real-time deep neural network with a custom training pipeline for a challenging natural-language, multi-label prediction task, and I held internal trainings in explainable AI. At Signum Life Science, I now maintain and lead development on a next-best-action engine for pharmaceutical sales, including explainable AI features. These roles have given me a practical engineering perspective on model evaluation, stakeholder communication, and the difficulty of deploying systems when their behaviour cannot be explained well enough.
+
+\hspace*{2em}
+I am drawn to <<GROUP_OR_PROJECT_FIT>>, especially <<SPECIFIC_RESEARCH_FOCUS_FROM_ADVERT>>. I have not worked directly on <<NEW_TOPIC_IF_RELEVANT>> before, but I have repeatedly worked with representation learning, explainability, and ML systems where reliability mattered. The chance to study <<PROJECT_METHOD_OR_IMPACT>> is therefore exciting to me.
+
+\vspace*{2em}
+I hope to hear back from you soon. Regards,
+
+\vspace*{1em}
+Ivar Cashin Eriksson.
+
+\end{document}

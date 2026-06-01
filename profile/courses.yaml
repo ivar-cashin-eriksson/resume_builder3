@@ -1,0 +1,295 @@
+coursework:
+  source: Degree and Grade Transcript.pdf
+  degree: Degree of Master of Science in Engineering
+  programme: Engineering Physics
+  institution: KTH Royal Institute of Technology
+  total_credits_ects: 300
+  grading_notes:
+    kth_scale: Excellent (A), Very Good (B), Good (C), Satisfactory (D), Sufficient
+      (E)
+    pass_scale: Pass (P)
+    swedish_degrees: No overall GPA or ranking is awarded for Swedish degrees.
+  courses:
+  - code: SI1121
+    course: Thermodynamics
+    credits_ects: 6.0
+    grade: Excellent
+    grade_letter: A
+    date: '2015-12-09'
+    institution: KTH Royal Institute of Technology
+  - code: SF1604
+    course: Linear Algebra
+    credits_ects: 7.5
+    grade: Excellent
+    grade_letter: A
+    date: '2016-01-13'
+    institution: KTH Royal Institute of Technology
+  - code: SF1602
+    course: Calculus II, part 1
+    credits_ects: 9.0
+    grade: Excellent
+    grade_letter: A
+    date: '2016-01-18'
+    institution: KTH Royal Institute of Technology
+  - code: DD1345
+    course: Fundamentals of Programming and Computer Science
+    credits_ects: 7.5
+    grade: Excellent
+    grade_letter: A
+    date: '2016-04-20'
+    institution: KTH Royal Institute of Technology
+  - code: SG1130
+    course: Mechanics I
+    credits_ects: 9.0
+    grade: Excellent
+    grade_letter: A
+    date: '2016-06-03'
+    institution: KTH Royal Institute of Technology
+  - code: SF1603
+    course: Calculus II, part 2
+    credits_ects: 9.0
+    grade: Excellent
+    grade_letter: A
+    date: '2016-06-07'
+    institution: KTH Royal Institute of Technology
+  - code: SK1102
+    course: Classical Physics
+    credits_ects: 12.0
+    grade: Excellent
+    grade_letter: A
+    date: '2016-06-13'
+    institution: KTH Royal Institute of Technology
+  - code: SF1628
+    course: Complex Analysis
+    credits_ects: 6.0
+    grade: Excellent
+    grade_letter: A
+    date: '2016-10-21'
+    institution: KTH Royal Institute of Technology
+  - code: SF1629
+    course: Differential Equations and Transforms II
+    credits_ects: 9.0
+    grade: Excellent
+    grade_letter: A
+    date: '2017-01-10'
+    institution: KTH Royal Institute of Technology
+  - code: SG1113
+    course: Mechanics, Continuation Course
+    credits_ects: 6.0
+    grade: Excellent
+    grade_letter: A
+    date: '2017-01-16'
+    institution: KTH Royal Institute of Technology
+  - code: SF1544
+    course: Numerical Methods, Basic Course IV
+    credits_ects: 6.0
+    grade: Excellent
+    grade_letter: A
+    date: '2017-03-03'
+    institution: KTH Royal Institute of Technology
+  - code: SF1901
+    course: Probability Theory and Statistics
+    credits_ects: 6.0
+    grade: Excellent
+    grade_letter: A
+    date: '2017-03-14'
+    institution: KTH Royal Institute of Technology
+  - code: SI1140
+    course: Mathematical Methods in Physics
+    credits_ects: 9.0
+    grade: Excellent
+    grade_letter: A
+    date: '2017-05-28'
+    institution: KTH Royal Institute of Technology
+  - code: SF1904
+    course: Markov Processes, Basic Course
+    credits_ects: 3.0
+    grade: Excellent
+    grade_letter: A
+    date: '2017-05-30'
+    institution: KTH Royal Institute of Technology
+  - code: SE1055
+    course: Strength of Materials and Solid Mechanics, Basic Course with Energy Methods
+    credits_ects: 9.0
+    grade: Excellent
+    grade_letter: A
+    date: '2017-06-02'
+    institution: KTH Royal Institute of Technology
+  - code: SH1012
+    course: Modern Physics
+    credits_ects: 8.0
+    grade: Excellent
+    grade_letter: A
+    date: '2017-06-30'
+    institution: KTH Royal Institute of Technology
+  - code: EI1240
+    course: Electromagnetic Theory
+    credits_ects: 9.0
+    grade: Excellent
+    grade_letter: A
+    date: '2017-10-21'
+    institution: KTH Royal Institute of Technology
+  - code: EL1000
+    course: Automatic Control, General Course
+    credits_ects: 6.0
+    grade: Excellent
+    grade_letter: A
+    date: '2017-10-27'
+    institution: KTH Royal Institute of Technology
+  - code: SI1151
+    course: Quantum Physics
+    credits_ects: 6.0
+    grade: Excellent
+    grade_letter: A
+    date: '2017-11-08'
+    institution: KTH Royal Institute of Technology
+  - code: SI1161
+    course: Statistical Physics
+    credits_ects: 6.0
+    grade: Excellent
+    grade_letter: A
+    date: '2018-01-08'
+    institution: KTH Royal Institute of Technology
+  - code: SF1811
+    course: Optimization
+    credits_ects: 6.0
+    grade: Excellent
+    grade_letter: A
+    date: '2018-01-10'
+    institution: KTH Royal Institute of Technology
+  - code: SG1215
+    course: Fluid Mechanics
+    credits_ects: 4.0
+    grade: Excellent
+    grade_letter: A
+    date: '2018-01-13'
+    institution: KTH Royal Institute of Technology
+  - code: DD1346
+    course: Object-Oriented Program Construction
+    credits_ects: 6.0
+    grade: Excellent
+    grade_letter: A
+    date: '2018-03-12'
+    institution: KTH Royal Institute of Technology
+  - code: SF1678
+    course: Groups and Rings
+    credits_ects: 7.5
+    grade: Excellent
+    grade_letter: A
+    date: '2018-03-14'
+    institution: KTH Royal Institute of Technology
+  - code: SA114X
+    course: Degree Project in Engineering Physics, First cycle
+    credits_ects: 15.0
+    grade: Pass
+    grade_letter: P
+    date: '2018-05-16'
+    institution: KTH Royal Institute of Technology
+  - code: SK2750
+    course: Solid State Physics
+    credits_ects: 6.0
+    grade: Excellent
+    grade_letter: A
+    date: '2018-08-22'
+    institution: KTH Royal Institute of Technology
+  - code: SF2940
+    course: Probability Theory
+    credits_ects: 7.5
+    grade: Excellent
+    grade_letter: A
+    date: '2018-10-24'
+    institution: KTH Royal Institute of Technology
+  - code: AK2036
+    course: Theory and Methodology of Science with Applications (Natural and Technological
+      Science)
+    credits_ects: 7.5
+    grade: Excellent
+    grade_letter: A
+    date: '2018-11-05'
+    institution: KTH Royal Institute of Technology
+  - code: SF2863
+    course: Systems Engineering
+    credits_ects: 7.5
+    grade: Excellent
+    grade_letter: A
+    date: '2019-01-07'
+    institution: KTH Royal Institute of Technology
+  - code: SF2520
+    course: Applied Numerical Methods
+    credits_ects: 7.5
+    grade: Excellent
+    grade_letter: A
+    date: '2019-01-11'
+    institution: KTH Royal Institute of Technology
+  - code: SF2955
+    course: Computer Intensive Methods in Mathematical Statistics
+    credits_ects: 7.5
+    grade: Excellent
+    grade_letter: A
+    date: '2019-05-28'
+    institution: KTH Royal Institute of Technology
+  - code: SF2935
+    course: Modern Methods of Statistical Learning
+    credits_ects: 7.5
+    grade: Excellent
+    grade_letter: A
+    date: '2019-10-24'
+    institution: KTH Royal Institute of Technology
+  - code: SF2957
+    course: Statistical Machine Learning
+    credits_ects: 7.5
+    grade: Excellent
+    grade_letter: A
+    date: '2020-01-07'
+    institution: KTH Royal Institute of Technology
+  - code: EL2805
+    course: Reinforcement Learning
+    credits_ects: 7.5
+    grade: Excellent
+    grade_letter: A
+    date: '2020-01-11'
+    institution: KTH Royal Institute of Technology
+  - code: SF2956
+    course: Topological Data Analysis
+    credits_ects: 7.5
+    grade: Excellent
+    grade_letter: A
+    date: '2020-02-20'
+    institution: KTH Royal Institute of Technology
+  - code: null
+    course: Applied Time Series
+    credits_ects: 5.0
+    grade: null
+    grade_letter: null
+    date: null
+    institution: ETH Zurich
+  - code: null
+    course: Causality
+    credits_ects: 4.0
+    grade: null
+    grade_letter: null
+    date: null
+    institution: ETH Zurich
+  - code: null
+    course: Computational Statistics
+    credits_ects: 8.0
+    grade: null
+    grade_letter: null
+    date: null
+    institution: ETH Zurich
+  - code: null
+    course: Game Theory and Control
+    credits_ects: 4.0
+    grade: null
+    grade_letter: null
+    date: null
+    institution: ETH Zurich
+  - code: SF290X
+    course: Degree Project in Mathematical Statistics, Second Cycle
+    credits_ects: 30.0
+    grade: Pass
+    grade_letter: P
+    date: '2020-05-29'
+    institution: KTH Royal Institute of Technology
+    thesis_title: Image Distance Learning for Probabilistic Dose-Volume Histogram
+      and Spatial Dose Prediction in Radiation Therapy Treatment Planning

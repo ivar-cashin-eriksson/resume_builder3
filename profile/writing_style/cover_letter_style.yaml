@@ -1,0 +1,32 @@
+opening_pattern:
+  - greeting
+  - direct_statement_of_application
+  - background_summary
+  - motivation_for_research
+
+body_order:
+  - previous_research_experience
+  - industry_experience
+  - connection_to_project
+  - personal_motivation
+
+research_motivation:
+  recurring_themes:
+    - desire_to_return_to_research
+    - curiosity_driven_work
+    - deep_understanding
+    - long_term_impact
+
+fit_arguments:
+  - technical_competence
+  - domain_experience
+  - research_motivation
+
+personal_section:
+  include_when_relevant: true
+
+closing:
+  style:
+    - brief
+    - polite
+    - non_salesy

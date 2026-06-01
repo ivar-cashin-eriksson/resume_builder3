@@ -1,0 +1,82 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[scale=0.7]{geometry}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[colorlinks=true, urlcolor=DarkBlue, linkcolor=DarkBlue, citecolor=DarkBlue]{hyperref}
+\usepackage{microtype}
+
+\definecolor{DarkBlue}{RGB}{0, 0, 150}
+
+% Keep the same serif/sans pairing as the CV and cover letter.
+\renewcommand{\rmdefault}{ppl}
+\renewcommand{\sfdefault}{phv}
+\microtypesetup{expansion=false}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.55em}
+
+\newcommand{\statementtitle}[1]{%
+  \begin{center}
+    {\Large\bfseries #1}
+  \end{center}
+}
+
+\newcommand{\statementsubtitle}[1]{%
+  \begin{center}
+    {\normalsize #1}
+  \end{center}
+  \vspace{0.5em}
+}
+
+\newcommand{\source}[2]{\href{#2}{#1}}
+
+\begin{document}
+
+\statementtitle{Research Statement}
+\statementsubtitle{<<POSITION\_TITLE>>}
+
+\section{Research Direction}
+<<RESEARCH\_DIRECTION\_OVERVIEW>>
+
+\section{Motivation and Background}
+<<MOTIVATION\_AND\_BACKGROUND>>
+
+\section{Proposed Project}
+<<PROPOSED\_PROJECT\_OVERVIEW>>
+
+\subsection{Research Questions}
+\begin{itemize}
+    \item <<RESEARCH\_QUESTION\_1>>
+    \item <<RESEARCH\_QUESTION\_2>>
+    \item <<RESEARCH\_QUESTION\_3>>
+\end{itemize}
+
+\subsection{Methodological Approach}
+<<METHODOLOGICAL\_APPROACH>>
+
+\subsubsection{Evaluation}
+<<EVALUATION\_PLAN>>
+
+\subsubsection{Expected Contributions}
+<<EXPECTED\_CONTRIBUTIONS>>
+
+\section{Fit With the Group}
+<<GROUP\_FIT>>
+
+\section{Selected Sources}
+The main sources I would build from are \cite{ref1,ref2,ref3}.
+
+\begin{thebibliography}{99}
+\bibitem{ref1}
+Vaswani, Ashish, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, \L ukasz Kaiser, and Illia Polosukhin. ``Attention Is All You Need.'' In \textit{Advances in Neural Information Processing Systems 30}, 2017. \href{https://arxiv.org/abs/1706.03762}{arXiv:1706.03762}.
+
+\bibitem{ref2}
+Elhage, Nelson, Tristan Hume, Catherine Olsson, Nicholas Schiefer, Tom Henighan, Shauna Kravec, Zac Hatfield-Dodds, Robert Lasenby, Dawn Drain, Carol Chen, Roger Grosse, Sam McCandlish, Jared Kaplan, Dario Amodei, Martin Wattenberg, and Christopher Olah. ``Toy Models of Superposition.'' 2022. \href{https://arxiv.org/abs/2209.10652}{arXiv:2209.10652}.
+
+\bibitem{ref3}
+Cunningham, Hoagy, Aidan Ewart, Logan Riggs, Robert Huben, and Lee Sharkey. ``Sparse Autoencoders Find Highly Interpretable Features in Language Models.'' 2023. \href{https://arxiv.org/abs/2309.08600}{arXiv:2309.08600}.
+\end{thebibliography}
+
+\end{document}

@@ -1,0 +1,51 @@
+skills:
+  programming_languages:
+  - Python
+  - C++
+  - Matlab
+  ml_libraries_and_methods:
+  - PyTorch
+  - TensorFlow
+  - SHAP
+  - YOLO
+  - XGBoost
+  - OpenCLIP
+  - autoencoders
+  - CNNs
+  - sparse Gaussian processes
+  - clustering
+  - time series forecasting
+  - Facebook Prophet
+  - explainable AI
+  ml_engineering_and_backend:
+  - FastAPI
+  - Docker
+  - MongoDB
+  - Qdrant
+  - Chromium extension development
+  - vector search
+  - web scraping
+  cloud_and_data_platforms:
+  - AWS
+  - MS Azure
+  - Databricks
+  certifications:
+  - Microsoft Azure Data Science Associate Certified
+  engineering_and_design_tools:
+  - 3D printing
+  - Fusion 360
+  domains:
+  - pharmaceutical analytics
+  - radiotherapy planning
+  - medical imaging
+  - e-commerce
+  - IoT
+  - manufacturing analytics
+  - energy
+  soft_skills:
+  - project management
+  - mentoring
+  - stakeholder communication
+  - training
+  - technical leadership
+  - commercialisation support

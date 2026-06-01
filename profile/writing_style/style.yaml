@@ -1,0 +1,44 @@
+voice:
+  tone:
+    - professional
+    - intellectually curious
+    - understated
+    - sincere
+    - analytical
+    - British English
+
+  avoid:
+    - hype
+    - buzzwords
+    - exaggerated claims
+    - corporate_jargon
+
+  prefer:
+    - concrete_examples
+    - evidence_backed_claims
+    - technical_precision
+    - modest_confidence
+    - direct_language
+
+sentence_style:
+  average_length: medium
+
+  characteristics:
+    - mostly_simple_sentences
+    - occasional_longer_explanatory_sentence
+    - active_voice
+    - minimal_adjectives
+
+structure:
+  introduction:
+    - state_motivation
+    - establish_fit
+    - establish_background
+
+  body:
+    - evidence_first
+    - interpretation_second
+
+  conclusion:
+    - future_oriented
+    - concise

@@ -1,10 +1,9 @@
 other_material/**
+.vscode/**
 
 # Ignore generated outputs by default, but keep final source/PDF artifacts trackable.
-outputs/**
-!outputs/
-!outputs/**/
+outputs/**/build/
+outputs/**/*.yaml
+outputs/**/*.md
 !outputs/**/*.tex
 !outputs/**/*.pdf
-!outputs/**/*.md
-!outputs/**/*.yaml

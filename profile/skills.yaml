@@ -1,11 +1,12 @@
 skills:
   programming_languages:
   - Python
+  - SQL
   - C++
   - Matlab
   ml_libraries_and_methods:
-  - PyTorch
   - TensorFlow
+  - PyTorch
   - SHAP
   - YOLO
   - XGBoost
@@ -26,14 +27,14 @@ skills:
   - vector search
   - web scraping
   cloud_and_data_platforms:
+  - Databricks
   - AWS
   - MS Azure
-  - Databricks
   certifications:
   - Microsoft Azure Data Science Associate Certified
   engineering_and_design_tools:
-  - 3D printing
   - Fusion 360
+  - 3D printing
   domains:
   - pharmaceutical analytics
   - radiotherapy planning

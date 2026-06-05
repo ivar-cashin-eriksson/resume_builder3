@@ -4,11 +4,11 @@ coursework:
   programme: Engineering Physics
   institution: KTH Royal Institute of Technology
   total_credits_ects: 300
+  gpa: 5.0 / 5.0
   grading_notes:
-    kth_scale: Excellent (A), Very Good (B), Good (C), Satisfactory (D), Sufficient
+    grading_scale: Excellent (A), Very Good (B), Good (C), Satisfactory (D), Sufficient
       (E)
     pass_scale: Pass (P)
-    swedish_degrees: No overall GPA or ranking is awarded for Swedish degrees.
   courses:
   - code: SI1121
     course: Thermodynamics

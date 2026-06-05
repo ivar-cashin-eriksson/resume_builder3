@@ -2,7 +2,7 @@ education:
 - institution: Royal Institute of Technology (KTH)
   location: Stockholm, Sweden
   period: 2015--2020
-  programme: Data Science and Engineering
+  programme: Engineering Physics
   degrees:
   - level: MSc
     field: Statistical Learning and Data Analytics
@@ -13,13 +13,17 @@ education:
   thesis_url: https://kth.diva-portal.org/smash/get/diva2:1431327/FULLTEXT02.pdf
   notes:
   - Relevant coursework listed in LaTeX source via \coursework macro.
+  - Widely recognized as the top engineering program in Sweden, with a strong emphasis on physics and mathematics.
 
 - institution: Stockholm University (SU)
   location: Stockholm, Sweden
   period: 2017--2022
   programme: Economics
   degree_type: Supplementary Bachelor's Degree
-  
+  notes:
+  - Completed a supplementary bachelor's degree in economics, which provided a strong foundation in economic theory and quantitative methods, complementing my engineering background.
+  - Did it for fun.
+
 - institution: Swiss Federal Institute of Technology (ETH)
   location: Zurich, Switzerland
   period: '2019'

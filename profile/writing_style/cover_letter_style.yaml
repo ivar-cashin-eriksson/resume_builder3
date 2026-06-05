@@ -1,32 +1,52 @@
-opening_pattern:
-  - greeting
-  - direct_statement_of_application
-  - background_summary
-  - motivation_for_research
+cover_letter_style:
+  body_order:
+  - introduction
+    - fit
+    - motivation
+  - previous_experience
+    - in_order_of_relevance
+  - personal_interests
+  - closing
 
-body_order:
-  - previous_research_experience
-  - industry_experience
-  - connection_to_project
-  - personal_motivation
-
-research_motivation:
-  recurring_themes:
-    - desire_to_return_to_research
-    - curiosity_driven_work
-    - deep_understanding
-    - long_term_impact
-
-fit_arguments:
-  - technical_competence
-  - domain_experience
-  - research_motivation
-
-personal_section:
-  include_when_relevant: true
-
-closing:
   style:
+  - tailored_to_job_description
+  - personal
+  - clear
+  - engaging
+  - confident
+  - enthusiastic
+  include:
+  - specific_evidence_and_examples
+  - enthusiasm_for_role
+  - why_this_company_specifically
+  - how_i_can_contribute
+  - connect_to_company_values
+  avoid:
+  - generic_phrases
+  - overused_cliches
+  - negative_language
+  - excessive_self_praise
+  - chronological_cv_recap
+
+  introduction:
+    components:
+    - greeting
+    - direct_statement_of_application
+    - background_summary
+    - motivation
+    style:
+    - concise
+    - engaging
+    - professional
+    - excited
+
+  closing:
+    components:
+    - expression_of_interest
+    - call_to_action
+    - gratitude
+    - signoff
+    style:
     - brief
     - polite
     - non_salesy

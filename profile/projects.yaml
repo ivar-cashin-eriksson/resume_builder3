@@ -1,5 +1,5 @@
 projects:
-- name: Project Iris
+- name: Project iris
   period: 2025--2025
   type: Solo project
   summary: End-to-end computer vision system for making product images on e-commerce sites interactive.
@@ -29,3 +29,40 @@ projects:
   - computer vision
   - e-commerce
   - recommendation/linking systems
+  motivation:
+  - Desire to learn more about ML engineering.
+
+- name: resume_builder
+  period: 2023--Present
+  type: Solo project
+  summary: A resume builder that generates tailored CVs and cover letters based on a structured profile and job descriptions.
+  description: Users create a structured profile with their background, skills, and experiences. The system then generates tailored CVs and cover letters for specific job applications, using the profile and job descriptions as input. Currently on version 3 with ongoing development.
+  components:
+  - Structured YAML profile for user information.
+  - Job description parsing module to extract key requirements.
+  - Resume generation engine that tailors content based on the profile and job description.
+  - Template system for formatting CVs and cover letters.
+  learning_goals:
+  - agentic prompting and system design
+  - practical NLP application development
+  - template-based document generation
+  technologies:
+  - YAML
+  - agentic workflows
+  motivation:
+  - Desire to learn more about agentic prompting and system design.
+  - Wanting a new job.
+
+- name: furniture
+  period: 2015--Present
+  type: Personal project
+  summary: Designing and building custom furniture, including a dining table, shelves, cutting board, knives, etc.
+  description: I design and build custom furniture pieces for my home. This includes a dining table, various shelves, and a cutting board. I enjoy the creative process of designing functional and aesthetically pleasing pieces, as well as the hands-on work of woodworking.
+  learning_goals:
+  - woodworking techniques
+  - furniture design principles
+  technologies:
+  - woodworking tools and machinery
+  - fusion 360 for design
+  motivation:
+  - Fun

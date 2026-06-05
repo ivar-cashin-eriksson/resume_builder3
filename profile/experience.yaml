@@ -2,16 +2,21 @@ experience:
 - organisation: Signum Life Science
   location: Copenhagen, Denmark
   period: 2024--Present
-  title: Full-Stack Data Scientist and Project Manager
-  summary: Maintains and leads development on Kwarts, a next-best-action engine for pharmaceutical sales,
-    and improves pharmaceutical price forecasting products.
+  title: Full-Stack Data Scientist, Project Manager
+  summary: Maintains and develops a pharmaceutical price forecasting platform, supports commercialisation efforts, and leads internal initiatives to foster innovation and collaboration.
   responsibilities:
-  - Building end-to-end, production ready, flexible, forecasting platform for pharmaceutical price and demand forecasting.
-  - Owned and developed Kwarts, originally built externally.
-  - Extended Kwarts with explainable AI features in collaboration with UX designers.
-  - Supports commercialisation by aiding sales representatives.
-  - Maintains and improves a pharmaceutical price forecasting model for Denmark's fortnightly blind auctions.
-  - Stabilised an XGBoost-based forecasting system and is driving a more robust modern implementation.
+  - Unwritten - Forecasting platform (Ongoing)
+    - Forecasting platform for pharmaceutical price and demand forecasting, patient population forecasts, etc.
+    - Architect, Project manager, Data Scientist, ML Engineer, and Software Engineer for the platform.
+    - End-to-end, production ready, flexible, 
+    - Databricks
+  - Kwarts - Next-best-action Prediction System (Terminated)
+    - Next-best-action prediction system for pharmaceutical sales representatives, providing actionable insights to support commercialisation efforts.
+    - Owner, Data Scientist, Software Developer.
+    - Originally built by a third party, I took over ownership and extended the system with explainable AI features in collaboration with UX designers.
+    - Extended with explainable AI features in collaboration with UX designers.
+  - Support commercialisation by aiding sales representatives.
+  - Maintain and improve a pharmaceutical price forecasting model for Denmark's fortnightly blind auctions.
   - Organised an internal week-long hackathon with up to 40 participants.
   technologies:
   - Databricks
@@ -28,7 +33,7 @@ experience:
 - organisation: Valcon
   location: Copenhagen, Denmark
   period: 2022--2024
-  title: Principal Data Scientist
+  title: Principal Data Scientist, Consultant
   summary: Led data science projects across pharma, energy, IoT, and manufacturing; mentored colleagues
     and shaped internal data science practices.
   responsibilities:
@@ -51,11 +56,16 @@ experience:
   - energy
   - IoT
   - manufacturing
+  customers:
+  - Novo Nordisk
+  - Belfor
+  - Gram
+  - Andel Energi
   
 - organisation: Valtech
   location: Copenhagen, Denmark
   period: 2021--2022
-  title: Data Scientist
+  title: Data Scientist, Consultant
   summary: Delivered machine learning solutions in e-commerce, including forecasting and behavioural clustering
     for personalisation.
   responsibilities:
@@ -69,11 +79,17 @@ experience:
   domains:
   - e-commerce
   - personalisation
+  customers:
+  - Rolex
+  - Velux
+  - Pandora
+  - Novo Nordisk
+  - Decathlon
 
 - organisation: RaySearch Laboratories
   location: Stockholm, Sweden
   period: 2019--2021
-  title: Researcher within Data Science
+  title: Data Scientist, Researcher
   summary: Worked on automating radiotherapy planning using deep learning, probabilistic modelling, and
     multi-objective optimisation.
   responsibilities:
@@ -82,8 +98,7 @@ experience:
   - Predicted dose-volume histograms and spatial dose distributions using sparse Gaussian processes.
   - Designed probabilistic frameworks for dose planning conditioned on patient geometry.
   - Redesigned lexicographic optimisation algorithms to better reflect clinical decision hierarchies.
-  - Collaborated with medical physicists and clinicians to align models with oncological standards and
-    practical workflows.
+  - Collaborated with medical physicists and clinicians to align models with oncological standards and practical workflows.
   - Implemented CNNs and autoencoders for medical image analysis.
   - Designed and optimised treatment planning algorithms used in production.
   technologies:

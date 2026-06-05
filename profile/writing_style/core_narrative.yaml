@@ -1,5 +1,13 @@
 core_narrative:
-  title: builder_researcher
+  role: 
+  - data_scientist
+  - builder
+  - researcher
+
+  personality_traits:
+  - curious
+  - analytical
+  - creative
 
   description: >
     Quantitative researcher and builder who enjoys
@@ -8,8 +16,8 @@ core_narrative:
     ideas into working solutions.
 
   supporting_evidence:
-    - engineering_physics
-    - radiotherapy_research
-    - machine_learning_products
-    - project_iris
-    - woodworking
+  - engineering_physics
+  - radiotherapy_research
+  - machine_learning_products
+  - project_iris
+  - woodworking

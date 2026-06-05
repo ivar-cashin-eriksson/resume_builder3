@@ -15,7 +15,7 @@ claims:
   evidence:
   - Owned and extended Kwarts at Signum.
   - Implemented an end-to-end production pipeline for a real-time deep neural network at Valcon.
-  - Built FastAPI, MongoDB, Qdrant, and Chromium extension architecture for Project Iris.
+  - Built FastAPI, MongoDB, Qdrant, and Chromium extension architecture for Project iris.
   use_for:
   - ML engineering roles
   - applied research roles
@@ -34,8 +34,8 @@ claims:
 
 - claim: Able to translate complex technical work for stakeholders.
   evidence:
-  - Presented regularly to non-technical stakeholders at Valcon.
-  - Worked with business stakeholders at Valtech.
+  - Presented regularly to non-technical stakeholders at Valcon, including C-level executives.
+  - Worked with business stakeholders at Valtech, including presenting for Rolex' CTO and other executives.
   - Supported sales representatives with commercialisation at Signum.
   - Collaborated with clinicians and medical physicists at RaySearch.
   use_for:
@@ -55,7 +55,7 @@ claims:
   
 - claim: Hands-on computer vision and multimodal retrieval experience.
   evidence:
-  - Built Project Iris using YOLOv8 for object detection.
+  - Built Project iris using YOLOv8 for object detection.
   - Used OpenCLIP embeddings for semantic item representation.
   - Implemented vector search with Qdrant.
   - Worked with CT image analysis using CNNs and autoencoders at RaySearch.

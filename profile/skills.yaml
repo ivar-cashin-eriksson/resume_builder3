@@ -4,32 +4,36 @@ skills:
   - SQL
   - C++
   - Matlab
-  ml_libraries_and_methods:
+  ml_libraries:
   - TensorFlow
   - PyTorch
   - SHAP
   - YOLO
   - XGBoost
   - OpenCLIP
+  - Facebook Prophet
+  - mlflow
+  ml_methods:
   - autoencoders
   - CNNs
   - sparse Gaussian processes
-  - clustering
   - time series forecasting
-  - Facebook Prophet
+  - clustering
   - explainable AI
   ml_engineering_and_backend:
   - FastAPI
   - Docker
   - MongoDB
   - Qdrant
-  - Chromium extension development
   - vector search
   - web scraping
+  - CI/CD pipelines
+  - Chromium extension development
   cloud_and_data_platforms:
   - Databricks
   - AWS
   - MS Azure
+  - GitHub
   certifications:
   - Microsoft Azure Data Science Associate Certified
   engineering_and_design_tools:

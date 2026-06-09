@@ -1,0 +1,56 @@
+% %--------------------------
+% %	CONFIGURATION
+% %--------------------------
+\documentclass[11pt,a4paper]{moderncv}
+\moderncvstyle{classic}
+\moderncvcolor{black}
+\definecolor{firstnamecolor}{rgb}{0,0,0}
+
+% Basic packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[hscale=0.7, top=2cm, bottom=2cm]{geometry}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{DarkBlue}{RGB}{0, 0, 150}
+\usepackage[colorlinks=true, urlcolor=DarkBlue, linkcolor=DarkBlue]{hyperref}
+
+\usepackage{microtype}
+
+% Configure font settings
+\renewcommand{\rmdefault}{ppl}
+\renewcommand{\sfdefault}{phv}
+\renewcommand*{\namefont}{\fontsize{26}{18}\mdseries}
+
+% Configure microtype
+\microtypesetup{expansion=false}
+
+% Load sensitive information
+\input{../../other_material/personal_info.tex}
+
+% %--------------------------
+\begin{document}
+\makecvtitle
+Hello Corti team,
+
+\vspace*{2em}
+I am writing to apply for the Senior MLOps Engineer role. I am a pragmatic data scientist and ML builder with seven years of experience across healthcare AI, pharmaceutical analytics, and production ML systems. Corti is interesting to me because the work sits where model quality, product integration, reliability, and clinical usefulness all matter at the same time. That is the kind of applied ML work I have found most meaningful.
+
+\hspace*{2em}
+At Signum Life Science, my current work is on an end-to-end Databricks forecasting platform for pharmaceutical price and demand forecasting. The role spans architecture, project management, data science, ML engineering, and software engineering. I also maintain and improve a pharmaceutical price forecasting model for Denmark's fortnightly blind auctions, and earlier owned an AWS-hosted next-best-action system for pharmaceutical sales representatives. In that system I extended the model experience with explainable AI features in collaboration with UX designers.
+
+\hspace*{2em}
+At Valcon, I led the design and implementation of an end-to-end production pipeline for a real-time deep neural network. The system used natural-language inputs and high-dimensional multi-class labels, so the work involved both modelling and practical engineering around a difficult prediction problem. I also mentored junior colleagues, led explainable AI and Git trainings, and regularly explained technical work to non-technical stakeholders.
+
+\hspace*{2em}
+My healthcare AI experience comes from RaySearch Laboratories, where I worked on automated radiotherapy planning. I built methods using autoencoders, sparse Gaussian processes, and optimisation on segmented 3D CT scans, and collaborated closely with clinicians and medical physicists to align the models with oncological standards and practical workflows. That experience made it clear that in clinical settings a model is only useful if it can fit the workflow and be trusted by the people around it.
+
+\hspace*{2em}
+The part of the role that fits me best is taking ownership of ML systems as they move into products: building pipelines, keeping model behaviour understandable, and working across ML, engineering, product, and domain users. My background is closer to applied ML engineering than platform-only DevOps, but I have repeatedly worked in the space between models and production systems, with practical experience around Python, Databricks, MLflow, Docker, cloud platforms, and CI/CD pipelines. I would be motivated to do that in Corti's clinical AI infrastructure.
+
+\vspace*{2em}
+I would welcome the opportunity to discuss where my background could be useful in the Engineering team. Regards,
+
+\vspace*{1em}
+Ivar Cashin Eriksson.
+
+\end{document}

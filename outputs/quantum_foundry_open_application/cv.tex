@@ -1,0 +1,158 @@
+% %--------------------------
+% %	CONFIGURATION
+% %--------------------------
+\documentclass[11pt,a4paper]{moderncv}
+\moderncvstyle{classic}
+\moderncvcolor{black}
+\definecolor{firstnamecolor}{rgb}{0,0,0}
+
+% Basic packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[scale=0.85]{geometry}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{DarkBlue}{RGB}{0, 0, 150}
+\usepackage[colorlinks=true, urlcolor=DarkBlue, linkcolor=DarkBlue]{hyperref}
+
+\usepackage{microtype}
+
+% Configure font settings
+\renewcommand{\rmdefault}{ppl}
+\renewcommand{\sfdefault}{phv}
+\renewcommand*{\namefont}{\fontsize{26}{18}\mdseries}
+
+% Configure microtype
+\microtypesetup{expansion=false}
+
+% Load sensitive information
+\input{../../other_material/personal_info.tex}
+
+% Title document
+\title{Curriculum Vitae}
+
+% %--------------------------
+
+\begin{document}
+\makecvtitle
+
+\section*{Introduction}
+I am a data scientist and ML engineer with seven years of applied ML experience and a background in Engineering Physics and Statistical Learning. I am interested in contributing to quantum hardware and advanced engineering environments through Python-based automation, experimental data analysis, modelling, and reliable data systems. I also have hands-on optics laboratory experience from coursework and an exchange at Zhejiang University, Hangzhou, China.
+
+\section{Education}
+\cventry{2015--2020}{Royal Institute of Technology, KTH -- Data Science and Engineering}{}{GPA: 5.0 (out of 5.0)}{}{Master: Statistical Learning and Data Analytics, Bachelor: Engineering Physics. \href{https://kth.diva-portal.org/smash/get/diva2:1431327/FULLTEXT02.pdf}{See thesis}. \newline Relevant coursework: Quantum Physics; Solid State Physics; Electromagnetic Theory.}
+
+\cventry{2017--2017}{Zhejiang University (ZJU) -- Exchange}{Optics laboratory work}{Hangzhou, China}{}{Work in optics laboratory on laser trimming microring resonators, in collaboration with a local research group. Fabricated microring resonators and tuned their resonance frequency by applying controlled laser pulses to selectively remove cladding material for integrated photonic circuits.}
+
+\cventry{2019--2019}{Swiss Federal Institute of Technology, ETH -- Applied Mathematics}{Exchange}{}{}{}
+
+\cventry{2017--2022}{Stockholm University, SU -- Economics}{Supplementary Bachelor's Degree}{}{}{}
+
+% ---------------------------
+% Selected Work Experience
+% ---------------------------
+\section{Selected Work Experience}
+
+% ---------------------------
+\large{Researcher within Data Science @ RaySearch Laboratories}
+\normalsize
+\begin{itemize}
+    \item Built ML methods for automated radiotherapy planning from segmented 3D CT scans.
+    \item Used autoencoders, sparse Gaussian processes, and optimisation for dose planning.
+    \item Collaborated with clinicians and medical physicists.
+\end{itemize}
+
+{\footnotesize\textit{Keywords: 3D computer vision, probabilistic modelling, latent representation, segmentation, autoencoders, optimisation, healthcare AI}}
+
+\hfill{\small{\textit{\hyperref[sec:raysearch]{Read more...}}}}
+
+% ---------------------------
+\large{Full-Stack Data Scientist \& Project Manager @ Signum Life Science}
+\normalsize
+\begin{itemize}
+    \item Building a Databricks forecasting platform for pharmaceutical price and demand.
+    \item Owned a next-best-action system and extended it with explainable AI.
+\end{itemize}
+
+{\footnotesize\textit{Keywords: Explainable AI, Azure Databricks, forecasting, XGBoost, pricing, ML engineering, project management}}
+
+\hfill{\small{\textit{\hyperref[sec:signum]{Read more...}}}}
+
+% ---------------------------
+\large{Principal Data Scientist @ Valcon}
+\normalsize
+\begin{itemize}
+    \item Architected an end-to-end production pipeline for a real-time neural network.
+    \item Led projects across pharma, energy, IoT, and manufacturing.
+    \item Mentored colleagues and led trainings in explainable AI and Git.
+\end{itemize}
+
+{\footnotesize\textit{Keywords: Real-time ML, NLP, explainability in AI, MLOps, multi-modal, Azure, Docker, mentoring, stakeholder management}}
+
+\hfill{\small{\textit{\hyperref[sec:valcon]{Read more...}}}}
+
+% ---------------------------
+% Skills and Other
+% ---------------------------
+\section{Skills and Other}
+\normalsize
+\cvitem{Technology}{Python, SQL, C++, PyTorch, TensorFlow, MLflow, Databricks, MS Azure}
+\cvitem{Language}{\textit{Native}: English, Swedish. \textit{Intermediate}: Danish.}
+\cvitem{Other}{Valcon People's Choice Award (2023); IYPT Sweden (2015); Mensa Sweden.}
+
+\newpage
+
+% ---------------------------
+% Detailed Work Experience
+% ---------------------------
+\section{Detailed Work Experience}
+
+% ---------------------------
+\phantomsection\label{sec:signum}
+\cventry{2024--Present}{Full-Stack Data Scientist and Project Manager}{Signum Life Science}{Copenhagen}{}{
+    At Signum, my current work is on an end-to-end Databricks forecasting platform for pharmaceutical price and demand forecasting. I work across architecture, project management, data science, ML engineering, and software engineering for the platform. The work builds on a pharmaceutical price forecasting model that helps clients navigate Denmark's fortnightly blind auctions.
+    \newline\hspace*{2em}
+    Earlier in the role, I owned and extended Kwarts, a next-best-action engine for pharmaceutical sales representatives. Originally built externally, the system was extended with features such as explainable AI in collaboration with UX designers, and supported commercialisation by aiding our sales representatives. Kwarts adapts to varied customer data maturity, from rule-based logic to deep learning, and is deployed in AWS for scalability.
+    \newline\hspace*{2em}
+    Beyond model development, I organised an internal week-long hackathon that included up to 40 participants.
+}{}
+
+% ---------------------------
+\phantomsection\label{sec:valcon}
+\cventry{2022--2024}{Principal Data Scientist}{Valcon}{Copenhagen}{}{
+    Led data science projects across pharma, energy, IoT, and manufacturing. Mentored junior colleagues in software architecture and data science best practices, led explainable AI and Git trainings, and regularly presented complex technical topics to non-technical stakeholders.
+    \newline\hspace*{2em}
+    One project involved training a real-time deep neural network with a custom training pipeline and modular architecture. The training data consisted of natural-language inputs and high-dimensional multi-class labels, which made for a challenging prediction problem. I was the lead data scientist and architect of the solution and responsible for implementing the end-to-end production pipeline.
+    \newline\hspace*{2em}
+    I was awarded the "Valcon People's Choice Award" for exemplary work, leadership, team spirit, and scientific curiosity.
+}{}
+
+% ---------------------------
+\phantomsection\label{sec:valtech}
+\cventry{2021--2022}{Data Scientist}{Valtech}{Copenhagen}{}{
+    Delivered ML solutions in e-commerce. Built time series forecasts using Facebook Prophet, and applied clustering to behavioural data to support personalisation. Worked closely with business stakeholders to ensure actionable outputs.
+}{}
+
+% ---------------------------
+\phantomsection\label{sec:raysearch}
+\cventry{2019--2021}{Researcher within Data Science}{RaySearch Laboratories}{Stockholm}{}{
+    At RaySearch Laboratories, I worked on automating radiotherapy planning using a combination of deep learning, probabilistic modelling, and multi-objective optimisation. I developed a pipeline that extracted latent anatomical features from segmented 3D CT scans using autoencoders, and used these representations to identify similar patients via a learned similarity metric. Dose-volume histograms and spatial dose distributions were then predicted using sparse Gaussian processes, providing a probabilistic framework for dose planning conditioned on patient geometry.
+    \newline\hspace*{2em}
+    Alongside this, I redesigned some of RaySearch's lexicographic optimisation algorithms to better reflect clinical decision hierarchies, particularly in palliative care where trade-offs between tumour control and organ sparing are nuanced. I collaborated closely with medical physicists and clinicians throughout, ensuring the models aligned with oncological standards and practical workflow requirements.
+}{}
+
+% ---------------------------
+% Other Work Experience
+% ---------------------------
+\section{Other Detailed Experience}
+
+% ---------------------------
+\phantomsection\label{sec:iris}
+\cventry{2025--2025}{Solo Project}{Project Iris}{}{}{
+    In this personal project I built a proof-of-concept end-to-end computer vision system for making product images on e-commerce sites interactive. The pipeline detects individual items using a YOLOv8 model, and embeds them semantically using OpenCLIP. The embeddings are then compared to support intelligent product linking across all images and products in a web store.
+    \newline\hspace*{2em}
+    The system includes a full-stack setup with a FastAPI backend, MongoDB for persistence, a Qdrant index for vector search, and a custom-built Chromium plug-in that overlays clickable links directly onto web shop imagery in real time. The project also includes a dynamic scraping and indexing pipeline for ingesting and structuring product data from arbitrary e-commerce sites.
+    \newline\hspace*{2em}
+    The project was a learning opportunity for fine-tuning of deep learning models and practical ML engineering.
+}{}
+
+\end{document}

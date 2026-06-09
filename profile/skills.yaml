@@ -12,21 +12,21 @@ skills:
   - XGBoost
   - OpenCLIP
   - Facebook Prophet
-  - mlflow
+  - MLflow
   ml_methods:
-  - autoencoders
+  - Autoencoders
   - CNNs
-  - sparse Gaussian processes
-  - time series forecasting
-  - clustering
-  - explainable AI
+  - Sparse Gaussian processes
+  - Time series forecasting
+  - Clustering
+  - Explainable AI
   ml_engineering_and_backend:
   - FastAPI
   - Docker
   - MongoDB
   - Qdrant
-  - vector search
-  - web scraping
+  - Vector search
+  - Web scraping
   - CI/CD pipelines
   - Chromium extension development
   cloud_and_data_platforms:
@@ -40,17 +40,21 @@ skills:
   - Fusion 360
   - 3D printing
   domains:
-  - pharmaceutical analytics
-  - radiotherapy planning
-  - medical imaging
-  - e-commerce
+  - Pharmaceutical analytics
+  - Radiotherapy planning
+  - Medical imaging
+  - E-commerce
   - IoT
-  - manufacturing analytics
-  - energy
+  - Manufacturing analytics
+  - Energy
   soft_skills:
-  - project management
-  - mentoring
-  - stakeholder communication
-  - training
-  - technical leadership
-  - commercialisation support
+  - Project management
+  - Mentoring
+  - Stakeholder communication
+  - Training
+  - Technical leadership
+  - Commercialisation support
+  languages:
+  - English (native)
+  - Swedish (native)
+  - Danish (intermediate)

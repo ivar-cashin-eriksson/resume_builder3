@@ -29,3 +29,9 @@ education:
   period: '2019'
   programme: Applied Mathematics
   type: Exchange
+
+- institution: Zhejiang University (ZJU)
+  location: Hangzhou, China
+  period: '2017'
+  work: Worked in optics laboratory on laser trimming microring resonators. The work was carried out in collaboration with the local research group. The project involved fabricating microring resonators and "trimming" their resonance frequency by applying controlled laser pulses to selectively remove cladding material. These are key components in integrated photonic circuits, and the reasearch aims to optimise their performance for use in optical computing circuits.
+  type: Exchange

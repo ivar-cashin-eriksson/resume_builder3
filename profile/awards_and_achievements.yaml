@@ -1,0 +1,25 @@
+awards:
+  - name: Valcon People's Choice Award
+    description: For exemplary work, leadership, team spirit, and scientific curiosity.
+    year: 2023
+    nominations:
+    - "This nomination could be for the absolute 'joy' it is working together with him, and 'can do' attitude on a project in an unfamiliar setting, with short deadline and almost unlimited scope, however, this will be for his curiosity. Absolute pleasure to work with someone who is always exploring the limits of what data can do to solve complex business problems, and his ability to explain and utilize these findings to both client and project members."
+    - "Exemplary and invaluable, he is a beacon of support and knowledge in every endeavor. His selflessness is truly inspiring, as he effortlessly navigates through various projects, lending a hand wherever needed."
+    - "Ivar for always being open for a discussion and shared learning - thanks!"
+    - "As he was a super great senior data scientist to work with. He always shares his experience and brought the strong attitude of 'Can do', everything is possible to do in Python. He trained me well on the coding project we worked together."
+    - "It is a pleasure to see how Ivar embodies our Curious value. He will dig into topics and explain them in a fun and enlightening way. It doesn't matter if the topic is heavy data science like SHAP or why the colour 'pink' doesn't actually exist."
+
+achievements:
+  - name: Mensa Sweden
+    description: Member of Mensa Sweden, an organization for individuals with high IQs.
+    year: 2015
+    test:
+      name: Test A
+      result: 135+
+
+  - name: IYPT Sweden
+    description: Member of team Sweden in the International Young Physicists' Tournament (IYPT). A prestigious experimental physics competition for high school students across the world. Participants research 17 open-ended problems. The research culminates in the teams presenting their solutions at the international competition in front of a live audience. I conducted experiments on the Magnus effect, brownian motion of bristled objects on a vibrating surface, and the physics of light refracting through water bottles.
+    year: 2015
+    role: Team Member
+    achievement: 
+    link: https://www.iypt.org/problems/iypt-2015-problems/

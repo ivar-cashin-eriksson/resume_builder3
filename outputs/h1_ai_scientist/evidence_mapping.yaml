@@ -1,0 +1,109 @@
+claims:
+  - claim: "Ivar has seven years of experience across pharmaceutical analytics, healthcare AI, production ML, and applied research."
+    used_in:
+      - "cv.tex"
+      - "cover_letter.tex"
+    source_file: "profile/experience.yaml"
+    source_quote_or_summary: "Experience entries span RaySearch Laboratories 2019--2021, Valtech 2021--2022, Valcon 2022--2024, and Signum Life Science 2024--Present."
+    confidence: high
+
+  - claim: "Current work includes an end-to-end Databricks forecasting platform for pharmaceutical price and demand forecasting, including patient population forecasts."
+    used_in:
+      - "cv.tex"
+      - "cover_letter.tex"
+    source_file: "profile/experience.yaml"
+    source_quote_or_summary: "Signum responsibilities list an end-to-end production-ready forecasting platform for pharmaceutical price and demand forecasting, patient population forecasts, and Databricks."
+    confidence: high
+
+  - claim: "Ivar maintains and improves an XGBoost pharmaceutical price forecasting model for Denmark's fortnightly blind auctions."
+    used_in:
+      - "cv.tex"
+      - "cover_letter.tex"
+    source_file: "profile/experience.yaml"
+    source_quote_or_summary: "Signum responsibilities include maintaining and improving a pharmaceutical price forecasting model for Denmark's fortnightly blind auctions; technologies include XGBoost."
+    confidence: high
+
+  - claim: "Ivar owned and extended a next-best-action prediction system for pharmaceutical sales representatives and added explainable AI features."
+    used_in:
+      - "cv.tex"
+      - "cover_letter.tex"
+    source_file: "profile/experience.yaml"
+    source_quote_or_summary: "Signum responsibilities describe Kwarts as a next-best-action prediction system for pharmaceutical sales representatives; Ivar was owner, data scientist, and software developer, and extended it with explainable AI features in collaboration with UX designers."
+    confidence: high
+
+  - claim: "Ivar has healthcare AI experience from automated radiotherapy planning."
+    used_in:
+      - "cv.tex"
+      - "cover_letter.tex"
+    source_file: "profile/experience.yaml"
+    source_quote_or_summary: "RaySearch summary states work on automating radiotherapy planning using deep learning, probabilistic modelling, and multi-objective optimisation."
+    confidence: high
+
+  - claim: "Ivar used autoencoders, sparse Gaussian processes, optimisation, and segmented 3D CT scans in clinical ML work."
+    used_in:
+      - "cv.tex"
+      - "cover_letter.tex"
+    source_file: "profile/experience.yaml"
+    source_quote_or_summary: "RaySearch responsibilities include extracting latent anatomical features from segmented 3D CT scans using autoencoders and predicting dose-volume histograms and spatial dose distributions using sparse Gaussian processes."
+    confidence: high
+
+  - claim: "Ivar collaborated with clinicians and medical physicists to align models with oncological standards and practical workflows."
+    used_in:
+      - "cv.tex"
+      - "cover_letter.tex"
+    source_file: "profile/experience.yaml"
+    source_quote_or_summary: "RaySearch responsibilities include collaboration with medical physicists and clinicians to align models with oncological standards and practical workflows."
+    confidence: high
+
+  - claim: "Ivar architected a production real-time neural-network pipeline using natural-language inputs and high-dimensional multi-class labels."
+    used_in:
+      - "cv.tex"
+      - "cover_letter.tex"
+    source_file: "profile/experience.yaml"
+    source_quote_or_summary: "Valcon responsibilities include architecting and implementing an end-to-end production pipeline for a real-time deep neural network involving natural-language inputs and high-dimensional multi-class labels."
+    confidence: high
+
+  - claim: "Ivar has experience leading explainable AI and Git trainings, mentoring colleagues, and communicating with non-technical stakeholders."
+    used_in:
+      - "cv.tex"
+      - "cover_letter.tex"
+    source_file: "profile/experience.yaml"
+    source_quote_or_summary: "Valcon responsibilities include mentoring junior colleagues, leading explainable AI and Git training sessions, and presenting complex technical topics to non-technical stakeholders."
+    confidence: high
+
+  - claim: "Ivar has a strong quantitative academic background in statistical learning, data analytics, and engineering physics."
+    used_in:
+      - "cv.tex"
+    source_file: "profile/education.yaml"
+    source_quote_or_summary: "KTH education entry lists MSc Statistical Learning and Data Analytics, BSc Engineering Physics, and GPA 5.0 / 5.0."
+    confidence: high
+
+  - claim: "Ivar's technology stack includes Python, SQL, C++, PyTorch, TensorFlow, SHAP, XGBoost, MLflow, Databricks, AWS, MS Azure, FastAPI, MongoDB, Qdrant, and Docker."
+    used_in:
+      - "cv.tex"
+    source_file: "profile/skills.yaml"
+    source_quote_or_summary: "Skills file lists these programming languages, ML libraries, ML engineering/backend tools, and cloud/data platforms."
+    confidence: high
+
+  - claim: "The resume_builder project is a structured system for generating tailored CVs and cover letters from profile data and job descriptions."
+    used_in:
+      - "cv.tex"
+    source_file: "profile/projects.yaml"
+    source_quote_or_summary: "resume_builder project description says it uses a structured profile, job description parsing, a resume generation engine, and a template system."
+    confidence: high
+
+  - claim: "The H1 role involves production ML, healthcare AI, NLP, Spark/Databricks, life-science data, and ML/NLP models on healthcare, clinical trial, claims, publication, and provider data."
+    used_in:
+      - "listing.md"
+      - "job_analysis.md"
+    source_file: "GitHub issue body supplied by user"
+    source_quote_or_summary: "Issue's fit section explicitly lists production ML, healthcare AI, NLP, Spark/Databricks, life-science data, and ML/NLP models on healthcare, clinical trial, claims, publication, and provider data."
+    confidence: high
+
+  - claim: "H1 works across healthcare and life-science data products for clinical, medical, commercial, health-plan, digital-health, provider, payer, and patient-related use cases."
+    used_in:
+      - "listing.md"
+      - "job_analysis.md"
+    source_file: "https://h1.co/"
+    source_quote_or_summary: "H1's public site describes an AI-powered platform across life sciences, payers, providers, and patients, with solution areas including Clinical, Medical, Commercial, Health Plans, and Digital Health."
+    confidence: high

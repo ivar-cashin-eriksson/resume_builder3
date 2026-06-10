@@ -1,0 +1,56 @@
+% %--------------------------
+% %	CONFIGURATION
+% %--------------------------
+\documentclass[11pt,a4paper]{moderncv}
+\moderncvstyle{classic}
+\moderncvcolor{black}
+\definecolor{firstnamecolor}{rgb}{0,0,0}
+
+% Basic packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[hscale=0.7, top=2cm, bottom=2cm]{geometry}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{DarkBlue}{RGB}{0, 0, 150}
+\usepackage[colorlinks=true, urlcolor=DarkBlue, linkcolor=DarkBlue]{hyperref}
+
+\usepackage{microtype}
+
+% Configure font settings
+\renewcommand{\rmdefault}{ppl}
+\renewcommand{\sfdefault}{phv}
+\renewcommand*{\namefont}{\fontsize{26}{18}\mdseries}
+
+% Configure microtype
+\microtypesetup{expansion=false}
+
+% Load sensitive information
+\input{../../other_material/personal_info.tex}
+
+% %--------------------------
+\begin{document}
+\makecvtitle
+Hello H1 team,
+
+\vspace*{2em}
+I am writing to apply for the AI Scientist role in Copenhagen. I am a data scientist and ML engineer with seven years of experience across pharmaceutical analytics, healthcare AI, applied research, and production ML systems. H1 is interesting to me because the role combines healthcare and life-science data with NLP and deployed ML, which is close to the kind of applied modelling work I have found most meaningful.
+
+\hspace*{2em}
+At Signum Life Science, my current work is on an end-to-end Databricks forecasting platform for pharmaceutical price and demand forecasting, including patient population forecasts. The role spans architecture, project management, data science, ML engineering, and software engineering. I also maintain and improve an XGBoost-based model for Denmark's pharmaceutical blind auctions, and earlier owned a next-best-action system for pharmaceutical sales representatives. In that system I extended the model experience with explainable AI features in collaboration with UX designers.
+
+\hspace*{2em}
+My healthcare AI experience comes from RaySearch Laboratories, where I worked on automated radiotherapy planning. I built methods using autoencoders, sparse Gaussian processes, and optimisation on segmented 3D CT scans, and collaborated closely with clinicians and medical physicists to align the models with oncological standards and practical workflows. That experience made the constraints of clinical modelling concrete: the system has to be statistically sound, understandable enough to inspect, and useful in a real decision workflow.
+
+\hspace*{2em}
+At Valcon, I led the design and implementation of an end-to-end production pipeline for a real-time deep neural network. The training data included natural-language inputs and high-dimensional multi-class labels, so the work involved both modelling and practical engineering around a difficult prediction problem. I also led explainable AI and Git trainings, mentored junior colleagues, and regularly explained technical work to non-technical stakeholders.
+
+\hspace*{2em}
+The parts of the H1 role that seem like the strongest fit are production-oriented ML, healthcare and pharmaceutical domain work, NLP-adjacent modelling, and the need to turn diverse data into usable products. I do not want to overstate direct experience with clinical-trial, claims, or publication datasets, but I have worked with adjacent life-science and clinical problems and would be motivated to learn H1's data domain in depth.
+
+\vspace*{2em}
+I would welcome the opportunity to discuss where my background could be useful at H1. Regards,
+
+\vspace*{1em}
+Ivar Cashin Eriksson.
+
+\end{document}

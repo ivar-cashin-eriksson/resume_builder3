@@ -1,0 +1,136 @@
+listing_slug: electricity_maps_senior_data_scientist_price_forecasting
+listing_source: GitHub issue body supplied by user
+
+sources_reviewed:
+  - README.md
+  - AGENTS.md
+  - templates/README.md
+  - templates/cv.tex
+  - templates/cover_letter.tex
+  - profile/profile.yaml
+  - profile/education.yaml
+  - profile/experience.yaml
+  - profile/skills.yaml
+  - profile/projects.yaml
+  - profile/courses.yaml
+  - profile/claims.yaml
+  - profile/awards_and_achievements.yaml
+  - profile/writing_style/style.yaml
+  - profile/writing_style/cover_letter_style.yaml
+  - profile/writing_style/core_narrative.yaml
+  - outputs/corti_senior_mlops_engineer/cv.tex
+  - outputs/corti_senior_mlops_engineer/cover_letter.tex
+  - outputs/dtu_ai_accountability/cv.tex
+  - outputs/dtu_ai_accountability/cover_letter.tex
+  - outputs/corti/cv.tex
+  - outputs/corti/cover_letter.tex
+
+claims:
+  - claim: "Ivar has seven years of applied machine-learning experience."
+    used_in:
+      - "cv.tex introduction"
+      - "cover_letter.tex paragraph 1"
+    source_file: "profile/experience.yaml"
+    source_quote_or_summary: "Experience entries begin with RaySearch Laboratories in 2019 and continue through the present role at Signum Life Science."
+    confidence: high
+
+  - claim: "Ivar has experience across pharmaceutical analytics, healthcare, energy, manufacturing, and e-commerce."
+    used_in:
+      - "cv.tex introduction"
+      - "cover_letter.tex paragraphs 1 and 3"
+    source_file: "profile/experience.yaml"
+    source_quote_or_summary: "Valcon domains include pharma, energy, IoT, and manufacturing; Valtech domain is e-commerce; RaySearch covers healthcare; Signum covers pharmaceutical analytics."
+    confidence: high
+
+  - claim: "Ivar is architecting a Databricks forecasting platform for pharmaceutical price and demand."
+    used_in:
+      - "cv.tex selected Signum section"
+      - "cv.tex detailed Signum section"
+      - "cover_letter.tex paragraph 2"
+    source_file: "profile/experience.yaml"
+    source_quote_or_summary: "Signum responsibilities include a forecasting platform for pharmaceutical price and demand forecasting, patient population forecasts, and roles as architect, project manager, data scientist, ML engineer, and software engineer; technologies include Databricks."
+    confidence: high
+
+  - claim: "Ivar maintains and improves an XGBoost price forecasting model for Denmark's fortnightly blind pharmaceutical auctions."
+    used_in:
+      - "cv.tex selected Signum section"
+      - "cv.tex detailed Signum section"
+      - "cover_letter.tex paragraph 2"
+    source_file: "profile/experience.yaml"
+    source_quote_or_summary: "Signum responsibilities include maintaining and improving a pharmaceutical price forecasting model for Denmark's fortnightly blind auctions; technologies include XGBoost."
+    confidence: high
+
+  - claim: "Ivar owned a next-best-action engine and extended explainable AI features with UX designers."
+    used_in:
+      - "cv.tex selected Signum section"
+      - "cv.tex detailed Signum section"
+    source_file: "profile/experience.yaml"
+    source_quote_or_summary: "Kwarts is described as a next-best-action prediction system; Ivar took ownership and extended it with explainable AI features in collaboration with UX designers."
+    confidence: high
+
+  - claim: "Ivar led data science projects across pharma, energy, IoT, and manufacturing."
+    used_in:
+      - "cv.tex selected Valcon section"
+      - "cv.tex detailed Valcon section"
+      - "cover_letter.tex paragraph 3"
+    source_file: "profile/experience.yaml"
+    source_quote_or_summary: "Valcon summary and responsibilities state leadership of data science projects across pharmaceuticals, energy, IoT, and manufacturing."
+    confidence: high
+
+  - claim: "Ivar architected and implemented an end-to-end production pipeline for a real-time neural network using natural-language inputs and high-dimensional labels."
+    used_in:
+      - "cv.tex selected Valcon section"
+      - "cv.tex detailed Valcon section"
+      - "cover_letter.tex paragraph 3"
+    source_file: "profile/experience.yaml"
+    source_quote_or_summary: "Valcon responsibilities include architecting and implementing an end-to-end production pipeline for a real-time deep neural network, with natural-language inputs and high-dimensional multi-class labels."
+    confidence: high
+
+  - claim: "Ivar mentored colleagues, led explainable AI and Git trainings, and communicated technical topics to non-technical stakeholders."
+    used_in:
+      - "cv.tex selected Valcon section"
+      - "cv.tex detailed Valcon section"
+      - "cover_letter.tex paragraph 3"
+    source_file: "profile/experience.yaml"
+    source_quote_or_summary: "Valcon responsibilities include mentoring junior colleagues, leading explainable AI and Git trainings, and presenting complex technical topics to non-technical stakeholders."
+    confidence: high
+
+  - claim: "Ivar has a strong statistical and applied mathematics background."
+    used_in:
+      - "cv.tex education"
+      - "cover_letter.tex paragraph 4"
+    source_file: "profile/education.yaml; profile/courses.yaml"
+    source_quote_or_summary: "KTH education includes MSc Statistical Learning and Data Analytics, BSc Engineering Physics, GPA 5.0 / 5.0; ETH exchange was in Applied Mathematics; courses include Statistical Machine Learning, Applied Time Series, and Optimization."
+    confidence: high
+
+  - claim: "Ivar worked on probabilistic modelling and optimisation for automated radiotherapy planning using autoencoders and sparse Gaussian processes on segmented 3D CT scans."
+    used_in:
+      - "cv.tex selected RaySearch section"
+      - "cv.tex detailed RaySearch section"
+      - "cover_letter.tex paragraph 4"
+    source_file: "profile/experience.yaml"
+    source_quote_or_summary: "RaySearch responsibilities include radiotherapy planning, autoencoders, sparse Gaussian processes, multi-objective optimisation, lexicographic optimisation, and segmented 3D CT scans."
+    confidence: high
+
+  - claim: "Ivar has Python, SQL, C++, PyTorch, TensorFlow, SHAP, XGBoost, Facebook Prophet, MLflow, Databricks, AWS, MS Azure, FastAPI, and Docker."
+    used_in:
+      - "cv.tex Skills and Other section"
+      - "cover_letter.tex paragraph 5"
+    source_file: "profile/skills.yaml"
+    source_quote_or_summary: "Skills file lists these programming languages, ML libraries, engineering tools, and cloud/data platforms."
+    confidence: high
+
+  - claim: "Ivar has not worked directly with electricity price forecasting, BigQuery, or grid and weather datasets."
+    used_in:
+      - "cover_letter.tex paragraph 5"
+      - "gap_report.md"
+    source_file: "profile/experience.yaml; profile/skills.yaml"
+    source_quote_or_summary: "No inspected profile file lists electricity price forecasting, BigQuery, grid data, or weather data."
+    confidence: high
+
+explicit_non_claims:
+  - "The materials do not claim direct electricity price forecasting experience."
+  - "The materials do not claim BigQuery experience."
+  - "The materials do not claim direct grid or weather data modelling experience."
+  - "The materials do not claim prior employment at Electricity Maps."
+  - "The materials do not claim climate-tech employment history beyond the listing motivation and adjacent energy-domain exposure."

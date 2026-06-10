@@ -2,7 +2,7 @@ name: Generate application materials
 
 on:
   issues:
-    types: [opened, edited, labeled]
+    types: [labeled]
 
 permissions:
   contents: write

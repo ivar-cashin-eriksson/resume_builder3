@@ -139,13 +139,29 @@ jobs:
           output-file: codex-output.md
           safety-strategy: drop-sudo
 
+      - name: Create application branch slug
+        id: slug
+        run: |
+          TITLE="${{ github.event.issue.title }}"
+
+          SLUG=$(echo "$TITLE" \
+            | sed -E 's/^[Aa]pply:[[:space:]]*//' \
+            | tr '[:upper:]' '[:lower:]' \
+            | sed -E 's/[^a-z0-9]+/-/g' \
+            | sed -E 's/^-+|-+$//g' \
+            | cut -c1-80)
+
+          echo "branch=application/${SLUG}" >> "$GITHUB_OUTPUT"
+
       - name: Create pull request
         uses: peter-evans/create-pull-request@v6
         with:
-          branch: application/issue-${{ github.event.issue.number }}
+          branch: ${{ steps.slug.outputs.branch }}
           title: "Application materials: ${{ github.event.issue.title }}"
           commit-message: "Generate application materials for issue #${{ github.event.issue.number }}"
           body: |
+            Closes #${{ github.event.issue.number }}
+
             Generated from issue #${{ github.event.issue.number }}.
 
             Codex summary:

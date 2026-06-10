@@ -1,0 +1,173 @@
+listing_slug: corti_senior_mlops_engineer
+listing_file: job_listings/corti_senior_mlops_engineer.md
+
+sources_reviewed:
+  - README.md
+  - templates/README.md
+  - templates/cv.tex
+  - templates/cover_letter.tex
+  - prompts/make_application.md
+  - job_listings/corti_senior_mlops_engineer.md
+  - job_listings/corti.md
+  - profile/profile.yaml
+  - profile/education.yaml
+  - profile/experience.yaml
+  - profile/skills.yaml
+  - profile/projects.yaml
+  - profile/courses.yaml
+  - profile/claims.yaml
+  - profile/writing_style/style.yaml
+  - profile/writing_style/cover_letter_style.yaml
+  - profile/writing_style/core_narrative.yaml
+  - outputs/corti/cv.tex
+  - outputs/corti/cover_letter.tex
+  - outputs/corti/evidence_mapping.yaml
+
+external_company_sources:
+  - source: "Corti Ashby listing"
+    url: "https://jobs.ashbyhq.com/corti/ec69b854-9d73-4207-82da-2708d9a10829"
+    used_for:
+      - "Confirming Senior MLOps Engineer title, location, department, and role emphasis."
+  - source: "Corti homepage"
+    url: "https://www.corti.ai/"
+    used_for:
+      - "Understanding Corti's developer-facing healthcare AI positioning."
+  - source: "Corti Symphony page"
+    url: "https://www.corti.ai/symphony"
+    used_for:
+      - "Understanding Corti's emphasis on compliant, guardrailed, auditable, production-scale clinical AI."
+
+major_claims:
+  - claim: "Ivar has seven years of experience applying machine learning."
+    used_in:
+      - "cv.tex introduction"
+      - "cover_letter.tex paragraph 1"
+    evidence:
+      - "profile/experience.yaml lists data science and ML roles beginning at RaySearch Laboratories in 2019 and continuing through the present."
+      - "outputs/corti/evidence_mapping.yaml and prior application examples use the same seven-year framing."
+
+  - claim: "Ivar works across healthcare AI, pharmaceutical analytics, manufacturing, energy, and e-commerce."
+    used_in:
+      - "cv.tex introduction"
+      - "cover_letter.tex paragraph 1"
+      - "cv.tex detailed Valcon and Valtech sections"
+    evidence:
+      - "profile/profile.yaml headline lists applied ML, medical imaging, pharmaceutical analytics, and ML engineering."
+      - "profile/experience.yaml lists RaySearch medical imaging/radiotherapy planning, Signum pharmaceutical analytics, Valcon pharma/energy/IoT/manufacturing, and Valtech e-commerce."
+      - "profile/skills.yaml domains include pharmaceutical analytics, radiotherapy planning, medical imaging, e-commerce, IoT, manufacturing analytics, and energy."
+
+  - claim: "Ivar's strongest fit is production-oriented ML work, including system ownership, end-to-end pipelines, product integration, and domain-expert collaboration."
+    used_in:
+      - "cv.tex introduction"
+      - "cover_letter.tex paragraphs 1 and 5"
+    evidence:
+      - "profile/claims.yaml claim: Experience building production-grade machine learning systems."
+      - "profile/experience.yaml Signum responsibilities include ownership of Kwarts and work across architecture, project management, data science, ML engineering, and software engineering for a forecasting platform."
+      - "profile/experience.yaml Valcon responsibilities include architecting and implementing an end-to-end production pipeline for a real-time deep neural network."
+      - "profile/claims.yaml describes collaboration with sales representatives, clinicians, medical physicists, business stakeholders, and non-technical stakeholders."
+
+  - claim: "Ivar is architecting a Databricks forecasting platform for pharmaceutical price and demand."
+    used_in:
+      - "cv.tex selected Signum section"
+      - "cv.tex detailed Signum section"
+      - "cover_letter.tex paragraph 2"
+    evidence:
+      - "profile/experience.yaml Signum responsibilities: Forecasting platform for pharmaceutical price and demand forecasting, patient population forecasts, etc."
+      - "profile/experience.yaml Signum responsibilities: Architect, Project manager, Data Scientist, ML Engineer, and Software Engineer for the platform."
+      - "profile/experience.yaml Signum technologies include Databricks."
+
+  - claim: "Ivar maintains and improves an XGBoost pharmaceutical price forecasting model for Denmark's fortnightly blind auctions."
+    used_in:
+      - "cv.tex selected Signum section"
+      - "cv.tex detailed Signum section"
+      - "cover_letter.tex paragraph 2"
+    evidence:
+      - "profile/experience.yaml Signum responsibilities include maintaining and improving a pharmaceutical price forecasting model for Denmark's fortnightly blind auctions."
+      - "profile/experience.yaml Signum technologies include XGBoost."
+      - "outputs/corti/cv.tex uses the same detailed Signum wording."
+
+  - claim: "Ivar owned and extended an AWS-hosted next-best-action engine with explainable AI features."
+    used_in:
+      - "cv.tex selected Signum section"
+      - "cv.tex detailed Signum section"
+      - "cover_letter.tex paragraph 2"
+    evidence:
+      - "profile/experience.yaml Signum responsibilities describe Kwarts as a next-best-action prediction system for pharmaceutical sales representatives."
+      - "profile/experience.yaml says Ivar took over ownership and extended the system with explainable AI features in collaboration with UX designers."
+      - "profile/experience.yaml Signum technologies include AWS."
+      - "outputs/corti/cv.tex detailed Signum section says Kwarts is deployed in AWS for scalability."
+
+  - claim: "Ivar architected and implemented an end-to-end production pipeline for a real-time neural network."
+    used_in:
+      - "cv.tex selected Valcon section"
+      - "cv.tex detailed Valcon section"
+      - "cover_letter.tex paragraph 3"
+    evidence:
+      - "profile/experience.yaml Valcon responsibilities include architecting and implementing an end-to-end production pipeline for a real-time deep neural network."
+      - "profile/claims.yaml evidence for production-grade ML systems includes the Valcon production pipeline."
+
+  - claim: "The Valcon system used natural-language inputs and high-dimensional multi-class labels."
+    used_in:
+      - "cv.tex selected Valcon section"
+      - "cv.tex detailed Valcon section"
+      - "cover_letter.tex paragraph 3"
+    evidence:
+      - "profile/experience.yaml Valcon responsibilities include systems involving natural-language inputs and high-dimensional multi-class labels."
+      - "outputs/corti/cv.tex and outputs/corti/cover_letter.tex use the same natural-language-input framing."
+
+  - claim: "Ivar mentored colleagues and led trainings in explainable AI and Git."
+    used_in:
+      - "cv.tex selected Valcon section"
+      - "cv.tex detailed Valcon section"
+      - "cover_letter.tex paragraph 3"
+    evidence:
+      - "profile/experience.yaml Valcon responsibilities include mentoring junior colleagues in software architecture and data science best practices."
+      - "profile/experience.yaml Valcon responsibilities include leading explainable AI and Git training sessions."
+      - "profile/claims.yaml includes leadership experience without relying only on formal authority."
+
+  - claim: "Ivar worked on automated radiotherapy planning using autoencoders, sparse Gaussian processes, and optimisation."
+    used_in:
+      - "cv.tex selected RaySearch section"
+      - "cv.tex detailed RaySearch section"
+      - "cover_letter.tex paragraph 4"
+    evidence:
+      - "profile/experience.yaml RaySearch responsibilities include autoencoders on segmented 3D CT scans, sparse Gaussian processes, and multi-objective and lexicographic optimisation."
+      - "profile/claims.yaml includes research experience in medical AI and probabilistic modelling."
+      - "profile/courses.yaml thesis title concerns probabilistic dose-volume histogram and spatial dose prediction in radiation therapy treatment planning."
+
+  - claim: "Ivar collaborated with clinicians and medical physicists to align models with oncological standards and clinical workflows."
+    used_in:
+      - "cv.tex selected RaySearch section"
+      - "cv.tex detailed RaySearch section"
+      - "cover_letter.tex paragraph 4"
+    evidence:
+      - "profile/experience.yaml RaySearch responsibilities include collaboration with medical physicists and clinicians to align models with oncological standards and practical workflows."
+      - "profile/claims.yaml includes stakeholder translation evidence from clinician and medical physicist collaboration."
+
+  - claim: "Ivar has Python, SQL, C++, PyTorch, TensorFlow, SHAP, XGBoost, MLflow, Docker, Databricks, AWS, Azure, FastAPI, MongoDB, and Qdrant experience."
+    used_in:
+      - "cv.tex skills section"
+      - "cover_letter.tex paragraph 5"
+    evidence:
+      - "profile/skills.yaml lists all these technologies, either under programming languages, ML libraries and methods, ML engineering and backend, or cloud and data platforms."
+
+  - claim: "Ivar has CI/CD pipeline experience."
+    used_in:
+      - "cover_letter.tex paragraph 5"
+    evidence:
+      - "profile/skills.yaml lists CI/CD pipelines under ml_engineering_and_backend."
+
+  - claim: "Ivar has a strong KTH education in Statistical Learning and Engineering Physics, with GPA 5.0 / 5.0."
+    used_in:
+      - "cv.tex education section"
+    evidence:
+      - "profile/education.yaml lists KTH MSc Statistical Learning and Data Analytics, BSc Engineering Physics, and GPA 5.0 / 5.0."
+      - "profile/courses.yaml lists relevant coursework and thesis title."
+
+explicit_non_claims:
+  - "The materials do not claim direct Corti, Symphony, NHS, EHR, or virtual care platform experience."
+  - "The materials do not claim direct clinical dialogue, speech-to-text, ambient documentation, or medical coding experience."
+  - "The materials do not claim Kubernetes, Terraform, Helm, ArgoCD, GitHub Actions, Kubeflow, DVC, model drift detection, or formal model governance implementation."
+  - "The materials do not claim security/compliance implementation experience."
+  - "The materials do not claim GCP experience."
+  - "The materials do not claim publications, patents, clinical credentials, or formal DevOps job titles."

@@ -1,0 +1,126 @@
+listing_slug: corti
+listing_file: job_listings/corti.md
+
+sources_reviewed:
+  - README.md
+  - templates/README.md
+  - templates/cv.tex
+  - templates/cover_letter.tex
+  - job_listings/corti.md
+  - profile/profile.yaml
+  - profile/education.yaml
+  - profile/experience.yaml
+  - profile/skills.yaml
+  - profile/projects.yaml
+  - profile/courses.yaml
+  - profile/claims.yaml
+  - profile/writing_style/style.yaml
+  - profile/writing_style/cover_letter_style.yaml
+  - profile/writing_style/core_narrative.yaml
+  - outputs/ku_PhD_fellowship_in_Mechanistic_Interpretability_for_LLM_Security/cv.tex
+  - outputs/ku_PhD_fellowship_in_Mechanistic_Interpretability_for_LLM_Security/cover_letter.tex
+  - outputs/ku_PhD_fellowship_in_Mechanistic_Interpretability_for_LLM_Security/evidence_mapping.yaml
+
+major_claims:
+  - claim: "Ivar has seven years of applied machine-learning experience."
+    used_in:
+      - cv.tex introduction
+      - cover_letter.tex paragraph 1
+    evidence:
+      - "profile/experience.yaml lists data science and ML roles beginning at RaySearch Laboratories in 2019 and continuing through the present."
+      - "The prior KU application example uses the same seven-year framing."
+
+  - claim: "Ivar has experience in medical imaging and healthcare AI."
+    used_in:
+      - cv.tex introduction
+      - cv.tex selected RaySearch section
+      - cover_letter.tex paragraphs 1 and 2
+    evidence:
+      - "profile/profile.yaml describes experience in medical imaging."
+      - "profile/experience.yaml RaySearch responsibilities include radiotherapy planning, 3D CT scans, clinical decision support, medical image analysis, and collaboration with clinicians."
+      - "profile/claims.yaml includes research experience in medical AI and probabilistic modelling."
+
+  - claim: "Ivar worked with clinical decision support constraints and clinician feedback."
+    used_in:
+      - cv.tex introduction
+      - cv.tex selected and detailed RaySearch sections
+      - cover_letter.tex paragraph 2
+    evidence:
+      - "profile/experience.yaml RaySearch responsibilities include redesigning lexicographic optimisation algorithms to reflect clinical decision hierarchies."
+      - "profile/experience.yaml states collaboration with medical physicists and clinicians to align models with oncological standards and practical workflows."
+      - "profile/skills.yaml lists clinical decision support as a domain."
+
+  - claim: "Ivar has pharmaceutical analytics and forecasting experience."
+    used_in:
+      - cv.tex introduction
+      - cv.tex selected and detailed Signum sections
+      - cover_letter.tex paragraph 3
+    evidence:
+      - "profile/profile.yaml headline includes pharmaceutical analytics."
+      - "profile/experience.yaml Signum responsibilities include a forecasting platform for pharmaceutical price and demand forecasting."
+      - "profile/experience.yaml Signum responsibilities include maintaining and improving a pharmaceutical price forecasting model for Denmark's fortnightly blind auctions."
+
+  - claim: "Ivar owned and extended a next-best-action system with explainable AI features."
+    used_in:
+      - cv.tex selected and detailed Signum sections
+      - cover_letter.tex paragraph 3
+    evidence:
+      - "profile/experience.yaml Signum responsibilities describe Kwarts as a next-best-action prediction system for pharmaceutical sales representatives."
+      - "profile/experience.yaml states Ivar took ownership and extended the system with explainable AI features in collaboration with UX designers."
+
+  - claim: "Ivar has production ML engineering experience."
+    used_in:
+      - cv.tex introduction
+      - cv.tex selected and detailed Valcon sections
+      - cover_letter.tex paragraphs 1, 3, and 4
+    evidence:
+      - "profile/claims.yaml includes experience building production-grade machine-learning systems."
+      - "profile/experience.yaml Valcon responsibilities include architecting and implementing an end-to-end production pipeline for a real-time deep neural network."
+      - "profile/projects.yaml Project Iris includes FastAPI, MongoDB, Qdrant, Chromium extension, scraping, and vector search."
+
+  - claim: "Ivar has exposure to natural-language-input ML systems."
+    used_in:
+      - cv.tex selected and detailed Valcon sections
+      - cover_letter.tex paragraph 3
+    evidence:
+      - "profile/experience.yaml Valcon responsibilities include systems involving natural-language inputs and high-dimensional multi-class labels."
+
+  - claim: "Ivar has explainable AI experience."
+    used_in:
+      - cv.tex introduction
+      - cv.tex selected Signum and Valcon sections
+      - cover_letter.tex paragraphs 3 and 4
+    evidence:
+      - "profile/experience.yaml Signum responsibilities include explainable AI features."
+      - "profile/experience.yaml Valcon responsibilities include leading explainable AI training sessions."
+      - "profile/skills.yaml includes SHAP and explainable AI."
+
+  - claim: "Ivar has a strong statistical and engineering education."
+    used_in:
+      - cv.tex education
+    evidence:
+      - "profile/education.yaml lists MSc Statistical Learning and Data Analytics and BSc Engineering Physics from KTH."
+      - "profile/education.yaml lists GPA 5.0 / 5.0."
+      - "profile/courses.yaml lists Statistical Machine Learning, Applied Numerical Methods, and Optimization."
+
+  - claim: "Ivar is interested in Corti roles where data science, ML engineering, and applied research meet."
+    used_in:
+      - cover_letter.tex closing
+    evidence:
+      - "profile/profile.yaml headline combines data science, project management, applied ML, medical imaging, pharmaceutical analytics, and ML engineering."
+      - "profile/writing_style/core_narrative.yaml describes Ivar as a data scientist, builder, and researcher."
+      - "job_listings/corti.md invites candidates interested in AI technology, machine learning, and software development."
+
+  - claim: "Ivar enjoys personal projects, including designing and building furniture."
+    used_in:
+      - cover_letter.tex paragraph 5
+    evidence:
+      - "profile/profile.yaml lists woodworking, designing and building furniture, and projects as personal interests."
+      - "profile/projects.yaml describes a furniture personal project."
+
+explicit_non_claims:
+  - "The materials do not claim direct experience with Corti, Symphony, NHS deployments, or Corti's data."
+  - "The materials do not claim direct clinical dialogue system experience."
+  - "The materials do not claim EHR or virtual care platform experience."
+  - "The materials do not claim LLM, speech, transcription, or medical conversational AI experience."
+  - "The materials do not claim publications."

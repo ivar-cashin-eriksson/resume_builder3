@@ -1,0 +1,229 @@
+listing_slug: dtu_ai_accountability
+listing_file: job_listings/dtu_ai_accountability.md
+
+sources_reviewed:
+  - README.md
+  - templates/README.md
+  - templates/cv.tex
+  - templates/cover_letter.tex
+  - prompts/make_application.md
+  - job_listings/dtu_ai_accountability.md
+  - profile/profile.yaml
+  - profile/education.yaml
+  - profile/experience.yaml
+  - profile/awards_and_achievements.yaml
+  - profile/skills.yaml
+  - profile/projects.yaml
+  - profile/courses.yaml
+  - profile/claims.yaml
+  - profile/writing_style/style.yaml
+  - profile/writing_style/cover_letter_style.yaml
+  - profile/writing_style/core_narrative.yaml
+  - profile/writing_style/research_statement_style.yaml
+  - outputs/ku_PhD_fellowship_in_Mechanistic_Interpretability_for_LLM_Security/cv.tex
+  - outputs/ku_PhD_fellowship_in_Mechanistic_Interpretability_for_LLM_Security/cover_letter.tex
+  - outputs/corti_senior_mlops_engineer/job_analysis.md
+  - outputs/corti_senior_mlops_engineer/evidence_mapping.yaml
+  - outputs/corti_senior_mlops_engineer/gap_report.md
+  - outputs/quantum_foundry/job_analysis.md
+  - outputs/quantum_foundry/evidence_mapping.yaml
+
+external_institution_sources:
+  - source: "DTU official job listing"
+    url: "https://efzu.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2001/job/7495"
+    used_for:
+      - "Confirming the title, DTU Compute context, responsibilities, qualification signals, contacts, and deadline."
+  - source: "DTU Compute homepage"
+    url: "https://www.compute.dtu.dk/"
+    used_for:
+      - "Understanding department scale, research sections, and applied mathematics/computer science context."
+  - source: "DTU Compute centres page"
+    url: "https://www.compute.dtu.dk/research/centres"
+    used_for:
+      - "Confirming Pioneer Centre for AI as a DTU Compute-affiliated centre/project context."
+  - source: "Pioneer Centre for AI Networks and Graphs collaboratory"
+    url: "https://www.aicentre.dk/collaboratories/networks-and-graphs"
+    used_for:
+      - "Understanding the collaboratory focus on explainability, fair AI, networked systems, and large-scale experimentation."
+  - source: "Sune Lehmann DTU profile"
+    url: "https://www.dtu.dk/english/person/sune-lehmann?id=25317"
+    used_for:
+      - "Understanding Sune Lehmann's DTU Compute role and research in social systems, massive data sets, complex systems, machine learning, and statistical analysis."
+  - source: "Piotr Sapieżyński algorithm audits course page"
+    url: "https://sapiezynski.com/cs4910.html"
+    used_for:
+      - "Understanding algorithm-auditing context: external audits, web-data collection, reverse engineering APIs, automated browsing, ML error analysis, statistics, and visualisation."
+  - source: "Piotr Sapieżyński publications page"
+    url: "https://www.sapiezynski.com/publications.html"
+    used_for:
+      - "Understanding relevant research themes around ad delivery, problematic advertising, fairness, networked privacy, and political advertising."
+
+major_claims:
+  - claim: "Ivar has seven years of experience applying machine learning."
+    used_in:
+      - "cv.tex introduction"
+      - "cover_letter.tex paragraph 1"
+    evidence:
+      - "profile/experience.yaml lists data scientist/researcher roles beginning at RaySearch Laboratories in 2019 and continuing through Signum Life Science in 2024--Present."
+      - "templates/README.md instructs calculating years of experience from 2019."
+      - "Prior application examples use the same seven-year framing."
+
+  - claim: "Ivar has a KTH Master's specialisation in Statistical Learning and Data Analytics, an Engineering Physics background, and GPA 5.0 / 5.0."
+    used_in:
+      - "cv.tex introduction"
+      - "cv.tex education section"
+      - "cover_letter.tex paragraph 1"
+    evidence:
+      - "profile/education.yaml lists KTH MSc Statistical Learning and Data Analytics and BSc Engineering Physics."
+      - "profile/education.yaml lists GPA 5.0 / 5.0."
+      - "profile/courses.yaml lists the same degree, programme, and GPA."
+
+  - claim: "Ivar has relevant coursework in Statistical Machine Learning, Causality, and Reinforcement Learning."
+    used_in:
+      - "cv.tex education section"
+    evidence:
+      - "profile/courses.yaml lists SF2957 Statistical Machine Learning."
+      - "profile/courses.yaml lists ETH Zurich course Causality."
+      - "profile/courses.yaml lists EL2805 Reinforcement Learning."
+
+  - claim: "Ivar has worked across healthcare, pharmaceutical analytics, manufacturing, e-commerce, and energy."
+    used_in:
+      - "cv.tex introduction"
+      - "cover_letter.tex paragraph 4"
+      - "cv.tex detailed work sections"
+    evidence:
+      - "profile/experience.yaml lists RaySearch radiotherapy planning and medical imaging."
+      - "profile/experience.yaml lists Signum pharmaceutical analytics and pharmaceutical sales."
+      - "profile/experience.yaml lists Valcon domains including pharma, energy, IoT, and manufacturing."
+      - "profile/experience.yaml lists Valtech e-commerce and personalisation."
+      - "profile/skills.yaml domains list pharmaceutical analytics, radiotherapy planning, medical imaging, e-commerce, IoT, manufacturing analytics, and energy."
+
+  - claim: "Ivar has hands-on experience with explainable AI."
+    used_in:
+      - "cv.tex introduction"
+      - "cv.tex selected Signum section"
+      - "cv.tex selected Valcon section"
+      - "cover_letter.tex paragraphs 4 and 5"
+    evidence:
+      - "profile/experience.yaml Signum responsibilities state that Ivar extended Kwarts with explainable AI features in collaboration with UX designers."
+      - "profile/experience.yaml Valcon responsibilities include leading explainable AI training sessions."
+      - "profile/skills.yaml lists SHAP and Explainable AI."
+
+  - claim: "Ivar has production ML systems experience."
+    used_in:
+      - "cv.tex introduction"
+      - "cv.tex selected Signum section"
+      - "cv.tex selected Valcon section"
+      - "cover_letter.tex paragraphs 4 and 5"
+    evidence:
+      - "profile/claims.yaml claim: Experience building production-grade machine learning systems."
+      - "profile/claims.yaml evidence includes owning and extending Kwarts at Signum, implementing an end-to-end production pipeline at Valcon, and Project Iris architecture."
+      - "profile/experience.yaml lists architecture, ML engineering, software engineering, production pipeline, and AWS deployment responsibilities."
+
+  - claim: "Ivar worked on automated radiotherapy planning using autoencoders, sparse Gaussian processes, and optimisation on segmented 3D CT scans."
+    used_in:
+      - "cv.tex selected RaySearch section"
+      - "cv.tex detailed RaySearch section"
+      - "cover_letter.tex paragraph 3"
+    evidence:
+      - "profile/experience.yaml RaySearch responsibilities include segmented 3D CT scans, autoencoders, sparse Gaussian processes, multi-objective optimisation, and lexicographic optimisation."
+      - "profile/claims.yaml states research experience in medical AI and probabilistic modelling."
+      - "profile/courses.yaml lists the thesis title: Image Distance Learning for Probabilistic Dose-Volume Histogram and Spatial Dose Prediction in Radiation Therapy Treatment Planning."
+
+  - claim: "Ivar collaborated with clinicians and medical physicists to align models with clinical standards and workflows."
+    used_in:
+      - "cv.tex selected RaySearch section"
+      - "cv.tex detailed RaySearch section"
+      - "cover_letter.tex paragraph 3"
+    evidence:
+      - "profile/experience.yaml states collaboration with medical physicists and clinicians to align models with oncological standards and practical workflows."
+      - "profile/claims.yaml lists this collaboration as evidence for translating complex technical work for stakeholders."
+
+  - claim: "Ivar is architecting a Databricks forecasting platform for pharmaceutical price and demand."
+    used_in:
+      - "cv.tex selected Signum section"
+      - "cv.tex detailed Signum section"
+      - "cover_letter.tex paragraph 4"
+    evidence:
+      - "profile/experience.yaml Signum responsibilities describe an ongoing forecasting platform for pharmaceutical price and demand forecasting and patient population forecasts."
+      - "profile/experience.yaml says the role includes architect, project manager, data scientist, ML engineer, and software engineer."
+      - "profile/experience.yaml lists Databricks under Signum technologies."
+
+  - claim: "Ivar maintains and improves a Denmark-specific XGBoost price forecasting model for blind pharmaceutical auctions."
+    used_in:
+      - "cv.tex selected Signum section"
+      - "cv.tex detailed Signum section"
+    evidence:
+      - "profile/experience.yaml Signum responsibilities include maintaining and improving a pharmaceutical price forecasting model for Denmark's fortnightly blind auctions."
+      - "profile/experience.yaml lists XGBoost under Signum technologies."
+
+  - claim: "Ivar owned a next-best-action engine for pharmaceutical sales and extended explainable AI features."
+    used_in:
+      - "cv.tex selected Signum section"
+      - "cv.tex detailed Signum section"
+      - "cover_letter.tex paragraph 4"
+    evidence:
+      - "profile/experience.yaml describes Kwarts as a next-best-action prediction system for pharmaceutical sales representatives."
+      - "profile/experience.yaml says Ivar took ownership and extended the system with explainable AI features in collaboration with UX designers."
+      - "profile/experience.yaml says Kwarts adapts from rule-based logic to deep learning and lists AWS."
+
+  - claim: "Ivar architected an end-to-end production pipeline for a real-time neural network using natural-language inputs and high-dimensional labels."
+    used_in:
+      - "cv.tex selected Valcon section"
+      - "cv.tex detailed Valcon section"
+      - "cover_letter.tex paragraph 4"
+    evidence:
+      - "profile/experience.yaml Valcon responsibilities include architecting and implementing an end-to-end production pipeline for a real-time deep neural network."
+      - "profile/experience.yaml states that the systems involved natural-language inputs and high-dimensional multi-class labels."
+
+  - claim: "Ivar led explainable AI and Git trainings, mentored junior data scientists, and communicated technical topics to non-technical stakeholders."
+    used_in:
+      - "cv.tex selected Valcon section"
+      - "cv.tex detailed Valcon section"
+      - "cover_letter.tex paragraph 4"
+    evidence:
+      - "profile/experience.yaml Valcon responsibilities include mentoring junior colleagues, leading explainable AI and Git trainings, and presenting complex technical topics to non-technical stakeholders."
+      - "profile/claims.yaml supports communication and leadership claims."
+
+  - claim: "Ivar has a solo project involving dynamic scraping, indexing, and a Chromium plug-in for real-time web-shop image overlays."
+    used_in:
+      - "cv.tex Skills and Other section"
+      - "cv.tex detailed Project Iris section"
+      - "cover_letter.tex paragraph 5"
+    evidence:
+      - "profile/projects.yaml Project Iris components include dynamic scraping and indexing, arbitrary e-commerce sites, and a custom Chromium plug-in overlaying clickable links on web-shop imagery in real time."
+      - "profile/projects.yaml lists YOLOv8, OpenCLIP, FastAPI, MongoDB, Qdrant, Chromium extension, web scraping, and vector search."
+
+  - claim: "Ivar has Python, SQL, C++, PyTorch, SHAP, XGBoost, Databricks, AWS, Azure, FastAPI, MongoDB, Qdrant, Docker, web scraping, and related ML methods."
+    used_in:
+      - "cv.tex Skills and Other section"
+      - "cover_letter.tex paragraph 5"
+    evidence:
+      - "profile/skills.yaml lists these technologies and methods."
+      - "profile/projects.yaml Project Iris lists FastAPI, MongoDB, Qdrant, web scraping, and Chromium extension."
+      - "profile/experience.yaml lists Databricks, AWS, XGBoost, explainable AI, deep learning, and rule-based systems."
+
+  - claim: "Ivar is a native English and Swedish speaker with intermediate Danish."
+    used_in:
+      - "cv.tex Skills and Other section"
+    evidence:
+      - "profile/profile.yaml lists English and Swedish as native and Danish as intermediate."
+      - "profile/skills.yaml repeats the same language information."
+
+  - claim: "Ivar received the Valcon People's Choice Award."
+    used_in:
+      - "cv.tex detailed Valcon section"
+    evidence:
+      - "profile/awards_and_achievements.yaml lists the Valcon People's Choice Award for exemplary work, leadership, team spirit, and scientific curiosity."
+
+explicit_non_claims:
+  - "The materials do not claim prior algorithm-auditing research."
+  - "The materials do not claim sock-puppet study or bot-study experience."
+  - "The materials do not claim reverse-engineering, web API reverse-engineering, red-teaming, or ethical-hacking experience."
+  - "The materials do not claim mobile app programming experience."
+  - "The materials do not claim familiarity with the DSA, DMA, AI Act, GDPR, or legal/regulatory implementation."
+  - "The materials do not claim direct work with browser or smartphone data from real human participants."
+  - "The materials do not claim direct social-network platform auditing, ad-delivery auditing, or political-advertising research."
+  - "The materials do not claim formal fairness research, fairness publications, or academic publications."
+  - "The materials do not claim direct LLM experience beyond supported deep learning and natural-language-input ML work."
+  - "The materials do not claim prior work with DTU, the Pioneer Centre for AI, Piotr Sapieżyński, or Sune Lehmann."

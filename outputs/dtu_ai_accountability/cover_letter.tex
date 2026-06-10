@@ -1,0 +1,56 @@
+% %--------------------------
+% %	CONFIGURATION
+% %--------------------------
+\documentclass[11pt,a4paper]{moderncv}
+\moderncvstyle{classic}
+\moderncvcolor{black}
+\definecolor{firstnamecolor}{rgb}{0,0,0}
+
+% Basic packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[hscale=0.7, top=2cm, bottom=2cm]{geometry}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{DarkBlue}{RGB}{0, 0, 150}
+\usepackage[colorlinks=true, urlcolor=DarkBlue, linkcolor=DarkBlue]{hyperref}
+
+\usepackage{microtype}
+
+% Configure font settings
+\renewcommand{\rmdefault}{ppl}
+\renewcommand{\sfdefault}{phv}
+\renewcommand*{\namefont}{\fontsize{26}{18}\mdseries}
+
+% Configure microtype
+\microtypesetup{expansion=false}
+
+% Load sensitive information
+\input{../../other_material/personal_info.tex}
+
+% %--------------------------
+\begin{document}
+\makecvtitle
+Hello Assistant Professor Sapieżyński and Professor Lehmann,
+
+\vspace*{2em}
+I am writing to apply for the PhD Scholarship in AI Accountability at DTU Compute. I have a Master's specialisation in Statistical Learning and Data Analytics from the Royal Institute of Technology (KTH), a background in Engineering Physics, and seven years of practical experience building and analysing machine learning (ML) systems. After some time in industry, I would like to return to academia to study ML systems more directly: how they behave in practice and where they fail.
+
+\hspace*{2em}
+The advertised project is interesting to me because it treats AI accountability as an empirical problem as well as a technical one. Designing simulations, collecting data from real systems, and working with technical and legal experts is close to the kind of research direction I want to pursue. The connection to the Pioneer Centre for AI's Networks and Graphs collaboratory also makes sense to me: explainability, fairness, networked systems, and large-scale experimentation are a natural setting for asking how algorithmic products affect people at scale.
+
+\hspace*{2em}
+My research experience comes from RaySearch Laboratories, where I worked on automated radiotherapy planning and completed my master's thesis. I developed probabilistic and computer vision-based ML methods using autoencoders, sparse Gaussian processes, and optimisation on segmented 3D CT scans. The work was not about social platforms, but it gave me practical experience with statistical modelling in a high-stakes domain, and with the need to understand model behaviour before using predictions in a real decision workflow.
+
+\hspace*{2em}
+Since moving to Copenhagen, I have worked across pharmaceutical analytics, manufacturing, energy, and e-commerce. At Valcon, I architected an end-to-end production pipeline for a real-time neural network using natural-language inputs and high-dimensional labels, and I led internal trainings in explainable AI and Git. At Signum Life Science, I have owned a next-best-action system for pharmaceutical sales, extended it with explainable AI features, and now work on a Databricks forecasting platform for pharmaceutical price and demand. These roles have made the limits of black-box prediction concrete, especially when systems need to be explained to users, commercial stakeholders, or domain experts.
+
+\hspace*{2em}
+For a more direct technical connection to the project, my solo Project Iris includes a dynamic scraping and indexing pipeline for arbitrary e-commerce sites and a custom Chromium plug-in that overlays ML-driven links on web-shop images in real time. I have not worked directly on sock-puppet studies, mobile app programming, or EU platform regulation before. Still, the combination of Python, statistics, ML engineering, web-data collection, explainability, and stakeholder-facing work would be a solid foundation for PhD research in algorithmic transparency and accountability.
+
+\vspace*{2em}
+I welcome the opportunity to discuss how my background can be valuable for the project. Regards,
+
+\vspace*{1em}
+Ivar Cashin Eriksson.
+
+\end{document}

@@ -1,0 +1,209 @@
+listing_slug: quantum_foundry
+listing_file: job_listings/quantum_foundry.md
+
+sources_reviewed:
+  - README.md
+  - templates/README.md
+  - templates/cv.tex
+  - templates/cover_letter.tex
+  - prompts/make_application.md
+  - job_listings/quantum_foundry.md
+  - profile/profile.yaml
+  - profile/education.yaml
+  - profile/experience.yaml
+  - profile/awards_and_achievements.yaml
+  - profile/skills.yaml
+  - profile/projects.yaml
+  - profile/courses.yaml
+  - profile/claims.yaml
+  - profile/writing_style/style.yaml
+  - profile/writing_style/cover_letter_style.yaml
+  - profile/writing_style/core_narrative.yaml
+  - outputs/corti/cover_letter.tex
+  - outputs/corti/cv.tex
+  - outputs/corti/evidence_mapping.yaml
+  - outputs/corti_senior_mlops_engineer/cover_letter.tex
+  - outputs/corti_senior_mlops_engineer/cv.tex
+  - outputs/corti_senior_mlops_engineer/evidence_mapping.yaml
+  - outputs/ku_PhD_fellowship_in_Mechanistic_Interpretability_for_LLM_Security/cover_letter.tex
+  - outputs/ku_PhD_fellowship_in_Mechanistic_Interpretability_for_LLM_Security/cv.tex
+
+external_company_sources:
+  - source: "QFC official job page"
+    url: "https://qfcph.com/jobs/quantum-photonics-engineer/"
+    used_for:
+      - "Confirming the role title, responsibilities, contact, and qualification signals."
+  - source: "QFC homepage"
+    url: "https://qfcph.com/"
+    used_for:
+      - "Understanding the foundry's emphasis on UHV manufacturing, quantum chip manufacturing, optical engineering, process control, and data science."
+  - source: "QFC about page"
+    url: "https://qfcph.com/about/"
+    used_for:
+      - "Understanding ownership by the Novo Nordisk Foundation, NQCP connection, atomic precision, interdisciplinarity, and data-driven work."
+  - source: "QFC careers page"
+    url: "https://qfcph.com/about/careers/"
+    used_for:
+      - "Confirming the open role and that QFC is based at the Niels Bohr Institute and owned by the Novo Nordisk Foundation."
+  - source: "NQCP programme page"
+    url: "https://nqcp.ku.dk/about-nqcp/"
+    used_for:
+      - "Understanding the programme mission, interdisciplinary ecosystem, pathfinder phase, and QFC's role."
+  - source: "NQCP join-us page"
+    url: "https://nqcp.ku.dk/join-us/"
+    used_for:
+      - "Understanding the full-stack quantum-computing environment at the Niels Bohr Institute."
+  - source: "Novo Nordisk Foundation project page"
+    url: "https://novonordiskfonden.dk/en/projects/novo-nordisk-foundation-quantum-computing-programme/"
+    used_for:
+      - "Understanding the NNF funding and long-term quantum-computing programme context."
+
+major_claims:
+  - claim: "Ivar has seven years of applied machine-learning experience."
+    used_in:
+      - "cv.tex introduction"
+    evidence:
+      - "profile/experience.yaml lists data science and ML roles beginning at RaySearch Laboratories in 2019 and continuing through the present."
+      - "Prior application examples use the same seven-year framing."
+
+  - claim: "Ivar has a KTH background in Engineering Physics and Statistical Learning."
+    used_in:
+      - "cv.tex introduction"
+      - "cv.tex education"
+      - "cover_letter.tex paragraph 2"
+    evidence:
+      - "profile/education.yaml lists a BSc in Engineering Physics and MSc in Statistical Learning and Data Analytics from KTH."
+      - "profile/education.yaml lists GPA 5.0 / 5.0."
+
+  - claim: "Ivar's relevant coursework includes Quantum Physics, Solid State Physics, and Electromagnetic Theory."
+    used_in:
+      - "cv.tex education"
+      - "cover_letter.tex paragraph 2"
+    evidence:
+      - "profile/courses.yaml lists SI1151 Quantum Physics."
+      - "profile/courses.yaml lists SK2750 Solid State Physics."
+      - "profile/courses.yaml lists EI1240 Electromagnetic Theory."
+
+  - claim: "Ivar has direct optics-lab experience from a Zhejiang University exchange, including collaborative work on laser trimming microring resonators for integrated photonic circuits."
+    used_in:
+      - "cv.tex introduction"
+      - "cv.tex education"
+      - "cover_letter.tex paragraphs 1 and 2"
+    evidence:
+      - "profile/education.yaml adds a Zhejiang University exchange in Hangzhou with work in an optics laboratory on laser trimming microring resonators, collaborating with a local research group, fabricating microring resonators, and trimming their resonance frequency by controlled laser pulses to selectively remove cladding material for integrated photonic circuits."
+
+  - claim: "Ivar represented Team Sweden at the International Young Physicists' Tournament."
+    used_in:
+      - "cv.tex skills and other"
+      - "cover_letter.tex paragraph 2"
+    evidence:
+      - "profile/awards_and_achievements.yaml lists IYPT Sweden as a Team Sweden membership in the International Young Physicists' Tournament."
+      - "profile/awards_and_achievements.yaml describes experiments on the Magnus effect, Brownian motion of bristled objects, and light refraction through water bottles."
+
+  - claim: "Ivar received the Valcon People's Choice Award for exemplary work, leadership, team spirit, and scientific curiosity."
+    used_in:
+      - "cv.tex skills and other"
+    evidence:
+      - "profile/awards_and_achievements.yaml lists the Valcon People's Choice Award with those attributes and 2023 as the year."
+
+  - claim: "Ivar is applying because QFC's quantum processor manufacturing work is close to a physics and engineering direction he wants to move towards."
+    used_in:
+      - "cv.tex introduction"
+      - "cover_letter.tex paragraph 1"
+    evidence:
+      - "profile/writing_style/core_narrative.yaml describes Ivar as a data scientist, builder, and researcher who enjoys understanding complex systems and turning ideas into working solutions."
+      - "profile/education.yaml supports the Engineering Physics background."
+      - "job_listings/quantum_foundry.md and external QFC sources describe quantum processor manufacturing."
+
+  - claim: "Ivar has Python and technical-computing experience."
+    used_in:
+      - "cv.tex selected Signum section"
+      - "cv.tex skills"
+      - "cover_letter.tex paragraph 3"
+    evidence:
+      - "profile/skills.yaml lists Python, SQL, C++, Matlab, PyTorch, TensorFlow, XGBoost, SHAP, MLflow, Databricks, AWS, MS Azure, Docker, FastAPI, MongoDB, and Qdrant."
+
+  - claim: "Ivar is building a Databricks forecasting platform for pharmaceutical price and demand."
+    used_in:
+      - "cv.tex selected Signum section"
+      - "cv.tex detailed Signum section"
+      - "cover_letter.tex paragraph 3"
+    evidence:
+      - "profile/experience.yaml Signum responsibilities include a forecasting platform for pharmaceutical price and demand forecasting and patient population forecasts."
+      - "profile/experience.yaml says the role spans architect, project manager, data scientist, ML engineer, and software engineer."
+      - "profile/experience.yaml lists Databricks under Signum technologies."
+
+  - claim: "Ivar maintains and improves an XGBoost pharmaceutical price forecasting model for Denmark's pharmaceutical price auctions."
+    used_in:
+      - "cv.tex selected Signum section"
+      - "cv.tex detailed Signum section"
+      - "cover_letter.tex paragraph 3"
+    evidence:
+      - "profile/experience.yaml says Ivar maintains and improves a pharmaceutical price forecasting model for Denmark's fortnightly blind auctions."
+      - "profile/experience.yaml lists XGBoost under Signum technologies."
+
+  - claim: "Ivar owned and extended a next-best-action system with explainable AI features."
+    used_in:
+      - "cv.tex selected Signum section"
+      - "cv.tex detailed Signum section"
+    evidence:
+      - "profile/experience.yaml describes Kwarts as a next-best-action prediction system for pharmaceutical sales representatives."
+      - "profile/experience.yaml says Ivar took ownership and extended the system with explainable AI features in collaboration with UX designers."
+
+  - claim: "Ivar architected an end-to-end production pipeline for a real-time neural network."
+    used_in:
+      - "cv.tex selected Valcon section"
+      - "cv.tex detailed Valcon section"
+      - "cover_letter.tex paragraph 3"
+    evidence:
+      - "profile/experience.yaml Valcon responsibilities include architecting and implementing an end-to-end production pipeline for a real-time deep neural network."
+      - "profile/claims.yaml lists this as evidence for production-grade ML systems."
+
+  - claim: "Ivar led projects across pharma, energy, IoT, and manufacturing."
+    used_in:
+      - "cv.tex selected Valcon section"
+      - "cv.tex detailed Valcon section"
+      - "cover_letter.tex paragraph 3"
+    evidence:
+      - "profile/experience.yaml states that Valcon work covered pharmaceuticals, energy, IoT, and manufacturing."
+
+  - claim: "Ivar mentored colleagues and led explainable AI and Git trainings."
+    used_in:
+      - "cv.tex selected Valcon section"
+      - "cv.tex detailed Valcon section"
+    evidence:
+      - "profile/experience.yaml Valcon responsibilities include mentoring junior colleagues and leading explainable AI and Git training sessions."
+      - "profile/claims.yaml supports leadership without relying only on formal authority."
+
+  - claim: "Ivar worked on automated radiotherapy planning using autoencoders, sparse Gaussian processes, and optimisation on segmented 3D CT scans."
+    used_in:
+      - "cv.tex selected RaySearch section"
+      - "cv.tex detailed RaySearch section"
+      - "cover_letter.tex paragraph 3"
+    evidence:
+      - "profile/experience.yaml RaySearch responsibilities include segmented 3D CT scans, autoencoders, sparse Gaussian processes, multi-objective optimisation, and lexicographic optimisation."
+      - "profile/courses.yaml lists the thesis title: Image Distance Learning for Probabilistic Dose-Volume Histogram and Spatial Dose Prediction in Radiation Therapy Treatment Planning."
+
+  - claim: "Ivar collaborated with clinicians and medical physicists."
+    used_in:
+      - "cv.tex selected RaySearch section"
+      - "cv.tex detailed RaySearch section"
+      - "cover_letter.tex paragraph 3"
+    evidence:
+      - "profile/experience.yaml states collaboration with medical physicists and clinicians to align models with oncological standards and practical workflows."
+      - "profile/claims.yaml uses clinician and medical physicist collaboration as evidence for translating complex technical work."
+
+  - claim: "Ivar enjoys practical projects, including designing and building furniture."
+    used_in:
+      - "cv.tex skills and other"
+    evidence:
+      - "profile/profile.yaml lists woodworking, designing and building furniture, and projects as personal interests."
+      - "profile/projects.yaml describes a furniture personal project."
+
+explicit_non_claims:
+  - "The materials do not claim broader photonics-characterisation, calibration, or instrument-control experience beyond the Zhejiang University optics-lab exchange and IYPT."
+  - "The materials do not claim experience operating, maintaining, or calibrating advanced optical measurement systems."
+  - "The materials do not claim nanofabrication, materials growth, cleanroom, UHV, quantum processor, QPU, semiconductor, superconducting, or photonic-device fabrication experience."
+  - "The materials do not claim direct experimental data acquisition or data logging for lab instruments."
+  - "The materials do not claim prior work with QFC, NQCP, the Niels Bohr Institute, Novo Nordisk Foundation quantum teams, or Rodrigo Thomas."
+  - "The materials do not claim publications, patents, PhD degree, security clearance, or Danish-native proficiency."

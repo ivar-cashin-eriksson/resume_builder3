@@ -7,6 +7,7 @@ skills:
   ml_libraries:
   - TensorFlow
   - PyTorch
+  - Scikit-learn
   - SHAP
   - YOLO
   - XGBoost

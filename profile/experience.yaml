@@ -10,6 +10,9 @@ experience:
     - Architect, Project manager, Data Scientist, ML Engineer, and Software Engineer for the platform.
     - End-to-end, production ready, flexible, 
     - Databricks
+  - Embedding and search work (Current task)
+    - Using LLMs to embed free text for downstream similarity search and matching workflows at Signum.
+    - Working with embedding-based representations rather than a full RAG system.
   - Kwarts - Next-best-action Prediction System (Terminated)
     - Next-best-action prediction system for pharmaceutical sales representatives, providing actionable insights to support commercialisation efforts.
     - Owner, Data Scientist, Software Developer.
@@ -42,7 +45,7 @@ experience:
   - Led explainable AI and Git training sessions.
   - Presented complex technical topics to non-technical stakeholders.
   - Architected and implemented an end-to-end production pipeline for a real-time deep neural network.
-  - Built systems involving natural-language inputs and high-dimensional multi-class labels.
+  - Built systems involving NLP and high-dimensional multi-class labels.
   - Developed IoT manufacturing analytics, including clustering algorithms for operator productivity patterns.
   recognition:
   - Valcon People's Choice Award for exemplary work, leadership, team spirit, and scientific curiosity.

@@ -1,0 +1,104 @@
+listing_slug: kapa_ai_research_engineer_applied_ai
+listing_file: outputs/kapa_ai_research_engineer_applied_ai/listing.md
+
+sources_reviewed:
+  - README.md
+  - templates/README.md
+  - templates/cv.tex
+  - templates/cover_letter.tex
+  - profile/profile.yaml
+  - profile/education.yaml
+  - profile/experience.yaml
+  - profile/skills.yaml
+  - profile/projects.yaml
+  - profile/courses.yaml
+  - profile/claims.yaml
+  - profile/awards_and_achievements.yaml
+  - profile/writing_style/style.yaml
+  - profile/writing_style/cover_letter_style.yaml
+  - profile/writing_style/core_narrative.yaml
+  - outputs/kapa_ai_research_engineer_applied_ai/listing.md
+
+major_claims:
+  - claim: "Ivar has seven years of applied machine-learning experience."
+    used_in:
+      - cv.tex introduction
+      - cover_letter.tex paragraph 1
+    evidence:
+      - "profile/experience.yaml lists ML and data science roles beginning at RaySearch Laboratories in 2019 and continuing through the present."
+
+  - claim: "Ivar has a strong quantitative background from KTH, including Statistical Learning and Data Analytics and Engineering Physics."
+    used_in:
+      - cv.tex introduction
+      - cv.tex education
+      - cover_letter.tex paragraph 1
+    evidence:
+      - "profile/education.yaml lists KTH degrees in Statistical Learning and Data Analytics and Engineering Physics with GPA 5.0 / 5.0."
+
+  - claim: "Ivar has production ML engineering experience."
+    used_in:
+      - cv.tex introduction
+      - cv.tex selected work experience
+      - cover_letter.tex paragraph 3
+    evidence:
+      - "profile/experience.yaml Signum responsibilities describe ownership of production forecasting systems."
+      - "profile/experience.yaml Valcon responsibilities describe an end-to-end production pipeline for a real-time deep neural network."
+      - "profile/claims.yaml includes experience building production-grade machine-learning systems."
+
+  - claim: "Ivar has explainable AI experience."
+    used_in:
+      - cv.tex selected work experience
+      - cover_letter.tex paragraph 3
+    evidence:
+      - "profile/experience.yaml Signum responsibilities describe extending Kwarts with explainable AI features."
+      - "profile/experience.yaml Valcon responsibilities describe explainable AI training sessions."
+
+  - claim: "Ivar has vector-search and embedding-adjacent experience."
+    used_in:
+      - cv.tex other detailed experience
+      - cover_letter.tex paragraph 3
+    evidence:
+      - "profile/projects.yaml Project iris uses OpenCLIP embeddings, Qdrant, and vector search."
+      - "profile/experience.yaml Signum includes current work using LLMs to embed free text for downstream search and retrieval workflows."
+      - "profile/skills.yaml lists Qdrant, vector search, OpenCLIP, and FastAPI."
+
+  - claim: "Ivar has experience building agentic workflows and template-driven systems."
+    used_in:
+      - cv.tex other detailed experience
+      - cover_letter.tex paragraph 4
+    evidence:
+      - "profile/projects.yaml resume_builder3 describes a source-grounded system that generates tailored CVs and cover letters from structured profile data and job descriptions."
+      - "profile/projects.yaml resume_builder3 describes a human-in-the-loop job-hunter agent using daily digests, GitHub issues, GitHub Actions, Codex, branches, and PR review."
+      - "profile/projects.yaml lists agentic prompting, system design, source-grounded generation, and human-in-the-loop application workflows as learning goals."
+
+  - claim: "Ivar has experience with evidence mapping and gap-report style evaluation."
+    used_in:
+      - cv.tex other detailed experience
+      - cover_letter.tex paragraph 4
+    evidence:
+      - "profile/projects.yaml resume_builder3 includes evidence mapping from generated claims back to source profile files and previous examples."
+      - "profile/projects.yaml resume_builder3 includes gap report generation to identify missing or weak fit before submission."
+      - "profile/claims.yaml includes source-grounded generation and evidence checking."
+
+  - claim: "Ivar has research experience in medical AI and probabilistic modelling."
+    used_in:
+      - cv.tex selected work experience
+      - cover_letter.tex paragraph 2
+    evidence:
+      - "profile/experience.yaml RaySearch responsibilities include autoencoders on segmented 3D CT scans, sparse Gaussian processes, and collaboration with clinicians."
+      - "profile/claims.yaml includes research experience in medical AI and probabilistic modelling."
+
+  - claim: "Ivar is interested in applied AI work that values evaluation and reliability."
+    used_in:
+      - cover_letter.tex paragraph 4
+    evidence:
+      - "profile/writing_style/core_narrative.yaml describes Ivar as a data scientist, builder, and researcher."
+      - "profile/claims.yaml and profile/experience.yaml support production systems, explainability, and stakeholder-facing work."
+      - "kapa.ai public pages emphasise grounded answers, citations, and production use-cases."
+
+explicit_non_claims:
+  - "The materials do not claim direct LLM training or fine-tuning experience."
+  - "The materials do not claim direct RAG benchmarking or evaluation-system experience."
+  - "The materials do not claim direct lexical search experience."
+  - "The materials do not claim direct experience with kapa.ai, its internal stack, or its datasets."
+  - "The materials do not claim publications."

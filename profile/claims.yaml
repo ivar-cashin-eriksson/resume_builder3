@@ -21,6 +21,34 @@ claims:
   - applied research roles
   - industry PhD applications
 
+- claim: Experience with embedding-based search and vector retrieval workflows.
+  evidence:
+  - Built Project iris using OpenCLIP embeddings and Qdrant vector search.
+  - Using LLMs to embed free text for downstream similarity search and matching workflows at Signum.
+  use_for:
+  - retrieval-adjacent applied AI roles
+  - search and recommendation roles
+  - applied ML roles
+
+- claim: Experience building agentic workflow automation for job applications.
+  evidence:
+  - resume_builder3 generates tailored CVs and cover letters from structured profile data and job descriptions.
+  - resume_builder3 is being extended into a job-hunter agent that crawls job adverts, sends a daily digest, waits for a response, and creates GitHub issues and actions for positive matches.
+  use_for:
+  - agentic workflow roles
+  - applied AI roles
+  - productivity automation roles
+
+- claim: Experience with source-grounded generation and evidence checking.
+  evidence:
+  - resume_builder3 generates application materials from profile YAML files, job descriptions, templates, and previous examples.
+  - resume_builder3 produces evidence mappings so major CV and cover-letter claims can be traced back to source files.
+  - resume_builder3 produces gap reports to identify missing or weak fit before submission.
+  use_for:
+  - applied AI roles
+  - RAG-adjacent roles
+  - evaluation-focused roles
+
 - claim: Research experience in medical AI and probabilistic modelling.
   evidence:
   - Worked on automated radiotherapy planning at RaySearch.

@@ -1,5 +1,6 @@
 projects:
 - name: Project iris
+  stylised: "'Project iris' with monospace font"
   period: 2025--2025
   type: Solo project
   summary: End-to-end computer vision system for making product images on e-commerce sites interactive.
@@ -32,23 +33,38 @@ projects:
   motivation:
   - Desire to learn more about ML engineering.
 
-- name: resume_builder
+- name: resume_builder3
+  stylised: "'resume_builder3' with a monospace font"
   period: 2023--Present
   type: Solo project
-  summary: A resume builder that generates tailored CVs and cover letters based on a structured profile and job descriptions.
-  description: Users create a structured profile with their background, skills, and experiences. The system then generates tailored CVs and cover letters for specific job applications, using the profile and job descriptions as input. Currently on version 3 with ongoing development.
+  summary: A source-grounded resume builder and human-in-the-loop job-application workflow based on structured profile data and job descriptions.
+  description: Users create a structured profile with their background, skills, and experiences. The system generates tailored CVs and cover letters for specific job applications, using profile YAML files and job descriptions as source material. It also produces evidence mappings and gap reports to keep major claims traceable and flag missing fit. The workflow includes a job-hunter agent that crawls the web for interesting adverts, sends a daily digest, waits for my response, and, if I respond positively, creates a GitHub issue tagged `job-application` that triggers a GitHub Action to prepare a new branch with listing information and application materials for review.
   components:
   - Structured YAML profile for user information.
   - Job description parsing module to extract key requirements.
   - Resume generation engine that tailors content based on the profile and job description.
   - Template system for formatting CVs and cover letters.
+  - Evidence mapping from generated claims back to source profile files and previous examples.
+  - Gap report generation to identify missing or weak fit before submission.
+  - Job-hunter agent that crawls the web for interesting job adverts.
+  - Daily digest generation with a wait-for-response step.
+  - GitHub issue creation tagged `job-application` when a role is selected.
+  - GitHub Action that asks Codex to create a new branch with listing information and application materials.
+  - Pull request creation to `main` for later review.
+  - Closing and archiving of the application issue after approved application.
   learning_goals:
   - agentic prompting and system design
   - practical NLP application development
+  - agentic workflow automation
+  - source-grounded generation
+  - human-in-the-loop application workflows
   - template-based document generation
   technologies:
   - YAML
   - agentic workflows
+  - GitHub Issues
+  - GitHub Actions
+  - Codex
   motivation:
   - Desire to learn more about agentic prompting and system design.
   - Wanting a new job.

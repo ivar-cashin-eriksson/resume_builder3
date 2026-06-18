@@ -1,0 +1,106 @@
+listing_slug: openai_ai_deployment_engineer_startups_stockholm_sweden
+listing_file: outputs/openai_ai_deployment_engineer_startups_stockholm_sweden/listing.md
+
+sources_reviewed:
+  - AGENTS.md
+  - README.md
+  - templates/cv.tex
+  - profile/profile.yaml
+  - profile/education.yaml
+  - profile/experience.yaml
+  - profile/projects.yaml
+  - profile/skills.yaml
+  - profile/claims.yaml
+  - profile/awards_and_achievements.yaml
+  - profile/writing_style/style.yaml
+  - profile/writing_style/core_narrative.yaml
+  - outputs/corti/cv.tex
+  - outputs/corti/evidence_mapping.yaml
+
+external_sources:
+  - source: OpenAI careers listing
+    url: https://openai.com/careers/ai-deployment-engineer-startups-stockholm-sweden/
+    used_for:
+      - Confirming role title, location, team, responsibilities, and candidate signals.
+
+major_claims:
+  - claim: "Ivar has seven years of applied machine-learning experience."
+    used_in:
+      - cv.tex introduction
+    evidence:
+      - "profile/experience.yaml lists data science and ML roles beginning at RaySearch Laboratories in 2019 and continuing through the present."
+      - "outputs/corti/cv.tex uses the same seven-year framing."
+
+  - claim: "Ivar has production ML systems experience."
+    used_in:
+      - cv.tex introduction
+      - cv.tex selected Valcon and Signum sections
+    evidence:
+      - "profile/claims.yaml includes experience building production-grade machine-learning systems."
+      - "profile/experience.yaml Valcon responsibilities include architecting and implementing an end-to-end production pipeline for a real-time deep neural network."
+      - "profile/experience.yaml Signum responsibilities include owning and extending Kwarts and developing a pharmaceutical forecasting platform."
+
+  - claim: "Ivar has experience translating technical problems for stakeholders and customers."
+    used_in:
+      - cv.tex introduction
+      - cv.tex selected Valcon, Valtech, and Signum sections
+    evidence:
+      - "profile/claims.yaml states Ivar is able to translate complex technical work for stakeholders."
+      - "profile/experience.yaml Valcon responsibilities include presenting complex technical topics to non-technical stakeholders."
+      - "profile/experience.yaml Valtech responsibilities include working closely with business stakeholders."
+      - "profile/experience.yaml Signum responsibilities include supporting commercialisation and sales representatives."
+
+  - claim: "Ivar has natural-language-input ML experience."
+    used_in:
+      - cv.tex selected and detailed Valcon sections
+    evidence:
+      - "profile/experience.yaml Valcon responsibilities include systems involving natural-language inputs and high-dimensional multi-class labels."
+
+  - claim: "Ivar has hands-on AI application and retrieval experience through Project Iris."
+    used_in:
+      - cv.tex selected Project Iris section
+      - cv.tex detailed Project Iris section
+    evidence:
+      - "profile/projects.yaml Project Iris describes YOLOv8 object detection, OpenCLIP embeddings, FastAPI, MongoDB, Qdrant vector search, web scraping, and a Chromium extension."
+      - "profile/claims.yaml includes hands-on computer vision and multimodal retrieval experience."
+
+  - claim: "Ivar explored Project Iris as a startup through H&M's startup ecosystem and withdrew after market analysis."
+    used_in:
+      - cv.tex introduction
+      - cv.tex selected Project Iris section
+      - cv.tex detailed Project Iris section
+    evidence:
+      - "profile/projects.yaml Project Iris startup_context says Ivar explored launching it as a startup with his sister through H&M's startup ecosystem."
+      - "profile/projects.yaml Project Iris startup_context says they withdrew the application after market analysis showed that the market gap was not as large as initially envisioned."
+      - "profile/claims.yaml includes experience with early startup validation and market analysis."
+
+  - claim: "Ivar has prompt and agentic-system interest through resume_builder."
+    used_in:
+      - cv.tex selected resume_builder section
+      - cv.tex detailed resume_builder section
+    evidence:
+      - "profile/projects.yaml resume_builder describes tailored CV and cover-letter generation from structured profile data and job descriptions."
+      - "profile/projects.yaml resume_builder lists agentic prompting and system design as learning goals and agentic workflows as a technology."
+
+  - claim: "Ivar has a strong KTH education in Statistical Learning and Engineering Physics."
+    used_in:
+      - cv.tex introduction
+      - cv.tex education
+    evidence:
+      - "profile/education.yaml lists an MSc in Statistical Learning and Data Analytics and BSc in Engineering Physics from KTH, with GPA 5.0 / 5.0."
+
+  - claim: "Ivar has Stockholm and Swedish-language fit."
+    used_in:
+      - cv.tex introduction
+      - cv.tex education and language sections
+    evidence:
+      - "profile/profile.yaml lists Stockholm, Sweden as a location."
+      - "profile/profile.yaml and profile/skills.yaml list Swedish as native."
+      - "profile/education.yaml lists KTH in Stockholm and RaySearch experience is in Stockholm in profile/experience.yaml."
+
+explicit_non_claims:
+  - "The CV does not claim direct OpenAI API or ChatGPT deployment experience."
+  - "The CV does not claim incorporated startup founder, CTO, fundraising, or operating-company experience."
+  - "The CV does not claim professional reinforcement learning work."
+  - "The CV does not claim LLM fine-tuning, LLM serving, production prompt engineering, or production agent ownership."
+  - "The CV does not claim formal LLM evaluation or benchmark ownership."

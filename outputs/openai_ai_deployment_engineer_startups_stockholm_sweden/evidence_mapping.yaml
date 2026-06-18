@@ -16,6 +16,7 @@ sources_reviewed:
   - profile/writing_style/core_narrative.yaml
   - outputs/corti/cv.tex
   - outputs/corti/evidence_mapping.yaml
+  - outputs/openai_ai_deployment_engineer_startups_stockholm_sweden/cv.tex
 
 external_sources:
   - source: OpenAI careers listing
@@ -35,20 +36,32 @@ major_claims:
     used_in:
       - cv.tex introduction
       - cv.tex selected Valcon and Signum sections
+      - cover_letter.tex Valcon invoice project story
     evidence:
       - "profile/claims.yaml includes experience building production-grade machine-learning systems."
       - "profile/experience.yaml Valcon responsibilities include architecting and implementing an end-to-end production pipeline for a real-time deep neural network."
+      - "profile/experience.yaml Valcon invoice quality-control project describes a production system with around two-second response time, 100 percent recall within the first two weeks, and over 50 business processes captured by the model."
       - "profile/experience.yaml Signum responsibilities include owning and extending Kwarts and developing a pharmaceutical forecasting platform."
 
   - claim: "Ivar has experience translating technical problems for stakeholders and customers."
     used_in:
       - cv.tex introduction
       - cv.tex selected Valcon, Valtech, and Signum sections
+      - cover_letter.tex Valcon invoice project story
     evidence:
       - "profile/claims.yaml states Ivar is able to translate complex technical work for stakeholders."
       - "profile/experience.yaml Valcon responsibilities include presenting complex technical topics to non-technical stakeholders."
+      - "profile/experience.yaml Valcon invoice quality-control project says Ivar acted as project manager and stakeholder manager, translating a very non-technical customer's business problem into an ML workflow."
       - "profile/experience.yaml Valtech responsibilities include working closely with business stakeholders."
       - "profile/experience.yaml Signum responsibilities include supporting commercialisation and sales representatives."
+
+  - claim: "At Valcon, Ivar helped a team of around five people build an invoice quality-control ML pipeline."
+    used_in:
+      - cover_letter.tex paragraphs 2 and 3
+    evidence:
+      - "profile/experience.yaml Valcon invoice quality-control project says Ivar worked with a team of around five people to build an end-to-end ML pipeline."
+      - "profile/experience.yaml Valcon invoice quality-control project says the system quality-controlled employee-created invoices and suggested extra invoice lines."
+      - "profile/experience.yaml Valcon invoice quality-control project says the system had around two-second response time, reached 100 percent recall within the first two weeks, and captured over 50 business processes."
 
   - claim: "Ivar has natural-language-input ML experience."
     used_in:
@@ -60,8 +73,10 @@ major_claims:
     used_in:
       - cv.tex selected Project Iris section
       - cv.tex detailed Project Iris section
+      - cover_letter.tex Project iris paragraph
     evidence:
       - "profile/projects.yaml Project Iris describes YOLOv8 object detection, OpenCLIP embeddings, FastAPI, MongoDB, Qdrant vector search, web scraping, and a Chromium extension."
+      - "profile/projects.yaml Project Iris describes automating shop-the-look tagging and scraping publicly available data to create product demos."
       - "profile/claims.yaml includes hands-on computer vision and multimodal retrieval experience."
 
   - claim: "Ivar explored Project Iris as a startup through H&M's startup ecosystem and withdrew after market analysis."
@@ -69,10 +84,18 @@ major_claims:
       - cv.tex introduction
       - cv.tex selected Project Iris section
       - cv.tex detailed Project Iris section
+      - cover_letter.tex Project iris paragraph
     evidence:
-      - "profile/projects.yaml Project Iris startup_context says Ivar explored launching it as a startup with his sister through H&M's startup ecosystem."
+      - "profile/projects.yaml Project Iris startup_context says Ivar explored launching it as a startup with his sister through H&M's startup ecosystem/incubator."
       - "profile/projects.yaml Project Iris startup_context says they withdrew the application after market analysis showed that the market gap was not as large as initially envisioned."
       - "profile/claims.yaml includes experience with early startup validation and market analysis."
+
+  - claim: "Ivar is motivated by advanced ML in production settings."
+    used_in:
+      - cover_letter.tex paragraph 1
+    evidence:
+      - "profile/writing_style/core_narrative.yaml describes Ivar as a data scientist, builder, and researcher who enjoys understanding complex systems and turning ideas into working solutions."
+      - "profile/claims.yaml includes production-grade ML systems, embedding-based search and retrieval, source-grounded generation, and hands-on computer vision and multimodal retrieval experience."
 
   - claim: "Ivar has prompt and agentic-system interest through resume_builder."
     used_in:

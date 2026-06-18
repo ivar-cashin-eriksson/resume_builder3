@@ -18,19 +18,9 @@
 
 ## Compilation
 
-PDF compilation was not completed in this environment.
+PDF compilation was completed locally with `pdflatex` after updating the generated materials to reference `../../other_material/personal_info_dk.tex` for Denmark contact details.
 
-Blockers:
-
-- No LaTeX compiler was available (`latexmk`, `pdflatex`, and `tectonic` were not found).
-- The template references `../../other_material/personal_info.tex`, but `other_material/` is absent in this checkout.
-
-Build logs saved:
-
-- `build/cv_build.log`
-- `build/cover_letter_build.log`
-
-Expected PDFs once compiled in a complete local environment:
+Generated PDFs:
 
 - `cv.pdf`
 - `cover_letter.pdf`

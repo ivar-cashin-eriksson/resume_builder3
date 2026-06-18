@@ -12,7 +12,8 @@ Structured workspace for producing tailored CVs, cover letters, and research sta
 |-- templates/               # Base LaTeX templates
 |-- job_listings/            # Private adverts/listings, ignored by Git
 |-- other_material/          # Private supporting files, ignored by Git
-|   |-- personal_info.tex    # Contact details loaded by CV/letter templates
+|   |-- personal_info_dk.tex # Denmark contact details loaded by CV/letter templates
+|   |-- personal_info_se.tex # Sweden contact details loaded by CV/letter templates
 |   `-- images/              # Local image assets used by LaTeX
 `-- outputs/                 # Generated application packages, ignored by Git
 ```
@@ -27,13 +28,14 @@ Git should track the reusable parts: `profile/`, `prompts/`, `templates/`, and t
 
 ## Private Material
 
-Keep contact details in:
+Keep country-specific contact details in:
 
 ```text
-other_material/personal_info.tex
+other_material/personal_info_dk.tex
+other_material/personal_info_se.tex
 ```
 
-The CV and cover letter templates load that file after they are copied into `outputs/<listing_slug>/`, so image paths inside `personal_info.tex` should also be relative to the generated output folder:
+The CV and cover letter templates default to the Denmark file after they are copied into `outputs/<listing_slug>/`. For Sweden-facing applications, change the `\input` line to `../../other_material/personal_info_se.tex`. Image paths inside both personal info files should remain relative to the generated output folder:
 
 ```tex
 \includegraphics[height=0.9em]{../../other_material/images/<file>}

@@ -15,6 +15,7 @@ claims:
   evidence:
   - Owned and extended Kwarts at Signum.
   - Implemented an end-to-end production pipeline for a real-time deep neural network at Valcon.
+  - Built an invoice quality-control ML system at Valcon with around two-second response time, 100 percent recall within the first two weeks of production, and over 50 business processes captured by the model.
   - Built FastAPI, MongoDB, Qdrant, and Chromium extension architecture for Project iris.
   use_for:
   - ML engineering roles
@@ -63,6 +64,7 @@ claims:
 - claim: Able to translate complex technical work for stakeholders.
   evidence:
   - Presented regularly to non-technical stakeholders at Valcon, including C-level executives.
+  - At Valcon, translated a very non-technical customer's invoice quality-control business problem into an implementable ML workflow while acting as project manager and stakeholder manager.
   - Worked with business stakeholders at Valtech, including presenting for Rolex' CTO and other executives.
   - Supported sales representatives with commercialisation at Signum.
   - Collaborated with clinicians and medical physicists at RaySearch.
@@ -86,8 +88,18 @@ claims:
   - Built Project iris using YOLOv8 for object detection.
   - Used OpenCLIP embeddings for semantic item representation.
   - Implemented vector search with Qdrant.
+  - Built Project iris to automate shop-the-look tagging, using publicly available scraped data for demos and a Chromium extension to display the use case.
   - Worked with CT image analysis using CNNs and autoencoders at RaySearch.
   use_for:
   - computer vision PhDs
   - ML research engineering
   - multimodal AI roles
+
+- claim: Experience with early startup validation and market analysis.
+  evidence:
+  - Explored launching Project iris as a startup with my sister through H&M's startup ecosystem/incubator.
+  - Withdrew the application after market analysis showed that the market gap was not as large as initially envisioned.
+  use_for:
+  - startup-facing roles
+  - product-minded ML roles
+  - AI deployment roles

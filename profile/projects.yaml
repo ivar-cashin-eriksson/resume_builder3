@@ -2,10 +2,14 @@ projects:
 - name: Project iris
   stylised: "'Project iris' with monospace font"
   period: 2025--2025
-  type: Solo project
-  summary: End-to-end computer vision system for making product images on e-commerce sites interactive.
+  type: Solo project / startup exploration
+  summary: End-to-end computer vision system for making product images on e-commerce sites interactive and automating shop-the-look tagging.
   description: Detects individual items in e-commerce imagery, embeds them semantically, and links similar
-    products across a web store through a real-time browser overlay.
+    products across a web store through a real-time browser overlay. The project started from an opportunity
+    to automate shop-the-look tagging.
+  startup_context:
+  - Explored launching Project iris as a startup together with my sister through H&M's startup ecosystem/incubator.
+  - Withdrew the application after market analysis showed that the market gap was not as large as initially envisioned.
   components:
   - YOLOv8 model for item detection.
   - OpenCLIP embeddings for semantic item representation.
@@ -14,6 +18,7 @@ projects:
   - Qdrant vector index for similarity search.
   - Custom Chromium plug-in overlaying clickable links on web shop imagery in real time.
   - Dynamic scraping and indexing pipeline for arbitrary e-commerce sites.
+  - Scraped publicly available data to create product demos.
   learning_goals:
   - fine-tuning deep learning models
   - practical ML engineering
@@ -30,8 +35,10 @@ projects:
   - computer vision
   - e-commerce
   - recommendation/linking systems
+  - startup validation
   motivation:
   - Desire to learn more about ML engineering.
+  - Interest in validating whether the technical product solved a real market gap.
 
 - name: resume_builder3
   stylised: "'resume_builder3' with a monospace font"

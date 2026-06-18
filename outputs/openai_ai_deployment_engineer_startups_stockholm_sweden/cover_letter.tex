@@ -1,0 +1,57 @@
+% %--------------------------
+% %	CONFIGURATION
+% %--------------------------
+\documentclass[11pt,a4paper]{moderncv}
+\moderncvstyle{classic}
+\moderncvcolor{black}
+\definecolor{firstnamecolor}{rgb}{0,0,0}
+
+% Basic packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[hscale=0.7, top=2cm, bottom=2cm]{geometry}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{DarkBlue}{RGB}{0, 0, 150}
+\usepackage[colorlinks=true, urlcolor=DarkBlue, linkcolor=DarkBlue]{hyperref}
+
+\usepackage{microtype}
+
+% Configure font settings
+\renewcommand{\rmdefault}{ppl}
+\renewcommand{\sfdefault}{phv}
+\renewcommand*{\namefont}{\fontsize{26}{18}\mdseries}
+
+% Configure microtype
+\microtypesetup{expansion=false}
+
+% Load sensitive information
+\input{../../other_material/personal_info_se.tex}
+
+% %--------------------------
+\begin{document}
+\makecvtitle
+Hello OpenAI team,
+
+\vspace*{2em}
+I am writing to apply for the AI Deployment Engineer, Startups role. I'm excited to get the chance to work with advanced machine learning in a production setting: not only building models or prototypes, but helping real users turn ambiguous workflows into reliable systems. That is the part of applied ML I have found most interesting in practice.
+
+\hspace*{2em}
+One Valcon project is a good example. Together with a team of eight people, I helped build an end-to-end ML pipeline for invoice quality control. The customer wanted to quality-control invoices created by employees and suggest extra invoice lines that should be added. My role shifted throughout the project but included project and stakeholder managing, architecting and Data Science. A large part of the work was converting the customer's non-technical understanding, and in-depth business knowledge of the problem into a concrete ML workflow: what the model should predict, how the process should behave, what counted as a miss, and how the output would fit into daily operations. We also collaborated with a third-party consultancy company to integrate our API into their existing applications and workflow.
+
+\hspace*{2em}
+The translation layer mattered as much as the modelling. Without it, the customer would have struggled to move from a business pain point to a deployed solution. The system went into production with roughly two-second response time, reached 100 percent recall within the first two weeks, and captured more than 50 business processes in the model. It taught me how valuable it is to stand between domain users, engineers, and models, and to keep iterating until the technical system actually matches the workflow.
+
+\hspace*{2em}
+I have also explored the startup side through Project \texttt{iris}. I saw an opportunity to automate shop-the-look tagging in e-commerce, then built an end-to-end pipeline around it: scraping publicly available data to create demos, detecting products in images, embedding them semantically, linking similar products across a store, and building a Chromium plug-in to show the use case directly in the browser. The project caught the attention of H\&M's startup incubator, and I explored launching it. We ultimately withdrew the application after market analysis showed that the gap was not as wide as we had expected.
+
+\hspace*{2em}
+That experience made the product side of AI more concrete for me. A technically plausible system is not enough; the workflow, market need, failure modes, and user value all have to line up. OpenAI's deployment work with startups seems to sit exactly in that space: helping ambitious technical users find where frontier models are useful, where they fail, and how those signals should feed back into better products and model behaviour.
+
+\vspace*{2em}
+I would welcome the opportunity to discuss how my experience in production ML, stakeholder translation, and startup-oriented AI prototyping could be useful to OpenAI. Regards,
+
+\vspace*{1em}
+Ivar Cashin Eriksson.
+
+\end{document}
+

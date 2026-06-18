@@ -46,6 +46,13 @@ experience:
   - Presented complex technical topics to non-technical stakeholders.
   - Architected and implemented an end-to-end production pipeline for a real-time deep neural network.
   - Built systems involving NLP and high-dimensional multi-class labels.
+  - Invoice quality-control ML project
+    - Worked with a team of around five people to build an end-to-end ML pipeline.
+    - Role included project management, stakeholder management, and translating the customer's business problem into a machine-learning workflow.
+    - Customer was very non-technical and needed substantial help converting the business problem into an implementable solution.
+    - The system quality-controlled employee-created invoices and suggested extra invoice lines to add.
+    - In production, the system had around two-second response time and reached 100 percent recall within the first two weeks.
+    - The model captured and automated over 50 business processes.
   - Developed IoT manufacturing analytics, including clustering algorithms for operator productivity patterns.
   recognition:
   - Valcon People's Choice Award for exemplary work, leadership, team spirit, and scientific curiosity.

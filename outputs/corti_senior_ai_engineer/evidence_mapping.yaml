@@ -1,0 +1,125 @@
+listing_slug: corti_senior_ai_engineer
+listing_file: outputs/corti_senior_ai_engineer/listing.md
+
+sources_reviewed:
+  - README.md
+  - AGENTS.md
+  - templates/README.md
+  - templates/cv.tex
+  - templates/cover_letter.tex
+  - profile/profile.yaml
+  - profile/education.yaml
+  - profile/experience.yaml
+  - profile/skills.yaml
+  - profile/projects.yaml
+  - profile/courses.yaml
+  - profile/claims.yaml
+  - profile/awards_and_achievements.yaml
+  - profile/writing_style/style.yaml
+  - profile/writing_style/cover_letter_style.yaml
+  - outputs/kapa_ai_research_engineer_applied_ai/cv.tex
+  - outputs/kapa_ai_research_engineer_applied_ai/listing.md
+  - outputs/kapa_ai_research_engineer_applied_ai/evidence_mapping.yaml
+  - outputs/corti/cv.tex
+  - outputs/corti/cover_letter.tex
+  - outputs/corti_senior_mlops_engineer/cv.tex
+  - outputs/corti_senior_mlops_engineer/cover_letter.tex
+  - outputs/corti_senior_mlops_engineer/evidence_mapping.yaml
+
+external_sources:
+  - source: Corti Ashby posting API / job listing
+    url: https://jobs.ashbyhq.com/corti/53b8f494-4375-44e1-88ee-d644dbafaba6
+    used_for:
+      - Confirming role title, location, reporting line, responsibilities, technology signals, and requirements.
+
+major_claims:
+  - claim: "Ivar has seven years of applied machine-learning experience."
+    used_in:
+      - cv.tex introduction
+      - cover_letter.tex paragraph 1
+    evidence:
+      - "profile/experience.yaml lists data science and ML roles beginning at RaySearch Laboratories in 2019 and continuing through the present."
+      - "Prior applications in outputs/corti and outputs/kapa_ai_research_engineer_applied_ai use the same seven-year framing."
+
+  - claim: "Ivar has a strong quantitative background from KTH in Statistical Learning and Engineering Physics."
+    used_in:
+      - cv.tex introduction
+      - cv.tex education
+      - cover_letter.tex paragraph 1
+    evidence:
+      - "profile/education.yaml lists an MSc in Statistical Learning and Data Analytics and a BSc in Engineering Physics from KTH, both with GPA 5.0 / 5.0."
+      - "profile/courses.yaml lists statistical machine learning, modern methods of statistical learning, optimisation, probability, reinforcement learning, and topological data analysis."
+
+  - claim: "Ivar has current LLM embedding work for similarity search and matching workflows."
+    used_in:
+      - cv.tex selected Signum section
+      - cv.tex detailed Signum section
+      - cover_letter.tex paragraph 2
+    evidence:
+      - "profile/experience.yaml Signum responsibilities include using LLMs to embed free text for downstream similarity search and matching workflows."
+      - "profile/claims.yaml includes experience with embedding-based search and vector retrieval workflows."
+
+  - claim: "Ivar has embedding-based retrieval and vector-search experience."
+    used_in:
+      - cv.tex introduction
+      - cv.tex selected Project Iris section
+      - cv.tex detailed Project Iris section
+      - cover_letter.tex paragraph 2
+    evidence:
+      - "profile/projects.yaml Project Iris uses OpenCLIP embeddings, Qdrant vector search, FastAPI, MongoDB, dynamic scraping, and a Chromium extension."
+      - "profile/skills.yaml lists OpenCLIP, Qdrant, vector search, FastAPI, MongoDB, and web scraping."
+      - "profile/claims.yaml includes experience with embedding-based search and vector retrieval workflows."
+
+  - claim: "Ivar has experience with source-grounded generation, evidence checking, and agentic workflow automation."
+    used_in:
+      - cv.tex selected resume_builder3 section
+      - cv.tex detailed resume_builder3 section
+      - cover_letter.tex paragraph 3
+    evidence:
+      - "profile/projects.yaml describes resume_builder3 as a source-grounded resume builder and human-in-the-loop job-application workflow."
+      - "profile/projects.yaml describes evidence mapping, gap reports, job-ad crawling, daily digests, GitHub issues, GitHub Actions, Codex branches, and PR review."
+      - "profile/claims.yaml includes experience building agentic workflow automation and source-grounded generation."
+
+  - claim: "Ivar has production ML systems experience."
+    used_in:
+      - cv.tex introduction
+      - cv.tex selected Signum section
+      - cv.tex selected Valcon section
+      - cover_letter.tex paragraphs 1 and 4
+    evidence:
+      - "profile/claims.yaml includes experience building production-grade machine-learning systems."
+      - "profile/experience.yaml Signum responsibilities include ownership of Kwarts and work across architecture, data science, ML engineering, software engineering, and project management for a forecasting platform."
+      - "profile/experience.yaml Valcon responsibilities include architecting and implementing an end-to-end production pipeline for a real-time deep neural network."
+
+  - claim: "Ivar has medical AI and clinician-collaboration experience."
+    used_in:
+      - cv.tex selected RaySearch section
+      - cv.tex detailed RaySearch section
+      - cover_letter.tex paragraph 4
+    evidence:
+      - "profile/experience.yaml RaySearch responsibilities include automated radiotherapy planning, autoencoders on segmented 3D CT scans, sparse Gaussian processes, optimisation, and collaboration with medical physicists and clinicians."
+      - "profile/claims.yaml includes research experience in medical AI and probabilistic modelling."
+
+  - claim: "Ivar has experience translating complex technical work across product, engineering, and stakeholder settings."
+    used_in:
+      - cover_letter.tex paragraph 5
+      - cv.tex selected Valcon and Signum sections
+    evidence:
+      - "profile/claims.yaml includes stakeholder translation evidence from Valcon, Valtech, Signum, and RaySearch."
+      - "profile/experience.yaml includes mentoring, trainings, stakeholder presentations, UX collaboration, sales support, and clinician collaboration."
+
+  - claim: "Ivar has Python, PyTorch, TensorFlow, FastAPI, Docker, MLflow, Databricks, AWS, Azure, Qdrant, and CI/CD pipeline exposure."
+    used_in:
+      - cv.tex skills section
+      - cover_letter.tex paragraph 5
+    evidence:
+      - "profile/skills.yaml lists these technologies under programming languages, ML libraries, ML engineering and backend, and cloud/data platforms."
+
+explicit_non_claims:
+  - "The materials do not claim direct work with Corti, Symphony, the NHS, EHR vendors, or virtual care platforms."
+  - "The materials do not claim transformer training, fine-tuning, post-training, or production LLM inference ownership."
+  - "The materials do not claim a full production RAG system."
+  - "The materials do not claim formal LLM benchmark ownership or human-evaluation framework ownership."
+  - "The materials do not claim Go, Kubernetes, Kafka, or NVIDIA Triton experience."
+  - "The materials do not claim clinical NLP, speech-to-text, medical coding, or healthcare compliance implementation."
+

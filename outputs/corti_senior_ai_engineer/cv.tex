@@ -1,0 +1,148 @@
+% %--------------------------
+% %	CONFIGURATION
+% %--------------------------
+\documentclass[11pt,a4paper]{moderncv}
+\moderncvstyle{classic}
+\moderncvcolor{black}
+\definecolor{firstnamecolor}{rgb}{0,0,0}
+
+% Basic packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[scale=0.9]{geometry}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{DarkBlue}{RGB}{0, 0, 150}
+\usepackage[colorlinks=true, urlcolor=DarkBlue, linkcolor=DarkBlue]{hyperref}
+
+\usepackage{microtype}
+
+% Configure font settings
+\renewcommand{\rmdefault}{ppl}
+\renewcommand{\sfdefault}{phv}
+\renewcommand*{\namefont}{\fontsize{26}{18}\mdseries}
+
+% Configure microtype
+\microtypesetup{expansion=false}
+
+% Load sensitive information
+\input{../../other_material/personal_info.tex}
+
+% Title document
+\title{Curriculum Vitae}
+
+% %--------------------------
+
+\begin{document}
+\makecvtitle
+
+\section*{Introduction}
+I am a data scientist and ML engineer with seven years of machine-learning experience and a strong quantitative background from KTH's Engineering Physics programme and MSc specialisation in Statistical Learning and Data Analytics. I have experience with production ML ownership, LLM embeddings, vector search, source-grounded generation, agentic workflow automation, and healthcare AI. I am applying to Corti because the Senior AI Engineer role combines applied AI engineering with clinical-grade systems where reliability, validation, and product usefulness matter.
+
+% ---------------------------
+% Selected Work Experience
+% ---------------------------
+\section{Selected Project, Research, and ML Engineering Experience}
+
+% ---------------------------
+\large{Full-Stack Data Scientist @ Signum Life Science}
+\normalsize
+\begin{itemize}
+    \item Build retrieval components for RAG-style systems: embeddings, semantic-similarity evaluation, retrieval-failure analysis, and domain-specific matching quality.
+    \item Architect and build an end-to-end forecasting platform for pharmaceutical price and demand.
+    \item Owned an AWS-hosted next-best-action system and extended it with explainable AI features.
+\end{itemize}
+
+{\footnotesize\textit{Keywords: LLM embeddings, semantic search, Databricks, MLflow, AWS, XGBoost, forecasting, explainable AI}}
+
+\hfill{\small{\textit{\hyperref[sec:signum]{Read more...}}}}
+
+% ---------------------------
+\large{Solo Project @ \texttt{resume\_builder3}}
+\normalsize
+\begin{itemize}
+    \item Build a source-grounded system for generating tailored application materials from profile YAMLs.
+    \item Produce evidence mappings and gap reports to keep generated claims traceable and weak fit visible.
+    \item Run a human-in-the-loop job-hunter workflow from web crawling to daily digests, GitHub issues, GitHub Actions, Codex branches, and PR review.
+\end{itemize}
+
+{\footnotesize\textit{Keywords: agentic workflows, source-grounded generation, context engineering, evidence mapping, GitHub Actions, Codex}}
+
+\hfill{\small{\textit{\hyperref[sec:resume_builder]{Read more...}}}}
+
+% ---------------------------
+\large{Researcher within Data Science @ RaySearch Laboratories}
+\normalsize
+\begin{itemize}
+    \item Developed ML methods for automated radiotherapy for cancer treatment from segmented 3D CT scans.
+    \item Used autoencoders, sparse Gaussian processes, learned similarity metrics, and optimisation for dose planning.
+    \item Collaborated with medical physicists and clinicians to align models with oncological standards and practical workflows.
+\end{itemize}
+
+{\footnotesize\textit{Keywords: medical AI, clinical decision support, deep learning, representation learning, probabilistic modelling, 3D CT}}
+
+\hfill{\small{\textit{\hyperref[sec:raysearch]{Read more...}}}}
+
+\section{Education}
+
+\cventry{2015--2020}{Royal Institute of Technology, KTH -- Data Science and Engineering}{}{GPA: 5.0 (out of 5.0)}{}{Master: Statistical Learning and Data Analytics, Bachelor: Engineering Physics. \href{https://kth.diva-portal.org/smash/get/diva2:1431327/FULLTEXT02.pdf}{See thesis}. \newline Relevant coursework: Statistical Machine Learning; Modern Methods of Statistical Learning; Reinforcement Learning; Optimization.}
+
+\cventry{2019--2019}{Swiss Federal Institute of Technology, ETH -- Applied Mathematics}{Exchange}{}{}{}
+
+\cventry{2017--2022}{Stockholm University, SU -- Economics}{Supplementary Bachelor's Degree}{}{}{}
+
+% ---------------------------
+% Skills and Other
+% ---------------------------
+\section{Skills and Other}
+\normalsize
+\cvitem{Technology}{Python, SQL, PyTorch, TensorFlow, Scikit-learn, SHAP, OpenCLIP, MLflow, FastAPI, Docker, MongoDB, Qdrant, Databricks, AWS, MS Azure, CI/CD pipelines.}
+\cvitem{Methods}{LLM embeddings, vector search, deep learning, representation learning, explainable AI.}
+\cvitem{Language}{\textit{Native}: English, Swedish. \textit{Intermediate}: Danish.}
+\cvitem{Other}{Valcon People's Choice Award (2023); IYPT Sweden (2015); Mensa Sweden; woodworker.}
+
+\newpage
+
+% ---------------------------
+% Detailed Work Experience
+% ---------------------------
+\section{Detailed Work Experience}
+
+% ---------------------------
+\phantomsection\label{sec:signum}
+\cventry{2024--Present}{Full-Stack Data Scientist}{Signum Life Science}{Copenhagen}{} {
+    At Signum, I work across architecture, project management, data science, ML engineering, and software engineering for many ongoing projects. The role requires taking loosely defined business problems and turning them into maintainable technical work.
+    \newline\hspace*{2em}
+    In my current task, I am using LLMs to embed free text for downstream similarity search and matching workflows. The work focuses on the retrieval layer of RAG-style systems: embedding free text, evaluating semantic similarity, analysing retrieval failures, and improving matching quality in domain-specific workflows.
+    \newline\hspace*{2em}
+    Alongside this, I am working on a forecasting platform for pharmaceutical price and demand forecasting, including patient population forecasts. I work across architecture, project management, data science, ML engineering, and software engineering for the platform, with Databricks as a core part of the implementation. The platform is being designed to provide thousands of simultaneous forecasts generated by thousands of independently trained models.
+    \newline\hspace*{2em}
+    Beyond model development, I organised an internal week-long hackathon with up to 40 participants.
+}{}
+
+% ---------------------------
+\phantomsection\label{sec:valcon}
+\cventry{2022--2024}{Principal Data Scientist}{Valcon}{Copenhagen}{} {
+    At Valcon, I led data science projects across pharma, energy, IoT, and manufacturing. The role involved senior ownership in settings where scope, data quality, and stakeholder expectations were often not fully defined at the outset.
+    \newline\hspace*{2em}
+    One project involved training a real-time deep neural network with a custom training pipeline and modular architecture. The training data consisted of natural-language inputs and high-dimensional multi-class labels, which made for a challenging prediction problem. I was responsible for the end-to-end production pipeline.
+    \newline\hspace*{2em}
+    I mentored junior colleagues, led explainable AI and Git trainings, and regularly presented technical topics to non-technical stakeholders. I was awarded the Valcon People's Choice Award for exemplary work, leadership, team spirit, and scientific curiosity.
+}{}
+
+% ---------------------------
+\phantomsection\label{sec:valtech}
+\cventry{2021--2022}{Data Scientist}{Valtech}{Copenhagen}{}{}{}
+
+% ---------------------------
+\phantomsection\label{sec:raysearch}
+\cventry{2019--2021}{Researcher within Data Science}{RaySearch Laboratories}{Stockholm}{} {
+    At RaySearch Laboratories, I worked on automating radiotherapy planning using deep learning, probabilistic modelling, and multi-objective optimisation. I developed a pipeline that extracted latent anatomical features from segmented 3D CT scans using autoencoders, then used those representations to identify similar patients via a learned similarity metric. Dose-volume histograms and spatial dose distributions were then predicted using sparse Gaussian processes, providing a probabilistic framework for dose planning conditioned on patient geometry. I also redesigned lexicographic optimisation algorithms to better reflect clinical decision hierarchies.
+    \newline\hspace*{2em}
+    I collaborated closely with medical physicists and clinicians throughout, ensuring the models aligned with oncological standards and practical workflow requirements.
+}{}
+
+\section{Selected Projects}
+\cvitem{\phantomsection\label{sec:resume_builder}\texttt{resume\_ builder3}}{Source-grounded agentic workflow for job applications. The system uses structured profile YAML, job listings, LaTeX templates, and previous examples to generate tailored CVs and cover letters. It also produces evidence mappings and gap reports so major claims can be traced back to source material and weak fit is visible before submission. I extended the workflow with a human-in-the-loop job-hunter agent that crawls the web for relevant adverts, sends a daily digest, waits for my response, creates GitHub issues for selected roles, triggers GitHub Actions/Codex to generate a branch with listing information and application materials, and opens a PR for review. This application is of course generated with this system!}
+\cvitem{Project \texttt{iris}}{Computer-vision retrieval system for identifying fashion items across web-shop images. Built object detection, embedding generation, vector indexing, and similarity search using YOLOv8, OpenCLIP, Qdrant, FastAPI, MongoDB, scraping, and a Chromium extension.}
+
+\end{document}

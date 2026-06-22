@@ -151,7 +151,7 @@ jobs:
           codex-args: '--config web_search="live"'
           sandbox: workspace-write
           output-file: .github/codex/runtime/briefing_summary.md
-          safety-strategy: drop-sudo
+          safety-strategy: unprivileged-user
 
       - name: Validate briefing output
         run: |
@@ -172,7 +172,7 @@ jobs:
           codex-args: '--config web_search="disabled"'
           sandbox: workspace-write
           output-file: .github/codex/runtime/generator_summary.md
-          safety-strategy: drop-sudo
+          safety-strategy: unprivileged-user
 
       - name: Run fit critic
         uses: openai/codex-action@v1
@@ -184,7 +184,7 @@ jobs:
           codex-args: '--config web_search="disabled"'
           sandbox: workspace-write
           output-file: .github/codex/runtime/fit_critic_summary.md
-          safety-strategy: drop-sudo
+          safety-strategy: unprivileged-user
 
       - name: Run style critic
         uses: openai/codex-action@v1
@@ -196,7 +196,7 @@ jobs:
           codex-args: '--config web_search="disabled"'
           sandbox: workspace-write
           output-file: .github/codex/runtime/style_critic_summary.md
-          safety-strategy: drop-sudo
+          safety-strategy: unprivileged-user
 
       - name: Validate critic outputs
         run: |
@@ -231,7 +231,7 @@ jobs:
           codex-args: '--config web_search="disabled"'
           sandbox: workspace-write
           output-file: .github/codex/runtime/revision_summary.md
-          safety-strategy: drop-sudo
+          safety-strategy: unprivileged-user
 
       - name: Compile PDFs
         run: |

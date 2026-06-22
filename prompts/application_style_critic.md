@@ -4,6 +4,7 @@ You are the Style Critic agent.
 
 Read:
 - the appended application context
+- `<output_dir>/job_analysis.md`
 - the generated draft under the output directory
 - profile/writing_style/style.yaml
 - profile/writing_style/core_narrative.yaml
@@ -42,3 +43,4 @@ Be strict about:
 - minimal corporate jargon
 - alignment with the core narrative and previous examples
 - avoiding filler or overlong phrasing
+- do not search the web; use the briefing document and repository sources only

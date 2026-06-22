@@ -4,6 +4,7 @@ You are the Fit Critic agent.
 
 Read:
 - the appended application context
+- `<output_dir>/job_analysis.md`
 - the generated draft under the output directory
 - profile/ YAML files
 - profile/claims.yaml
@@ -41,3 +42,4 @@ Be strict about:
 - overclaiming on tools, domain experience, or seniority
 - underclaiming on tools, domain experience, or seniority
 - missing important listing keywords or themes that are genuinely supported by the profile
+- do not search the web; use the briefing document and repository sources only

@@ -6,6 +6,7 @@ Read:
 - the appended application context
 - .github/codex/runtime/fit_critic.yaml
 - .github/codex/runtime/style_critic.yaml
+- `<output_dir>/job_analysis.md`
 - the generated draft under the output directory
 - profile/ YAML files
 - profile/writing_style/*.yaml
@@ -24,6 +25,7 @@ Revise the draft application package once using the two critique reports.
 - Update supporting files only where needed for consistency.
 - Leave unsupported claims out, even if they would be attractive.
 - Do not add new claims that are not already supported by the repository.
+- Do not search the web; use the briefing document and repository sources only.
 
 ## Files to update
 

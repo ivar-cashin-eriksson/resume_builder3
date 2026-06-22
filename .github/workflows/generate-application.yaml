@@ -73,12 +73,34 @@ jobs:
           - Every major claim in the CV and cover letter must be traceable to a profile YAML file or previous application example.
           - Prefer omission over unsupported claims.
           - Compile PDFs when possible.
+          - Only the briefing step may use web search. Later steps must not browse the web.
           EOF
 
+          cat prompts/application_briefing.md .github/codex/runtime/application_context.md > .github/codex/runtime/briefing_prompt.md
           cat prompts/application_generator.md .github/codex/runtime/application_context.md > .github/codex/runtime/generator_prompt.md
           cat prompts/application_fit_critic.md .github/codex/runtime/application_context.md > .github/codex/runtime/fit_critic_prompt.md
           cat prompts/application_style_critic.md .github/codex/runtime/application_context.md > .github/codex/runtime/style_critic_prompt.md
           cat prompts/application_revision.md .github/codex/runtime/application_context.md > .github/codex/runtime/revision_prompt.md
+
+      - name: Run listing briefing
+        uses: openai/codex-action@v1
+        with:
+          openai-api-key: ${{ secrets.OPENAI_API_KEY }}
+          prompt-file: .github/codex/runtime/briefing_prompt.md
+          model: gpt-5.4-mini
+          effort: medium
+          sandbox: workspace-write
+          output-file: .github/codex/runtime/briefing_summary.md
+          safety-strategy: drop-sudo
+
+      - name: Validate briefing output
+        run: |
+          set -euo pipefail
+
+          if [ ! -f "$OUTPUT_DIR/job_analysis.md" ]; then
+            echo "Missing briefing output: $OUTPUT_DIR/job_analysis.md" >&2
+            exit 1
+          fi
 
       - name: Generate draft package
         uses: openai/codex-action@v1

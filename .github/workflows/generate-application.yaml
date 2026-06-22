@@ -21,8 +21,8 @@ jobs:
     if: >
       github.event_name == 'workflow_dispatch' ||
       (
-        steps.issue.outputs.user.login == 'ivar-cashin-eriksson' &&
-        contains(steps.issue.outputs.labels.*.name, 'job-application')
+        github.event.issue.user.login == 'ivar-cashin-eriksson' &&
+        contains(github.event.issue.labels.*.name, 'job-application')
       )
     runs-on: ubuntu-latest
 
@@ -37,11 +37,12 @@ jobs:
         id: issue
         env:
           GH_TOKEN: ${{ github.token }}
-          EVENT_NAME: ${{ github.event_name }}
           MANUAL_ISSUE_NUMBER: ${{ inputs.issue_number }}
-          EVENT_ISSUE_NUMBER: ${{ steps.issue.outputs.number }}
+          EVENT_ISSUE_NUMBER: ${{ github.event.issue.number }}
         run: |
           set -euo pipefail
+
+          mkdir -p .github/codex
 
           ISSUE_NUMBER="${EVENT_ISSUE_NUMBER:-$MANUAL_ISSUE_NUMBER}"
 

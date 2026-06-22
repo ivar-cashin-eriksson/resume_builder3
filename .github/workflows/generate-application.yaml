@@ -1,0 +1,281 @@
+name: Generate application materials
+
+on:
+  issues:
+    types: [labeled]
+
+  workflow_dispatch:
+    inputs:
+      issue_number:
+        description: "Issue number to generate materials for"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+jobs:
+  generate-application:
+    if: >
+      github.event_name == 'workflow_dispatch' ||
+      (
+        steps.issue.outputs.user.login == 'ivar-cashin-eriksson' &&
+        contains(steps.issue.outputs.labels.*.name, 'job-application')
+      )
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Create runtime directory
+        run: mkdir -p .github/codex
+
+      - name: Load issue data
+        id: issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EVENT_NAME: ${{ github.event_name }}
+          MANUAL_ISSUE_NUMBER: ${{ inputs.issue_number }}
+          EVENT_ISSUE_NUMBER: ${{ steps.issue.outputs.number }}
+        run: |
+          set -euo pipefail
+
+          ISSUE_NUMBER="${EVENT_ISSUE_NUMBER:-$MANUAL_ISSUE_NUMBER}"
+
+          if [ -z "$ISSUE_NUMBER" ]; then
+            echo "No issue number found." >&2
+            exit 1
+          fi
+
+          gh issue view "$ISSUE_NUMBER" \
+            --json number,title,body,author,labels \
+            > .github/codex/runtime_issue.json
+
+          AUTHOR=$(jq -r '.author.login' .github/codex/runtime_issue.json)
+          LABELS=$(jq -r '[.labels[].name] | join(", ")' .github/codex/runtime_issue.json)
+
+          if [ "$AUTHOR" != "ivar-cashin-eriksson" ]; then
+            echo "Issue author is $AUTHOR, expected ivar-cashin-eriksson." >&2
+            exit 1
+          fi
+
+          if ! jq -e '.labels[].name == "job-application"' .github/codex/runtime_issue.json >/dev/null; then
+            echo "Issue does not have label: job-application" >&2
+            exit 1
+          fi
+
+          {
+            echo "number=$(jq -r '.number' .github/codex/runtime_issue.json)"
+            echo "title=$(jq -r '.title' .github/codex/runtime_issue.json)"
+            echo "labels=$LABELS"
+
+            echo "body<<EOF"
+            jq -r '.body // ""' .github/codex/runtime_issue.json
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Prepare application context and prompt files
+        env:
+          ISSUE_TITLE: ${{ steps.issue.outputs.title }}
+          ISSUE_BODY: ${{ steps.issue.outputs.body }}
+          ISSUE_LABELS: ${{ steps.issue.outputs.labels }}
+          ISSUE_NUMBER: ${{ steps.issue.outputs.number }}
+        run: |
+          set -euo pipefail
+
+          mkdir -p .github/codex/runtime
+
+          LISTING_SLUG=$(printf '%s' "$ISSUE_TITLE" \
+            | sed -E 's/^[Aa]pply:[[:space:]]*//' \
+            | tr '[:upper:]' '[:lower:]' \
+            | sed -E 's/[^a-z0-9]+/-/g' \
+            | sed -E 's/^-+|-+$//g' \
+            | cut -c1-80)
+
+          if [ -z "$LISTING_SLUG" ]; then
+            LISTING_SLUG="application-${{ steps.issue.outputs.number }}"
+          fi
+
+          OUTPUT_DIR="outputs/${LISTING_SLUG}"
+
+          echo "LISTING_SLUG=$LISTING_SLUG" >> "$GITHUB_ENV"
+          echo "OUTPUT_DIR=$OUTPUT_DIR" >> "$GITHUB_ENV"
+          echo "BRANCH_NAME=application/${LISTING_SLUG}" >> "$GITHUB_ENV"
+
+          cat > .github/codex/runtime/application_context.md <<EOF
+          # Application Context
+
+          ## GitHub Issue
+
+          Title: $ISSUE_TITLE
+
+          Body:
+          $ISSUE_BODY
+
+          Labels: $ISSUE_LABELS
+
+          ## Derived Repository Targets
+
+          - listing_slug: $LISTING_SLUG
+          - output_dir: $OUTPUT_DIR
+
+          ## Hard Rules
+
+          - Use only facts found in the repository or the approved listing material.
+          - Do not invent experience, publications, grades, tools, employers, dates, awards, or achievements.
+          - Keep the tone direct, personal, factual, modest, and in British English.
+          - Make no changes outside \`$OUTPUT_DIR/\`.
+          - Every major claim in the CV and cover letter must be traceable to a profile YAML file or previous application example.
+          - Prefer omission over unsupported claims.
+          - Compile PDFs when possible.
+          - Only the briefing step may use web search. Later steps must not browse the web.
+          EOF
+
+          cat prompts/application_briefing.md .github/codex/runtime/application_context.md > .github/codex/runtime/briefing_prompt.md
+          cat prompts/application_generator.md .github/codex/runtime/application_context.md > .github/codex/runtime/generator_prompt.md
+          cat prompts/application_fit_critic.md .github/codex/runtime/application_context.md > .github/codex/runtime/fit_critic_prompt.md
+          cat prompts/application_style_critic.md .github/codex/runtime/application_context.md > .github/codex/runtime/style_critic_prompt.md
+          cat prompts/application_revision.md .github/codex/runtime/application_context.md > .github/codex/runtime/revision_prompt.md
+
+      - name: Run listing briefing
+        uses: openai/codex-action@v1
+        with:
+          openai-api-key: ${{ secrets.OPENAI_API_KEY }}
+          prompt-file: .github/codex/runtime/briefing_prompt.md
+          model: gpt-5.4-mini
+          effort: medium
+          codex-args: '--config web_search="live"'
+          sandbox: workspace-write
+          output-file: .github/codex/runtime/briefing_summary.md
+          safety-strategy: drop-sudo
+
+      - name: Validate briefing output
+        run: |
+          set -euo pipefail
+
+          if [ ! -f "$OUTPUT_DIR/job_analysis.md" ]; then
+            echo "Missing briefing output: $OUTPUT_DIR/job_analysis.md" >&2
+            exit 1
+          fi
+
+      - name: Generate draft package
+        uses: openai/codex-action@v1
+        with:
+          openai-api-key: ${{ secrets.OPENAI_API_KEY }}
+          prompt-file: .github/codex/runtime/generator_prompt.md
+          model: gpt-5.4-mini
+          effort: medium
+          codex-args: '--config web_search="disabled"'
+          sandbox: workspace-write
+          output-file: .github/codex/runtime/generator_summary.md
+          safety-strategy: drop-sudo
+
+      - name: Run fit critic
+        uses: openai/codex-action@v1
+        with:
+          openai-api-key: ${{ secrets.OPENAI_API_KEY }}
+          prompt-file: .github/codex/runtime/fit_critic_prompt.md
+          model: gpt-5.4-mini
+          effort: low
+          codex-args: '--config web_search="disabled"'
+          sandbox: workspace-write
+          output-file: .github/codex/runtime/fit_critic_summary.md
+          safety-strategy: drop-sudo
+
+      - name: Run style critic
+        uses: openai/codex-action@v1
+        with:
+          openai-api-key: ${{ secrets.OPENAI_API_KEY }}
+          prompt-file: .github/codex/runtime/style_critic_prompt.md
+          model: gpt-5.4-mini
+          effort: low
+          codex-args: '--config web_search="disabled"'
+          sandbox: workspace-write
+          output-file: .github/codex/runtime/style_critic_summary.md
+          safety-strategy: drop-sudo
+
+      - name: Validate critic outputs
+        run: |
+          set -euo pipefail
+
+          for file in .github/codex/runtime/fit_critic.yaml .github/codex/runtime/style_critic.yaml; do
+            if [ ! -f "$file" ]; then
+              echo "Missing critic output: $file" >&2
+              exit 1
+            fi
+          done
+
+          grep -q '^listing_slug:' .github/codex/runtime/fit_critic.yaml
+          grep -q '^verdict:' .github/codex/runtime/fit_critic.yaml
+          grep -q '^score:' .github/codex/runtime/fit_critic.yaml
+          grep -q '^must_fix:' .github/codex/runtime/fit_critic.yaml
+          grep -q '^recommended_edits:' .github/codex/runtime/fit_critic.yaml
+
+          grep -q '^listing_slug:' .github/codex/runtime/style_critic.yaml
+          grep -q '^verdict:' .github/codex/runtime/style_critic.yaml
+          grep -q '^score:' .github/codex/runtime/style_critic.yaml
+          grep -q '^style_mismatches:' .github/codex/runtime/style_critic.yaml
+          grep -q '^recommended_edits:' .github/codex/runtime/style_critic.yaml
+
+      - name: Revise draft from critiques
+        uses: openai/codex-action@v1
+        with:
+          openai-api-key: ${{ secrets.OPENAI_API_KEY }}
+          prompt-file: .github/codex/runtime/revision_prompt.md
+          model: gpt-5.4-mini
+          effort: medium
+          codex-args: '--config web_search="disabled"'
+          sandbox: workspace-write
+          output-file: .github/codex/runtime/revision_summary.md
+          safety-strategy: drop-sudo
+
+      - name: Compile PDFs
+        run: |
+          set -euo pipefail
+
+          if ! command -v pdflatex >/dev/null 2>&1; then
+            echo "pdflatex is not available on this runner." >&2
+            exit 1
+          fi
+
+          cd "$OUTPUT_DIR"
+          mkdir -p build
+
+          for tex in cv.tex cover_letter.tex research_statement.tex; do
+            if [ -f "$tex" ]; then
+              pdflatex -interaction=nonstopmode -output-directory build "$tex"
+              pdflatex -interaction=nonstopmode -output-directory build "$tex"
+              cp "build/${tex%.tex}.pdf" "${tex%.tex}.pdf"
+            fi
+          done
+
+      - name: Create application branch slug
+        id: slug
+        run: |
+          echo "branch=$BRANCH_NAME" >> "$GITHUB_OUTPUT"
+
+      - name: Build pull request body
+        run: |
+          set -euo pipefail
+
+          {
+            printf 'Closes #%s\n\n' "${{ steps.issue.outputs.number }}"
+            printf 'Generated from issue #%s.\n\n' "${{ steps.issue.outputs.number }}"
+            printf 'Generator summary:\n\n```md\n'
+            cat .github/codex/runtime/generator_summary.md
+            printf '\n```\n\nRevision summary:\n\n```md\n'
+            cat .github/codex/runtime/revision_summary.md
+            printf '\n```\n'
+          } > .github/codex/runtime/pr_body.md
+
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: ${{ steps.slug.outputs.branch }}
+          title: "Application materials: ${{ steps.issue.outputs.title }}"
+          commit-message: "Generate application materials for issue #${{ steps.issue.outputs.number }}"
+          body-path: .github/codex/runtime/pr_body.md
+          labels: application-draft

@@ -38,7 +38,7 @@ Also generate the materials requested in the application such as:
 - Keep the CV evidence-grounded and concise.
 - Preserve the existing LaTeX template structure as closely as possible.
 - Use only claims supported by the repository sources or prior approved examples.
-- Do not search the web. Use the generated briefing document for company and role context.
+- Do not browse the web, search the web, or open external URLs. Use the generated briefing document for company and role context.
 - If fit is weak, surface that honestly in the gap report rather than overstating it.
 - Write the supporting files so they can be used by later critique steps.
 - Do not compile PDFs yet.

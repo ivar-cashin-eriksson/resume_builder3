@@ -43,4 +43,4 @@ Be strict about:
 - minimal corporate jargon
 - alignment with the core narrative and previous examples
 - avoiding filler or overlong phrasing
-- do not search the web; use the briefing document and repository sources only
+- Do not browse the web, search the web, or open external URLs; use the briefing document and repository sources only.

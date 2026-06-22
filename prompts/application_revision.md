@@ -25,7 +25,7 @@ Revise the draft application package once using the two critique reports.
 - Update supporting files only where needed for consistency.
 - Leave unsupported claims out, even if they would be attractive.
 - Do not add new claims that are not already supported by the repository.
-- Do not search the web; use the briefing document and repository sources only.
+- Do not browse the web, search the web, or open external URLs; use the briefing document and repository sources only.
 
 ## Files to update
 

@@ -4,6 +4,13 @@ on:
   issues:
     types: [labeled]
 
+  workflow_dispatch:
+    inputs:
+      issue_number:
+        description: "Issue number to generate materials for"
+        required: true
+        type: string
+
 permissions:
   contents: write
   pull-requests: write
@@ -12,19 +19,70 @@ permissions:
 jobs:
   generate-application:
     if: >
-      github.event.issue.user.login == 'ivar-cashin-eriksson' &&
-      contains(github.event.issue.labels.*.name, 'job-application')
+      github.event_name == 'workflow_dispatch' ||
+      (
+        steps.issue.outputs.user.login == 'ivar-cashin-eriksson' &&
+        contains(steps.issue.outputs.labels.*.name, 'job-application')
+      )
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Create runtime directory
+        run: mkdir -p .github/codex
+
+      - name: Load issue data
+        id: issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EVENT_NAME: ${{ github.event_name }}
+          MANUAL_ISSUE_NUMBER: ${{ inputs.issue_number }}
+          EVENT_ISSUE_NUMBER: ${{ steps.issue.outputs.number }}
+        run: |
+          set -euo pipefail
+
+          ISSUE_NUMBER="${EVENT_ISSUE_NUMBER:-$MANUAL_ISSUE_NUMBER}"
+
+          if [ -z "$ISSUE_NUMBER" ]; then
+            echo "No issue number found." >&2
+            exit 1
+          fi
+
+          gh issue view "$ISSUE_NUMBER" \
+            --json number,title,body,author,labels \
+            > .github/codex/runtime_issue.json
+
+          AUTHOR=$(jq -r '.author.login' .github/codex/runtime_issue.json)
+          LABELS=$(jq -r '[.labels[].name] | join(", ")' .github/codex/runtime_issue.json)
+
+          if [ "$AUTHOR" != "ivar-cashin-eriksson" ]; then
+            echo "Issue author is $AUTHOR, expected ivar-cashin-eriksson." >&2
+            exit 1
+          fi
+
+          if ! jq -e '.labels[].name == "job-application"' .github/codex/runtime_issue.json >/dev/null; then
+            echo "Issue does not have label: job-application" >&2
+            exit 1
+          fi
+
+          {
+            echo "number=$(jq -r '.number' .github/codex/runtime_issue.json)"
+            echo "title=$(jq -r '.title' .github/codex/runtime_issue.json)"
+            echo "labels=$LABELS"
+
+            echo "body<<EOF"
+            jq -r '.body // ""' .github/codex/runtime_issue.json
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+
       - name: Prepare application context and prompt files
         env:
-          ISSUE_TITLE: ${{ github.event.issue.title }}
-          ISSUE_BODY: ${{ github.event.issue.body }}
-          ISSUE_LABELS: ${{ join(github.event.issue.labels.*.name, ', ') }}
+          ISSUE_TITLE: ${{ steps.issue.outputs.title }}
+          ISSUE_BODY: ${{ steps.issue.outputs.body }}
+          ISSUE_LABELS: ${{ steps.issue.outputs.labels }}
+          ISSUE_NUMBER: ${{ steps.issue.outputs.number }}
         run: |
           set -euo pipefail
 
@@ -38,7 +96,7 @@ jobs:
             | cut -c1-80)
 
           if [ -z "$LISTING_SLUG" ]; then
-            LISTING_SLUG="application-${{ github.event.issue.number }}"
+            LISTING_SLUG="application-${{ steps.issue.outputs.number }}"
           fi
 
           OUTPUT_DIR="outputs/${LISTING_SLUG}"
@@ -89,6 +147,7 @@ jobs:
           prompt-file: .github/codex/runtime/briefing_prompt.md
           model: gpt-5.4-mini
           effort: medium
+          codex-args: '--config web_search="live"'
           sandbox: workspace-write
           output-file: .github/codex/runtime/briefing_summary.md
           safety-strategy: drop-sudo
@@ -109,6 +168,7 @@ jobs:
           prompt-file: .github/codex/runtime/generator_prompt.md
           model: gpt-5.4-mini
           effort: medium
+          codex-args: '--config web_search="disabled"'
           sandbox: workspace-write
           output-file: .github/codex/runtime/generator_summary.md
           safety-strategy: drop-sudo
@@ -120,6 +180,7 @@ jobs:
           prompt-file: .github/codex/runtime/fit_critic_prompt.md
           model: gpt-5.4-mini
           effort: low
+          codex-args: '--config web_search="disabled"'
           sandbox: workspace-write
           output-file: .github/codex/runtime/fit_critic_summary.md
           safety-strategy: drop-sudo
@@ -131,6 +192,7 @@ jobs:
           prompt-file: .github/codex/runtime/style_critic_prompt.md
           model: gpt-5.4-mini
           effort: low
+          codex-args: '--config web_search="disabled"'
           sandbox: workspace-write
           output-file: .github/codex/runtime/style_critic_summary.md
           safety-strategy: drop-sudo
@@ -165,6 +227,7 @@ jobs:
           prompt-file: .github/codex/runtime/revision_prompt.md
           model: gpt-5.4-mini
           effort: medium
+          codex-args: '--config web_search="disabled"'
           sandbox: workspace-write
           output-file: .github/codex/runtime/revision_summary.md
           safety-strategy: drop-sudo
@@ -199,8 +262,8 @@ jobs:
           set -euo pipefail
 
           {
-            printf 'Closes #%s\n\n' "${{ github.event.issue.number }}"
-            printf 'Generated from issue #%s.\n\n' "${{ github.event.issue.number }}"
+            printf 'Closes #%s\n\n' "${{ steps.issue.outputs.number }}"
+            printf 'Generated from issue #%s.\n\n' "${{ steps.issue.outputs.number }}"
             printf 'Generator summary:\n\n```md\n'
             cat .github/codex/runtime/generator_summary.md
             printf '\n```\n\nRevision summary:\n\n```md\n'
@@ -212,7 +275,7 @@ jobs:
         uses: peter-evans/create-pull-request@v6
         with:
           branch: ${{ steps.slug.outputs.branch }}
-          title: "Application materials: ${{ github.event.issue.title }}"
-          commit-message: "Generate application materials for issue #${{ github.event.issue.number }}"
+          title: "Application materials: ${{ steps.issue.outputs.title }}"
+          commit-message: "Generate application materials for issue #${{ steps.issue.outputs.number }}"
           body-path: .github/codex/runtime/pr_body.md
           labels: application-draft

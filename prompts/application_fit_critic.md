@@ -42,4 +42,4 @@ Be strict about:
 - overclaiming on tools, domain experience, or seniority
 - underclaiming on tools, domain experience, or seniority
 - missing important listing keywords or themes that are genuinely supported by the profile
-- do not search the web; use the briefing document and repository sources only
+- Do not browse the web, search the web, or open external URLs; use the briefing document and repository sources only.

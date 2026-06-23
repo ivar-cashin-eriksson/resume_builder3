@@ -30,11 +30,18 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Create Codex runtime directories
+        run: |
+          set -euo pipefail
+          mkdir -p .github/codex/runtime
+
       - name: Create unprivileged Codex user
         run: |
           set -euo pipefail
-
-          sudo adduser --system --home /home/guest --shell /bin/bash --group guest
+          
+          if ! id guest >/dev/null 2>&1; then
+            sudo adduser --system --home /home/guest --shell /bin/bash --group guest
+          fi
 
           sudo usermod -a -G guest runner
           sudo usermod -a -G runner guest
@@ -43,8 +50,8 @@ jobs:
           sudo chmod -R g+rwX "$GITHUB_WORKSPACE"
           sudo find "$GITHUB_WORKSPACE" -type d -exec chmod g+s {} +
 
-      - name: Create runtime directory
-        run: mkdir -p .github/codex
+          sudo mkdir -p /home/guest/.codex
+          sudo chown -R guest:guest /home/guest
 
       - name: Load issue data
         id: issue

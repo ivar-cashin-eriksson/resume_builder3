@@ -152,7 +152,7 @@ jobs:
       - name: Copy PDF to repo root
         run: |
           set -euo pipefail
-          cp build/cv.pdf "$OUTPUT_DIR/cv.pdf"
+          cp "$OUTPUT_DIR/build/cv.pdf" "$OUTPUT_DIR/cv.pdf"
 
       - name: Commit generated PDF
         run: |

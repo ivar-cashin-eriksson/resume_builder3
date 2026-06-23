@@ -107,7 +107,7 @@ jobs:
           - Only the briefing step may use web search. Later steps must not browse the web.
           EOF
 
-          cat "Generate a minimal LaTeX file for testing purposes named test.tex." > .github/codex/runtime/test_instructions.md
+          cat prompts/test_prompt.md .github/codex/runtime/application_context.md > .github/codex/runtime/test_prompt.md
 
       - name: Run listing briefing
         uses: openai/codex-action@v1

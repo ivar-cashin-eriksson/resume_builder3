@@ -2,20 +2,20 @@
 
 You are the Revision agent.
 
-Read:
+## Inputs
+
 - the appended application context
-- .github/codex/runtime/fit_critic.yaml
-- .github/codex/runtime/style_critic.yaml
+- `.github/codex/runtime/fit_critic.yaml`
+- `.github/codex/runtime/style_critic.yaml`
 - `<output_dir>/job_analysis.md`
-- the generated draft under the output directory
+- the generated draft under `<output_dir>/`
 - profile/ YAML files
 - profile/writing_style/*.yaml
 - templates/*.tex
-- only the current generated draft under `<output_dir>/`
-- also read example materials in `examples/`
+- previous application examples in `examples/`
 - do not read other directories under `outputs/`
-- Read generated application materials from `.tex` and `.md` sources only.
-- Do not read generated PDFs or files under `build/` unless explicitly asked to validate PDF layout.
+- read generated application materials from `.tex` and `.md` sources only
+- do not read generated PDFs or files under `build/` unless explicitly asked to validate PDF layout
 
 ## Task
 
@@ -29,15 +29,15 @@ Revise the draft application package once using the two critique reports.
 - Update supporting files only where needed for consistency.
 - Leave unsupported claims out, even if they would be attractive.
 - Do not add new claims that are not already supported by the repository.
-- Do not browse the web, search the web, or open external URLs; use the briefing document and repository sources only.
+- Do not browse the web, search the web, or open external URLs.
+- Use the briefing document and repository sources only.
 
-## Files to update
+## Prefer updating
 
-Prefer updating:
 - application materials
-- evidence_mapping.yaml
-- gap_report.md
-- generation_summary.md
+- `evidence_mapping.yaml`
+- `gap_report.md`
+- `generation_summary.md`
 
 ## Completion
 

@@ -1,0 +1,177 @@
+name: Render LaTeX Test
+
+on:
+  workflow_dispatch:
+    inputs:
+      issue_number:
+        description: "Issue number to generate materials for"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+jobs:
+  generate-application:
+    if: >
+      github.event_name == 'workflow_dispatch' ||
+      (
+        github.event.issue.user.login == 'ivar-cashin-eriksson' &&
+        contains(github.event.issue.labels.*.name, 'job-application')
+      )
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Create Codex runtime directories
+        run: |
+          set -euo pipefail
+          mkdir -p .github/codex/runtime
+
+      - name: Create unprivileged Codex user
+        run: |
+          set -euo pipefail
+          
+          if ! id guest >/dev/null 2>&1; then
+            sudo adduser --system --home /home/guest --shell /bin/bash --group guest
+          fi
+
+          sudo usermod -a -G guest runner
+          sudo usermod -a -G runner guest
+
+          sudo chown -R runner:guest "$GITHUB_WORKSPACE"
+          sudo chmod -R g+rwX "$GITHUB_WORKSPACE"
+          sudo find "$GITHUB_WORKSPACE" -type d -exec chmod g+s {} +
+
+          sudo mkdir -p /home/guest/.codex
+          sudo chown -R guest:guest /home/guest
+
+      - name: Prepare application context and prompt files
+        env:
+          ISSUE_TITLE: ${{ steps.issue.outputs.title }}
+          ISSUE_BODY: ${{ steps.issue.outputs.body }}
+          ISSUE_LABELS: ${{ steps.issue.outputs.labels }}
+          ISSUE_NUMBER: ${{ steps.issue.outputs.number }}
+        run: |
+          set -euo pipefail
+
+          mkdir -p .github/codex/runtime
+
+          LISTING_SLUG=$(printf '%s' "$ISSUE_TITLE" \
+            | sed -E 's/^[Aa]pply:[[:space:]]*//' \
+            | tr '[:upper:]' '[:lower:]' \
+            | sed -E 's/[^a-z0-9]+/-/g' \
+            | sed -E 's/^-+|-+$//g' \
+            | cut -c1-80)
+
+          if [ -z "$LISTING_SLUG" ]; then
+            LISTING_SLUG="application-${{ steps.issue.outputs.number }}"
+          fi
+
+          OUTPUT_DIR="outputs/${LISTING_SLUG}"
+
+          echo "LISTING_SLUG=$LISTING_SLUG" >> "$GITHUB_ENV"
+          echo "OUTPUT_DIR=$OUTPUT_DIR" >> "$GITHUB_ENV"
+          echo "BRANCH_NAME=application/${LISTING_SLUG}" >> "$GITHUB_ENV"
+
+          cat > .github/codex/runtime/application_context.md <<EOF
+          # Application Context
+
+          ## GitHub Issue
+
+          Title: $ISSUE_TITLE
+
+          Body:
+          $ISSUE_BODY
+
+          Labels: $ISSUE_LABELS
+
+          ## Derived Repository Targets
+
+          - listing_slug: $LISTING_SLUG
+          - output_dir: $OUTPUT_DIR
+
+          ## Hard Rules
+
+          - Use only facts found in the repository or the approved listing material.
+          - Do not invent experience, publications, grades, tools, employers, dates, awards, or achievements.
+          - Keep the tone direct, personal, factual, modest, and in British English.
+          - Make no changes outside \`$OUTPUT_DIR/\`.
+          - Every major claim in the CV and cover letter must be traceable to a profile YAML file or previous application example.
+          - Prefer omission over unsupported claims.
+          - Compile PDFs when possible.
+          - Only the briefing step may use web search. Later steps must not browse the web.
+          EOF
+
+          cat "Generate a minimal LaTeX file for testing purposes named test.tex." > .github/codex/runtime/test_instructions.md
+
+      - name: Run listing briefing
+        uses: openai/codex-action@v1
+        with:
+          openai-api-key: ${{ secrets.OPENAI_API_KEY }}
+          prompt-file: .github/codex/runtime/test_instructions.md
+          model: gpt-5.4-mini
+          effort: low
+          codex-args: '--config web_search="live"'
+          sandbox: workspace-write
+          output-file: .github/codex/runtime/test_summary.md
+          safety-strategy: unprivileged-user
+          codex-user: guest
+
+      - name: Repair workspace permissions
+        run: |
+          set -euo pipefail
+          sudo chown -R runner:guest "$GITHUB_WORKSPACE"
+          sudo chmod -R g+rwX "$GITHUB_WORKSPACE"
+          sudo find "$GITHUB_WORKSPACE" -type d -exec chmod g+s {} +
+
+      - name: Install LaTeX
+        run: |
+          set -euo pipefail
+          sudo apt-get update
+          sudo apt-get install -y \
+            texlive-latex-base \
+            texlive-latex-recommended \
+            texlive-latex-extra \
+            texlive-fonts-extra
+
+      - name: Compile PDFs
+        run: |
+          set -euo pipefail
+
+          cd "$OUTPUT_DIR"
+          mkdir -p build
+
+          pdflatex -interaction=nonstopmode -output-directory=build test.tex
+
+      - name: Create application branch slug
+        id: slug
+        run: |
+          echo "branch=$BRANCH_NAME" >> "$GITHUB_OUTPUT"
+
+      - name: Build pull request body
+        run: |
+          set -euo pipefail
+
+          {
+            printf 'Closes #%s\n\n' "${{ steps.issue.outputs.number }}"
+            printf 'Generated from issue #%s.\n\n' "${{ steps.issue.outputs.number }}"
+            printf 'Generator summary:\n\n```md\n'
+            cat .github/codex/runtime/generator_summary.md
+            printf '\n```\n\nRevision summary:\n\n```md\n'
+            cat .github/codex/runtime/revision_summary.md
+            printf '\n```\n'
+          } > .github/codex/runtime/pr_body.md
+
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: ${{ steps.slug.outputs.branch }}
+          title: "Application materials: ${{ steps.issue.outputs.title }}"
+          commit-message: "Generate application materials for issue #${{ steps.issue.outputs.number }}"
+          body-path: .github/codex/runtime/pr_body.md
+          labels: application-draft

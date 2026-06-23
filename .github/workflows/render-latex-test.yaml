@@ -11,89 +11,28 @@ on:
 permissions:
   contents: write
   pull-requests: write
-  issues: write
+  issues: read
 
 jobs:
   generate-application:
-    if: >
-      github.event_name == 'workflow_dispatch' ||
-      (
-        github.event.issue.user.login == 'ivar-cashin-eriksson' &&
-        contains(github.event.issue.labels.*.name, 'job-application')
-      )
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Create Codex runtime directories
-        run: |
-          set -euo pipefail
-          mkdir -p .github/codex/runtime
-
       - name: Create unprivileged Codex user
-        run: |
-          set -euo pipefail
-          
-          if ! id guest >/dev/null 2>&1; then
-            sudo adduser --system --home /home/guest --shell /bin/bash --group guest
-          fi
-
-          sudo usermod -a -G guest runner
-          sudo usermod -a -G runner guest
-
-          sudo chown -R runner:guest "$GITHUB_WORKSPACE"
-          sudo chmod -R g+rwX "$GITHUB_WORKSPACE"
-          sudo find "$GITHUB_WORKSPACE" -type d -exec chmod g+s {} +
-
-          sudo mkdir -p /home/guest/.codex
-          sudo chown -R guest:guest /home/guest
+        run: bash .github/scripts/setup_codex_user.sh
 
       - name: Load issue data
         id: issue
         env:
           GH_TOKEN: ${{ github.token }}
           MANUAL_ISSUE_NUMBER: ${{ inputs.issue_number }}
-          EVENT_ISSUE_NUMBER: ${{ github.event.issue.number }}
-        run: |
-          set -euo pipefail
-
-          mkdir -p .github/codex
-
-          ISSUE_NUMBER="${EVENT_ISSUE_NUMBER:-$MANUAL_ISSUE_NUMBER}"
-
-          if [ -z "$ISSUE_NUMBER" ]; then
-            echo "No issue number found." >&2
-            exit 1
-          fi
-
-          gh issue view "$ISSUE_NUMBER" \
-            --json number,title,body,author,labels \
-            > .github/codex/runtime_issue.json
-
-          AUTHOR=$(jq -r '.author.login' .github/codex/runtime_issue.json)
-          LABELS=$(jq -r '[.labels[].name] | join(", ")' .github/codex/runtime_issue.json)
-
-          if [ "$AUTHOR" != "ivar-cashin-eriksson" ]; then
-            echo "Issue author is $AUTHOR, expected ivar-cashin-eriksson." >&2
-            exit 1
-          fi
-
-          if ! jq -e '.labels[].name == "job-application"' .github/codex/runtime_issue.json >/dev/null; then
-            echo "Issue does not have label: job-application." >&2
-            exit 1
-          fi
-
-          {
-            echo "number=$(jq -r '.number' .github/codex/runtime_issue.json)"
-            echo "title=$(jq -r '.title' .github/codex/runtime_issue.json)"
-            echo "labels=$LABELS"
-
-            echo "body<<EOF"
-            jq -r '.body // ""' .github/codex/runtime_issue.json
-            echo "EOF"
-          } >> "$GITHUB_OUTPUT"
+        run: bash .github/scripts/load_issue_data.sh
 
       - name: Prepare application context and prompt files
         env:
@@ -101,58 +40,7 @@ jobs:
           ISSUE_BODY: ${{ steps.issue.outputs.body }}
           ISSUE_LABELS: ${{ steps.issue.outputs.labels }}
           ISSUE_NUMBER: ${{ steps.issue.outputs.number }}
-        run: |
-          set -euo pipefail
-
-          mkdir -p .github/codex/runtime
-
-          LISTING_SLUG=$(printf '%s' "$ISSUE_TITLE" \
-            | sed -E 's/^[Aa]pply:[[:space:]]*//' \
-            | tr '[:upper:]' '[:lower:]' \
-            | sed -E 's/[^a-z0-9]+/-/g' \
-            | sed -E 's/^-+|-+$//g' \
-            | cut -c1-80)
-
-          if [ -z "$LISTING_SLUG" ]; then
-            LISTING_SLUG="application-${{ steps.issue.outputs.number }}"
-          fi
-
-          OUTPUT_DIR="outputs/${LISTING_SLUG}"
-
-          echo "LISTING_SLUG=$LISTING_SLUG" >> "$GITHUB_ENV"
-          echo "OUTPUT_DIR=$OUTPUT_DIR" >> "$GITHUB_ENV"
-          echo "BRANCH_NAME=application/${LISTING_SLUG}" >> "$GITHUB_ENV"
-
-          cat > .github/codex/runtime/application_context.md <<EOF
-          # Application Context
-
-          ## GitHub Issue
-
-          Title: $ISSUE_TITLE
-
-          Body:
-          $ISSUE_BODY
-
-          Labels: $ISSUE_LABELS
-
-          ## Derived Repository Targets
-
-          - listing_slug: $LISTING_SLUG
-          - output_dir: $OUTPUT_DIR
-
-          ## Hard Rules
-
-          - Use only facts found in the repository or the approved listing material.
-          - Do not invent experience, publications, grades, tools, employers, dates, awards, or achievements.
-          - Keep the tone direct, personal, factual, modest, and in British English.
-          - Make no changes outside \`$OUTPUT_DIR/\`.
-          - Every major claim in the test and cover letter must be traceable to a profile YAML file or previous application example.
-          - Prefer omission over unsupported claims.
-          - Compile PDFs when possible.
-          - Only the briefing step may use web search. Later steps must not browse the web.
-          EOF
-
-          cat prompts/test_prompt.md .github/codex/runtime/application_context.md > .github/codex/runtime/test_prompt.md
+        run: bash .github/scripts/prepare_test_context.sh
 
       - name: Run listing briefing
         uses: openai/codex-action@v1
@@ -168,76 +56,28 @@ jobs:
           codex-user: guest
 
       - name: Repair workspace permissions
-        run: |
-          set -euo pipefail
-          sudo chown -R runner:guest "$GITHUB_WORKSPACE"
-          sudo chmod -R g+rwX "$GITHUB_WORKSPACE"
-          sudo find "$GITHUB_WORKSPACE" -type d -exec chmod g+s {} +
+        run: bash .github/scripts/repair_workspace_permissions.sh
 
       - name: Install LaTeX
-        run: |
-          set -euo pipefail
-          sudo apt-get update
-          sudo apt-get install -y \
-            texlive-latex-base \
-            texlive-latex-recommended \
-            texlive-latex-extra \
-            texlive-fonts-extra
+        run: bash .github/scripts/install_latex.sh
 
       - name: Compile PDFs
-        run: |
-          set -euo pipefail
-
-          cd "$OUTPUT_DIR"
-          mkdir -p build
-
-          pdflatex -interaction=nonstopmode -output-directory=build test.tex
-          pdflatex -interaction=nonstopmode -output-directory=build test.tex
+        run: bash .github/scripts/compile_test_pdfs.sh
 
       - name: Copy PDFs to output directory
-        run: |
-          set -euo pipefail
-
-          shopt -s nullglob
-          for pdf in "$OUTPUT_DIR"/build/*.pdf; do
-            cp "$pdf" "$OUTPUT_DIR/"
-          done
+        run: bash .github/scripts/promote_pdfs.sh
 
       - name: Commit generated PDF
-        run: |
-          set -euo pipefail
-
-          if ! find "$OUTPUT_DIR" -maxdepth 1 -name '*.pdf' -print -quit | grep -q .; then
-            echo "No PDF files found to commit"
-            exit 0
-          fi
-
-          if git diff --quiet -- "$OUTPUT_DIR"/*.pdf; then
-            echo "No PDF changes to commit"
-            exit 0
-          fi
-
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-
-          git add "$OUTPUT_DIR"/*.pdf
-          git commit -m "Update generated test PDF"
-          git push
+        run: bash .github/scripts/commit_pdfs.sh
 
       - name: Create application branch slug
         id: slug
-        run: |
-          echo "branch=$BRANCH_NAME" >> "$GITHUB_OUTPUT"
+        run: echo "branch=$BRANCH_NAME" >> "$GITHUB_OUTPUT"
 
       - name: Build pull request body
-        run: |
-          set -euo pipefail
-
-          {
-            printf 'Closes #%s\n\n' "${{ steps.issue.outputs.number }}"
-            printf 'Generated from issue #%s.\n\n' "${{ steps.issue.outputs.number }}"
-            printf '\n```\n'
-          } > .github/codex/runtime/pr_body.md
+        env:
+          ISSUE_NUMBER: ${{ steps.issue.outputs.number }}
+        run: bash .github/scripts/build_pr_body.sh
 
       - name: Create pull request
         uses: peter-evans/create-pull-request@v6

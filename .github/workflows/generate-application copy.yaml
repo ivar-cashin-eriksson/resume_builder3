@@ -160,10 +160,6 @@ jobs:
           {
             printf 'Closes #%s\n\n' "${{ steps.issue.outputs.number }}"
             printf 'Generated from issue #%s.\n\n' "${{ steps.issue.outputs.number }}"
-            printf 'Generator summary:\n\n```md\n'
-            cat .github/codex/runtime/generator_summary.md
-            printf '\n```\n\nRevision summary:\n\n```md\n'
-            cat .github/codex/runtime/revision_summary.md
             printf '\n```\n'
           } > .github/codex/runtime/pr_body.md
 

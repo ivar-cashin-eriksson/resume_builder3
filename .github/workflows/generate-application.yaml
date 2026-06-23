@@ -30,6 +30,19 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Create unprivileged Codex user
+        run: |
+          set -euo pipefail
+
+          sudo adduser --system --home /home/guest --shell /bin/bash --group guest
+
+          sudo usermod -a -G guest runner
+          sudo usermod -a -G runner guest
+
+          sudo chown -R runner:guest "$GITHUB_WORKSPACE"
+          sudo chmod -R g+rwX "$GITHUB_WORKSPACE"
+          sudo find "$GITHUB_WORKSPACE" -type d -exec chmod g+s {} +
+
       - name: Create runtime directory
         run: mkdir -p .github/codex
 
@@ -152,6 +165,7 @@ jobs:
           sandbox: workspace-write
           output-file: .github/codex/runtime/briefing_summary.md
           safety-strategy: unprivileged-user
+          codex-user: guest
 
       - name: Validate briefing output
         run: |
@@ -173,6 +187,7 @@ jobs:
           sandbox: workspace-write
           output-file: .github/codex/runtime/generator_summary.md
           safety-strategy: unprivileged-user
+          codex-user: guest
 
       - name: Run fit critic
         uses: openai/codex-action@v1
@@ -185,6 +200,7 @@ jobs:
           sandbox: workspace-write
           output-file: .github/codex/runtime/fit_critic_summary.md
           safety-strategy: unprivileged-user
+          codex-user: guest
 
       - name: Run style critic
         uses: openai/codex-action@v1
@@ -197,6 +213,7 @@ jobs:
           sandbox: workspace-write
           output-file: .github/codex/runtime/style_critic_summary.md
           safety-strategy: unprivileged-user
+          codex-user: guest
 
       - name: Validate critic outputs
         run: |
@@ -232,6 +249,7 @@ jobs:
           sandbox: workspace-write
           output-file: .github/codex/runtime/revision_summary.md
           safety-strategy: unprivileged-user
+          codex-user: guest
 
       - name: Compile PDFs
         run: |

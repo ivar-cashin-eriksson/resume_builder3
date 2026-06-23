@@ -11,7 +11,11 @@ Read:
 - profile/ YAML files
 - profile/writing_style/*.yaml
 - templates/*.tex
-- previous application examples in outputs/
+- only the current generated draft under `<output_dir>/`
+- also read example materials in `examples/`
+- do not read other directories under `outputs/`
+- Read generated application materials from `.tex` and `.md` sources only.
+- Do not read generated PDFs or files under `build/` unless explicitly asked to validate PDF layout.
 
 ## Task
 

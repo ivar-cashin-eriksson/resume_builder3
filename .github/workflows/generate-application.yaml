@@ -167,7 +167,7 @@ jobs:
           openai-api-key: ${{ secrets.OPENAI_API_KEY }}
           prompt-file: .github/codex/runtime/briefing_prompt.md
           model: gpt-5.4-mini
-          effort: medium
+          effort: low
           codex-args: '--config web_search="live"'
           sandbox: workspace-write
           output-file: .github/codex/runtime/briefing_summary.md
@@ -257,6 +257,16 @@ jobs:
           output-file: .github/codex/runtime/revision_summary.md
           safety-strategy: unprivileged-user
           codex-user: guest
+
+      - name: Install LaTeX
+        run: |
+          set -euo pipefail
+          sudo apt-get update
+          sudo apt-get install -y \
+            texlive-latex-base \
+            texlive-latex-recommended \
+            texlive-latex-extra \
+            texlive-fonts-recommended
 
       - name: Compile PDFs
         run: |

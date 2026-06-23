@@ -9,7 +9,11 @@ Read:
 - profile/writing_style/style.yaml
 - profile/writing_style/core_narrative.yaml
 - profile/writing_style/cover_letter_style.yaml
-- previous approved application examples in outputs/
+- only the current generated draft under `<output_dir>/`
+- also read example materials in `examples/`
+- do not read other directories under `outputs/`
+- Read generated application materials from `.tex` and `.md` sources only.
+- Do not read generated PDFs or files under `build/` unless explicitly asked to validate PDF layout.
 
 ## Task
 
@@ -44,3 +48,4 @@ Be strict about:
 - alignment with the core narrative and previous examples
 - avoiding filler or overlong phrasing
 - Do not browse the web, search the web, or open external URLs; use the briefing document and repository sources only.
+- Do not read any other files in the repository.

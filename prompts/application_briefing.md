@@ -6,6 +6,10 @@ Read:
 - the linked application
 - the listing material from the issue body
 - public sources about the company, institute, and role as needed
+- also read example materials in `examples/`
+- do not read other directories under `outputs/`
+- Read generated application materials from `.tex` and `.md` sources only.
+- Do not read generated PDFs or files under `build/` unless explicitly asked to validate PDF layout.
 
 ## Task
 

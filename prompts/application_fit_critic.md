@@ -8,7 +8,11 @@ Read:
 - the generated draft under the output directory
 - profile/ YAML files
 - profile/claims.yaml
-- previous application examples in outputs/
+- only the current generated draft under `<output_dir>/`
+- also read example materials in `examples/`
+- do not read other directories under `outputs/`
+- Read generated application materials from `.tex` and `.md` sources only.
+- Do not read generated PDFs or files under `build/` unless explicitly asked to validate PDF layout.
 
 ## Task
 
@@ -43,3 +47,4 @@ Be strict about:
 - underclaiming on tools, domain experience, or seniority
 - missing important listing keywords or themes that are genuinely supported by the profile
 - Do not browse the web, search the web, or open external URLs; use the briefing document and repository sources only.
+- Do not read any other files in the repository.

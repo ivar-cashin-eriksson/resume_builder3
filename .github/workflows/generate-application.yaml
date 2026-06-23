@@ -258,6 +258,13 @@ jobs:
           safety-strategy: unprivileged-user
           codex-user: guest
 
+      - name: Repair workspace permissions
+        run: |
+          set -euo pipefail
+          sudo chown -R runner:guest "$GITHUB_WORKSPACE"
+          sudo chmod -R g+rwX "$GITHUB_WORKSPACE"
+          sudo find "$GITHUB_WORKSPACE" -type d -exec chmod g+s {} +
+
       - name: Install LaTeX
         run: |
           set -euo pipefail

@@ -14,18 +14,21 @@ permissions:
   issues: read
 
 jobs:
-  generate-application:
+  generate_patch:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: bash
+    
+    permissions:
+      contents: read
+
+    outputs:
+      has_patch: ${{ steps.diff.outputs.has_patch }}
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Create unprivileged Codex user
-        run: bash .github/scripts/setup_codex_user.sh
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          persist-credentials: false
 
       - name: Load issue data
         id: issue
@@ -42,37 +45,85 @@ jobs:
           ISSUE_NUMBER: ${{ steps.issue.outputs.number }}
         run: bash .github/scripts/prepare_test_context.sh
 
-      - name: Run listing briefing
+      - name: Make test LaTeX
         uses: openai/codex-action@v1
         with:
           openai-api-key: ${{ secrets.OPENAI_API_KEY }}
-          prompt-file: .github/codex/runtime/test_prompt.md
           model: gpt-5.4-mini
           effort: low
-          codex-args: '--config web_search="live"'
           sandbox: workspace-write
-          output-file: .github/codex/runtime/test_summary.md
-          safety-strategy: unprivileged-user
-          codex-user: guest
+          safety-strategy: drop-sudo
+          codex-args: '--config web_search="disabled"'
+          prompt: |
+            You are for testing and debugging purposes.
 
-      - name: Repair workspace permissions
-        run: bash .github/scripts/repair_workspace_permissions.sh
+            Generate a minimal LaTeX file for testing purposes named test.tex in the `<output_dir>/`.
+          
+      - name: Create patch artifact
+        id: diff
+        run: |
+          git add -N .
+          git diff --binary HEAD > codex.patch
 
-      - name: Install LaTeX
-        run: bash .github/scripts/install_latex.sh
+          if [ -s codex.patch ]; then
+            echo "has_patch=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_patch=false" >> "$GITHUB_OUTPUT"
+          fi
 
-      - name: Compile PDFs
-        run: bash .github/scripts/compile_test_pdfs.sh
+      - name: Upload patch artifact
+        if: steps.diff.outputs.has_patch == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: codex.patch
+          path: codex.patch
+          if-no-files-found: error
 
-      - name: Copy PDFs to output directory
-        run: bash .github/scripts/promote_pdfs.sh
+  open_pr:
+    runs-on: ubuntu-latest
+    needs: generate_patch
+    if: needs.generate_patch.outputs.has_patch == 'true'
 
-      - name: Commit generated PDF
-        run: bash .github/scripts/commit_pdfs.sh
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Read issue metadata
+        id: issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_NUMBER: ${{ inputs.issue_number }}
+        run: |
+          issue_json="$(gh issue view "$ISSUE_NUMBER" --json number,title,body)"
+          echo "number=$(echo "$issue_json" | jq -r '.number')" >> "$GITHUB_OUTPUT"
+          echo "title=$(echo "$issue_json" | jq -r '.title')" >> "$GITHUB_OUTPUT"    
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: codex.patch
+
+      - name: Apply Codex patch
+        run: |
+          git apply --index codex.patch
 
       - name: Create application branch slug
         id: slug
-        run: echo "branch=$BRANCH_NAME" >> "$GITHUB_OUTPUT"
+        env:
+          ISSUE_NUMBER: ${{ steps.issue.outputs.number }}
+          ISSUE_TITLE: ${{ steps.issue.outputs.title }}
+        run: |
+          slug="$(echo "$ISSUE_TITLE" \
+            | tr '[:upper:]' '[:lower:]' \
+            | sed -E 's/[^a-z0-9]+/-/g; s/^-+|-+$//g' \
+            | cut -c1-60)"
+
+          branch="application/issue-${ISSUE_NUMBER}-${slug}"
+          echo "branch=$branch" >> "$GITHUB_OUTPUT"
 
       - name: Build pull request body
         env:

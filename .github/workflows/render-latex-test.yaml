@@ -125,6 +125,7 @@ jobs:
       - name: Build pull request body
         env:
           ISSUE_NUMBER: ${{ steps.issue.outputs.number }}
+          PR_BODY_PATH: /tmp/pr_body.md
         run: bash .github/scripts/build_pr_body.sh
 
       - name: Create pull request
@@ -133,5 +134,5 @@ jobs:
           branch: ${{ steps.slug.outputs.branch }}
           title: "Application materials: ${{ steps.issue.outputs.title }}"
           commit-message: "Generate application materials for issue #${{ steps.issue.outputs.number }}"
-          body-path: .github/codex/runtime/pr_body.md
+          body-path: /tmp/pr_body.md
           labels: application-draft

@@ -54,10 +54,7 @@ jobs:
           sandbox: workspace-write
           safety-strategy: drop-sudo
           codex-args: '--config web_search="disabled"'
-          prompt: |
-            You are for testing and debugging purposes.
-
-            Generate a minimal LaTeX file for testing purposes named test.tex in the `<output_dir>/`.
+          prompt-file: .github/codex/runtime/test_prompt.md
           
       - name: Create patch artifact
         id: diff

@@ -60,9 +60,9 @@ jobs:
         id: diff
         run: |
           git add -N .
-          git diff --binary HEAD > codex.patch
+          git diff --binary HEAD > /tmp/codex.patch
 
-          if [ -s codex.patch ]; then
+          if [ -s /tmp/codex.patch ]; then
             echo "has_patch=true" >> "$GITHUB_OUTPUT"
           else
             echo "has_patch=false" >> "$GITHUB_OUTPUT"
@@ -73,7 +73,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: codex.patch
-          path: codex.patch
+          path: /tmp/codex.patch
           if-no-files-found: error
 
   open_pr:
@@ -100,13 +100,14 @@ jobs:
           echo "number=$(echo "$issue_json" | jq -r '.number')" >> "$GITHUB_OUTPUT"
           echo "title=$(echo "$issue_json" | jq -r '.title')" >> "$GITHUB_OUTPUT"    
 
-      - uses: actions/download-artifact@v4
+      - name: Download Codex patch
+        uses: actions/download-artifact@v4
         with:
           name: codex.patch
+          path: /tmp/codex-patch
 
       - name: Apply Codex patch
-        run: |
-          git apply --index codex.patch
+        run: git apply --index /tmp/codex-patch/codex.patch
 
       - name: Create application branch slug
         id: slug

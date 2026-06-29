@@ -178,6 +178,7 @@ jobs:
     needs: 
       - vars
       - generate_patch
+      - render_documents
     if: needs.generate_patch.outputs.has_patch == 'true'
 
     permissions:

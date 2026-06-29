@@ -110,7 +110,9 @@ jobs:
   # --------------------------------------------------------------------
   open_pr:
     runs-on: ubuntu-latest
-    needs: generate_patch
+    needs: 
+      - generate_patch
+      - vars
     if: needs.generate_patch.outputs.has_patch == 'true'
 
     permissions:

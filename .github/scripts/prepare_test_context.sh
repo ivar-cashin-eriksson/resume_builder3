@@ -4,10 +4,10 @@ set -euo pipefail
 : "${LISTING_SLUG:?LISTING_SLUG is required}"
 : "${OUTPUT_DIR:?OUTPUT_DIR is required}"
 
-RUNTIME_DIR="${RUNTIME_DIR:-/tmp/codex-runtime}"
+RUNTIME_DIR=".github/codex/runtime"
 mkdir -p "$RUNTIME_DIR"
 
-cat > .github/codex/runtime/application_context.md <<EOF
+cat > "$RUNTIME_DIR/application_context.md" <<EOF
 
 # Application Context
 

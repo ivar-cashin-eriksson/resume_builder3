@@ -108,11 +108,76 @@ jobs:
           if-no-files-found: error
 
   # --------------------------------------------------------------------
+  render_documents:
+    runs-on: ubuntu-latest
+    needs: 
+      - vars
+      - generate_patch
+    if: needs.generate_patch.outputs.has_patch == 'true'
+
+    permissions:
+      contents: read
+
+    outputs:
+      has_patch: ${{ steps.diff.outputs.has_patch }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Download Codex patch
+        uses: actions/download-artifact@v4
+        with:
+          name: codex.patch
+          path: /tmp/codex-patch
+
+      - name: Apply Codex patch
+        run: |
+          git apply --index /tmp/codex-patch/codex.patch
+          git reset
+
+      - name: Install LaTeX
+        run: bash .github/scripts/install_latex.sh
+
+      - name: Compile PDFs
+        env:
+          OUTPUT_DIR: ${{ needs.vars.outputs.output_dir }}
+        run: bash .github/scripts/compile_test_pdfs.sh
+
+      - name: Copy PDFs to output directory
+        env:
+          OUTPUT_DIR: ${{ needs.vars.outputs.output_dir }}
+        run: bash .github/scripts/promote_pdfs.sh
+
+      - name: Create rendered patch artifact
+        id: diff
+        run: |
+          git add -N .
+          git diff --binary HEAD > /tmp/rendered.patch
+
+          if [ -s /tmp/rendered.patch ]; then
+            echo "has_patch=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_patch=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Upload rendered patch artifact
+        if: steps.diff.outputs.has_patch == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: rendered.patch
+          path: /tmp/rendered.patch
+          if-no-files-found: error
+
+  # --------------------------------------------------------------------
   open_pr:
     runs-on: ubuntu-latest
     needs: 
-      - generate_patch
       - vars
+      - generate_patch
     if: needs.generate_patch.outputs.has_patch == 'true'
 
     permissions:

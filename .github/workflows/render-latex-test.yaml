@@ -72,10 +72,8 @@ jobs:
 
       - name: Prepare application context and prompt files
         env:
-          ISSUE_TITLE: ${{ needs.vars.outputs.issue_title }}
-          ISSUE_BODY: ${{ needs.vars.outputs.issue_body }}
-          ISSUE_LABELS: ${{ needs.vars.outputs.issue_labels }}
-          ISSUE_NUMBER: ${{ needs.vars.outputs.issue_number }}
+          LISTING_SLUG: ${{ needs.vars.outputs.listing_slug }}
+          OUTPUT_DIR: ${{ needs.vars.outputs.output_dir }}
         run: bash .github/scripts/prepare_test_context.sh
 
       - name: Make test LaTeX

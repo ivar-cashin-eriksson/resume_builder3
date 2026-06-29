@@ -14,11 +14,51 @@ permissions:
   issues: read
 
 jobs:
+  # --------------------------------------------------------------------
+  vars:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: read
+      issues: read
+
+    outputs:
+      issue_number: ${{ steps.issue.outputs.number }}
+      issue_title: ${{ steps.issue.outputs.title }}
+      issue_labels: ${{ steps.issue.outputs.labels }}
+      issue_body: ${{ steps.issue.outputs.body }}
+      listing_slug: ${{ steps.vars.outputs.listing_slug }}
+      output_dir: ${{ steps.vars.outputs.output_dir }}
+      branch_name: ${{ steps.vars.outputs.branch_name }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+
+      - name: Load issue data
+        id: issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_NUMBER: ${{ inputs.issue_number }}
+        run: bash .github/scripts/load_issue_data.sh
+
+      - name: Derive application variables
+        id: vars
+        env:
+          ISSUE_TITLE: ${{ steps.issue.outputs.title }}
+          ISSUE_NUMBER: ${{ steps.issue.outputs.number }}
+        run: bash .github/scripts/derive_application_vars.sh
+
+  # -------------------------------------------------------------------- 
   generate_patch:
     runs-on: ubuntu-latest
     
     permissions:
       contents: read
+
+    needs: vars
 
     outputs:
       has_patch: ${{ steps.diff.outputs.has_patch }}
@@ -30,19 +70,12 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
 
-      - name: Load issue data
-        id: issue
-        env:
-          GH_TOKEN: ${{ github.token }}
-          MANUAL_ISSUE_NUMBER: ${{ inputs.issue_number }}
-        run: bash .github/scripts/load_issue_data.sh
-
       - name: Prepare application context and prompt files
         env:
-          ISSUE_TITLE: ${{ steps.issue.outputs.title }}
-          ISSUE_BODY: ${{ steps.issue.outputs.body }}
-          ISSUE_LABELS: ${{ steps.issue.outputs.labels }}
-          ISSUE_NUMBER: ${{ steps.issue.outputs.number }}
+          ISSUE_TITLE: ${{ needs.vars.outputs.issue_title }}
+          ISSUE_BODY: ${{ needs.vars.outputs.issue_body }}
+          ISSUE_LABELS: ${{ needs.vars.outputs.issue_labels }}
+          ISSUE_NUMBER: ${{ needs.vars.outputs.issue_number }}
         run: bash .github/scripts/prepare_test_context.sh
 
       - name: Make test LaTeX
@@ -76,6 +109,7 @@ jobs:
           path: /tmp/codex.patch
           if-no-files-found: error
 
+  # --------------------------------------------------------------------
   open_pr:
     runs-on: ubuntu-latest
     needs: generate_patch
@@ -94,7 +128,7 @@ jobs:
         id: issue
         env:
           GH_TOKEN: ${{ github.token }}
-          ISSUE_NUMBER: ${{ inputs.issue_number }}
+          ISSUE_NUMBER: ${{ needs.vars.outputs.issue_number }}
         run: |
           issue_json="$(gh issue view "$ISSUE_NUMBER" --json number,title,body)"
           echo "number=$(echo "$issue_json" | jq -r '.number')" >> "$GITHUB_OUTPUT"
@@ -112,8 +146,8 @@ jobs:
       - name: Create application branch slug
         id: slug
         env:
-          ISSUE_NUMBER: ${{ steps.issue.outputs.number }}
-          ISSUE_TITLE: ${{ steps.issue.outputs.title }}
+          ISSUE_TITLE: ${{ needs.vars.outputs.issue_title }}
+          ISSUE_NUMBER: ${{ needs.vars.outputs.issue_number }}
         run: |
           slug="$(echo "$ISSUE_TITLE" \
             | tr '[:upper:]' '[:lower:]' \
@@ -125,15 +159,15 @@ jobs:
 
       - name: Build pull request body
         env:
-          ISSUE_NUMBER: ${{ steps.issue.outputs.number }}
+          ISSUE_NUMBER: ${{ needs.vars.outputs.issue_number }}
           PR_BODY_PATH: /tmp/pr_body.md
         run: bash .github/scripts/build_pr_body.sh
 
       - name: Create pull request
         uses: peter-evans/create-pull-request@v6
         with:
-          branch: ${{ steps.slug.outputs.branch }}
-          title: "Application materials: ${{ steps.issue.outputs.title }}"
-          commit-message: "Generate application materials for issue #${{ steps.issue.outputs.number }}"
+          branch_name: ${{ steps.vars.outputs.branch_name }}
+          title: "Application materials: ${{ needs.vars.outputs.issue_title }}"
+          commit-message: "Generate application materials for issue #${{ needs.vars.outputs.issue_number }}"
           body-path: /tmp/pr_body.md
           labels: application-draft

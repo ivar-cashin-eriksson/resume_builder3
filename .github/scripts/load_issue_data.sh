@@ -3,7 +3,7 @@ set -euo pipefail
 
 mkdir -p .github/codex
 
-ISSUE_NUMBER="${MANUAL_ISSUE_NUMBER:-}"
+ISSUE_NUMBER="${ISSUE_NUMBER:-}"
 
 if [ -z "$ISSUE_NUMBER" ]; then
   echo "No issue number found." >&2

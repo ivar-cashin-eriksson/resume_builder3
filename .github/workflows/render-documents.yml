@@ -1,0 +1,82 @@
+name: Render Documents
+
+on:
+  workflow_call:
+    inputs:
+      output_dir:
+        required: true
+        type: string
+      input_patch_artifact_name:
+        default: codex.patch
+        type: string
+      output_patch_artifact_name:
+        default: rendered.patch
+        type: string
+    outputs:
+      has_patch:
+        description: "Whether the rendered patch artifact has content"
+        value: ${{ jobs.render_documents.outputs.has_patch }}
+
+permissions:
+  contents: read
+
+jobs:
+  render_documents:
+    runs-on: ubuntu-latest
+
+    outputs:
+      has_patch: ${{ steps.diff.outputs.has_patch }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Download input patch
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ inputs.input_patch_artifact_name }}
+          path: /tmp/input-patch
+
+      - name: Apply input patch
+        env:
+          PATCH_PATH: /tmp/input-patch/${{ inputs.input_patch_artifact_name }}
+        run: git apply "$PATCH_PATH"
+
+      - name: Install LaTeX
+        run: bash .github/scripts/install_latex.sh
+
+      - name: Compile PDFs
+        env:
+          OUTPUT_DIR: ${{ inputs.output_dir }}
+        run: bash .github/scripts/compile_test_pdfs.sh
+
+      - name: Copy PDFs to output directory
+        env:
+          OUTPUT_DIR: ${{ inputs.output_dir }}
+        run: bash .github/scripts/promote_pdfs.sh
+
+      - name: Create rendered patch artifact
+        id: diff
+        env:
+          OUTPUT_DIR: ${{ inputs.output_dir }}
+          PATCH_PATH: /tmp/${{ inputs.output_patch_artifact_name }}
+        run: |
+          git add -N -f "$OUTPUT_DIR"
+          git diff --binary HEAD > "$PATCH_PATH"
+
+          if [ -s "$PATCH_PATH" ]; then
+            echo "has_patch=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_patch=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Upload rendered patch artifact
+        if: steps.diff.outputs.has_patch == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ inputs.output_patch_artifact_name }}
+          path: /tmp/${{ inputs.output_patch_artifact_name }}
+          if-no-files-found: error

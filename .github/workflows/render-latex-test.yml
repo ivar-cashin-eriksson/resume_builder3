@@ -1,0 +1,105 @@
+name: Render LaTeX Test
+
+on:
+  workflow_dispatch:
+    inputs:
+      issue_number:
+        description: "Issue number to generate materials for"
+        required: true
+        type: string
+
+jobs:
+  vars:
+    permissions:
+      contents: read
+      issues: read
+    uses: ./.github/workflows/vars.yml
+    with:
+      issue_number: ${{ github.event.inputs.issue_number }}
+
+  generate_patch:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+
+    needs: vars
+
+    outputs:
+      has_patch: ${{ steps.diff.outputs.has_patch }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Prepare application context and prompt files
+        env:
+          LISTING_SLUG: ${{ needs.vars.outputs.listing_slug }}
+          OUTPUT_DIR: ${{ needs.vars.outputs.output_dir }}
+        run: bash .github/scripts/prepare_test_context.sh
+
+      - name: Make test LaTeX
+        uses: openai/codex-action@v1
+        with:
+          openai-api-key: ${{ secrets.OPENAI_API_KEY }}
+          model: gpt-5.4-mini
+          effort: low
+          sandbox: workspace-write
+          safety-strategy: drop-sudo
+          codex-args: '--config web_search="disabled"'
+          prompt-file: .github/codex/runtime/test_prompt.md
+
+      - name: Create patch artifact
+        id: diff
+        run: |
+          git add -N .
+          git diff --binary HEAD > /tmp/codex.patch
+
+          if [ -s /tmp/codex.patch ]; then
+            echo "has_patch=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_patch=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Upload patch artifact
+        if: steps.diff.outputs.has_patch == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: codex.patch
+          path: /tmp/codex.patch
+          if-no-files-found: error
+
+  render_documents:
+    needs:
+      - vars
+      - generate_patch
+    if: needs.generate_patch.outputs.has_patch == 'true'
+    permissions:
+      contents: read
+    uses: ./.github/workflows/render-documents.yml
+    with:
+      output_dir: ${{ needs.vars.outputs.output_dir }}
+      input_patch_artifact_name: codex.patch
+      output_patch_artifact_name: rendered.patch
+
+  open_pr:
+    needs:
+      - vars
+      - render_documents
+    if: needs.render_documents.outputs.has_patch == 'true'
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: read
+    uses: ./.github/workflows/open-pr.yml
+    with:
+      issue_number: ${{ needs.vars.outputs.issue_number }}
+      issue_title: ${{ needs.vars.outputs.issue_title }}
+      branch_name: ${{ needs.vars.outputs.branch_name }}
+      patch_artifact_name: rendered.patch
+      pr_title: "Application materials: ${{ needs.vars.outputs.issue_title }}"
+      commit_message: "Generate application materials for issue #${{ needs.vars.outputs.issue_number }}"
+      labels: application-draft

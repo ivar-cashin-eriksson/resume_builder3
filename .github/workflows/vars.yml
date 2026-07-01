@@ -1,0 +1,67 @@
+name: Issue Variables
+
+on:
+  workflow_call:
+    inputs:
+      issue_number:
+        required: true
+        type: string
+    outputs:
+      issue_number:
+        description: "Issue number"
+        value: ${{ jobs.vars.outputs.issue_number }}
+      issue_title:
+        description: "Issue title"
+        value: ${{ jobs.vars.outputs.issue_title }}
+      issue_labels:
+        description: "Issue labels"
+        value: ${{ jobs.vars.outputs.issue_labels }}
+      issue_body:
+        description: "Issue body"
+        value: ${{ jobs.vars.outputs.issue_body }}
+      listing_slug:
+        description: "Derived listing slug"
+        value: ${{ jobs.vars.outputs.listing_slug }}
+      output_dir:
+        description: "Derived output directory"
+        value: ${{ jobs.vars.outputs.output_dir }}
+      branch_name:
+        description: "Derived branch name"
+        value: ${{ jobs.vars.outputs.branch_name }}
+
+permissions:
+  contents: read
+  issues: read
+
+jobs:
+  vars:
+    runs-on: ubuntu-latest
+
+    outputs:
+      issue_number: ${{ steps.issue.outputs.number }}
+      issue_title: ${{ steps.issue.outputs.title }}
+      issue_labels: ${{ steps.issue.outputs.labels }}
+      issue_body: ${{ steps.issue.outputs.body }}
+      listing_slug: ${{ steps.vars.outputs.listing_slug }}
+      output_dir: ${{ steps.vars.outputs.output_dir }}
+      branch_name: ${{ steps.vars.outputs.branch_name }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+
+      - name: Load issue data
+        id: issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_NUMBER: ${{ inputs.issue_number }}
+        run: bash .github/scripts/load_issue_data.sh
+
+      - name: Derive application variables
+        id: vars
+        env:
+          ISSUE_TITLE: ${{ steps.issue.outputs.title }}
+          ISSUE_NUMBER: ${{ steps.issue.outputs.number }}
+        run: bash .github/scripts/derive_application_vars.sh

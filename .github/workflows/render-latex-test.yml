@@ -7,7 +7,6 @@ on:
         description: "Issue number to generate materials for"
         required: true
         type: string
-  push: -- Add this here
 
 jobs:
   vars:

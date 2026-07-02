@@ -8,6 +8,8 @@ on:
         required: true
         type: string
   push:
+    branches:
+      - chore/split-up-action
 
 jobs:
   vars:

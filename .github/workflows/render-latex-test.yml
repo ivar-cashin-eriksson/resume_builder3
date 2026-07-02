@@ -7,9 +7,6 @@ on:
         description: "Issue number to generate materials for"
         required: true
         type: string
-  push:
-    branches:
-      - chore/split-up-action
 
 jobs:
   vars:

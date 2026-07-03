@@ -42,7 +42,7 @@ jobs:
           LISTING_SLUG: ${{ needs.vars.outputs.listing_slug }}
           OUTPUT_DIR: ${{ needs.vars.outputs.output_dir }}
           PROMPT_FILE: "prompts/test_prompt.md"
-        run: bash .github/scripts/prepare_test_context.sh
+        run: bash .github/scripts/prepare_prompt.sh
 
       - name: Make test LaTeX
         uses: openai/codex-action@v1

@@ -31,11 +31,11 @@ Git should track the reusable parts: `profile/`, `prompts/`, `templates/`, and t
 Keep country-specific contact details in:
 
 ```text
-other_material/personal_info_dk.tex
-other_material/personal_info_se.tex
+secrets/personal_info_dk.tex
+secrets/personal_info_se.tex
 ```
 
-The CV and cover letter templates default to the Denmark file after they are copied into `outputs/<listing_slug>/`. For Sweden-facing applications, change the `\input` line to `../../other_material/personal_info_se.tex`. Image paths inside both personal info files should remain relative to the generated output folder:
+The CV and cover letter templates default to the Denmark file after they are copied into `outputs/<listing_slug>/`. For Sweden-facing applications, change the `\input` line to `../../secrets/personal_info_se.tex`. Image paths inside both personal info files should remain relative to the generated output folder:
 
 ```tex
 \includegraphics[height=0.9em]{../../other_material/images/<file>}

@@ -18,7 +18,7 @@
 
 ## Compilation
 
-PDF compilation was completed locally with `pdflatex` after updating the generated materials to reference `../../other_material/personal_info_dk.tex` for Denmark contact details.
+PDF compilation was completed locally with `pdflatex` after updating the generated materials to reference `../../secrets/personal_info_dk.tex` for Denmark contact details.
 
 Generated PDFs:
 

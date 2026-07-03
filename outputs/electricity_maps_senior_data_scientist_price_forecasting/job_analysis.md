@@ -58,4 +58,4 @@ The application should position Ivar as a senior applied data scientist with a s
 - Missing fit / gap report markdown.
 - Generation summary markdown.
 
-PDFs have since been compiled locally with `pdflatex`. The generated LaTeX references `other_material/personal_info_dk.tex` for Denmark contact details.
+PDFs have since been compiled locally with `pdflatex`. The generated LaTeX references `secrets/personal_info_dk.tex` for Denmark contact details.

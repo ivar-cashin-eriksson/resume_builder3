@@ -1,4 +1,4 @@
 .vscode/
 .github/codex/
-other_material/
-outputs/**/build/
+secrets/
+**/build/

@@ -177,7 +177,10 @@ jobs:
   create_personal_info_file:
     permissions:
       contents: read
-    uses: ./.github/workflows/create-personal-info-files.yml    
+    uses: ./.github/workflows/create-personal-info-files.yml
+    secrets:
+      PERSONAL_INFO_DK_TEX: ${{ secrets.PERSONAL_INFO_DK_TEX }}
+      PERSONAL_INFO_SE_TEX: ${{ secrets.PERSONAL_INFO_SE_TEX }}
 
   render_documents:
     needs:

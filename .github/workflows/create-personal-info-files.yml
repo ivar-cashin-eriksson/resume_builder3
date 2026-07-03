@@ -2,6 +2,11 @@ name: Create personal info files
 
 on:
   workflow_call:
+    secrets:
+      PERSONAL_INFO_DK_TEX:
+        required: true
+      PERSONAL_INFO_SE_TEX:
+        required: true
 
 permissions:
   contents: read
@@ -11,11 +16,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v5
-        with:
-          persist-credentials: false
-
       - name: Create personal info files
         run: |
           set -euo pipefail

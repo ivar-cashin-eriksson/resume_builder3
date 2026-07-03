@@ -71,6 +71,8 @@ jobs:
           OUTPUT_DIR: ${{ needs.vars.outputs.output_dir }}
         run: bash .github/scripts/validate_application_outputs.sh briefing
 
+# The first Codex step drops sudo for the rest of this job.
+# Later Codex calls use unsafe so the action does not try to drop sudo again.
       - name: Generate draft package
         uses: openai/codex-action@v1
         with:
@@ -81,7 +83,7 @@ jobs:
           codex-args: '--config web_search="disabled"'
           sandbox: workspace-write
           output-file: .github/codex/runtime/generator_summary.md
-          safety-strategy: drop-sudo
+          safety-strategy: unsafe
 
       - name: Run fit critic
         uses: openai/codex-action@v1
@@ -93,7 +95,7 @@ jobs:
           codex-args: '--config web_search="disabled"'
           sandbox: workspace-write
           output-file: .github/codex/runtime/fit_critic_summary.md
-          safety-strategy: drop-sudo
+          safety-strategy: unsafe
 
       - name: Run style critic
         uses: openai/codex-action@v1
@@ -105,7 +107,7 @@ jobs:
           codex-args: '--config web_search="disabled"'
           sandbox: workspace-write
           output-file: .github/codex/runtime/style_critic_summary.md
-          safety-strategy: drop-sudo
+          safety-strategy: unsafe
 
       - name: Validate critic outputs
         run: bash .github/scripts/validate_application_outputs.sh critics
@@ -120,7 +122,7 @@ jobs:
           codex-args: '--config web_search="disabled"'
           sandbox: workspace-write
           output-file: .github/codex/runtime/revision_summary.md
-          safety-strategy: drop-sudo
+          safety-strategy: unsafe
 # ----------------------------------------------------------------------
 
       - name: Create patch artifact

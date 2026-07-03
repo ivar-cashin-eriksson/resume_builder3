@@ -17,6 +17,9 @@ jobs:
 
     steps:
       - name: Create personal info files
+        env:
+          PERSONAL_INFO_DK_TEX: ${{ secrets.PERSONAL_INFO_DK_TEX }}
+          PERSONAL_INFO_SE_TEX: ${{ secrets.PERSONAL_INFO_SE_TEX }}
         run: |
           set -euo pipefail
 

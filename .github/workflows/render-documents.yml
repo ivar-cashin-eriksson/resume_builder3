@@ -12,6 +12,9 @@ on:
       output_patch_artifact_name:
         default: rendered.patch
         type: string
+      private_material_artifact_name:
+        required: true
+        type: string
     outputs:
       has_patch:
         description: "Whether the rendered patch artifact has content"
@@ -45,6 +48,19 @@ jobs:
           PATCH_PATH: /tmp/input-patch/${{ inputs.input_patch_artifact_name }}
         run: git apply "$PATCH_PATH"
 
+      - name: Download private material files
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ inputs.private_material_artifact_name }}
+          path: secrets
+
+      - name: Verify private material files
+        run: |
+          set -euo pipefail
+
+          test -f secrets/personal_info_dk.tex
+          test -f secrets/personal_info_se.tex
+
       - name: Install LaTeX
         run: bash .github/scripts/install_latex.sh
 
@@ -65,7 +81,7 @@ jobs:
           PATCH_PATH: /tmp/${{ inputs.output_patch_artifact_name }}
         run: |
           git add -N "$OUTPUT_DIR"
-          git diff --binary HEAD > "$PATCH_PATH"
+          git diff --binary HEAD -- "$OUTPUT_DIR" ":(exclude)secrets/personal_info_*.tex" > "$PATCH_PATH"
 
           if [ -s "$PATCH_PATH" ]; then
             echo "has_patch=true" >> "$GITHUB_OUTPUT"

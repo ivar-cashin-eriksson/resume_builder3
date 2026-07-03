@@ -174,10 +174,11 @@ jobs:
             .github/codex/runtime/revision_summary.md
           if-no-files-found: error
 
-  create_personal_info_file:
+  create_private_material_files:
+    needs: vars
     permissions:
       contents: read
-    uses: ./.github/workflows/create-personal-info-files.yml
+    uses: ./.github/workflows/create-private-material-files.yml
     secrets:
       PERSONAL_INFO_DK_TEX: ${{ secrets.PERSONAL_INFO_DK_TEX }}
       PERSONAL_INFO_SE_TEX: ${{ secrets.PERSONAL_INFO_SE_TEX }}
@@ -186,7 +187,7 @@ jobs:
     needs:
       - vars
       - generate_patch
-      - create_personal_info_file
+      - create_private_material_files
     if: needs.generate_patch.outputs.has_patch == 'true'
     permissions:
       contents: read
@@ -195,6 +196,7 @@ jobs:
       output_dir: ${{ needs.vars.outputs.output_dir }}
       input_patch_artifact_name: codex.patch
       output_patch_artifact_name: rendered.patch
+      private_material_artifact_name: ${{ needs.create_private_material_files.outputs.artifact_name }}
 
   open_pr:
     needs:

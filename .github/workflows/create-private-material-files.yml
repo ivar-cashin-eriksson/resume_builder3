@@ -1,0 +1,46 @@
+name: Create private material files
+
+on:
+  workflow_call:
+    secrets:
+      PERSONAL_INFO_DK_TEX:
+        required: true
+      PERSONAL_INFO_SE_TEX:
+        required: true
+    outputs:
+      artifact_name:
+        description: "Private material artifact name"
+        value: ${{ jobs.create_private_material_files.outputs.artifact_name }}
+
+permissions:
+  contents: read
+
+jobs:
+  create_private_material_files:
+    runs-on: ubuntu-latest
+
+    outputs:
+      artifact_name: ${{ steps.vars.outputs.artifact_name }}
+
+    steps:
+      - name: Set artifact name
+        id: vars
+        run: echo "artifact_name=private-material-files" >> "$GITHUB_OUTPUT"
+
+      - name: Create private material files
+        env:
+          PERSONAL_INFO_DK_TEX: ${{ secrets.PERSONAL_INFO_DK_TEX }}
+          PERSONAL_INFO_SE_TEX: ${{ secrets.PERSONAL_INFO_SE_TEX }}
+        run: |
+          set -euo pipefail
+
+          mkdir -p secrets
+          printf '%s\n' "$PERSONAL_INFO_DK_TEX" > secrets/personal_info_dk.tex
+          printf '%s\n' "$PERSONAL_INFO_SE_TEX" > secrets/personal_info_se.tex
+
+      - name: Upload private material files
+        uses: actions/upload-artifact@v4
+        with:
+          name: private-material-files
+          path: secrets/personal_info_*.tex
+          if-no-files-found: error

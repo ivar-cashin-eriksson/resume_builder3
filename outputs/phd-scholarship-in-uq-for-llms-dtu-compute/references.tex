@@ -1,0 +1,38 @@
+% %--------------------------
+% %	CONFIGURATION
+% %--------------------------
+\documentclass[11pt,a4paper]{moderncv}
+\moderncvstyle{classic}
+\moderncvcolor{black}
+\definecolor{firstnamecolor}{rgb}{0,0,0}
+
+% Basic packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[scale=0.7]{geometry}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{DarkBlue}{RGB}{0, 0, 150}
+\usepackage[colorlinks=true, urlcolor=DarkBlue, linkcolor=DarkBlue]{hyperref}
+
+\usepackage{microtype}
+
+% Configure font settings
+\renewcommand{\rmdefault}{ppl}
+\renewcommand{\sfdefault}{phv}
+\renewcommand*{\namefont}{\fontsize{26}{18}\mdseries}
+
+% Configure microtype
+\microtypesetup{expansion=false}
+
+\input{../../secrets/personal_info_dk.tex}
+
+\begin{document}
+\section*{References}
+
+\begin{itemize}
+    \item \textbf{Laura Hortvath-Perge:} Manager from a previous workplace. She can speak to how I work in a fast-paced setting. Reachable at \href{mailto:laurahp@google.com}{laurahp@google.com}.
+    \item \textbf{Tianfang Zhang:} Master's thesis supervisor at KTH Royal Institute of Technology. He can speak to my ability to work independently on advanced research projects. Reachable at \href{mailto:tianfang@kth.se}{tianfang@kth.se}.
+    \item \textbf{Morten Mørup:} Academic contact with whom I have discussed a research project on graph representation learning for pharmaceuticals. He can speak to my work in an academic research setting. Reachable at \href{mailto:mmor@dtu.dk}{mmor@dtu.dk}.
+\end{itemize}
+
+\end{document}

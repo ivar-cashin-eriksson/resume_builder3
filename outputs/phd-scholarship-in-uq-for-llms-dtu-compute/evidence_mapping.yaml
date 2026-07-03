@@ -1,0 +1,125 @@
+listing_slug: phd-scholarship-in-uq-for-llms-dtu-compute
+listing_source: GitHub issue body supplied by user
+
+sources_reviewed:
+  - profile/profile.yaml
+  - profile/education.yaml
+  - profile/experience.yaml
+  - profile/skills.yaml
+  - profile/projects.yaml
+  - profile/courses.yaml
+  - profile/claims.yaml
+  - profile/awards_and_achievements.yaml
+  - profile/writing_style/style.yaml
+  - profile/writing_style/cover_letter_style.yaml
+  - profile/writing_style/core_narrative.yaml
+  - profile/writing_style/research_statement_style.yaml
+  - templates/README.md
+  - templates/cv.tex
+  - templates/cover_letter.tex
+  - templates/research_statement.tex
+  - other_material/references.tex
+
+claims:
+  - claim: "Ivar has seven years of machine-learning experience."
+    used_in:
+      - "cv.tex introduction"
+      - "cover_letter.tex paragraph 1"
+    source_file: "profile/experience.yaml"
+    source_quote_or_summary: "Experience entries start with RaySearch Laboratories in 2019 and continue through the current role at Signum Life Science."
+    confidence: high
+
+  - claim: "Ivar has a KTH MSc specialisation in Statistical Learning and Data Analytics and a BSc in Engineering Physics."
+    used_in:
+      - "cv.tex education"
+      - "cover_letter.tex paragraph 1"
+    source_file: "profile/education.yaml"
+    source_quote_or_summary: "KTH entry lists MSc in Statistical Learning and Data Analytics and BSc in Engineering Physics."
+    confidence: high
+
+  - claim: "Ivar has a 5.0 / 5.0 GPA in the KTH source material."
+    used_in:
+      - "cv.tex education"
+    source_file: "profile/education.yaml"
+    source_quote_or_summary: "KTH entry lists gpa: 5.0 / 5.0."
+    confidence: high
+
+  - claim: "Ivar studied Applied Mathematics at ETH Zurich as an exchange student."
+    used_in:
+      - "cv.tex education"
+      - "cover_letter.tex paragraph 4"
+    source_file: "profile/education.yaml"
+    source_quote_or_summary: "ETH entry lists Applied Mathematics, Exchange, 2019."
+    confidence: high
+
+  - claim: "Ivar has relevant coursework in Statistical Machine Learning, Probability Theory, and Optimization."
+    used_in:
+      - "cv.tex education"
+      - "cover_letter.tex paragraph 4"
+    source_file: "profile/courses.yaml"
+    source_quote_or_summary: "Courses list includes SF2957 Statistical Machine Learning, SF1901 Probability Theory and Statistics, SF1811 Optimization, and related quantitative coursework."
+    confidence: high
+
+  - claim: "Ivar worked on probabilistic modelling and optimisation for automated radiotherapy planning using autoencoders and sparse Gaussian processes."
+    used_in:
+      - "cv.tex selected and detailed RaySearch sections"
+      - "cover_letter.tex paragraph 2"
+      - "research_statement.tex motivation/background"
+    source_file: "profile/experience.yaml"
+    source_quote_or_summary: "RaySearch responsibilities include autoencoders on segmented 3D CT scans, sparse Gaussian processes, multi-objective optimisation, lexicographic optimisation, and collaboration with clinicians."
+    confidence: high
+
+  - claim: "Ivar has experience with explainable AI and stakeholder communication."
+    used_in:
+      - "cv.tex selected and detailed Valcon sections"
+      - "cover_letter.tex paragraph 3"
+    source_file: "profile/experience.yaml"
+    source_quote_or_summary: "Valcon responsibilities include explainable AI training, mentoring, and presenting technical topics to non-technical stakeholders; Signum responsibilities include explainable AI features."
+    confidence: high
+
+  - claim: "Ivar has experience with LLM embeddings for free-text similarity search and matching workflows."
+    used_in:
+      - "cv.tex selected Signum section"
+      - "cover_letter.tex paragraph 3"
+      - "research_statement.tex motivation/background"
+    source_file: "profile/experience.yaml"
+    source_quote_or_summary: "Signum responsibilities include using LLMs to embed free text for downstream similarity search and matching workflows."
+    confidence: high
+
+  - claim: "Ivar has experience with model evaluation and behaviour analysis."
+    used_in:
+      - "cv.tex introduction"
+      - "cover_letter.tex paragraph 1"
+      - "research_statement.tex research direction"
+    source_file: "profile/experience.yaml; profile/claims.yaml"
+    source_quote_or_summary: "Signum embedding work, RaySearch validation with clinicians, and Valcon production ML systems all require careful evaluation of model behaviour."
+    confidence: medium
+
+  - claim: "Ivar has experience building production ML systems."
+    used_in:
+      - "cv.tex introduction"
+      - "cover_letter.tex paragraph 3"
+      - "research_statement.tex motivation/background"
+    source_file: "profile/claims.yaml; profile/experience.yaml"
+    source_quote_or_summary: "Claims file and experience file describe production ML systems at Valcon, Signum, and Project iris."
+    confidence: high
+
+  - claim: "Ivar has native English and Swedish, and intermediate Danish."
+    used_in:
+      - "cv.tex skills and other"
+    source_file: "profile/profile.yaml"
+    source_quote_or_summary: "Profile lists English native, Swedish native, and Danish intermediate."
+    confidence: high
+
+  - claim: "The references sheet uses three existing contacts from the repository."
+    used_in:
+      - "references.tex"
+    source_file: "other_material/references.tex"
+    source_quote_or_summary: "The repository contains a references sheet with Laura Hortvath-Perge, Tianfang Zhang, and Morten Mørup."
+    confidence: medium
+
+explicit_non_claims:
+  - "The materials do not claim direct prior work on uncertainty quantification for large language models."
+  - "The materials do not claim direct mechanistic interpretability or LLM security experience."
+  - "The materials do not claim publications."
+  - "The materials do not claim named supervisors or a published DTU project description beyond the issue title and job analysis."

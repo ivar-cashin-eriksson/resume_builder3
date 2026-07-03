@@ -1,0 +1,77 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[scale=0.7]{geometry}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[colorlinks=true, urlcolor=DarkBlue, linkcolor=DarkBlue, citecolor=DarkBlue]{hyperref}
+\usepackage{microtype}
+
+\definecolor{DarkBlue}{RGB}{0, 0, 150}
+
+% Keep the same serif/sans pairing as the CV and cover letter.
+\renewcommand{\rmdefault}{ppl}
+\renewcommand{\sfdefault}{phv}
+\microtypesetup{expansion=false}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.55em}
+
+\newcommand{\statementtitle}[1]{%
+  \begin{center}
+    {\Large\bfseries #1}
+  \end{center}
+}
+
+\newcommand{\statementsubtitle}[1]{%
+  \begin{center}
+    {\normalsize #1}
+  \end{center}
+  \vspace{0.5em}
+}
+
+\begin{document}
+
+\statementtitle{Research Statement}
+\statementsubtitle{Uncertainty Quantification for Large Language Models}
+
+\section{Research Direction}
+I would like to study how uncertainty can be measured, calibrated, and used in large language models so that model outputs are easier to trust, reject, or route to a human when needed. The core question is not whether a model can produce fluent text, but whether it can indicate when it is likely to be wrong, incomplete, or outside its competence. That is a natural fit for a PhD project in a mathematically oriented department such as DTU Compute.
+
+The project I would propose sits between model evaluation, probabilistic modelling, and trustworthy AI. I am especially interested in methods that work at the answer level rather than only at the token level, because practical users usually need a decision about an output, not a sequence of next-token probabilities. I would aim to connect uncertainty estimates to behaviour such as abstention, selective answering, and confidence-aware evaluation.
+
+\section{Motivation and Background}
+My background is in statistical learning and engineering physics rather than NLP, but I have worked with the kinds of methods that matter for uncertainty-aware modelling. At RaySearch Laboratories, I worked on automated radiotherapy planning using deep learning, probabilistic modelling, and optimisation. That included autoencoders on segmented 3D CT scans and sparse Gaussian processes for predicting dose-volume histograms and spatial dose distributions. The setting required careful treatment of model uncertainty because the outputs influenced a clinical decision process.
+
+At Valcon, I built a production real-time neural network on natural-language inputs and high-dimensional labels, and I led explainable AI training. At Signum Life Science, I currently work on a forecasting platform for pharmaceutical price and demand forecasting, and I use LLMs to embed free text for similarity search and matching workflows. These roles are not direct work on LLM uncertainty, but they have given me practical exposure to model evaluation, retrieval quality, and production behaviour.
+
+\section{Proposed Project}
+My first hypothesis would be that useful uncertainty signals in LLMs are not singular. Some will come from the model's own predictive distribution, some from variation across sampled generations, and some from consistency between generated answers and retrieved or supplied evidence. A useful PhD project would compare these signals systematically and ask which combinations best predict whether an answer is correct, incomplete, or likely to fail under prompt variation.
+
+\subsection{Research Questions}
+\begin{itemize}
+    \item Which uncertainty measures are most informative for large language models when the output is judged at the level of a final answer rather than a token?
+    \item How stable are those measures under paraphrase, domain shift, and changes in prompt style?
+    \item Can uncertainty estimates be turned into simple policies for abstention, reranking, or human review without materially reducing usefulness?
+\end{itemize}
+
+\subsection{Methodological Approach}
+I would start with controlled evaluation benchmarks where the target answer is known and the prompt can be perturbed in a systematic way. That would make it possible to compare different uncertainty signals under repeated sampling and to measure how well they separate correct from incorrect responses. I would then extend the analysis to more open-ended tasks where the model must summarise, explain, or transform evidence rather than simply retrieve a fact.
+
+From a modelling perspective, I would expect to work with post-hoc calibration, selective prediction, and thresholding strategies before moving to more ambitious methods. I would also look at whether uncertainty behaves differently in plain generation versus embedding-based retrieval workflows, because the Signum work has shown me that similarity search and matching can fail in subtle but important ways. The practical goal would be to identify uncertainty measures that are simple enough to evaluate, but meaningful enough to support deployment decisions.
+
+\subsubsection{Evaluation}
+The evaluation would focus on calibration quality, error detection, and the usefulness of abstention. I would compare uncertainty estimates against task accuracy, robustness under prompt variation, and the cost of refusing to answer. If the project includes retrieval-augmented settings, I would also compare uncertainty with evidence consistency and retrieval quality. The point is not to optimise a single scalar score, but to understand which uncertainty signals are reliable enough to support use.
+
+\subsubsection{Expected Contributions}
+I would expect the project to produce three modest contributions: a clearer comparison of answer-level uncertainty signals for LLMs; an evaluation protocol that tests robustness under prompt and domain variation; and a practical view of when uncertainty estimates are useful enough to guide abstention or human review. If the work went well, it could also suggest a cleaner distinction between model confidence and actual reliability.
+
+\section{Fit With the Group}
+DTU Compute is a good fit because the topic needs mathematical care as well as practical relevance. The department's Scientific Computing and Cognitive Systems environments both point towards the kind of research I would like to do: methods work that is grounded in computation, but still close to real systems. My own training in statistical learning, applied mathematics, and probabilistic modelling should help me contribute to that setting.
+
+I do not claim prior direct research in LLM uncertainty quantification. My fit is instead based on adjacent experience: building probabilistic models, working with representation learning, evaluating model behaviour in production, and moving between research questions and deployed systems. I would use the PhD to turn that background into deeper methodological work on how large language models should express uncertainty and how that uncertainty should be used.
+
+\section{Selected Sources}
+The main sources for this statement are the DTU listing itself and the profile material in this repository. I would expect the PhD work to connect to the broader literature on calibration, selective prediction, conformal prediction, and uncertainty-aware evaluation of neural language models.
+
+\end{document}

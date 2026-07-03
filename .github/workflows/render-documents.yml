@@ -51,7 +51,7 @@ jobs:
       - name: Compile PDFs
         env:
           OUTPUT_DIR: ${{ inputs.output_dir }}
-        run: bash .github/scripts/compile_test_pdfs.sh
+        run: bash .github/scripts/compile_pdfs.sh
 
       - name: Copy PDFs to output directory
         env:

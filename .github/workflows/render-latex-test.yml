@@ -35,22 +35,26 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
 
+# ------------------ Run GPT to generate LaTeX patch -------------------
       - name: Prepare application context and prompt files
+        id: prepare_context
         env:
           LISTING_SLUG: ${{ needs.vars.outputs.listing_slug }}
           OUTPUT_DIR: ${{ needs.vars.outputs.output_dir }}
+          PROMPT_FILE: "prompts/test_prompt.md"
         run: bash .github/scripts/prepare_test_context.sh
 
       - name: Make test LaTeX
         uses: openai/codex-action@v1
         with:
           openai-api-key: ${{ secrets.OPENAI_API_KEY }}
-          model: gpt-5.4-mini
+          model: gpt-5.4-nano
           effort: low
           sandbox: workspace-write
           safety-strategy: drop-sudo
           codex-args: '--config web_search="disabled"'
-          prompt-file: .github/codex/runtime/test_prompt.md
+          prompt-file: ${{ steps.prepare_context.outputs.runtime_prompt_file }}
+# ----------------------------------------------------------------------
 
       - name: Create patch artifact
         id: diff
@@ -100,6 +104,6 @@ jobs:
       issue_title: ${{ needs.vars.outputs.issue_title }}
       branch_name: ${{ needs.vars.outputs.branch_name }}
       patch_artifact_name: rendered.patch
-      pr_title: "Application materials: ${{ needs.vars.outputs.issue_title }}"
-      commit_message: "Generate application materials for issue #${{ needs.vars.outputs.issue_number }}"
+      pr_title: "TEST for issue: ${{ needs.vars.outputs.issue_title }}"
+      commit_message: "Test commit for issue #${{ needs.vars.outputs.issue_number }}"
       labels: application-draft

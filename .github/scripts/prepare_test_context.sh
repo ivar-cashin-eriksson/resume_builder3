@@ -3,9 +3,14 @@ set -euo pipefail
 
 : "${LISTING_SLUG:?LISTING_SLUG is required}"
 : "${OUTPUT_DIR:?OUTPUT_DIR is required}"
+: "${PROMPT_FILE:?PROMPT_FILE is required}"
+
 
 RUNTIME_DIR=".github/codex/runtime"
 mkdir -p "$RUNTIME_DIR"
+
+PROMPT_BASENAME="$(basename "$PROMPT_FILE")"
+RUNTIME_PROMPT_FILE="$RUNTIME_DIR/$PROMPT_BASENAME"
 
 cat > "$RUNTIME_DIR/application_context.md" <<EOF
 
@@ -16,4 +21,4 @@ cat > "$RUNTIME_DIR/application_context.md" <<EOF
 
 EOF
 
-cat prompts/test_prompt.md .github/codex/runtime/application_context.md > .github/codex/runtime/test_prompt.md
+cat "$PROMPT_FILE" "$RUNTIME_DIR/application_context.md" > "$RUNTIME_PROMPT_FILE"

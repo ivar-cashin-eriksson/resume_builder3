@@ -11,155 +11,48 @@ on:
         required: true
         type: string
 
-permissions:
-  contents: write
-  pull-requests: write
-  issues: write
-
 jobs:
-  generate-application:
+  vars:
     if: >
       github.event_name == 'workflow_dispatch' ||
       (
         github.event.issue.user.login == 'ivar-cashin-eriksson' &&
         contains(github.event.issue.labels.*.name, 'job-application')
       )
+    permissions:
+      contents: read
+      issues: read
+    uses: ./.github/workflows/vars.yml
+    with:
+      issue_number: ${{ github.event.issue.number || inputs.issue_number }}
+
+  generate_patch:
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+
+    needs: vars
+
+    outputs:
+      has_patch: ${{ steps.diff.outputs.has_patch }}
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          persist-credentials: false
 
-      - name: Create Codex runtime directories
-        run: |
-          set -euo pipefail
-          mkdir -p .github/codex/runtime
-
-      - name: Create unprivileged Codex user
-        run: |
-          set -euo pipefail
-          
-          if ! id guest >/dev/null 2>&1; then
-            sudo adduser --system --home /home/guest --shell /bin/bash --group guest
-          fi
-
-          sudo usermod -a -G guest runner
-          sudo usermod -a -G runner guest
-
-          sudo chown -R runner:guest "$GITHUB_WORKSPACE"
-          sudo chmod -R g+rwX "$GITHUB_WORKSPACE"
-          sudo find "$GITHUB_WORKSPACE" -type d -exec chmod g+s {} +
-
-          sudo mkdir -p /home/guest/.codex
-          sudo chown -R guest:guest /home/guest
-
-      - name: Load issue data
-        id: issue
-        env:
-          GH_TOKEN: ${{ github.token }}
-          MANUAL_ISSUE_NUMBER: ${{ inputs.issue_number }}
-          EVENT_ISSUE_NUMBER: ${{ github.event.issue.number }}
-        run: |
-          set -euo pipefail
-
-          mkdir -p .github/codex
-
-          ISSUE_NUMBER="${EVENT_ISSUE_NUMBER:-$MANUAL_ISSUE_NUMBER}"
-
-          if [ -z "$ISSUE_NUMBER" ]; then
-            echo "No issue number found." >&2
-            exit 1
-          fi
-
-          gh issue view "$ISSUE_NUMBER" \
-            --json number,title,body,author,labels \
-            > .github/codex/runtime_issue.json
-
-          AUTHOR=$(jq -r '.author.login' .github/codex/runtime_issue.json)
-          LABELS=$(jq -r '[.labels[].name] | join(", ")' .github/codex/runtime_issue.json)
-
-          if [ "$AUTHOR" != "ivar-cashin-eriksson" ]; then
-            echo "Issue author is $AUTHOR, expected ivar-cashin-eriksson." >&2
-            exit 1
-          fi
-
-          if ! jq -e '.labels[].name == "job-application"' .github/codex/runtime_issue.json >/dev/null; then
-            echo "Issue does not have label: job-application" >&2
-            exit 1
-          fi
-
-          {
-            echo "number=$(jq -r '.number' .github/codex/runtime_issue.json)"
-            echo "title=$(jq -r '.title' .github/codex/runtime_issue.json)"
-            echo "labels=$LABELS"
-
-            echo "body<<EOF"
-            jq -r '.body // ""' .github/codex/runtime_issue.json
-            echo "EOF"
-          } >> "$GITHUB_OUTPUT"
-
+# ---------------- Run GPT to generate application patch ----------------
       - name: Prepare application context and prompt files
         env:
-          ISSUE_TITLE: ${{ steps.issue.outputs.title }}
-          ISSUE_BODY: ${{ steps.issue.outputs.body }}
-          ISSUE_LABELS: ${{ steps.issue.outputs.labels }}
-          ISSUE_NUMBER: ${{ steps.issue.outputs.number }}
-        run: |
-          set -euo pipefail
-
-          mkdir -p .github/codex/runtime
-
-          LISTING_SLUG=$(printf '%s' "$ISSUE_TITLE" \
-            | sed -E 's/^[Aa]pply:[[:space:]]*//' \
-            | tr '[:upper:]' '[:lower:]' \
-            | sed -E 's/[^a-z0-9]+/-/g' \
-            | sed -E 's/^-+|-+$//g' \
-            | cut -c1-80)
-
-          if [ -z "$LISTING_SLUG" ]; then
-            LISTING_SLUG="application-${{ steps.issue.outputs.number }}"
-          fi
-
-          OUTPUT_DIR="outputs/${LISTING_SLUG}"
-
-          echo "LISTING_SLUG=$LISTING_SLUG" >> "$GITHUB_ENV"
-          echo "OUTPUT_DIR=$OUTPUT_DIR" >> "$GITHUB_ENV"
-          echo "BRANCH_NAME=application/${LISTING_SLUG}" >> "$GITHUB_ENV"
-
-          cat > .github/codex/runtime/application_context.md <<EOF
-          # Application Context
-
-          ## GitHub Issue
-
-          Title: $ISSUE_TITLE
-
-          Body:
-          $ISSUE_BODY
-
-          Labels: $ISSUE_LABELS
-
-          ## Derived Repository Targets
-
-          - listing_slug: $LISTING_SLUG
-          - output_dir: $OUTPUT_DIR
-
-          ## Hard Rules
-
-          - Use only facts found in the repository or the approved listing material.
-          - Do not invent experience, publications, grades, tools, employers, dates, awards, or achievements.
-          - Keep the tone direct, personal, factual, modest, and in British English.
-          - Make no changes outside \`$OUTPUT_DIR/\`.
-          - Every major claim in the CV and cover letter must be traceable to a profile YAML file or previous application example.
-          - Prefer omission over unsupported claims.
-          - Compile PDFs when possible.
-          - Only the briefing step may use web search. Later steps must not browse the web.
-          EOF
-
-          cat prompts/application_briefing.md .github/codex/runtime/application_context.md > .github/codex/runtime/briefing_prompt.md
-          cat prompts/application_generator.md .github/codex/runtime/application_context.md > .github/codex/runtime/generator_prompt.md
-          cat prompts/application_fit_critic.md .github/codex/runtime/application_context.md > .github/codex/runtime/fit_critic_prompt.md
-          cat prompts/application_style_critic.md .github/codex/runtime/application_context.md > .github/codex/runtime/style_critic_prompt.md
-          cat prompts/application_revision.md .github/codex/runtime/application_context.md > .github/codex/runtime/revision_prompt.md
+          ISSUE_TITLE: ${{ needs.vars.outputs.issue_title }}
+          ISSUE_BODY: ${{ needs.vars.outputs.issue_body }}
+          ISSUE_LABELS: ${{ needs.vars.outputs.issue_labels }}
+          LISTING_SLUG: ${{ needs.vars.outputs.listing_slug }}
+          OUTPUT_DIR: ${{ needs.vars.outputs.output_dir }}
+        run: bash .github/scripts/prepare_application_prompts.sh
 
       - name: Run listing briefing
         uses: openai/codex-action@v1
@@ -171,17 +64,12 @@ jobs:
           codex-args: '--config web_search="live"'
           sandbox: workspace-write
           output-file: .github/codex/runtime/briefing_summary.md
-          safety-strategy: unprivileged-user
-          codex-user: guest
+          safety-strategy: drop-sudo
 
       - name: Validate briefing output
-        run: |
-          set -euo pipefail
-
-          if [ ! -f "$OUTPUT_DIR/job_analysis.md" ]; then
-            echo "Missing briefing output: $OUTPUT_DIR/job_analysis.md" >&2
-            exit 1
-          fi
+        env:
+          OUTPUT_DIR: ${{ needs.vars.outputs.output_dir }}
+        run: bash .github/scripts/validate_application_outputs.sh briefing
 
       - name: Generate draft package
         uses: openai/codex-action@v1
@@ -193,8 +81,7 @@ jobs:
           codex-args: '--config web_search="disabled"'
           sandbox: workspace-write
           output-file: .github/codex/runtime/generator_summary.md
-          safety-strategy: unprivileged-user
-          codex-user: guest
+          safety-strategy: drop-sudo
 
       - name: Run fit critic
         uses: openai/codex-action@v1
@@ -206,8 +93,7 @@ jobs:
           codex-args: '--config web_search="disabled"'
           sandbox: workspace-write
           output-file: .github/codex/runtime/fit_critic_summary.md
-          safety-strategy: unprivileged-user
-          codex-user: guest
+          safety-strategy: drop-sudo
 
       - name: Run style critic
         uses: openai/codex-action@v1
@@ -219,31 +105,10 @@ jobs:
           codex-args: '--config web_search="disabled"'
           sandbox: workspace-write
           output-file: .github/codex/runtime/style_critic_summary.md
-          safety-strategy: unprivileged-user
-          codex-user: guest
+          safety-strategy: drop-sudo
 
       - name: Validate critic outputs
-        run: |
-          set -euo pipefail
-
-          for file in .github/codex/runtime/fit_critic.yaml .github/codex/runtime/style_critic.yaml; do
-            if [ ! -f "$file" ]; then
-              echo "Missing critic output: $file" >&2
-              exit 1
-            fi
-          done
-
-          grep -q '^listing_slug:' .github/codex/runtime/fit_critic.yaml
-          grep -q '^verdict:' .github/codex/runtime/fit_critic.yaml
-          grep -q '^score:' .github/codex/runtime/fit_critic.yaml
-          grep -q '^must_fix:' .github/codex/runtime/fit_critic.yaml
-          grep -q '^recommended_edits:' .github/codex/runtime/fit_critic.yaml
-
-          grep -q '^listing_slug:' .github/codex/runtime/style_critic.yaml
-          grep -q '^verdict:' .github/codex/runtime/style_critic.yaml
-          grep -q '^score:' .github/codex/runtime/style_critic.yaml
-          grep -q '^style_mismatches:' .github/codex/runtime/style_critic.yaml
-          grep -q '^recommended_edits:' .github/codex/runtime/style_critic.yaml
+        run: bash .github/scripts/validate_application_outputs.sh critics
 
       - name: Revise draft from critiques
         uses: openai/codex-action@v1
@@ -255,70 +120,80 @@ jobs:
           codex-args: '--config web_search="disabled"'
           sandbox: workspace-write
           output-file: .github/codex/runtime/revision_summary.md
-          safety-strategy: unprivileged-user
-          codex-user: guest
+          safety-strategy: drop-sudo
+# ----------------------------------------------------------------------
 
-      - name: Repair workspace permissions
-        run: |
-          set -euo pipefail
-          sudo chown -R runner:guest "$GITHUB_WORKSPACE"
-          sudo chmod -R g+rwX "$GITHUB_WORKSPACE"
-          sudo find "$GITHUB_WORKSPACE" -type d -exec chmod g+s {} +
-
-      - name: Install LaTeX
-        run: |
-          set -euo pipefail
-          sudo apt-get update
-          sudo apt-get install -y \
-            texlive-latex-base \
-            texlive-latex-recommended \
-            texlive-latex-extra \
-            texlive-fonts-recommended
-
-      - name: Compile PDFs
+      - name: Create patch artifact
+        id: diff
+        env:
+          OUTPUT_DIR: ${{ needs.vars.outputs.output_dir }}
         run: |
           set -euo pipefail
 
-          if ! command -v pdflatex >/dev/null 2>&1; then
-            echo "pdflatex is not available on this runner." >&2
+          outside_changes=$(git status --porcelain --untracked-files=all -- . ":(exclude)$OUTPUT_DIR")
+
+          if [ -n "$outside_changes" ]; then
+            echo "Unexpected changes outside $OUTPUT_DIR:" >&2
+            printf '%s\n' "$outside_changes" >&2
             exit 1
           fi
 
-          cd "$OUTPUT_DIR"
-          mkdir -p build
+          git add -N "$OUTPUT_DIR"
+          git diff --binary HEAD -- "$OUTPUT_DIR" > /tmp/codex.patch
 
-          for tex in cv.tex cover_letter.tex research_statement.tex; do
-            if [ -f "$tex" ]; then
-              pdflatex -interaction=nonstopmode -output-directory build "$tex"
-              pdflatex -interaction=nonstopmode -output-directory build "$tex"
-              cp "build/${tex%.tex}.pdf" "${tex%.tex}.pdf"
-            fi
-          done
+          if [ -s /tmp/codex.patch ]; then
+            echo "has_patch=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_patch=false" >> "$GITHUB_OUTPUT"
+          fi
 
-      - name: Create application branch slug
-        id: slug
-        run: |
-          echo "branch=$BRANCH_NAME" >> "$GITHUB_OUTPUT"
-
-      - name: Build pull request body
-        run: |
-          set -euo pipefail
-
-          {
-            printf 'Closes #%s\n\n' "${{ steps.issue.outputs.number }}"
-            printf 'Generated from issue #%s.\n\n' "${{ steps.issue.outputs.number }}"
-            printf 'Generator summary:\n\n```md\n'
-            cat .github/codex/runtime/generator_summary.md
-            printf '\n```\n\nRevision summary:\n\n```md\n'
-            cat .github/codex/runtime/revision_summary.md
-            printf '\n```\n'
-          } > .github/codex/runtime/pr_body.md
-
-      - name: Create pull request
-        uses: peter-evans/create-pull-request@v6
+      - name: Upload patch artifact
+        if: steps.diff.outputs.has_patch == 'true'
+        uses: actions/upload-artifact@v4
         with:
-          branch: ${{ steps.slug.outputs.branch }}
-          title: "Application materials: ${{ steps.issue.outputs.title }}"
-          commit-message: "Generate application materials for issue #${{ steps.issue.outputs.number }}"
-          body-path: .github/codex/runtime/pr_body.md
-          labels: application-draft
+          name: codex.patch
+          path: /tmp/codex.patch
+          if-no-files-found: error
+
+      - name: Upload summary artifact
+        if: steps.diff.outputs.has_patch == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: application-summaries
+          path: |
+            .github/codex/runtime/generator_summary.md
+            .github/codex/runtime/revision_summary.md
+          if-no-files-found: error
+
+  render_documents:
+    needs:
+      - vars
+      - generate_patch
+    if: needs.generate_patch.outputs.has_patch == 'true'
+    permissions:
+      contents: read
+    uses: ./.github/workflows/render-documents.yml
+    with:
+      output_dir: ${{ needs.vars.outputs.output_dir }}
+      input_patch_artifact_name: codex.patch
+      output_patch_artifact_name: rendered.patch
+
+  open_pr:
+    needs:
+      - vars
+      - render_documents
+    if: needs.render_documents.outputs.has_patch == 'true'
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: read
+    uses: ./.github/workflows/open-pr.yml
+    with:
+      issue_number: ${{ needs.vars.outputs.issue_number }}
+      issue_title: ${{ needs.vars.outputs.issue_title }}
+      branch_name: ${{ needs.vars.outputs.branch_name }}
+      patch_artifact_name: rendered.patch
+      summary_artifact_name: application-summaries
+      pr_title: "Application materials: ${{ needs.vars.outputs.issue_title }}"
+      commit_message: "Generate application materials for issue #${{ needs.vars.outputs.issue_number }}"
+      labels: application-draft

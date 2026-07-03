@@ -22,3 +22,7 @@ cat > "$RUNTIME_DIR/application_context.md" <<EOF
 EOF
 
 cat "$PROMPT_FILE" "$RUNTIME_DIR/application_context.md" > "$RUNTIME_PROMPT_FILE"
+
+{
+  echo "runtime_prompt_file=$RUNTIME_PROMPT_FILE"
+} >> "$GITHUB_OUTPUT"

@@ -1,89 +1,114 @@
 # Resume Builder
 
-Structured workspace for producing tailored CVs, cover letters, and research statements. The repo separates reusable source material from private inputs and generated application outputs.
+## 🧭 What this is
 
-## Structure
+Resume Builder is a source-grounded job application workspace developed by Ivar Cashin Eriksson. It turns structured profile data, LaTeX templates, and a job listing into tailored application material: CVs, cover letters, research statements, evidence mappings, and gap reports.
+
+The goal is not to automate judgement away. The goal is to make careful applications cheap enough to do consistently while keeping the final review human.
+
+Approximate current runtime: about 10 minutes per application.
+Approximate current model cost: about USD 0.30 per application.
+
+## 🧱 Philosophy
+
+The project is built around a few constraints:
+
+- Facts live in `profile/`, not in prompts.
+- Major claims should be traceable to source material.
+- Missing fit should be surfaced rather than hidden.
+- Language should stay concrete, modest, and in British English.
+- Generated files should be easy to inspect before anything is sent.
+
+This is why the repo keeps profile data, prompts, templates, private material, and generated outputs separate. The split makes it easier to change one part of the system without quietly changing the facts or the style.
+
+## ⚙️ How it works
+
+The main automated workflow is issue-driven:
+
+1. A GitHub issue labelled `job-application` provides the listing and context.
+2. GitHub Actions derives the application slug and output directory.
+3. Codex creates the application source files under `outputs/<listing_slug>/`.
+4. Private LaTeX material is created from GitHub Actions secrets and passed to the render job as an artifact.
+5. The render job applies `codex.patch`, tries to compile PDFs, and emits `rendered.patch` if rendering succeeds.
+6. A PR is opened for review.
+
+If PDF rendering fails, the workflow still opens a PR using `codex.patch`. The PR body notes that rendering failed, so the generated source can still be inspected and fixed manually.
+
+## 📁 Repository layout
 
 ```text
 .
-|-- profile/                 # Factual source data for applications
-|-- profile/writing_style/   # Tone and style guidance
-|-- prompts/                 # Reusable generation prompts
-|-- templates/               # Base LaTeX templates
-|-- job_listings/            # Private adverts/listings, ignored by Git
-|-- other_material/          # Private supporting files, ignored by Git
-|   |-- personal_info_dk.tex # Denmark contact details loaded by CV/letter templates
-|   |-- personal_info_se.tex # Sweden contact details loaded by CV/letter templates
-|   `-- images/              # Local image assets used by LaTeX
-`-- outputs/                 # Generated application packages, ignored by Git
+|-- profile/                 # factual source data
+|-- profile/writing_style/   # tone, narrative, and style preferences
+|-- prompts/                 # generation and critique prompts
+|-- templates/               # LaTeX templates
+|-- secrets/                 # local/private LaTeX inputs, ignored by Git
+|-- other_material/          # local supporting assets such as images, ignored by Git
+|-- outputs/                 # generated application packages
+`-- .github/workflows/       # GitHub Actions automation
 ```
 
-Git should track the reusable parts: `profile/`, `prompts/`, `templates/`, and the root docs. Private or generated material belongs in `job_listings/`, `other_material/`, or `outputs/`.
+Git should track reusable source material and workflow code. Do not commit `secrets/`, build folders, or private generated material unless you explicitly intend to publish it.
 
-## Requirements
+## 🔐 Private material
 
-- A LaTeX distribution such as MiKTeX, TeX Live, or MacTeX.
-- Template packages: `moderncv`, `geometry`, `xcolor`, `hyperref`, and `microtype`.
-- No Python or Node setup is currently required.
-
-## Private Material
-
-Keep country-specific contact details in:
+The LaTeX templates expect contact details at render time:
 
 ```text
 secrets/personal_info_dk.tex
 secrets/personal_info_se.tex
 ```
 
-The CV and cover letter templates default to the Denmark file after they are copied into `outputs/<listing_slug>/`. For Sweden-facing applications, change the `\input` line to `../../secrets/personal_info_se.tex`. Image paths inside both personal info files should remain relative to the generated output folder:
+In GitHub Actions these files are materialised from the `PERSONAL_INFO_DK_TEX` and `PERSONAL_INFO_SE_TEX` repository secrets, uploaded as a short-lived artifact, and downloaded into `secrets/` before LaTeX runs.
 
-```tex
-\includegraphics[height=0.9em]{../../other_material/images/<file>}
-```
+For local rendering, create the same files manually in `secrets/`.
 
-Put transcripts, references, examples, signatures, and other non-public material under `other_material/`.
+## 📦 Generated output
 
-## Creating An Application
-
-1. Save the listing under `job_listings/`.
-2. Update `profile/*.yaml` if the application needs facts that are missing.
-3. Use `prompts/make_application.md` to generate the materials.
-4. Save generated files under `outputs/<listing_slug>/`.
-5. Review the evidence mapping and gap report before submitting.
-
-Typical generated files:
+A typical application directory looks like this:
 
 ```text
 outputs/<listing_slug>/
+|-- listing.md
+|-- job_analysis.md
 |-- cv.tex
 |-- cover_letter.tex
 |-- research_statement.tex
-|-- job_analysis.md
-|-- evidence_mapping.md
-`-- gap_report.md
+|-- evidence_mapping.yaml
+|-- gap_report.md
+`-- *.pdf
 ```
 
-## Compiling
+Not every application needs every document. For example, `research_statement.tex` is only relevant when a listing asks for one.
+
+## 🖨️ Manual rendering
 
 Compile from inside the generated output folder:
 
 ```powershell
 cd outputs\<listing_slug>
 pdflatex cv.tex
+pdflatex cv.tex
+pdflatex cover_letter.tex
 pdflatex cover_letter.tex
 pdflatex research_statement.tex
 pdflatex research_statement.tex
 ```
 
-Skip the research statement if the listing does not require one. The templates assume this output-folder location; compiling directly from `templates/` may require temporary path adjustments.
+Skip files that are not part of the application. The templates assume they are rendered from `outputs/<listing_slug>/`, because their private-material paths are relative to that location.
 
-## Rules
+## 🛠️ Project notes
 
-Follow `templates/README.md` for detailed adaptation rules. The short version:
+Current strengths:
 
-- Use only facts from `profile/`, the listing, or supplied supporting material.
-- Do not invent publications, grades, supervisors, awards, tools, or experience.
-- Keep the tone direct, personal, factual, and modest.
-- Keep the CV first page and the cover letter to one page each.
-- Replace all placeholders before compiling.
-- Manually inspect PDFs before submitting.
+- cheap enough to use for many applications
+- evidence-first generation instead of free-form rewriting
+- GitHub PR review before anything is submitted
+- render fallback, so failed PDFs do not hide generated source files
+
+Future ideas:
+
+- richer local validation before opening the PR
+- clearer reporting of unsupported claims
+- better docs for job discovery and issue creation
+- more structured quality gates around LaTeX rendering

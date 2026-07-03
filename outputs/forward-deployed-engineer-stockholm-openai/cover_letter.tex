@@ -1,0 +1,59 @@
+% %--------------------------
+% %	CONFIGURATION
+% %--------------------------
+\documentclass[11pt,a4paper]{moderncv}
+\moderncvstyle{classic}
+\moderncvcolor{black}
+\definecolor{firstnamecolor}{rgb}{0,0,0}
+
+% Basic packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[hscale=0.7, top=2cm, bottom=2cm]{geometry}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{DarkBlue}{RGB}{0, 0, 150}
+\usepackage[colorlinks=true, urlcolor=DarkBlue, linkcolor=DarkBlue]{hyperref}
+
+\usepackage{microtype}
+
+% Configure font settings
+\renewcommand{\rmdefault}{ppl}
+\renewcommand{\sfdefault}{phv}
+\renewcommand*{\namefont}{\fontsize{26}{18}\mdseries}
+
+% Configure microtype
+\microtypesetup{expansion=false}
+
+% Load sensitive information
+\input{../../secrets/personal_info_se.tex}
+
+% %--------------------------
+\begin{document}
+\makecvtitle
+Hello OpenAI team,
+
+\vspace*{2em}
+I am writing to apply for the Forward Deployed Engineer role in Stockholm. My strongest work is customer-facing delivery: scoping ambiguous problems, building production systems, and keeping the output usable in day-to-day workflows. I have done that in consultancy, at Signum, and previously in Stockholm at RaySearch.
+
+\hspace*{2em}
+At Valcon, I worked on an invoice quality-control system for a very non-technical customer. A large part of the work was translating the business problem into an implementable ML workflow: what the model should predict, how the process should behave, what counted as an error, and how the output would fit into daily operations. The system went into production with roughly two-second response time, reached 100 percent recall within the first two weeks, and captured more than 50 business processes in the model.
+
+\hspace*{2em}
+That experience shaped how I think about deployment work. The technical solution only matters if it fits the workflow, survives edge cases, and gives the customer something they can actually use. I have also led data science projects across pharma, energy, IoT, and manufacturing, and managed the delivery of end-to-end production pipelines.
+
+\hspace*{2em}
+At Signum, I maintain a pharmaceutical forecasting platform and extend a next-best-action system inherited from a third party. In that work I use LLMs to embed free text for downstream similarity search and matching workflows, and I extended the next-best-action system with explainable AI features in collaboration with UX designers. The work is practical and iterative, with attention to what people can actually use.
+
+\hspace*{2em}
+I have also built a full-stack computer vision and retrieval system in Project \texttt{iris}. It was a solo startup exploration, not a shipped customer deployment. I used YOLOv8, OpenCLIP, FastAPI, MongoDB, Qdrant, and a Chromium extension, and withdrew the startup application after market analysis suggested the gap was smaller than expected.
+
+\hspace*{2em}
+I have worked in Stockholm before at RaySearch, and I speak Swedish natively. I would welcome the chance to discuss how my background in production ML, stakeholder translation, and full-stack applied systems could be useful in Stockholm.
+
+\vspace*{2em}
+Regards,
+
+\vspace*{1em}
+Ivar Cashin Eriksson.
+
+\end{document}

@@ -1,4 +1,4 @@
-other_material/
 .vscode/
-outputs/**/build/
 .github/codex/
+other_material/
+outputs/**/build/

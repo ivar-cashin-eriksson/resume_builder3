@@ -64,7 +64,7 @@ jobs:
           OUTPUT_DIR: ${{ inputs.output_dir }}
           PATCH_PATH: /tmp/${{ inputs.output_patch_artifact_name }}
         run: |
-          git add -N -f "$OUTPUT_DIR"
+          git add -N "$OUTPUT_DIR"
           git diff --binary HEAD > "$PATCH_PATH"
 
           if [ -s "$PATCH_PATH" ]; then

@@ -27,6 +27,9 @@ on:
       labels:
         default: ""
         type: string
+      render_status_message:
+        default: ""
+        type: string
 
 permissions:
   contents: write
@@ -66,6 +69,7 @@ jobs:
           ISSUE_NUMBER: ${{ inputs.issue_number }}
           PR_BODY_PATH: /tmp/pr_body.md
           INCLUDE_SUMMARIES: ${{ inputs.summary_artifact_name != '' }}
+          RENDER_STATUS_MESSAGE: ${{ inputs.render_status_message }}
           GENERATOR_SUMMARY_PATH: /tmp/pr-summaries/generator_summary.md
           REVISION_SUMMARY_PATH: /tmp/pr-summaries/revision_summary.md
         run: bash .github/scripts/build_pr_body.sh

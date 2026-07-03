@@ -3,12 +3,17 @@ set -euo pipefail
 
 PR_BODY_PATH="${PR_BODY_PATH:-/tmp/pr_body.md}"
 INCLUDE_SUMMARIES="${INCLUDE_SUMMARIES:-false}"
+RENDER_STATUS_MESSAGE="${RENDER_STATUS_MESSAGE:-}"
 GENERATOR_SUMMARY_PATH="${GENERATOR_SUMMARY_PATH:-}"
 REVISION_SUMMARY_PATH="${REVISION_SUMMARY_PATH:-}"
 
 {
   printf 'Closes #%s\n\n' "${ISSUE_NUMBER}"
   printf 'Generated from issue #%s.\n\n' "${ISSUE_NUMBER}"
+
+  if [ -n "$RENDER_STATUS_MESSAGE" ]; then
+    printf '%s\n\n' "$RENDER_STATUS_MESSAGE"
+  fi
 
   if [ "$INCLUDE_SUMMARIES" = "true" ]; then
     if [ ! -f "$GENERATOR_SUMMARY_PATH" ]; then

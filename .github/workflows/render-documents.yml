@@ -81,7 +81,7 @@ jobs:
           PATCH_PATH: /tmp/${{ inputs.output_patch_artifact_name }}
         run: |
           git add -N "$OUTPUT_DIR"
-          git diff --binary HEAD -- "$OUTPUT_DIR" ":(exclude)secrets/personal_info_*.tex" > "$PATCH_PATH"
+          git diff --binary HEAD -- "$OUTPUT_DIR" ":(exclude)$OUTPUT_DIR/build/**" ":(exclude)secrets/personal_info_*.tex" > "$PATCH_PATH"
 
           if [ -s "$PATCH_PATH" ]; then
             echo "has_patch=true" >> "$GITHUB_OUTPUT"

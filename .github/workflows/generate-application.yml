@@ -148,7 +148,7 @@ jobs:
           fi
 
           git add -N "$OUTPUT_DIR"
-          git diff --binary HEAD -- "$OUTPUT_DIR" > /tmp/codex.patch
+          git diff --binary HEAD -- "$OUTPUT_DIR" ":(exclude)$OUTPUT_DIR/build/**" > /tmp/codex.patch
 
           if [ -s /tmp/codex.patch ]; then
             echo "has_patch=true" >> "$GITHUB_OUTPUT"
@@ -198,11 +198,47 @@ jobs:
       output_patch_artifact_name: rendered.patch
       private_material_artifact_name: ${{ needs.create_private_material_files.outputs.artifact_name }}
 
+  select_patch_artifact:
+    runs-on: ubuntu-latest
+
+    needs:
+      - generate_patch
+      - render_documents
+
+    if: always() && needs.generate_patch.outputs.has_patch == 'true'
+
+    outputs:
+      patch_artifact_name: ${{ steps.select.outputs.patch_artifact_name }}
+      render_succeeded: ${{ steps.select.outputs.render_succeeded }}
+      render_status_message: ${{ steps.select.outputs.render_status_message }}
+
+    steps:
+      - name: Select patch artifact
+        id: select
+        run: |
+          set -euo pipefail
+
+          if [ "${{ needs.render_documents.result }}" = "success" ] && [ "${{ needs.render_documents.outputs.has_patch }}" = "true" ]; then
+            echo "patch_artifact_name=rendered.patch" >> "$GITHUB_OUTPUT"
+            echo "render_succeeded=true" >> "$GITHUB_OUTPUT"
+            echo "render_status_message=PDF rendering succeeded." >> "$GITHUB_OUTPUT"
+          elif [ "${{ needs.render_documents.result }}" = "success" ]; then
+            echo "patch_artifact_name=codex.patch" >> "$GITHUB_OUTPUT"
+            echo "render_succeeded=true" >> "$GITHUB_OUTPUT"
+            echo "render_status_message=PDF rendering completed, but no rendered patch was produced. This PR uses the generated source patch." >> "$GITHUB_OUTPUT"
+          else
+            echo "patch_artifact_name=codex.patch" >> "$GITHUB_OUTPUT"
+            echo "render_succeeded=false" >> "$GITHUB_OUTPUT"
+            echo "render_status_message=PDF rendering failed in GitHub Actions. This PR contains the generated source files only; PDFs should be rendered manually after fixing the LaTeX issue." >> "$GITHUB_OUTPUT"
+          fi
+
   open_pr:
     needs:
       - vars
+      - generate_patch
       - render_documents
-    if: needs.render_documents.outputs.has_patch == 'true'
+      - select_patch_artifact
+    if: always() && needs.generate_patch.outputs.has_patch == 'true'
     permissions:
       contents: write
       pull-requests: write
@@ -212,8 +248,9 @@ jobs:
       issue_number: ${{ needs.vars.outputs.issue_number }}
       issue_title: ${{ needs.vars.outputs.issue_title }}
       branch_name: ${{ needs.vars.outputs.branch_name }}
-      patch_artifact_name: rendered.patch
+      patch_artifact_name: ${{ needs.select_patch_artifact.outputs.patch_artifact_name }}
       summary_artifact_name: application-summaries
       pr_title: "Application materials: ${{ needs.vars.outputs.issue_title }}"
       commit_message: "Generate application materials for issue #${{ needs.vars.outputs.issue_number }}"
       labels: application-draft
+      render_status_message: ${{ needs.select_patch_artifact.outputs.render_status_message }}

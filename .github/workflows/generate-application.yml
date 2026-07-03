@@ -65,7 +65,7 @@ jobs:
           sandbox: workspace-write
           output-file: .github/codex/runtime/briefing_summary.md
           codex-home: .github/codex/home/briefing
-          safety-strategy: drop-sudo
+          safety-strategy: unsafe
 
       - name: Validate briefing output
         env:

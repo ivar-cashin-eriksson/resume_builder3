@@ -44,7 +44,7 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
 
-# ---------------- Run GPT to generate application patch ----------------
+      # ---------- Run GPT to generate application patch ---------------
       - name: Prepare application context and prompt files
         env:
           ISSUE_TITLE: ${{ needs.vars.outputs.issue_title }}
@@ -72,9 +72,10 @@ jobs:
           OUTPUT_DIR: ${{ needs.vars.outputs.output_dir }}
         run: bash .github/scripts/validate_application_outputs.sh briefing
 
-# Each Codex step gets its own home so generated action config stays isolated.
-# The first Codex step drops sudo for the rest of this job.
-# Later calls use unsafe so the action does not try to drop sudo again.
+      # Each Codex step gets its own home so generated action config 
+      # stays isolated. The first Codex step drops sudo for the rest of
+      # this job. Later calls use unsafe so the action does not try to 
+      # drop sudo again.
       - name: Generate draft package
         uses: openai/codex-action@v1
         with:
@@ -129,7 +130,7 @@ jobs:
           output-file: .github/codex/runtime/revision_summary.md
           codex-home: .github/codex/home/revision
           safety-strategy: unsafe
-# ----------------------------------------------------------------------
+      # ----------------------------------------------------------------
 
       - name: Create patch artifact
         id: diff
@@ -173,10 +174,16 @@ jobs:
             .github/codex/runtime/revision_summary.md
           if-no-files-found: error
 
+  create_personal_info_file:
+    permissions:
+      contents: read
+    uses: ./.github/workflows/create-personal-info-files.yml    
+
   render_documents:
     needs:
       - vars
       - generate_patch
+      - create_personal_info_file
     if: needs.generate_patch.outputs.has_patch == 'true'
     permissions:
       contents: read

@@ -1,0 +1,91 @@
+documents:
+  cv:
+    introduction:
+      - claim: "Data scientist and project manager with six years of experience in production ML, consultancy, medical AI, and applied software development."
+        sources:
+          - profile/experience.yaml
+          - profile/profile.yaml
+      - claim: "My strongest work is customer-facing delivery: translating messy requirements into implementable workflows, owning production systems, and keeping models useful in practice."
+        sources:
+          - profile/experience.yaml
+          - profile/profile.yaml
+    experience:
+      - claim: "Own and extend production systems at Signum, including a forecasting platform and embedding-based similarity search."
+        sources:
+          - profile/experience.yaml
+          - profile/skills.yaml
+      - claim: "Built and owned a next-best-action system and extended it with explainable AI in collaboration with UX designers."
+        sources:
+          - profile/experience.yaml
+      - claim: "Delivered customer-facing ML projects in consultancy, including a real-time deep neural network pipeline and an invoice quality-control system."
+        sources:
+          - profile/experience.yaml
+      - claim: "Worked with non-technical stakeholders to translate business problems into implementable ML workflows."
+        sources:
+          - profile/experience.yaml
+      - claim: "Worked in Stockholm at RaySearch and speak Swedish natively."
+        sources:
+          - profile/experience.yaml
+          - profile/profile.yaml
+      - claim: "Worked on automated radiotherapy planning with clinicians and medical physicists."
+        sources:
+          - profile/experience.yaml
+    projects:
+      - claim: "Built a solo computer vision and retrieval exploration using YOLOv8, OpenCLIP, FastAPI, MongoDB, Qdrant, and a Chromium extension."
+        sources:
+          - profile/projects.yaml
+          - profile/skills.yaml
+      - claim: "Explored Project iris through H&M's startup ecosystem and withdrew after market analysis suggested the gap was smaller than expected."
+        sources:
+          - profile/projects.yaml
+      - claim: "Built a source-grounded job-application workflow with evidence mappings and gap reports."
+        sources:
+          - profile/projects.yaml
+    education:
+      - claim: "MSc in Statistical Learning and Data Analytics and BSc in Engineering Physics from KTH, with a supplementary economics degree."
+        sources:
+          - profile/education.yaml
+    skills:
+      - claim: "Python, SQL, PyTorch, TensorFlow, FastAPI, Docker, MongoDB, Qdrant, Databricks, AWS, Azure, and GitHub."
+        sources:
+          - profile/skills.yaml
+  cover_letter:
+    introduction:
+      - claim: "Interested in the role because it combines customer delivery, production systems, and feedback into product and model work."
+        sources:
+          - outputs/forward-deployed-engineer-stockholm-openai/job_analysis.md
+          - profile/profile.yaml
+    body:
+      - claim: "Experience translating a non-technical customer problem into an implementable ML workflow."
+        sources:
+          - profile/experience.yaml
+      - claim: "Experience owning production ML systems and working across architecture, project management, data science, ML engineering, and software engineering."
+        sources:
+          - profile/experience.yaml
+      - claim: "Experience with LLM-based embeddings for similarity search and matching."
+        sources:
+          - profile/experience.yaml
+      - claim: "Experience building a full-stack computer vision and retrieval system as a solo startup exploration, with market analysis leading to withdrawal."
+        sources:
+          - profile/projects.yaml
+      - claim: "Experience working in Stockholm and speaking Swedish natively."
+        sources:
+          - profile/experience.yaml
+          - profile/profile.yaml
+    closing:
+      - claim: "Interest in discussing fit for deployment engineering in Stockholm."
+        sources:
+          - outputs/forward-deployed-engineer-stockholm-openai/job_analysis.md
+sources:
+  - id: profile
+    path: profile/profile.yaml
+  - id: experience
+    path: profile/experience.yaml
+  - id: projects
+    path: profile/projects.yaml
+  - id: skills
+    path: profile/skills.yaml
+  - id: education
+    path: profile/education.yaml
+  - id: job_analysis
+    path: outputs/forward-deployed-engineer-stockholm-openai/job_analysis.md

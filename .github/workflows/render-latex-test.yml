@@ -88,6 +88,7 @@ jobs:
       output_dir: ${{ needs.vars.outputs.output_dir }}
       input_patch_artifact_name: codex.patch
       output_patch_artifact_name: rendered.patch
+      private_material_artifact_name: "NOT_USED"
 
   open_pr:
     needs:

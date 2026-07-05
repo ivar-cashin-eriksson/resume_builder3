@@ -33,11 +33,11 @@
 \makecvtitle
 
 \section*{Introduction}
-Seven years' experience applying machine learning across healthcare, pharmaceutical analytics, manufacturing, e-commerce, and energy. Background in Engineering Physics and Statistical Learning and Data Analytics from KTH. Experience spans probabilistic modelling, autoencoders, sparse Gaussian processes, explainable AI, and production ML systems. Applying for PhD work on uncertainty quantification for large language models because the topic aligns with model evaluation and careful analysis of model behaviour.
+Seven years' experience applying machine learning across healthcare, pharmaceutical analytics, manufacturing, e-commerce, and energy. Background in Engineering Physics and Statistical Learning and Data Analytics from KTH. Experience spans probabilistic modelling, autoencoders, sparse Gaussian processes, explainable AI, and production ML systems. Applying for PhD work on uncertainty quantification for LLMs because the topic aligns with my interest in model evaluation and analysis of model behaviour.
 
 \section{Education}
 
-\cventry{2015--2020}{Royal Institute of Technology, KTH -- Data Science and Engineering}{}{GPA: 5.0 (out of 5.0)}{}{Master: Statistical Learning and Data Analytics, Bachelor: Engineering Physics. \href{https://kth.diva-portal.org/smash/get/diva2:1431327/FULLTEXT02.pdf}{See thesis}. \newline Relevant coursework: Statistical Machine Learning; Probability Theory; Optimization.}
+\cventry{2015--2020}{Royal Institute of Technology, KTH -- Data Science and Engineering}{}{GPA: 5.0 (out of 5.0)}{}{Master: Statistical Learning and Data Analytics, Bachelor: Engineering Physics. \href{https://kth.diva-portal.org/smash/get/diva2:1431327/FULLTEXT02.pdf}{See thesis}. \newline Relevant coursework: Statistical Machine Learning; Probability Theory; Reinforcement Learning.}
 
 \cventry{2017--2022}{Stockholm University, SU -- Economics}{Supplementary Bachelor's Degree}{}{}{}
 
@@ -54,7 +54,7 @@ Seven years' experience applying machine learning across healthcare, pharmaceuti
 \begin{itemize}
 \item Built latent anatomical representations from segmented 3D CT scans using autoencoders.
 \item Predicted dose-volume histograms and spatial dose distributions with sparse Gaussian processes.
-\item Redesigned optimisation algorithms to reflect clinical decision hierarchies and validated methods with clinicians.
+\item Redesigned optimisation algorithms to reflect clinical decision hierarchies and validated with clinicians.
 \end{itemize}
 
 {\footnotesize\textit{Keywords: representation learning, autoencoders, sparse Gaussian processes, probabilistic modelling, optimisation, medical AI}}
@@ -62,12 +62,11 @@ Seven years' experience applying machine learning across healthcare, pharmaceuti
 \hfill{\small{\textit{\hyperref[sec:raysearch]{Read more...}}}}
 
 % ---------------------------
-\large{Full-Stack Data Scientist \& Project Manager @ Signum Life Science}
+\large{Full-Stack Data Scientist @ Signum Life Science}
 \normalsize
 \begin{itemize}
 \item Work on a forecasting platform for pharmaceutical price, demand, and patient population forecasts.
 \item Use LLMs to embed free text for downstream similarity search and matching workflows.
-\item Maintain a pharmaceutical price forecasting model for Denmark's fortnightly blind auctions.
 \end{itemize}
 
 {\footnotesize\textit{Keywords: forecasting, embeddings, similarity search, Databricks, AWS, XGBoost, ML engineering}}
@@ -78,12 +77,12 @@ Seven years' experience applying machine learning across healthcare, pharmaceuti
 \large{Principal Data Scientist @ Valcon}
 \normalsize
 \begin{itemize}
-\item Built an end-to-end production pipeline for a real-time neural network using natural-language inputs and high-dimensional labels.
+\item Built an end-to-end production pipeline for a real-time neural network using NLP, high-dimensional labels and transfer learning.
 \item Led explainable AI and Git trainings; mentored junior colleagues.
 \item Presented complex technical topics to non-technical stakeholders.
 \end{itemize}
 
-{\footnotesize\textit{Keywords: deep learning, natural-language inputs, explainable AI, MLOps, mentoring}}
+{\footnotesize\textit{Keywords: deep learning, NLP, explainable AI, MLOps, mentoring}}
 
 \hfill{\small{\textit{\hyperref[sec:valcon]{Read more...}}}}
 
@@ -92,7 +91,7 @@ Seven years' experience applying machine learning across healthcare, pharmaceuti
 % ---------------------------
 \section{Skills and Other}
 \normalsize
-\cvitem{Technology}{Python, SQL, C++, Matlab, PyTorch, TensorFlow, Scikit-learn, SHAP, XGBoost, OpenCLIP, Facebook Prophet, MLflow, FastAPI, Docker, MongoDB, Qdrant, Databricks, AWS, MS Azure.}
+\cvitem{Technology}{Python, SQL, PyTorch, TensorFlow, Scikit-learn, SHAP, OpenCLIP, Facebook Prophet, MLflow, FastAPI, Docker, MongoDB, Qdrant, Databricks, AWS, MS Azure.}
 \cvitem{Methods}{Statistical learning, probabilistic modelling, autoencoders, CNNs, sparse Gaussian processes, clustering, explainable AI.}
 \cvitem{Language}{Native English and Swedish; intermediate Danish.}
 
@@ -105,12 +104,14 @@ Seven years' experience applying machine learning across healthcare, pharmaceuti
 
 % ---------------------------
 \phantomsection\label{sec:signum}
-\cventry{2024--Present}{Full-Stack Data Scientist and Project Manager}{Signum Life Science}{Copenhagen}{}{
-    At Signum, I work across architecture, project management, data science, ML engineering, and software engineering for a forecasting platform for pharmaceutical price and demand forecasting. The work includes patient population forecasts and a production setup built around Databricks.
+\cventry{2024--Present}{Full-Stack Data Scientist}{Signum Life Science}{Copenhagen}{} {
+    At Signum, I work across architecture, project management, data science, ML engineering, and software engineering for many ongoing projects. The role requires taking loosely defined business problems and turning them into maintainable technical work.
     \newline\hspace*{2em}
-    In my current task, I use LLMs to embed free text for downstream similarity search and matching workflows. This is embedding-based work rather than a full RAG system, but it has made model behaviour, retrieval quality, and evaluation choices more concrete for me.
+    In my current task, I am using LLMs to embed free text for downstream similarity search and matching workflows. The work focuses on the retrieval layer of RAG-style systems: embedding free text, evaluating semantic similarity, analysing retrieval failures, and improving matching quality in domain-specific workflows.
     \newline\hspace*{2em}
-    I also maintain and improve a pharmaceutical price forecasting model for Denmark's fortnightly blind auctions.
+    Alongside this, I am working on a forecasting platform for pharmaceutical price and demand forecasting, including patient population forecasts. I work across architecture, project management, data science, ML engineering, and software engineering for the platform, with Databricks as a core part of the implementation. The platform is being designed to provide thousands of simultaneous forecasts generated by thousands of independently trained models.
+    \newline\hspace*{2em}
+    Beyond that, I organised an internal week-long hackathon with up to 40 participants.
 }{}
 
 % ---------------------------
@@ -124,11 +125,25 @@ Seven years' experience applying machine learning across healthcare, pharmaceuti
 }{}
 
 % ---------------------------
+\phantomsection\label{sec:valtech}
+\cventry{2021--2022}{Data Scientist}{Valtech}{Copenhagen}{} {
+    Delivered ML solutions in e-commerce. Built time-series forecasts using Facebook Prophet and applied clustering to behavioural data to support personalisation. Worked closely with business stakeholders to ensure actionable outputs, including presentations for C-level stakeholders.
+}{}
+
+% ---------------------------
 \phantomsection\label{sec:raysearch}
 \cventry{2019--2021}{Researcher within Data Science}{RaySearch Laboratories}{Stockholm}{}{
     At RaySearch Laboratories, I worked on automating radiotherapy planning using deep learning, probabilistic modelling, and multi-objective optimisation. I developed a pipeline that extracted latent anatomical features from segmented 3D CT scans using autoencoders, and used these representations to identify similar patients via a learned similarity metric. Dose-volume histograms and spatial dose distributions were then predicted using sparse Gaussian processes.
     \newline\hspace*{2em}
     Alongside this, I redesigned lexicographic optimisation algorithms to better reflect clinical decision hierarchies. I collaborated closely with medical physicists and clinicians throughout, ensuring the models aligned with oncological standards and practical workflow requirements.
 }{}
+
+% ---------------------------
+% Other Projects
+% ---------------------------
+\section{Projects}
+\cvitem{\phantomsection\label{sec:resume_builder}\texttt{resume\_ builder3}}{Source-grounded agentic workflow for job applications. The system uses structured profile YAML, job listings, LaTeX templates, and previous examples to generate tailored CVs and cover letters. It also produces evidence mappings and gap reports so major claims can be traced back to source material and weak fit is visible before submission. I extended the workflow with a human-in-the-loop job-hunter agent that crawls the web for relevant adverts, sends a daily digest, waits for my response, creates GitHub issues for selected roles, triggers GitHub Actions/Codex to generate a branch with listing information and application materials, and opens a PR for review. This application is of course generated with this system!}
+
+\cvitem{\phantomsection\label{sec:iris}Project \texttt{iris}}{End-to-end computer-vision retrieval system for making product images on e-commerce sites interactive. Built object detection, embedding generation, vector indexing, similarity search, backend APIs, persistence, dynamic scraping, and a Chromium extension using YOLOv8, OpenCLIP, Qdrant, FastAPI, and MongoDB.}
 
 \end{document}

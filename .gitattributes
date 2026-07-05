@@ -1,2 +1,3 @@
-outputs/** binary
-other_material/** binary
+*.pdf binary
+*png binary
+*jpg binary

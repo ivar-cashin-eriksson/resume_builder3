@@ -1,0 +1,137 @@
+listing_slug: senior-ai-engineer-ai-centre-of-excellence-saxo-bank
+listing_file: outputs/senior-ai-engineer-ai-centre-of-excellence-saxo-bank/listing.md
+
+sources_reviewed:
+  - outputs/senior-ai-engineer-ai-centre-of-excellence-saxo-bank/job_analysis.md
+  - profile/profile.yaml
+  - profile/experience.yaml
+  - profile/skills.yaml
+  - profile/projects.yaml
+  - profile/education.yaml
+  - profile/claims.yaml
+  - profile/writing_style/style.yaml
+  - profile/writing_style/cover_letter_style.yaml
+  - profile/writing_style/core_narrative.yaml
+  - examples/cv.tex
+  - examples/cover_letter.tex
+
+major_claims:
+  - claim: "Ivar has experience since 2019 building production ML systems."
+    used_in:
+      - "cv.tex introduction"
+      - "cover_letter.tex paragraph 1"
+      - "listing.md fit summary"
+    evidence:
+      - "profile/experience.yaml lists RaySearch Laboratories starting in 2019 and continuing through the present."
+      - "profile/claims.yaml includes experience building production-grade machine learning systems."
+
+  - claim: "Ivar's strongest fit is production AI delivery across data science, software engineering, and project management."
+    used_in:
+      - "cv.tex introduction"
+      - "cover_letter.tex paragraph 1"
+      - "listing.md fit summary"
+    evidence:
+      - "profile/experience.yaml Signum summary includes architecture, project management, data science, ML engineering, and software engineering."
+      - "profile/experience.yaml Valcon summary includes end-to-end production pipeline work."
+      - "profile/claims.yaml supports production ML, stakeholder translation, and leadership."
+
+  - claim: "Ivar works on a production forecasting platform for pharmaceutical price and demand."
+    used_in:
+      - "cv.tex selected Signum section"
+      - "cv.tex detailed Signum section"
+      - "cover_letter.tex paragraph 2"
+    evidence:
+      - "profile/experience.yaml Signum responsibilities describe a forecasting platform for pharmaceutical price and demand forecasting, patient population forecasts, etc."
+      - "profile/experience.yaml Signum technologies include Databricks."
+
+  - claim: "Ivar maintains and improves a pharmaceutical price forecasting model for Denmark's fortnightly blind auctions."
+    used_in:
+      - "cv.tex selected Signum section"
+      - "cv.tex detailed Signum section"
+      - "cover_letter.tex paragraph 2"
+    evidence:
+      - "profile/experience.yaml Signum responsibilities explicitly mention the model and the auctions."
+
+  - claim: "Ivar owns and extends a next-best-action system for pharmaceutical sales representatives with explainable AI features."
+    used_in:
+      - "cv.tex selected Signum section"
+      - "cv.tex detailed Signum section"
+      - "cover_letter.tex paragraph 2"
+    evidence:
+      - "profile/experience.yaml says Ivar took over ownership and extended the system with explainable AI features in collaboration with UX designers."
+      - "profile/experience.yaml describes Kwarts as a next-best-action prediction system for pharmaceutical sales representatives."
+
+  - claim: "Ivar is using LLMs to embed free text for downstream similarity search and matching workflows."
+    used_in:
+      - "cv.tex selected Signum section"
+      - "cv.tex detailed Signum section"
+      - "cover_letter.tex paragraph 2"
+    evidence:
+      - "profile/experience.yaml Signum responsibilities describe using LLMs to embed free text for similarity search and matching workflows."
+      - "profile/claims.yaml supports embedding-based search and vector retrieval workflows."
+
+  - claim: "Ivar led the technical delivery of an end-to-end production pipeline for a real-time deep neural network."
+    used_in:
+      - "cv.tex selected Valcon section"
+      - "cv.tex detailed Valcon section"
+      - "cover_letter.tex paragraph 3"
+    evidence:
+      - "profile/experience.yaml Valcon responsibilities explicitly mention architecting and implementing an end-to-end production pipeline for a real-time deep neural network."
+      - "profile/claims.yaml supports production-grade ML systems."
+
+  - claim: "Ivar mentored junior colleagues and led trainings in explainable AI and Git."
+    used_in:
+      - "cv.tex selected Valcon section"
+      - "cv.tex detailed Valcon section"
+      - "cover_letter.tex paragraph 3"
+    evidence:
+      - "profile/experience.yaml Valcon responsibilities include mentoring and trainings."
+      - "profile/claims.yaml includes leadership experience without relying only on formal authority."
+
+  - claim: "Ivar worked on automated radiotherapy planning using autoencoders, sparse Gaussian processes, and optimisation."
+    used_in:
+      - "cv.tex selected RaySearch section"
+      - "cv.tex detailed RaySearch section"
+      - "cover_letter.tex paragraph 4"
+    evidence:
+      - "profile/experience.yaml RaySearch responsibilities list autoencoders, sparse Gaussian processes, multi-objective optimisation, and lexicographic optimisation."
+      - "profile/claims.yaml includes research experience in medical AI and probabilistic modelling."
+
+  - claim: "Ivar collaborated with clinicians and medical physicists to align models with practical workflows."
+    used_in:
+      - "cv.tex selected RaySearch section"
+      - "cv.tex detailed RaySearch section"
+      - "cover_letter.tex paragraph 4"
+    evidence:
+      - "profile/experience.yaml RaySearch responsibilities mention collaboration with medical physicists and clinicians."
+      - "profile/claims.yaml includes stakeholder translation evidence."
+
+  - claim: "Ivar has Python, SQL, C++, TensorFlow, PyTorch, SHAP, XGBoost, OpenCLIP, MLflow, FastAPI, Docker, MongoDB, Qdrant, Databricks, AWS, and Azure experience."
+    used_in:
+      - "cv.tex skills section"
+      - "cover_letter.tex paragraph 5"
+    evidence:
+      - "profile/skills.yaml lists these technologies."
+
+  - claim: "Ivar has project management, mentoring, stakeholder communication, training, and commercialisation support experience."
+    used_in:
+      - "cv.tex skills section"
+      - "cover_letter.tex paragraphs 2-5"
+    evidence:
+      - "profile/skills.yaml lists these soft skills."
+      - "profile/experience.yaml Signum, Valcon, and RaySearch provide supporting examples."
+
+  - claim: "Ivar has source-grounded generation and evidence-checking project experience through resume_builder3."
+    used_in:
+      - "cv.tex other detailed experience"
+      - "listing.md fit summary"
+    evidence:
+      - "profile/projects.yaml describes resume_builder3 as a source-grounded resume builder producing evidence mappings and gap reports."
+
+explicit_non_claims:
+  - "The materials do not claim direct Microsoft Copilot Studio experience."
+  - "The materials do not claim C#/.NET production experience."
+  - "The materials do not claim Kubernetes, Terraform, Helm, ArgoCD, or explicit infrastructure-as-code experience."
+  - "The materials do not claim formal model governance, drift detection, or observability tooling."
+  - "The materials do not claim direct bank, trading-platform, or financial-services delivery experience."
+  - "The materials do not claim direct security, compliance, or regulated-infrastructure implementation experience."

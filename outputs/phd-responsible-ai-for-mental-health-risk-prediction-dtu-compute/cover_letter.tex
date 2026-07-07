@@ -1,0 +1,54 @@
+% %--------------------------
+% %	CONFIGURATION
+% %--------------------------
+\documentclass[11pt,a4paper]{moderncv}
+\moderncvstyle{classic}
+\moderncvcolor{black}
+\definecolor{firstnamecolor}{rgb}{0,0,0}
+
+% Basic packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[Hscale=0.7, top=2cm, bottom=2cm]{geometry}
+
+\usepackage{microtype}
+
+% Configure font settings
+\renewcommand{\rmdefault}{ppl}
+\renewcommand{\sfdefault}{phv}
+\renewcommand*{\namefont}{\fontsize{26}{18}\mdseries}
+
+% Configure microtype
+\microtypesetup{expansion=false}
+
+% Load country-specific contact information after copying into outputs/<listing_slug>/.
+% Use personal_info_dk.tex for Denmark-facing applications and personal_info_se.tex for Sweden-facing applications.
+\input{../../secrets/personal_info_dk.tex}
+
+% %--------------------------
+\begin{document}
+\makecvtitle
+Dear DTU Compute PhD Selection Committee,
+
+\vspace*{2em}
+I am writing to apply for the PhD scholarship in Responsible AI for Mental Health Risk Prediction. The project appeals to me because it combines clinical prediction with uncertainty quantification, explainability, fairness, and robustness. I am interested in work where models have to stand up to stress testing and performance auditing, not just headline accuracy.
+
+\hspace*{2em}
+My background is in Engineering Physics and Statistical Learning and Data Analytics at KTH, followed by work in applied ML across healthcare, pharmaceutical analytics, and consulting. At RaySearch Laboratories, I worked on automating radiotherapy planning using deep learning, probabilistic modelling, and multi-objective optimisation. I built pipelines on segmented 3D CT scans, used sparse Gaussian processes to predict dose-volume histograms and spatial dose distributions, and worked closely with medical physicists and clinicians. That is the closest part of my background to uncertainty-aware clinical prediction, and it taught me that model behaviour has to be understood in context, not just measured.
+
+\hspace*{2em}
+At Valcon and Signum, I have built and maintained production ML systems and worked on explainable AI features. I have led explainable AI training, mentored junior colleagues, and presented technical work to non-technical stakeholders. In Signum, I own and extend a next-best-action system and work with embedding-based similarity search and forecasting workflows on structured data, which feels like a sensible transfer to tabular registry data even though I have not worked with registries before. Across these roles, I have used Python, XGBoost, PyTorch, TensorFlow, SHAP, Databricks, and AWS in practical settings where the model had to fit an operational workflow.
+
+\hspace*{2em}
+I do not have direct experience with mental-health risk prediction or Danish registry data, and fairness auditing is not yet a specialist area for me. That is part of why the project interests me: it would be a good place to build further experience in uncertainty, robustness, and fairness, while working across the technical, ethical, and legal sides of responsible AI. The project’s emphasis on uncertainty quantification, explainability, fairness, stress testing, and performance auditing is close to the kind of work I want to do more of.
+
+\vspace*{2em}
+Thank you for your consideration. I would welcome the chance to discuss how my background could be useful to the project.
+
+\vspace*{1em}
+Kind regards,
+
+\vspace*{1em}
+Ivar Cashin Eriksson.
+
+\end{document}

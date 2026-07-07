@@ -1,0 +1,53 @@
+% %--------------------------
+% %	CONFIGURATION
+% %--------------------------
+\documentclass[11pt,a4paper]{moderncv}
+\moderncvstyle{classic}
+\moderncvcolor{black}
+\definecolor{firstnamecolor}{rgb}{0,0,0}
+
+% Basic packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[hscale=0.7, top=2cm, bottom=2cm]{geometry}
+
+\usepackage{microtype}
+
+% Configure font settings
+\renewcommand{\rmdefault}{ppl}
+\renewcommand{\sfdefault}{phv}
+\renewcommand*{\namefont}{\fontsize{26}{18}\mdseries}
+
+% Configure microtype
+\microtypesetup{expansion=false}
+
+% Load sensitive information
+\input{../../secrets/personal_info_dk.tex}
+
+% %--------------------------
+\begin{document}
+\makecvtitle
+Hello Pleo hiring team,
+
+\vspace*{2em}
+I am writing to apply for the Senior Applied AI Engineer role. The part of the job that stands out to me is the combination of shipping AI features, working with stakeholders and UX designers to shape the problem, and making the system practical in production. That is the kind of applied work I have enjoyed most in practice.
+
+\hspace*{2em}
+At Signum, I work on production applied AI in a way that is close to this brief. I maintain a pharmaceutical forecasting platform, use LLM embeddings for similarity search and matching workflows, and extend a next-best-action system with explainable AI in collaboration with UX designers. The work has required me to think carefully about what the system should do for users and how to keep the implementation practical.
+
+\hspace*{2em}
+At Valcon, I led a real-time deep neural network pipeline and worked on an invoice quality-control system where the main task was translating a very non-technical business problem into a workable machine learning workflow. The system quality-controlled employee-created invoices and suggested extra invoice lines to add. In production, it had around two-second response time and reached 100 percent recall within the first two weeks. I also presented technical work to non-technical stakeholders and trained colleagues in explainable AI and Git.
+
+\hspace*{2em}
+Project \texttt{iris} adds another angle. It is an end-to-end computer vision and retrieval system for e-commerce imagery that I built from the product idea through to implementation, including object detection, semantic embeddings, vector search, scraping, and a browser extension. I explored launching it as a startup, then withdrew after market analysis showed the gap was smaller than I expected. That exercise made the product side of applied AI concrete for me.
+
+\hspace*{2em}
+I would welcome the opportunity to discuss how my background in production ML, embeddings, explainable AI, and cross-functional delivery could be useful at Pleo.
+
+\vspace*{2em}
+Regards,
+
+\vspace*{1em}
+Ivar Cashin Eriksson
+
+\end{document}

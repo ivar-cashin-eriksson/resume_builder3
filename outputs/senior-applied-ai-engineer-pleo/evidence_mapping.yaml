@@ -1,0 +1,81 @@
+cv:
+  introduction:
+    - claim: Seven years of experience applying ML across several domains.
+      sources:
+        - profile/experience.yaml
+        - profile/profile.yaml
+        - profile/claims.yaml
+    - claim: Background in production ML systems, embeddings, and product-facing applied AI.
+      sources:
+        - profile/experience.yaml
+        - profile/projects.yaml
+        - profile/skills.yaml
+        - profile/claims.yaml
+  education:
+    - claim: MSc in Statistical Learning and Data Analytics and BSc in Engineering Physics from KTH.
+      sources:
+        - profile/education.yaml
+        - profile/profile.yaml
+    - claim: Relevant coursework in statistical machine learning, modern methods of statistical learning, and reinforcement learning.
+      sources:
+        - profile/courses.yaml
+  selected_work_experience:
+    - claim: Owned and extended a production forecasting platform and embedding-based similarity workflows at Signum.
+      sources:
+        - profile/experience.yaml
+        - profile/claims.yaml
+    - claim: Extended a next-best-action system with explainable AI in collaboration with UX designers.
+      sources:
+        - profile/experience.yaml
+        - profile/claims.yaml
+    - claim: Led an end-to-end real-time deep neural network pipeline at Valcon and translated a non-technical business problem into an ML workflow.
+      sources:
+        - profile/experience.yaml
+        - profile/claims.yaml
+    - claim: Built a computer vision retrieval system for e-commerce imagery with YOLOv8, OpenCLIP, FastAPI, MongoDB, Qdrant, and a Chromium extension.
+      sources:
+        - profile/projects.yaml
+        - profile/claims.yaml
+    - claim: Explored startup launch of Project iris and withdrew after market analysis showed the gap was not as large as expected.
+      sources:
+        - profile/projects.yaml
+        - profile/claims.yaml
+  skills_and_other:
+    - claim: Experience with Databricks, AWS, FastAPI, vector search, explainable AI, mentoring, and stakeholder communication.
+      sources:
+        - profile/skills.yaml
+        - profile/experience.yaml
+    - claim: Valcon People's Choice Award and Mensa Sweden membership.
+      sources:
+        - profile/awards_and_achievements.yaml
+        - profile/profile.yaml
+cover_letter:
+  paragraph_1:
+    - claim: The role is appealing because it sits at the intersection of applied AI, production delivery, and product judgement.
+      sources:
+        - outputs/senior-applied-ai-engineer-pleo/job_analysis.md
+        - profile/experience.yaml
+  paragraph_2:
+    - claim: Signum demonstrates ownership of production AI work, including embeddings, similarity search, and explainable AI.
+      sources:
+        - profile/experience.yaml
+        - profile/skills.yaml
+    - claim: Valcon demonstrates translating ambiguous customer problems into working ML systems and communicating with non-technical stakeholders.
+      sources:
+        - profile/experience.yaml
+        - profile/claims.yaml
+    - claim: Valcon's invoice quality-control system had around two-second response time and reached 100 percent recall within the first two weeks of production.
+      sources:
+        - profile/experience.yaml
+        - profile/claims.yaml
+  paragraph_3:
+    - claim: Project iris demonstrates end-to-end product-minded AI prototyping and explicit market validation.
+      sources:
+        - profile/projects.yaml
+        - profile/claims.yaml
+  closing:
+    - claim: The applicant can contribute in applied ML, product collaboration, and building trustworthy AI features.
+      sources:
+        - outputs/senior-applied-ai-engineer-pleo/job_analysis.md
+        - profile/experience.yaml
+        - profile/projects.yaml

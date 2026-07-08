@@ -1,0 +1,50 @@
+% %--------------------------
+% %	CONFIGURATION
+% %--------------------------
+\documentclass[11pt,a4paper]{moderncv}
+\moderncvstyle{classic}
+\moderncvcolor{black}
+\definecolor{firstnamecolor}{rgb}{0,0,0}
+
+% Basic packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[hscale=0.7, top=2cm, bottom=2cm]{geometry}
+
+\usepackage{microtype}
+
+% Configure font settings
+\renewcommand{\rmdefault}{ppl}
+\renewcommand{\sfdefault}{phv}
+\renewcommand*{\namefont}{\fontsize{26}{18}\mdseries}
+
+% Configure microtype
+\microtypesetup{expansion=false}
+
+% Load sensitive information
+\input{../../secrets/personal_info_dk.tex}
+
+% %--------------------------
+\begin{document}
+\makecvtitle
+Hello Flatpay team,
+
+\vspace*{2em}
+I am writing to apply for the Senior Data Scientist role. I am a data scientist and project manager based in Copenhagen, with experience in production ML, Databricks-based forecasting, LLM embedding workflows, and computer vision. My toolkit includes Python, SQL, Databricks, MLflow, AWS, and MS Azure, and the role's focus on production AI and end-to-end ownership is close to the work I have done at Signum and Valcon.
+
+\hspace*{2em}
+At Signum, I maintain a pharmaceutical price forecasting platform and work on LLM embeddings for downstream similarity search and matching. The platform is built around Databricks, and my work spans architecture, project management, data science, ML engineering, and software engineering. I also took over a next-best-action system for sales representatives and extended it with explainable AI features in collaboration with UX designers.
+
+\hspace*{2em}
+At Valcon, I built and helped own production ML systems including a real-time deep neural network pipeline and an invoice quality-control system. The invoice system reached a response time of around two seconds in production and captured over 50 business processes. I also mentored junior colleagues, led explainable AI and Git trainings, and regularly presented technical work to non-technical stakeholders.
+
+\hspace*{2em}
+I am also interested in the computer vision side of the role. In Project \texttt{iris}, I built an end-to-end computer vision system for product images in e-commerce using YOLOv8, OpenCLIP, FastAPI, MongoDB, Qdrant, and a Chromium extension. I explored launching the project through H\&M's startup ecosystem, then withdrew after market analysis suggested the gap was smaller than expected.
+
+\vspace*{2em}
+Flatpay's focus on production AI and practical ownership is the part of applied work I find most engaging. I would welcome the opportunity to discuss how my background could be useful. Regards,
+
+\vspace*{1em}
+Ivar Cashin Eriksson.
+
+\end{document}

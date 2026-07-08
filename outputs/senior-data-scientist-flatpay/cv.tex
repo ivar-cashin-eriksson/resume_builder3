@@ -1,0 +1,129 @@
+% %--------------------------
+% %	CONFIGURATION
+% %--------------------------
+\documentclass[11pt,a4paper]{moderncv}
+\moderncvstyle{classic}
+\moderncvcolor{black}
+\definecolor{firstnamecolor}{rgb}{0,0,0}
+
+% Basic packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[scale=0.85]{geometry}
+
+\usepackage{microtype}
+
+% Configure font settings
+\renewcommand{\rmdefault}{ppl}
+\renewcommand{\sfdefault}{phv}
+\renewcommand*{\namefont}{\fontsize{26}{18}\mdseries}
+
+% Configure microtype
+\microtypesetup{expansion=false}
+
+% Load country-specific contact information after copying into outputs/<listing_slug>/.
+% Use personal_info_dk.tex for Denmark-facing applications and personal_info_se.tex for Sweden-facing applications.
+\input{../../secrets/personal_info_dk.tex}
+
+% Title document
+\title{Curriculum Vitae}
+
+% %--------------------------
+
+\begin{document}
+\makecvtitle
+
+\section*{Introduction}
+Data scientist and project manager building production ML systems in Databricks, with experience in forecasting, embeddings, and computer vision. Based in Copenhagen and used to working across model development, implementation, and stakeholder delivery.
+
+\section{Selected Work Experience}
+
+% ---------------------------
+\large{Full-Stack Data Scientist, Project Manager @ Signum Life Science}
+\normalsize
+\begin{itemize}
+\item Own and develop a Databricks-based pharmaceutical price forecasting platform and LLM embedding workflows for similarity search and matching.
+\item Took over a next-best-action system for sales representatives and extended it with explainable AI features.
+\end{itemize}
+
+{\footnotesize\textit{Keywords: Databricks, AWS, forecasting, embeddings, ML engineering, project management}}
+
+\hfill{\small{\textit{\hyperref[sec:signum]{Read more...}}}}
+
+% ---------------------------
+\large{Principal Data Scientist @ Valcon}
+\normalsize
+\begin{itemize}
+\item Built an end-to-end production pipeline for a real-time deep neural network.
+\item Delivered an invoice quality-control ML system and mentored junior colleagues.
+\end{itemize}
+
+{\footnotesize\textit{Keywords: production ML, stakeholder management, mentoring, explainable AI, real-time systems}}
+
+\hfill{\small{\textit{\hyperref[sec:valcon]{Read more...}}}}
+
+% ---------------------------
+\section{Education}
+
+\cventry{2015--2020}{Royal Institute of Technology, KTH -- Data Science and Engineering}{}{GPA: 5.0 (out of 5.0)}{}{Master: Statistical Learning and Data Analytics, Bachelor: Engineering Physics. \href{https://kth.diva-portal.org/smash/get/diva2:1431327/FULLTEXT02.pdf}{See thesis}. \newline Relevant coursework: Probability Theory and Statistics; Optimization; Object-Oriented Program Construction.}
+
+\cventry{2017--2022}{Stockholm University, SU -- Economics}{Supplementary Bachelor's Degree}{}{}{}
+
+\cventry{2019--2019}{Swiss Federal Institute of Technology, ETH -- Applied Mathematics}{Exchange}{}{}{}
+
+% ---------------------------
+\section{Skills and Other}
+\normalsize
+\cvitem{Technology}{Python, SQL, Databricks, MLflow, AWS, MS Azure, PyTorch, TensorFlow, Scikit-learn, SHAP, XGBoost, FastAPI, Docker, MongoDB, Qdrant, YOLO, OpenCLIP, vector search.}
+\cvitem{Language}{\textit{Native}: English, Swedish. \textit{Intermediate}: Danish.}
+\cvitem{Personal}{I enjoy projects, woodworking, climbing, bicycling, and hiking.}
+\cvitem{Other}{Member of Mensa Sweden; Valcon People's Choice Award for exemplary work, leadership, team spirit, and scientific curiosity.}
+
+\newpage
+
+% ---------------------------
+% Detailed Work Experience
+% ---------------------------
+\section{Detailed Work Experience}
+
+% ---------------------------
+\phantomsection\label{sec:signum}
+\cventry{2024--Present}{Full-Stack Data Scientist, Project Manager}{Signum Life Science}{Copenhagen}{}{
+    At Signum, I maintain and develop a pharmaceutical price forecasting platform and work on LLM embedding workflows for downstream similarity search and matching. The role spans architecture, project management, data science, ML engineering, and software engineering.
+    \newline\hspace*{2em}
+    I also took over a next-best-action system for sales representatives and extended it with explainable AI features in collaboration with UX designers. I support commercialisation by aiding sales representatives and have organised an internal week-long hackathon with up to 40 participants.
+}{}
+
+% ---------------------------
+\phantomsection\label{sec:valcon}
+\cventry{2022--2024}{Principal Data Scientist}{Valcon}{Copenhagen}{}{
+    At Valcon, I led data science projects across pharmaceuticals, energy, IoT, and manufacturing. One project involved architecting and implementing an end-to-end production pipeline for a real-time deep neural network.
+    \newline\hspace*{2em}
+    Another was an invoice quality-control system that reached a response time of around two seconds in production and captured over 50 business processes. I also mentored junior colleagues, led explainable AI and Git trainings, and regularly presented technical material to non-technical stakeholders.
+}{}
+
+% ---------------------------
+\phantomsection\label{sec:valtech}
+\cventry{2021--2022}{Data Scientist}{Valtech}{Copenhagen}{}{
+    Delivered machine learning solutions in e-commerce, including time-series forecasting with Facebook Prophet and clustering of behavioural data for personalisation. I worked closely with business stakeholders to keep outputs actionable.
+}{}
+
+% ---------------------------
+\phantomsection\label{sec:raysearch}
+\cventry{2019--2021}{Researcher within Data Science}{RaySearch Laboratories}{Stockholm}{}{
+    At RaySearch, I worked on automated radiotherapy planning using deep learning, probabilistic modelling, and multi-objective optimisation. I developed pipelines that extracted latent anatomical features from segmented 3D CT scans using autoencoders, then used learned similarity metrics and sparse Gaussian processes to support dose planning.
+    \newline\hspace*{2em}
+    The work fed into production treatment planning algorithms. I collaborated closely with medical physicists and clinicians to ensure the models matched oncological standards and practical workflow requirements.
+}{}
+
+% ---------------------------
+% Projects
+% ---------------------------
+\section{Projects}
+\cvitem{\phantomsection\label{sec:iris}Project \texttt{iris}}{End-to-end computer vision system for product images in e-commerce. Built object detection, semantic embeddings, backend APIs, persistence, similarity search, and a Chromium extension using YOLOv8, OpenCLIP, FastAPI, MongoDB, and Qdrant.
+\newline\hspace*{2em}
+Explored launching it through H\&M's startup ecosystem, then withdrew after market analysis suggested the gap was smaller than first expected.}
+
+\cvitem{\texttt{resume\_builder3}}{Source-grounded workflow for generating tailored application materials from profile YAML files and job descriptions. Produces evidence mappings and gap reports so major claims stay traceable and weak fit is visible before submission.}
+
+\end{document}

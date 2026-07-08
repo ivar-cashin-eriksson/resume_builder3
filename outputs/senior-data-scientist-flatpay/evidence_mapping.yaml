@@ -1,0 +1,150 @@
+listing:
+  slug: senior-data-scientist-flatpay
+  title: Senior Data Scientist
+  organisation: Flatpay
+
+document_claims:
+  - claim: Production ML ownership across the stack
+    used_in:
+      - cv
+      - cover_letter
+    sources:
+      - file: profile/experience.yaml
+        evidence:
+          - organisation: Signum Life Science
+            points:
+              - "Architect, Project manager, Data Scientist, ML Engineer, and Software Engineer for the platform."
+              - "Maintains and develops a pharmaceutical price forecasting platform."
+          - organisation: Valcon
+            points:
+              - "Architected and implemented an end-to-end production pipeline for a real-time deep neural network."
+              - "Built an invoice quality-control ML project."
+
+  - claim: Databricks-based forecasting and platform work
+    used_in:
+      - cv
+      - cover_letter
+    sources:
+      - file: profile/experience.yaml
+        evidence:
+          - organisation: Signum Life Science
+            points:
+              - "Databricks"
+              - "Forecasting platform for pharmaceutical price and demand forecasting, patient population forecasts, etc."
+      - file: profile/skills.yaml
+        evidence:
+          - section: cloud_and_data_platforms
+            points:
+              - "Databricks"
+
+  - claim: Core applied ML stack in Python, SQL, Databricks, MLflow, AWS, and MS Azure
+    used_in:
+      - cv
+      - cover_letter
+    sources:
+      - file: profile/skills.yaml
+        evidence:
+          - section: programming_languages
+            points:
+              - "Python"
+              - "SQL"
+          - section: ml_libraries
+            points:
+              - "MLflow"
+          - section: cloud_and_data_platforms
+            points:
+              - "Databricks"
+              - "AWS"
+              - "MS Azure"
+
+  - claim: LLM embedding workflows and similarity search experience
+    used_in:
+      - cv
+      - cover_letter
+    sources:
+      - file: profile/experience.yaml
+        evidence:
+          - organisation: Signum Life Science
+            points:
+              - "Using LLMs to embed free text for downstream similarity search and matching workflows at Signum."
+      - file: profile/claims.yaml
+        evidence:
+          - claim: Experience with embedding-based search and vector retrieval workflows.
+
+  - claim: Multimodal computer vision and image analysis experience
+    used_in:
+      - cv
+      - cover_letter
+    sources:
+      - file: profile/projects.yaml
+        evidence:
+          - project: Project iris
+            points:
+              - "YOLOv8 model for item detection."
+              - "OpenCLIP embeddings for semantic item representation."
+              - "FastAPI backend."
+              - "Qdrant vector index for similarity search."
+      - file: profile/experience.yaml
+        evidence:
+          - organisation: RaySearch Laboratories
+            points:
+              - "Developed pipelines for extracting latent anatomical features from segmented 3D CT scans using autoencoders."
+              - "Implemented CNNs and autoencoders for medical image analysis."
+
+  - claim: Stakeholder communication, mentoring, and leadership
+    used_in:
+      - cv
+      - cover_letter
+    sources:
+      - file: profile/experience.yaml
+        evidence:
+          - organisation: Valcon
+            points:
+              - "Mentored junior colleagues in software architecture and data science best practices."
+              - "Presented complex technical topics to non-technical stakeholders."
+          - organisation: Signum Life Science
+            points:
+              - "Organised an internal week-long hackathon with up to 40 participants."
+      - file: profile/awards_and_achievements.yaml
+        evidence:
+          - award: Valcon People's Choice Award
+
+  - claim: Copenhagen-based senior data scientist with Nordic language coverage
+    used_in:
+      - cv
+      - cover_letter
+    sources:
+      - file: profile/profile.yaml
+        evidence:
+          - locations:
+              - Copenhagen, Denmark
+              - Stockholm, Sweden
+      - file: profile/profile.yaml
+        evidence:
+          - languages:
+              - English native
+              - Swedish native
+              - Danish intermediate
+
+  - claim: Applied ML background in medical imaging and probabilistic modelling
+    used_in:
+      - cv
+      - cover_letter
+    sources:
+      - file: profile/experience.yaml
+        evidence:
+          - organisation: RaySearch Laboratories
+            points:
+              - "Predicted dose-volume histograms and spatial dose distributions using sparse Gaussian processes."
+              - "Collaborated with medical physicists and clinicians."
+
+  - claim: Product-minded experimentation and market validation
+    used_in:
+      - cover_letter
+    sources:
+      - file: profile/projects.yaml
+        evidence:
+          - project: Project iris
+            points:
+              - "Explored launching Project iris as a startup together with my sister through H&M's startup ecosystem/incubator."
+              - "Withdrew the application after market analysis showed that the market gap was not as large as initially envisioned."

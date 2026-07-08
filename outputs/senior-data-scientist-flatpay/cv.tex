@@ -34,19 +34,19 @@
 \makecvtitle
 
 \section*{Introduction}
-Data scientist and project manager building production ML systems in Databricks, with experience in forecasting, embeddings, and computer vision. Based in Copenhagen and used to working across model development, implementation, and stakeholder delivery.
+Senior data scientist and ML engineer building production AI systems in Databricks, with experience across forecasting, LLM embeddings, retrieval workflows, computer vision, and stakeholder-facing delivery. Based in Copenhagen and used to owning work from ambiguous business problem through implementation, productionisation, and adoption.
 
-\section{Selected Work Experience}
+\section{Selected Deployment and ML Engineering Experience}
 
 % ---------------------------
 \large{Full-Stack Data Scientist, Project Manager @ Signum Life Science}
 \normalsize
 \begin{itemize}
-\item Own and develop a Databricks-based pharmaceutical price forecasting platform and LLM embedding workflows for similarity search and matching.
+\item Own and develop a Databricks-based pharmaceutical forecasting platform and LLM embedding / retrieval workflows for semantic matching, enrichment, and downstream decision support.
 \item Took over a next-best-action system for sales representatives and extended it with explainable AI features.
 \end{itemize}
 
-{\footnotesize\textit{Keywords: Databricks, AWS, forecasting, embeddings, ML engineering, project management}}
+{\footnotesize\textit{Keywords: Databricks, NLP, forecasting, embeddings, ML engineering, project management}}
 
 \hfill{\small{\textit{\hyperref[sec:signum]{Read more...}}}}
 
@@ -54,13 +54,25 @@ Data scientist and project manager building production ML systems in Databricks,
 \large{Principal Data Scientist @ Valcon}
 \normalsize
 \begin{itemize}
-\item Built an end-to-end production pipeline for a real-time deep neural network.
-\item Delivered an invoice quality-control ML system and mentored junior colleagues.
+    \item Scoped and delivered an invoice quality-control ML system for a non-technical customer, translating business rules, failure modes, and daily operations into an implementable workflow.
+    \item Production system achieved roughly two-second response time, 100\% recall within the first two weeks.
+    \item Led technical projects across many industries, including stakeholder communication and mentoring.
 \end{itemize}
 
 {\footnotesize\textit{Keywords: production ML, stakeholder management, mentoring, explainable AI, real-time systems}}
 
 \hfill{\small{\textit{\hyperref[sec:valcon]{Read more...}}}}
+
+% ---------------------------
+\large{Solo Project @ Project \texttt{iris}}
+\normalsize
+\begin{itemize}
+    \item An end-to-end AI application that detects products in e-commerce images and links similar items across a web store. Uses YOLOv8, OpenCLIP, FastAPI, MongoDB, and a custom Chromium extension.
+\end{itemize}
+
+{\footnotesize\textit{Keywords: AI application development, startup validation, OpenCLIP, YOLOv8, vector search, FastAPI, Qdrant, computer vision}}
+
+\hfill{\small{\textit{\hyperref[sec:iris]{Read more...}}}}
 
 % ---------------------------
 \section{Education}
@@ -76,7 +88,7 @@ Data scientist and project manager building production ML systems in Databricks,
 \normalsize
 \cvitem{Technology}{Python, SQL, Databricks, MLflow, AWS, MS Azure, PyTorch, TensorFlow, Scikit-learn, SHAP, XGBoost, FastAPI, Docker, MongoDB, Qdrant, YOLO, OpenCLIP, vector search.}
 \cvitem{Language}{\textit{Native}: English, Swedish. \textit{Intermediate}: Danish.}
-\cvitem{Personal}{I enjoy projects, woodworking, climbing, bicycling, and hiking.}
+\cvitem{Personal}{I enjoy working on personal projects, woodworking, climbing, bicycling, and hiking.}
 \cvitem{Other}{Member of Mensa Sweden; Valcon People's Choice Award for exemplary work, leadership, team spirit, and scientific curiosity.}
 
 \newpage
@@ -91,7 +103,9 @@ Data scientist and project manager building production ML systems in Databricks,
 \cventry{2024--Present}{Full-Stack Data Scientist, Project Manager}{Signum Life Science}{Copenhagen}{}{
     At Signum, I maintain and develop a pharmaceutical price forecasting platform and work on LLM embedding workflows for downstream similarity search and matching. The role spans architecture, project management, data science, ML engineering, and software engineering.
     \newline\hspace*{2em}
-    I also took over a next-best-action system for sales representatives and extended it with explainable AI features in collaboration with UX designers. I support commercialisation by aiding sales representatives and have organised an internal week-long hackathon with up to 40 participants.
+    I also took over a next-best-action system for sales representatives and extended it with explainable AI features in collaboration with UX designers. I support commercialisation by helping sales representatives interpret model outputs, understand explainability views, and use the system in customer-facing workflows.
+    \newline\hspace*{2em}
+    In addition, I have organised an internal week-long hackathon with up to 40 participants.
 }{}
 
 % ---------------------------
@@ -111,19 +125,19 @@ Data scientist and project manager building production ML systems in Databricks,
 % ---------------------------
 \phantomsection\label{sec:raysearch}
 \cventry{2019--2021}{Researcher within Data Science}{RaySearch Laboratories}{Stockholm}{}{
-    At RaySearch, I worked on automated radiotherapy planning using deep learning, probabilistic modelling, and multi-objective optimisation. I developed pipelines that extracted latent anatomical features from segmented 3D CT scans using autoencoders, then used learned similarity metrics and sparse Gaussian processes to support dose planning.
+    At RaySearch, I worked on automated radiotherapy planning using deep learning, probabilistic modelling, and multi-objective optimisation. I developed pipelines that extracted latent anatomical features from segmented 3D CT scans using autoencoders, then used learned similarity metrics and sparse Gaussian processes to support dose planning. The work fed into production treatment planning algorithms.
     \newline\hspace*{2em}
-    The work fed into production treatment planning algorithms. I collaborated closely with medical physicists and clinicians to ensure the models matched oncological standards and practical workflow requirements.
+    I collaborated closely with medical physicists and clinicians to ensure the models matched oncological standards and practical workflow requirements.
 }{}
 
 % ---------------------------
 % Projects
 % ---------------------------
 \section{Projects}
-\cvitem{\phantomsection\label{sec:iris}Project \texttt{iris}}{End-to-end computer vision system for product images in e-commerce. Built object detection, semantic embeddings, backend APIs, persistence, similarity search, and a Chromium extension using YOLOv8, OpenCLIP, FastAPI, MongoDB, and Qdrant.
-\newline\hspace*{2em}
-Explored launching it through H\&M's startup ecosystem, then withdrew after market analysis suggested the gap was smaller than first expected.}
+\cvitem{\phantomsection\label{sec:iris}Project \texttt{iris}}{End-to-end image-processing and retrieval system for e-commerce imagery. Built object detection, semantic embeddings, vector indexing, similarity search, backend APIs, persistence, dynamic scraping, and a Chromium extension using YOLOv8, OpenCLIP, FastAPI, MongoDB, and Qdrant. 
+\newline\hspace*{2em} 
+Explored through H\&M's startup ecosystem, including customer discovery, product scoping, and market validation.}
 
-\cvitem{\texttt{resume\_builder3}}{Source-grounded workflow for generating tailored application materials from profile YAML files and job descriptions. Produces evidence mappings and gap reports so major claims stay traceable and weak fit is visible before submission.}
+\cvitem{\phantomsection\label{sec:resume_builder}\texttt{resume\_ builder3}}{Source-grounded agentic workflow for job applications. The system uses structured profile YAML, job listings, LaTeX templates, and previous examples to generate tailored CVs and cover letters. It also produces evidence mappings and gap reports so major claims can be traced back to source material and weak fit is visible before submission. I extended the workflow with a human-in-the-loop job-hunter agent that crawls the web for relevant adverts, sends a daily digest, waits for my response, creates GitHub issues for selected roles, triggers GitHub Actions/Codex to generate a branch with listing information and application materials, and opens a PR for review. This application is of course generated with this system!}
 
 \end{document}

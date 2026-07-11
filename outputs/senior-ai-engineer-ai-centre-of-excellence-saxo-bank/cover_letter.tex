@@ -1,0 +1,53 @@
+% %--------------------------
+% %	CONFIGURATION
+% %--------------------------
+\documentclass[11pt,a4paper]{moderncv}
+\moderncvstyle{classic}
+\moderncvcolor{black}
+\definecolor{firstnamecolor}{rgb}{0,0,0}
+
+% Basic packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[scale=0.9]{geometry}
+
+\usepackage{microtype}
+
+% Configure font settings
+\renewcommand{\rmdefault}{ppl}
+\renewcommand{\sfdefault}{phv}
+\renewcommand*{\namefont}{\fontsize{26}{18}\mdseries}
+
+% Configure microtype
+\microtypesetup{expansion=false}
+
+% Load sensitive information
+\input{../../secrets/personal_info_dk.tex}
+
+% %--------------------------
+\begin{document}
+\makecvtitle
+Hello Saxo team,
+
+\vspace*{2em}
+I am writing to apply for the Senior AI Engineer role in the AI Centre of Excellence. My background is in building production ML systems and working across data science, software engineering, and project delivery. The part of the role that fits me best is taking AI work from a useful idea into something that can be maintained, reused, and used by others.
+
+\hspace*{2em}
+At Signum Life Science, I currently work on a pharmaceutical forecasting platform that spans architecture, project management, data science, ML engineering, and software engineering. I also maintain and improve a model for Denmark's fortnightly blind pharmaceutical auctions, and I own and extend a next-best-action system for pharmaceutical sales representatives. In that work I have extended the system with explainable AI features together with UX designers, and I am now using LLMs to embed free text for downstream similarity search and matching workflows.
+
+\hspace*{2em}
+At Valcon, I worked on an end-to-end production pipeline for a real-time deep neural network. The work involved a difficult prediction problem with natural-language inputs and high-dimensional multi-class labels, and it required close communication with non-technical stakeholders. I also mentored junior colleagues and led training sessions in explainable AI and Git.
+
+\hspace*{2em}
+My earlier work at RaySearch Laboratories was in automated radiotherapy planning. There I built methods using autoencoders, sparse Gaussian processes, and optimisation on segmented 3D CT scans, and collaborated closely with clinicians and medical physicists. That made the importance of practical constraints, workflow fit, and careful technical judgement very clear.
+
+\hspace*{2em}
+I am interested in Saxo because the role combines applied AI, engineering standards, and cross-functional delivery. I would bring production ML experience, Python, mentoring, and a careful approach to building systems that are grounded in evidence and can be maintained over time. I do not have direct Copilot Studio or C#/.NET experience, so I am not claiming that background here.
+
+\vspace*{2em}
+I would welcome the opportunity to discuss where my background could be useful to the team. Regards,
+
+\vspace*{1em}
+Ivar Cashin Eriksson.
+
+\end{document}

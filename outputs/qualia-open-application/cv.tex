@@ -1,0 +1,178 @@
+% ---------------------------
+% CONFIGURATION
+% ---------------------------
+\documentclass[11pt,a4paper]{moderncv}
+\moderncvstyle{classic}
+\moderncvcolor{black}
+\definecolor{firstnamecolor}{rgb}{0,0,0}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[scale=0.9]{geometry}
+\usepackage{microtype}
+
+\renewcommand{\rmdefault}{ppl}
+\renewcommand{\sfdefault}{phv}
+\renewcommand*{\namefont}{\fontsize{26}{18}\mdseries}
+
+\microtypesetup{expansion=false}
+
+\input{../../secrets/personal_info_se.tex}
+
+\title{Curriculum Vitae}
+
+% ---------------------------
+
+\begin{document}
+\makecvtitle
+
+% ---------------------------
+% Introduction
+% ---------------------------
+\section*{Introduction}
+
+I am a research-oriented ML engineer with seven years of experience building and deploying ML systems across many industries including manufacturing.
+\newline\hspace*{2em}
+My work has ranged from deep-learning computer vision and probabilistic modelling to production forecasting platforms, real-time neural networks, data pipelines, APIs, and full-stack AI applications.
+\newline\hspace*{2em}
+I would bring experience in model development, experimental design, data quality, evaluation, deployment, and translating difficult real-world problems into maintainable ML systems.
+
+% ---------------------------
+% Selected Experience
+% ---------------------------
+\section{Selected Experience}
+
+% ---------------------------
+\large{Researcher within Data Science @ RaySearch Laboratories}
+\normalsize
+\begin{itemize}
+    \item Developed deep-learning and probabilistic models for automated radiotherapy treatment planning.
+    \item Built representation-learning pipelines using autoencoders, learned similarity metrics, and sparse Gaussian processes to predict spatial dose distributions and dose-volume histograms.
+    \item Designed models and lexicographic optimisation strategies around physical, clinical, and operational constraints in collaboration with medical physicists and clinicians.
+\end{itemize}
+
+{\footnotesize\textit{Keywords: computer vision, representation learning, probabilistic modelling, 3D medical imaging, optimisation, applied research}}
+
+\hfill{\small{\textit{\hyperref[sec:raysearch]{Read more...}}}}
+
+% ---------------------------
+\large{Principal Data Scientist @ Valcon}
+\normalsize
+\begin{itemize}
+    \item Led end-to-end ML projects across many industries, from problem formulation to customer adoption.
+    \item Built a real-time deep neural network with a custom training pipeline and modular production architecture for high-dimensional multi-class prediction.
+    \item Scoped and delivered an invoice quality-control system that achieved 100\% recall during its first two weeks in production with approximately two-second response time.
+\end{itemize}
+
+{\footnotesize\textit{Keywords: production ML, deep learning, manufacturing, real-time inference, data quality, customer deployment}}
+
+\hfill{\small{\textit{\hyperref[sec:valcon]{Read more...}}}}
+
+% ---------------------------
+\large{Solo Project @ Project \texttt{iris}}
+\normalsize
+\begin{itemize}
+    \item Built an end-to-end computer-vision system using YOLOv8 for automatic "shop-the-look" tagging.
+    \item Including object detection, image embedding, backend APIs, web scraping, and a Chromium extension.
+\end{itemize}
+
+{\footnotesize\textit{Keywords: computer vision, OpenCLIP, YOLOv8, embeddings, vector search, FastAPI, full-stack AI}}
+
+\hfill{\small{\textit{\hyperref[sec:iris]{Read more...}}}}
+
+% ---------------------------
+% Education
+% ---------------------------
+\section{Education}
+
+\cventry{2015--2020}{Royal Institute of Technology, KTH -- Data Science and Engineering}{}{GPA: 5.0 out of 5.0}{}{Master's specialisation in Statistical Learning and Data Analytics; Bachelor's degree in Engineering Physics.
+\href{https://kth.diva-portal.org/smash/get/diva2:1431327/FULLTEXT02.pdf}{Thesis: Image-Distance Learning for Probabilistic Spatial Dose Prediction in Radiation Therapy}.
+\newline
+Relevant coursework: Reinforcement Learning; Statistical Machine Learning; Modern Methods of Statistical Learning; Optimisation; Computer-Intensive Methods in Mathematical Statistics, Control Theory.}
+
+\cventry{2019}{Swiss Federal Institute of Technology, ETH}{Exchange in Applied Mathematics}{}{}{}
+
+\cventry{2017--2022}{Stockholm University}{Supplementary Bachelor's Degree in Economics}{}{}{}
+
+% ---------------------------
+% Skills
+% ---------------------------
+\section{Skills and Other}
+
+\cvitem
+{Machine Learning}
+{Deep learning, computer vision, representation learning, probabilistic modelling, reinforcement learning, model evaluation, experimental design, agentic workflows.}
+
+\cvitem
+{Technology}
+{Python, PyTorch, TensorFlow, YOLOv8, MLflow, Databricks, FastAPI, GitHub Actions.}
+
+\cvitem
+{Soft-Skills}
+{Scoping, customer discovery, stakeholder management, project ownership, mentoring.}
+
+\newpage
+
+% ---------------------------
+% Detailed Work Experience
+% ---------------------------
+\section{Detailed Work Experience}
+
+% ---------------------------
+\phantomsection\label{sec:signum}
+\cventry{2024--Present}{Full-Stack Data Scientist and Project Manager}{Signum Life Science}{Copenhagen}{}{
+At Signum, I work across data science, ML engineering, software engineering, architecture, and project ownership. My role centres on taking loosely defined analytical problems and turning them into maintainable systems used in operational workflows.
+\newline\hspace*{2em}
+I am currently helping design and build an end-to-end platform for pharmaceutical demand and price forecasting. The platform covers data ingestion, validation, feature engineering, model training, experiment tracking, model registration, batch inference, and downstream delivery. It is designed to support thousands of simultaneous forecasts generated by independently trained models.
+\newline\hspace*{2em}
+The work requires dealing with heterogeneous and imperfect source systems, establishing reliable data contracts, analysing model failure modes, and ensuring that offline improvements translate into useful operational outputs. Databricks, MLflow, Python, and SQL form the core of the implementation.
+\newline\hspace*{2em}
+Beyond technical delivery, I regularly scope work with customers and internal stakeholders, mentor colleagues, and organised a week-long internal hackathon for approximately 40 participants.
+}{}
+
+% ---------------------------
+\phantomsection\label{sec:valcon}
+\cventry{2022--2024}{Principal Data Scientist}{Valcon}{Copenhagen}{}{
+At Valcon, I led machine-learning projects across manufacturing, pharma, energy, IoT, and life science. I was responsible for technical scoping, modelling, engineering, stakeholder communication, and production delivery in projects where data quality and operational requirements were often unclear initially.
+\newline\hspace*{2em}
+One project involved designing and deploying a real-time deep neural network for invoice quality control. The model operated on natural-language inputs with high-dimensional multi-class targets and featured a custom training pipeline and modular architecture. I owned the pipeline, including preprocessing, model development, inference, testing, deployment, and performance optimisation. The system translated business rules and operational failure modes into a production ML workflow and achieved 100\% recall during its first two weeks in production and returned results in approximately two seconds.
+\newline\hspace*{2em}
+For a manufacturing customer, I contributed to ML and analytics work involving operational and sensor-derived data. Across these projects, a recurring challenge was distinguishing genuine signals from inconsistencies introduced by changing processes, instrumentation, or human behaviour.
+\newline\hspace*{2em}
+In addition, I mentored junior colleagues, delivered internal training in explainable AI and Git, and regularly presented technical work to non-technical stakeholders. I received Valcon's People's Choice Award for exemplary work, leadership, team spirit, and scientific curiosity.
+}{}
+
+% ---------------------------
+\phantomsection\label{sec:valtech}
+\cventry{2021--2022}{Data Scientist}{Valtech}{Copenhagen}{}{
+Delivered applied ML solutions, including forecasting, customer segmentation, and behavioural analysis. Worked closely with business stakeholders to translate outputs into commercial decisions.
+}{}
+
+% ---------------------------
+\phantomsection\label{sec:raysearch}
+\cventry{2019--2021}{Researcher within Data Science}{RaySearch Laboratories}{Stockholm}{}{
+At RaySearch Laboratories, I researched methods for automating radiotherapy treatment planning using deep learning, probabilistic modelling, and multi-objective optimisation.
+\newline\hspace*{2em}
+I developed a pipeline that extracted latent anatomical representations from segmented 3D CT scans using autoencoders. These representations were used to identify anatomically similar patients through a learned similarity metric. Based on the retrieved patients, the system predicted dose-volume histograms and spatial dose distributions using sparse Gaussian processes. The work combined computer vision, representation learning, uncertainty modelling, and high-dimensional medical data. 
+\newline\hspace*{2em}
+I also redesigned lexicographic optimisation methods in close collaboration with clinicians to better represent clinical priorities during automated treatment planning.
+}{}
+
+% ---------------------------
+% Projects
+% ---------------------------
+\section{Projects}
+
+\cvitem{\phantomsection\label{sec:iris}Project \texttt{iris}}{
+An end-to-end computer-vision retrieval system for making products in e-commerce images interactive. The system detects visible products, produces image embeddings, retrieves visually similar items, and presents the results directly within a web browser. I built the complete system, including object detection, embedding generation, vector indexing, similarity search, backend APIs, persistence, dynamic web scraping, and a Chromium extension.
+\newline\hspace*{2em}
+The project was considered for commercialisation through H\&M's startup ecosystem but we later withdrew after the market gap prooved too small to justify further investment.
+}
+
+\cvitem{\phantomsection\label{sec:resume_builder}\texttt{resume\_ builder3}}{
+A source-grounded agentic workflow for generating tailored job applications. The system combines structured profile data, job listings, LaTeX templates, previous materials, and evidence mappings to produce CVs and cover letters while keeping generated claims traceable.
+\newline\hspace*{2em}
+I extended the project into a human-in-the-loop workflow that crawls job listings, creates daily digests, generates GitHub issues for selected roles, triggers GitHub Actions and Codex to create application branches, renders documents, and opens pull requests for review.
+}
+
+\end{document}

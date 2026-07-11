@@ -34,13 +34,11 @@
 \makecvtitle
 
 \section*{Introduction}
-I have seven years' experience applying machine learning in healthcare, pharmaceutical analytics, and consulting, with training in Engineering Physics and Statistical Learning and Data Analytics at KTH.
-\newline\hspace*{2em}
-My practical experience includes probabilistic ML, explainable AI, production ML, and clinically sensitive prediction problems. I am particularly interested in how uncertainty, robustness, fairness, and interpretability affect the safe use of machine learning in health-data settings.
+Machine learning researcher and data scientist with seven years' experience developing predictive models for healthcare and pharmaceutical applications. My background combines Engineering Physics and Statistical Learning at KTH with industrial research in radiotherapy planning, probabilistic modelling, explainable AI, and production machine learning. My research interests are trustworthy machine learning, uncertainty quantification, model robustness, and clinical decision support.
 
 \section{Education}
 
-\cventry{2015--2020}{Royal Institute of Technology, KTH -- Engineering Physics}{}{GPA: 5.0 / 5.0}{}{Master: Statistical Learning and Data Analytics, Bachelor: Engineering Physics. \href{https://kth.diva-portal.org/smash/get/diva2:1431327/FULLTEXT02.pdf}{See thesis}. \newline Relevant coursework: Probability Theory; Statistical Machine Learning; Computational Statistics.}
+\cventry{2015--2020}{Royal Institute of Technology, KTH -- Engineering Physics (MSc)}{}{GPA: 5.0 / 5.0}{}{Specialisation: Statistical Learning and Data Analytics; Thesis: \href{https://kth.diva-portal.org/smash/get/diva2:1431327/FULLTEXT02.pdf}{Probabilistic Dose Prediction for Radiotherapy Treatment Planning (deep learning and sparse Gaussian processes)}. \newline Relevant coursework: Probability Theory; Statistical Machine Learning; Computational Statistics.}
 
 \cventry{2017--2022}{Stockholm University, SU - Economics}{Supplementary Bachelor's Degree}{}{}{}
 
@@ -57,7 +55,7 @@ My practical experience includes probabilistic ML, explainable AI, production ML
 \begin{itemize}
 \item Developed radiotherapy planning pipelines using deep learning, probabilistic ML, and optimisation. 
 \item Built autoencoder-based features from segmented 3D CT scans and sparse Gaussian process models for uncertainty-aware, probabilistic dose prediction.
-\item Worked closely with clinicians to ensure model outputs were clinically relevant and interpretable.
+\item Collaborated with clinicians and medical physicists to evaluate clinically meaningful model behaviour.
 \end{itemize}
 
 {\footnotesize\textit{Focus: clinical AI, probabilistic modelling, deep learning, embedding learning, optimisation, medical imaging}}
@@ -65,11 +63,24 @@ My practical experience includes probabilistic ML, explainable AI, production ML
 \hfill{\small{\textit{\hyperref[sec:raysearch]{Read more...}}}}
 
 % ---------------------------
+\large{Full-Stack Data Scientist @ Signum Life Science}
+\normalsize
+\begin{itemize}
+\item Lead development of a production forecasting platform supporting reproducible model evaluation across thousands of pharmaceutical forecasts.
+\item Designed explainable AI workflows and embedding-based retrieval for commercial decision support.
+\end{itemize}
+
+{\footnotesize\textit{Focus: forecasting, explainable AI, production ML systems}}
+
+\hfill{\small{\textit{\hyperref[sec:signum]{Read more...}}}}
+
+% ---------------------------
 \large{Principal Data Scientist @ Valcon}
 \normalsize
 \begin{itemize}
 \item Led data science projects across pharma, energy, IoT, and manufacturing.
-\item Implemented an end-to-end production pipeline for a real-time deep neural network and led explainable AI training.
+\item Implemented an end-to-end production pipeline for a real-time deep neural network.
+\item Mentored junior colleagues and led trainings in explainable AI and Git.
 \end{itemize}
 
 {\footnotesize\textit{Focus: production ML, explainable AI, model evaluation, stakeholder communication}}
@@ -77,26 +88,14 @@ My practical experience includes probabilistic ML, explainable AI, production ML
 \hfill{\small{\textit{\hyperref[sec:valcon]{Read more...}}}}
 
 % ---------------------------
-\large{Full-Stack Data Scientist @ Signum Life Science}
-\normalsize
-\begin{itemize}
-\item Maintain and develop a pharmaceutical price and demand forecasting platform with reproducible model evaluation workflows.
-\item Own and extend a next-best-action system, including explainable AI features and embedding-based matching workflows.
-\end{itemize}
-
-{\footnotesize\textit{Focus: forecasting, explainable AI, ownership of production ML systems}}
-
-\hfill{\small{\textit{\hyperref[sec:signum]{Read more...}}}}
-
-% ---------------------------
 % Skills and Other
 % ---------------------------
 \section{Skills and Other}
 \normalsize
 \cvitem{Technology}{Python, SQL, PyTorch, TensorFlow, Scikit-learn, SHAP, XGBoost, FastAPI, Databricks.}
-\cvitem{Methods}{Uncertainty-aware probabilistic modelling, deep learning, model evaluation, explainable AI, sparse Gaussian processes.}
+\cvitem{Methods}{Probabilistic modelling, sparse Gaussian processes, deep learning, uncertainty quantification, explainable AI, model evaluation, calibration, optimisation}
 \cvitem{Language}{\textit{Native}: English, Swedish. \textit{Intermediate}: Danish.}
-\cvitem{Other}{Valcon People's Choice Award for exemplary work, team spirit, and curiosity; Mensa Sweden member.}
+\cvitem{Other}{Valcon People's Choice Award for exemplary work, team spirit, and curiosity.}
 
 \newpage
 
@@ -118,9 +117,9 @@ My practical experience includes probabilistic ML, explainable AI, production ML
 % ---------------------------
 \phantomsection\label{sec:valcon}
 \cventry{2022--2024}{Principal Data Scientist}{Valcon}{Copenhagen}{}{
-    Led data science projects across pharma, energy, IoT, and manufacturing. Mentored junior colleagues in software architecture and data science best practices, led explainable AI and Git trainings, and regularly presented complex technical topics to non-technical stakeholders.
+    Led machine learning projects across healthcare, energy, IoT, and manufacturing, while mentoring junior colleagues and delivering training in explainable AI and software engineering practices.
     \newline\hspace*{2em}
-    One project involved training a real-time deep neural network with a custom training pipeline and modular architecture. The training data consisted of natural-language inputs and high-dimensional multi-class labels, which made for a challenging prediction problem. I was the lead data scientist and architect of the solution and responsible for implementing the end-to-end production pipeline. An important part of the work involved communicating model behaviour and limitations to non-technical stakeholders.
+    Architected and implemented an end-to-end production deep learning system for a challenging natural-language prediction task with high-dimensional outputs. A key part of the work involved evaluating model behaviour and communicating capabilities and limitations to non-technical stakeholders.
     \newline\hspace*{2em}
     I was awarded the "Valcon People's Choice Award" for exemplary work, leadership, team spirit, and scientific curiosity.
 }{}
@@ -134,9 +133,9 @@ My practical experience includes probabilistic ML, explainable AI, production ML
 % ---------------------------
 \phantomsection\label{sec:raysearch}
 \cventry{2019--2021}{Researcher within Data Science}{RaySearch Laboratories}{Stockholm}{}{
-    At RaySearch Laboratories, I worked on automating radiotherapy planning using a combination of deep learning, probabilistic modelling, and multi-objective optimisation. I developed a pipeline that extracted latent anatomical features from segmented 3D CT scans using autoencoders, and used these representations to identify similar patients via a learned similarity metric. Dose-volume histograms and spatial dose distributions were then predicted using sparse Gaussian processes, providing an uncertainty-aware framework for dose planning conditioned on patient geometry.
+    At RaySearch Laboratories, I worked on automating radiotherapy planning using a combination of deep learning, probabilistic modelling, and multi-objective optimisation. I developed a pipeline that extracted latent anatomical features from segmented 3D CT scans using autoencoders, and used these representations to identify anatomically similar patients via a learned similarity metric. Dose-volume histograms and spatial dose distributions were then predicted using sparse Gaussian processes, providing an uncertainty-aware framework for dose planning conditioned on patient geometry.
     \newline\hspace*{2em}
-    Alongside this, I redesigned some of RaySearch's lexicographic optimisation algorithms to better reflect clinical decision hierarchies, particularly in palliative care where trade-offs between tumour control and organ sparing are nuanced. I collaborated closely with medical physicists and clinicians throughout, ensuring the models aligned with oncological standards and practical workflow requirements.
+    I also redesigned components of RaySearch's lexicographic optimisation framework to better capture the priorities clinicians use when balancing tumour coverage against organ sparing. The work focused on making optimisation behaviour more closely reflect clinical decision-making, particularly for palliative treatment planning where competing objectives must be carefully prioritised. I collaborated closely with medical physicists and clinicians throughout, ensuring the models aligned with oncological standards and practical workflow requirements.
 }{}
         
 % ---------------------------

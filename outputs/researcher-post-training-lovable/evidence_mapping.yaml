@@ -1,0 +1,84 @@
+listing:
+  title: Researcher, Post Training
+  organisation: Lovable
+  location: Stockholm, London
+  source: outputs/researcher-post-training-lovable/job_analysis.md
+
+cv:
+  introduction:
+    claim: "Data scientist and researcher with seven years of experience building applied ML systems."
+    sources:
+      - profile/profile.yaml
+      - profile/experience.yaml
+    notes: "Derived from the 2019-present timeline and the headline in profile.yaml."
+  education:
+    claim: "MSc in Statistical Learning and Data Analytics and BSc in Engineering Physics from KTH, plus a supplementary bachelor's degree in Economics and an ETH exchange."
+    sources:
+      - profile/education.yaml
+    notes: "Thesis link retained from the source template."
+  selected_work_experience:
+    - claim: "At Signum, maintain a production forecasting platform and use LLMs to embed free text for similarity search and matching workflows."
+      sources:
+        - profile/experience.yaml
+        - profile/claims.yaml
+      notes: "Closest evidence for retrieval, embeddings, evaluation, and production ML."
+    - claim: "At Valcon, led an end-to-end production pipeline for a real-time deep neural network and worked on NLP and high-dimensional multi-class labels."
+      sources:
+        - profile/experience.yaml
+        - profile/claims.yaml
+      notes: "Used to support production engineering and applied modelling claims."
+    - claim: "At RaySearch, used autoencoders, sparse Gaussian processes, and optimisation for radiotherapy planning."
+      sources:
+        - profile/experience.yaml
+        - profile/claims.yaml
+      notes: "Used to support adjacent research-style modelling claims."
+  detailed_work_experience:
+    - claim: "At Signum, work across architecture, project management, data science, ML engineering, and software engineering; current task uses LLMs for embeddings and similarity search."
+      sources:
+        - profile/experience.yaml
+    - claim: "At Valcon, owned the invoice quality-control ML system, including project management, stakeholder management, explainable AI, and production performance."
+      sources:
+        - profile/experience.yaml
+        - profile/awards_and_achievements.yaml
+    - claim: "At RaySearch, used autoencoders, sparse Gaussian processes, and optimisation for radiotherapy planning."
+      sources:
+        - profile/experience.yaml
+        - profile/claims.yaml
+    - claim: "At Valtech, built time-series forecasts and clustering-based personalisation work."
+      sources:
+        - profile/experience.yaml
+  skills:
+    claim: "Python, SQL, PyTorch, TensorFlow, SHAP, MLflow, FastAPI, Docker, Databricks, AWS, Azure, vector search, and CI/CD pipelines."
+    sources:
+      - profile/skills.yaml
+    notes: "Trimmed to the items most relevant to this listing."
+  languages:
+    claim: "English and Swedish native; Danish intermediate."
+    sources:
+      - profile/skills.yaml
+
+cover_letter:
+  paragraph_1:
+    claim: "The application states that the fit is adjacent rather than direct: applied ML, production systems, and evaluation-minded work rather than hands-on post-training."
+    sources:
+      - outputs/researcher-post-training-lovable/job_analysis.md
+  paragraph_2:
+    claim: "Adjacent experience includes production ML at Signum and Valcon, plus embedding-based retrieval work."
+    sources:
+      - profile/experience.yaml
+      - profile/claims.yaml
+  paragraph_3:
+    claim: "resume_builder3 shows source-grounded generation, evidence mapping, and gap reporting."
+    sources:
+      - profile/projects.yaml
+      - profile/claims.yaml
+  closing:
+    claim: "The letter stays modest about fit and does not claim direct post-training ownership."
+    sources:
+      - outputs/researcher-post-training-lovable/job_analysis.md
+
+gaps:
+  - "No direct evidence of large-scale LLM post-training, RFT, RLVR, preference optimisation, or reward modelling."
+  - "No direct evidence of distributed training ownership or GPU cluster orchestration."
+  - "No evidence of JAX use, speculative decoding, or production code-generation model training at scale."
+  - "No open-source ML publications or contributions were surfaced in the repository sources."

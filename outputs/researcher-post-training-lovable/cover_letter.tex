@@ -1,0 +1,51 @@
+% %--------------------------
+% %	CONFIGURATION
+% %--------------------------
+\documentclass[11pt,a4paper]{moderncv}
+\moderncvstyle{classic}
+\moderncvcolor{black}
+\definecolor{firstnamecolor}{rgb}{0,0,0}
+
+% Basic packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[Hscale=0.7, top=2cm, bottom=2cm]{geometry}
+
+\usepackage{microtype}
+
+% Configure font settings
+\renewcommand{\rmdefault}{ppl}
+\renewcommand{\sfdefault}{phv}
+\renewcommand*{\namefont}{\fontsize{26}{18}\mdseries}
+
+% Configure microtype
+\microtypesetup{expansion=false}
+
+% Load country-specific contact information after copying into outputs/<listing_slug>/.
+% Use personal_info_dk.tex for Denmark-facing applications and personal_info_se.tex for Sweden-facing applications.
+\input{../../secrets/personal_info_se.tex}
+
+% %--------------------------
+\begin{document}
+\makecvtitle
+Hello Lovable team,
+
+\vspace*{2em}
+I am writing to apply for the Researcher, Post Training role. My background is adjacent rather than direct: applied ML, production systems, and evaluation-minded work, rather than hands-on LLM post-training.
+
+\hspace*{2em}
+At Signum, I currently work on a production forecasting platform and on a task that uses LLMs to embed free text for similarity search and matching workflows. That work has me dealing with retrieval quality, failure analysis, and the practical limits of how model outputs fit into a domain-specific product. At Valcon, I led an end-to-end production pipeline for a real-time deep neural network and worked on an invoice quality-control system that had to be reliable in daily use.
+
+\hspace*{2em}
+I also work on \texttt{resume\_builder3}, a source-grounded workflow that generates tailored application materials from structured profile data and job descriptions. It produces evidence mappings and gap reports so major claims stay traceable and weak fit is visible before submission. That has made traceability and failure analysis more concrete for me in systems that combine models, data, and product constraints.
+
+\hspace*{2em}
+Lovable's focus on building and shipping rather than treating research as an end in itself is a good match for how I like to work. I would bring applied ML experience, careful use of source material, and a strong interest in turning model improvements into production behaviour that is actually useful.
+
+\vspace*{2em}
+I would welcome the chance to discuss whether my background in production ML, embeddings, and evaluation-focused work could be useful at Lovable. Regards,
+
+\vspace*{1em}
+Ivar Cashin Eriksson.
+
+\end{document}

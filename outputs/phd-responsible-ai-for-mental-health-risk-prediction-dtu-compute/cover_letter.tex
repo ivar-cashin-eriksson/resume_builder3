@@ -1,0 +1,57 @@
+% %--------------------------
+% %	CONFIGURATION
+% %--------------------------
+\documentclass[11pt,a4paper]{moderncv}
+\moderncvstyle{classic}
+\moderncvcolor{black}
+\definecolor{firstnamecolor}{rgb}{0,0,0}
+
+% Basic packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[hscale=0.7, top=2cm, bottom=2cm]{geometry}
+
+\usepackage{microtype}
+
+% Configure font settings
+\renewcommand{\rmdefault}{ppl}
+\renewcommand{\sfdefault}{phv}
+\renewcommand*{\namefont}{\fontsize{26}{18}\mdseries}
+
+% Configure microtype
+\microtypesetup{expansion=false}
+
+% Load country-specific contact information after copying into outputs/<listing_slug>/.
+% Use personal_info_dk.tex for Denmark-facing applications and personal_info_se.tex for Sweden-facing applications.
+\input{../../secrets/personal_info_dk.tex}
+
+% %--------------------------
+\begin{document}
+\makecvtitle
+Dear DTU Compute PhD Selection Committee,
+
+\vspace*{2em}
+I am applying for the PhD position in Responsible AI for Mental Health Risk Prediction because I am interested in a question that has become increasingly important throughout my work with machine learning: when is a model trustworthy enough to support real decisions in healthcare?
+
+\hspace*{2em}
+My first serious exposure to clinical AI was not through benchmark datasets, but through radiotherapy planning. At RaySearch Laboratories, I worked on automating treatment planning using deep learning, uncertainty-aware modelling using sparse Gaussian processes, and optimisation. The models were not only evaluated as abstract predictors; their outputs had to be meaningful to medical physicists and clinicians working with complex treatment decisions. That experience shaped how I think about machine learning in healthcare. Predictive performance matters, but so do uncertainty, interpretability, clinical relevance, and the ability to communicate what a model can and cannot say.
+
+\hspace*{2em}
+Since then, my work in consulting and pharmaceutical analytics has reinforced the same lesson from a production perspective. At Valcon, I led applied machine learning projects across pharma, energy, IoT, and manufacturing, including an end-to-end real-time deep learning system with natural-language inputs and high-dimensional multi-class outputs. At Signum Life Science, I now work on pharmaceutical forecasting systems where robustness, reproducible evaluation, and clear communication of model limitations are central to whether the models are useful in practice. These experiences have made me particularly interested in the gap between technically strong models and models that can be safely understood, audited, and acted upon.
+
+\hspace*{2em}
+What attracts me most to this project is that it treats uncertainty, fairness, and interpretability as research problems rather than implementation details. I am particularly interested in methods for quantifying predictive uncertainty, evaluating robustness, and communicating model limitations in ways that support rather than replace clinical judgement.
+
+\hspace*{2em}
+I believe I would bring a useful combination of methodological depth and practical realism to the project. My background combines statistical machine learning with experience deploying models in clinical and pharmaceutical settings where transparency, robustness, and reproducibility are practical requirements rather than academic ideals. I am comfortable working across research, implementation, and communication, and I enjoy collaborating with domain experts to make technical work useful outside a purely technical setting.
+
+\hspace*{2em}
+I am especially motivated by the opportunity to return to a research environment and work on machine learning methods for health data where the scientific and societal stakes are high. I am excited by the opportunity to contribute to new methods for trustworthy machine learning while working closely with clinicians and researchers on problems where methodological advances can have genuine clinical impact.
+
+\vspace*{1em}
+Kind regards,
+
+\vspace*{1em}
+Ivar Cashin Eriksson.
+
+\end{document}

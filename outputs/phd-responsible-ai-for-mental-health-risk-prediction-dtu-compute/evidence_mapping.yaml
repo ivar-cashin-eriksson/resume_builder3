@@ -1,0 +1,124 @@
+application:
+  listing_slug: phd-responsible-ai-for-mental-health-risk-prediction-dtu-compute
+  role: PhD scholarship in Responsible AI for Mental Health Risk Prediction
+
+claims:
+  - claim: "The applicant has a strong quantitative background relevant to PhD-level ML research."
+    used_in:
+      - cv.tex: introduction and education
+      - cover_letter.tex: opening background summary
+    sources:
+      - file: profile/education.yaml
+        evidence:
+          - "KTH MSc in Statistical Learning and Data Analytics"
+          - "KTH BSc in Engineering Physics"
+          - "ETH exchange in Applied Mathematics"
+          - "GPA 5.0 / 5.0"
+      - file: profile/courses.yaml
+        evidence:
+          - "Probability Theory"
+          - "Statistical Machine Learning"
+          - "Computational Statistics"
+          - "Optimization"
+
+  - claim: "The applicant has clinical AI and probabilistic modelling experience relevant to uncertainty handling."
+    used_in:
+      - cv.tex: selected work experience and detailed RaySearch section
+      - cover_letter.tex: second body paragraph
+    sources:
+      - file: profile/experience.yaml
+        evidence:
+          - "RaySearch Laboratories role"
+          - "autoencoders on segmented 3D CT scans"
+          - "sparse Gaussian processes"
+          - "probabilistic framework for dose planning conditioned on patient geometry"
+          - "collaboration with medical physicists and clinicians"
+      - file: profile/claims.yaml
+        evidence:
+          - "Research experience in medical AI and probabilistic modelling"
+
+  - claim: "The applicant has explainable AI and model communication experience."
+    used_in:
+      - cv.tex: selected work experience and skills
+      - cover_letter.tex: third body paragraph
+    sources:
+      - file: profile/experience.yaml
+        evidence:
+          - "Kwarts extended with explainable AI features in collaboration with UX designers"
+          - "Led explainable AI and Git training sessions"
+          - "Presented complex technical topics to non-technical stakeholders"
+      - file: profile/skills.yaml
+        evidence:
+          - "Explainable AI"
+          - "Stakeholder communication"
+
+  - claim: "The applicant has experience owning and building production ML systems."
+    used_in:
+      - cv.tex: selected work experience
+      - cover_letter.tex: third body paragraph
+    sources:
+      - file: profile/experience.yaml
+        evidence:
+          - "Maintains and develops a pharmaceutical price forecasting platform"
+          - "Architected and implemented an end-to-end production pipeline for a real-time deep neural network"
+          - "Next-best-action prediction system"
+          - "Forecasting platform for pharmaceutical price and demand forecasting, patient population forecasts, etc."
+      - file: profile/claims.yaml
+        evidence:
+          - "Experience building production-grade machine learning systems"
+
+  - claim: "The applicant has Python and relevant ML tooling experience."
+    used_in:
+      - cv.tex: skills section
+      - cover_letter.tex: third body paragraph
+    sources:
+      - file: profile/skills.yaml
+        evidence:
+          - "Python"
+          - "Scikit-learn"
+          - "SHAP"
+          - "XGBoost"
+          - "PyTorch"
+          - "TensorFlow"
+      - file: profile/experience.yaml
+        evidence:
+          - "Databricks"
+          - "AWS"
+
+  - claim: "The applicant has stakeholder-facing experience in interdisciplinary settings."
+    used_in:
+      - cover_letter.tex: second and third body paragraphs
+      - cv.tex: detailed sections
+    sources:
+      - file: profile/experience.yaml
+        evidence:
+          - "Collaborated with medical physicists and clinicians"
+          - "Presented complex technical topics to non-technical stakeholders"
+          - "Supported sales representatives with commercialisation"
+      - file: profile/claims.yaml
+        evidence:
+          - "Able to translate complex technical work for stakeholders"
+
+  - claim: "The applicant has a relevant project that demonstrates applied ML engineering."
+    used_in:
+      - cv.tex: solo side project
+    sources:
+      - file: profile/projects.yaml
+        evidence:
+          - "Project iris"
+          - "YOLOv8"
+          - "OpenCLIP"
+          - "FastAPI"
+          - "Qdrant"
+          - "Chromium extension"
+
+  - claim: "The applicant's personal and language details are current for a Denmark-facing application."
+    used_in:
+      - cv.tex: skills and other section
+    sources:
+      - file: profile/profile.yaml
+        evidence:
+          - "Copenhagen, Denmark"
+          - "English native"
+          - "Swedish native"
+          - "Danish intermediate"

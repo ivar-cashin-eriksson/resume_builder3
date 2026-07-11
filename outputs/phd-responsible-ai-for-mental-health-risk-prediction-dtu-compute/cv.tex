@@ -1,0 +1,154 @@
+% %--------------------------
+% %	CONFIGURATION
+% %--------------------------
+\documentclass[11pt,a4paper]{moderncv}
+\moderncvstyle{classic}
+\moderncvcolor{black}
+\definecolor{firstnamecolor}{rgb}{0,0,0}
+
+% Basic packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[scale=0.85]{geometry}
+
+\usepackage{microtype}
+
+% Configure font settings
+\renewcommand{\rmdefault}{ppl}
+\renewcommand{\sfdefault}{phv}
+\renewcommand*{\namefont}{\fontsize{26}{18}\mdseries}
+
+% Configure microtype
+\microtypesetup{expansion=false}
+
+% Load country-specific contact information after copying into outputs/<listing_slug>/.
+% Use personal_info_dk.tex for Denmark-facing applications and personal_info_se.tex for Sweden-facing applications.
+\input{../../secrets/personal_info_dk.tex}
+
+% Title document
+\title{Curriculum Vitae}
+
+% %--------------------------
+
+\begin{document}
+\makecvtitle
+
+\section*{Introduction}
+Machine learning researcher and data scientist with seven years' experience developing predictive models for healthcare and pharmaceutical applications. My background combines Engineering Physics and Statistical Learning at KTH with industrial research in radiotherapy planning, probabilistic modelling, explainable AI, and production machine learning. My research interests are trustworthy machine learning, uncertainty quantification, model robustness, and clinical decision support.
+
+\section{Education}
+
+\cventry{2015--2020}{Royal Institute of Technology, KTH -- Engineering Physics (MSc)}{}{GPA: 5.0 / 5.0}{}{Specialisation: Statistical Learning and Data Analytics; Thesis: \href{https://kth.diva-portal.org/smash/get/diva2:1431327/FULLTEXT02.pdf}{Probabilistic Dose Prediction for Radiotherapy Treatment Planning (deep learning and sparse Gaussian processes)}. \newline Relevant coursework: Probability Theory; Statistical Machine Learning; Computational Statistics.}
+
+\cventry{2017--2022}{Stockholm University, SU - Economics}{Supplementary Bachelor's Degree}{}{}{}
+
+\cventry{2019--2019}{Swiss Federal Institute of Technology, ETH - Applied Mathematics}{Exchange}{}{}{}
+
+% ---------------------------
+% Selected Work Experience
+% ---------------------------
+\section{Selected Work Experience}
+
+% ---------------------------
+\large{Researcher within Data Science @ RaySearch Laboratories}
+\normalsize
+\begin{itemize}
+\item Developed radiotherapy planning pipelines using deep learning, probabilistic ML, and optimisation. 
+\item Built autoencoder-based features from segmented 3D CT scans and sparse Gaussian process models for uncertainty-aware, probabilistic dose prediction.
+\item Collaborated with clinicians and medical physicists to evaluate clinically meaningful model behaviour.
+\end{itemize}
+
+{\footnotesize\textit{Focus: clinical AI, probabilistic modelling, deep learning, embedding learning, optimisation, medical imaging}}
+
+\hfill{\small{\textit{\hyperref[sec:raysearch]{Read more...}}}}
+
+% ---------------------------
+\large{Full-Stack Data Scientist @ Signum Life Science}
+\normalsize
+\begin{itemize}
+\item Lead development of a production forecasting platform supporting reproducible model evaluation across thousands of pharmaceutical forecasts.
+\item Designed explainable AI workflows and embedding-based retrieval for commercial decision support.
+\end{itemize}
+
+{\footnotesize\textit{Focus: forecasting, explainable AI, production ML systems}}
+
+\hfill{\small{\textit{\hyperref[sec:signum]{Read more...}}}}
+
+% ---------------------------
+\large{Principal Data Scientist @ Valcon}
+\normalsize
+\begin{itemize}
+\item Led data science projects across pharma, energy, IoT, and manufacturing.
+\item Implemented an end-to-end production pipeline for a real-time deep neural network.
+\item Mentored junior colleagues and led trainings in explainable AI and Git.
+\end{itemize}
+
+{\footnotesize\textit{Focus: production ML, explainable AI, model evaluation, stakeholder communication}}
+
+\hfill{\small{\textit{\hyperref[sec:valcon]{Read more...}}}}
+
+% ---------------------------
+% Skills and Other
+% ---------------------------
+\section{Skills and Other}
+\normalsize
+\cvitem{Technology}{Python, SQL, PyTorch, TensorFlow, Scikit-learn, SHAP, XGBoost, FastAPI, Databricks.}
+\cvitem{Methods}{Probabilistic modelling, sparse Gaussian processes, deep learning, uncertainty quantification, explainable AI, model evaluation, calibration, optimisation}
+\cvitem{Language}{\textit{Native}: English, Swedish. \textit{Intermediate}: Danish.}
+\cvitem{Other}{Valcon People's Choice Award for exemplary work, team spirit, and curiosity.}
+
+\newpage
+
+% ---------------------------
+% Detailed Work Experience
+% ---------------------------
+\section{Detailed Work Experience}
+
+% ---------------------------
+\phantomsection\label{sec:signum}
+\cventry{2024--Present}{Full-Stack Data Scientist and Project Manager}{Signum Life Science}{Copenhagen}{}{
+    At Signum, my current work is on an end-to-end forecasting platform for pharmaceutical price and demand forecasting. The work builds on a pharmaceutical price forecasting model that helps clients navigate Denmark's fortnightly blind auctions. After stabilising the XGBoost-based system, I am now driving efforts toward a more robust and modern implementation made to support thousands of production forecasting models, with emphasis on reproducible evaluation, robust performance across heterogeneous product groups, and clear communication of model limitations.
+    \newline\hspace*{2em}
+    Earlier in the role, I owned and extended Kwarts, a next-best-action engine for pharmaceutical sales. Originally built externally, the system was extended with features such as explainable AI in collaboration with UX designers, and supported commercialisation by aiding our sales representatives. Kwarts adapts to varied customer data maturity, from rule-based logic to deep learning, and is deployed in AWS for scalability.
+    \newline\hspace*{2em}
+    Beyond model development, I organised an internal week-long hackathon that included up to 40 participants.
+}{}
+
+% ---------------------------
+\phantomsection\label{sec:valcon}
+\cventry{2022--2024}{Principal Data Scientist}{Valcon}{Copenhagen}{}{
+    Led machine learning projects across healthcare, energy, IoT, and manufacturing, while mentoring junior colleagues and delivering training in explainable AI and software engineering practices.
+    \newline\hspace*{2em}
+    Architected and implemented an end-to-end production deep learning system for a challenging natural-language prediction task with high-dimensional outputs. A key part of the work involved evaluating model behaviour and communicating capabilities and limitations to non-technical stakeholders.
+    \newline\hspace*{2em}
+    I was awarded the "Valcon People's Choice Award" for exemplary work, leadership, team spirit, and scientific curiosity.
+}{}
+
+% ---------------------------
+\phantomsection\label{sec:valtech}
+\cventry{2021--2022}{Data Scientist}{Valtech}{Copenhagen}{}{
+    Delivered ML solutions in e-commerce. Built time series forecasts using Facebook Prophet, and applied clustering to behavioural data to support personalisation. Worked closely with business stakeholders to ensure actionable outputs.
+}{}
+
+% ---------------------------
+\phantomsection\label{sec:raysearch}
+\cventry{2019--2021}{Researcher within Data Science}{RaySearch Laboratories}{Stockholm}{}{
+    At RaySearch Laboratories, I worked on automating radiotherapy planning using a combination of deep learning, probabilistic modelling, and multi-objective optimisation. I developed a pipeline that extracted latent anatomical features from segmented 3D CT scans using autoencoders, and used these representations to identify anatomically similar patients via a learned similarity metric. Dose-volume histograms and spatial dose distributions were then predicted using sparse Gaussian processes, providing an uncertainty-aware framework for dose planning conditioned on patient geometry.
+    \newline\hspace*{2em}
+    I also redesigned components of RaySearch's lexicographic optimisation framework to better capture the priorities clinicians use when balancing tumour coverage against organ sparing. The work focused on making optimisation behaviour more closely reflect clinical decision-making, particularly for palliative treatment planning where competing objectives must be carefully prioritised. I collaborated closely with medical physicists and clinicians throughout, ensuring the models aligned with oncological standards and practical workflow requirements.
+}{}
+        
+% ---------------------------
+% Other Experience
+% ---------------------------
+\section{Selected Technical Project}
+
+% ---------------------------
+\phantomsection\label{sec:iris}
+\cventry{2025--2025}{Solo Project}{Project Iris}{}{}{
+    In this personal project I built a PoC end-to-end computer vision system for making product images on e-commerce sites interactive. The pipeline detects individual items using a YOLOv8 model, and embeds them semantically using OpenCLIP. The embeddings are then compared to support intelligent product linking across all images and products in a web store.
+    \newline\hspace*{2em}
+    The system includes a full-stack setup with a FastAPI backend, MongoDB for persistence, a Qdrant index for vector search, and a custom-built Chromium plug-in that overlays clickable links directly onto web shop imagery in real time. The project also includes a dynamic scraping and indexing pipeline for ingesting and structuring product data from arbitrary e-commerce sites.
+}{}
+
+\end{document}

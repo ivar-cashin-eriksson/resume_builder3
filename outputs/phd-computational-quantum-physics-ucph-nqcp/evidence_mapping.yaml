@@ -1,0 +1,107 @@
+sources:
+  - profile/profile.yaml
+  - profile/education.yaml
+  - profile/experience.yaml
+  - profile/skills.yaml
+  - profile/claims.yaml
+  - profile/projects.yaml
+  - profile/awards_and_achievements.yaml
+  - profile/courses.yaml
+  - outputs/phd-computational-quantum-physics-ucph-nqcp/job_analysis.md
+
+claims:
+  - section: cv introduction
+    claim: Ivar is a researcher and data scientist with a background in Engineering Physics and Statistical Learning and Data Analytics.
+    sources:
+      - profile/profile.yaml
+      - profile/education.yaml
+    trace: KTH Engineering Physics and the MSc in Statistical Learning and Data Analytics support this compact factual introduction.
+
+  - section: cv education
+    claim: KTH studies include Quantum Physics, Statistical Physics, Mathematical Methods in Physics, Numerical Methods, Applied Numerical Methods, and a thesis on probabilistic dose and spatial prediction.
+    sources:
+      - profile/courses.yaml
+      - profile/education.yaml
+    trace: Course list and thesis title support a strong quantitative physics and modelling background.
+
+  - section: cv education
+    claim: The ETH exchange in Applied Mathematics and the Stockholm University economics degree are part of the broader quantitative background.
+    sources:
+      - profile/education.yaml
+    trace: These entries are explicitly listed in the education file.
+
+  - section: cv selected experience
+    claim: RaySearch work included autoencoders on segmented 3D CT scans, learned similarity metrics, sparse Gaussian processes, and lexicographic optimisation.
+    sources:
+      - profile/experience.yaml
+      - profile/claims.yaml
+    trace: These are the strongest source-backed modelling and optimisation claims for a research application.
+
+  - section: cv selected experience
+    claim: The RaySearch work also involved collaboration with medical physicists and clinicians.
+    sources:
+      - profile/experience.yaml
+      - profile/claims.yaml
+    trace: This supports collaborative research and interdisciplinary communication.
+
+  - section: cv selected experience
+    claim: Signum work includes free-text embeddings for similarity search and maintaining forecasting systems.
+    sources:
+      - profile/experience.yaml
+      - profile/claims.yaml
+    trace: Useful as adjacent computational and modelling experience, but secondary to the physics fit.
+
+  - section: cv selected experience
+    claim: Valcon work includes an end-to-end production pipeline for a real-time deep neural network, mentoring, and technical stakeholder communication.
+    sources:
+      - profile/experience.yaml
+      - profile/claims.yaml
+    trace: This supports independence, technical depth, and collaboration.
+
+  - section: cv research and exchange
+    claim: The Zhejiang University exchange included optics-lab work on laser trimming microring resonators for integrated photonic circuits.
+    sources:
+      - profile/education.yaml
+    trace: This is the most directly relevant adjacent physics experience for a computational quantum physics application.
+
+  - section: cv research and exchange
+    claim: Team Sweden at the International Young Physicists' Tournament shows experimental physics engagement.
+    sources:
+      - profile/awards_and_achievements.yaml
+    trace: This is a source-backed physics credential and should be kept modest.
+
+  - section: cover letter
+    claim: The cover letter can honestly frame the applicant as lacking direct quantum-computing research while highlighting physics, numerical methods, probabilistic modelling, and optimisation.
+    sources:
+      - profile/education.yaml
+      - profile/experience.yaml
+      - profile/courses.yaml
+      - outputs/phd-computational-quantum-physics-ucph-nqcp/job_analysis.md
+    trace: This matches the listed requirements without overstating fit.
+
+  - section: cover letter
+    claim: The cover letter can reference collaboration across disciplines and teams as evidence for fit with NQCP's collaborative environment.
+    sources:
+      - profile/experience.yaml
+      - profile/claims.yaml
+    trace: RaySearch, Valcon, and Signum all include collaboration and communication evidence.
+
+  - section: cv research and exchange
+    claim: The CV should foreground the ZJU optics exchange and the International Young Physicists' Tournament before the broader industry roles.
+    sources:
+      - profile/education.yaml
+      - profile/awards_and_achievements.yaml
+    trace: These are source-backed physics-adjacent items that help move the CV closer to the role's research framing.
+
+  - section: cover letter
+    claim: The cover letter can mention the KTH thesis on probabilistic dose and spatial prediction as an example of modelling a physical system.
+    sources:
+      - profile/courses.yaml
+    trace: The thesis title is directly source-backed and relevant to simulation-oriented work.
+
+unsupported_claims_to_avoid:
+  - Direct quantum computing research experience
+  - Quantum hardware simulation experience
+  - Quantum error correction experience
+  - Publication record in quantum physics
+  - Experience with specific NQCP internal tools or platforms

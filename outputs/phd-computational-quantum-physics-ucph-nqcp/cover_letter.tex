@@ -1,0 +1,56 @@
+% %--------------------------
+% %	CONFIGURATION
+% %--------------------------
+\documentclass[11pt,a4paper]{moderncv}
+\moderncvstyle{classic}
+\moderncvcolor{black}
+\definecolor{firstnamecolor}{rgb}{0,0,0}
+
+% Basic packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[scale=0.85]{geometry}
+
+\usepackage{microtype}
+
+% Configure font settings
+\renewcommand{\rmdefault}{ppl}
+\renewcommand{\sfdefault}{phv}
+\renewcommand*{\namefont}{\fontsize{26}{18}\mdseries}
+
+% Configure microtype
+\microtypesetup{expansion=false}
+
+% Load sensitive information
+\input{../../secrets/personal_info_dk.tex}
+
+% %--------------------------
+\begin{document}
+\makecvtitle
+Dear PhD selection committee,
+
+\vspace*{2em}
+I am writing to apply for the PhD fellowship in Computational Quantum Physics (Theory \& Simulations) at NQCP. My background is in Engineering Physics from KTH, with an MSc in Statistical Learning and Data Analytics, and my work has centred on numerical modelling, probabilistic methods, optimisation, and applied machine learning.
+
+\hspace*{2em}
+I do not bring direct quantum-computing research experience. The closest parts of my record are the physics coursework, the modelling work, and the habit of working carefully on systems where the assumptions matter.
+
+\hspace*{2em}
+At RaySearch Laboratories, I worked on radiotherapy planning using autoencoders on segmented 3D CT scans, sparse Gaussian processes for dose prediction, and optimisation methods for clinical decision support. That work required building models around a physical system, checking whether the modelling assumptions made sense, and collaborating closely with medical physicists and clinicians. It is the closest match in my background to the sort of research discipline I would expect in a theory-and-simulation PhD.
+
+\hspace*{2em}
+My physics background is broader than that one role. At KTH, I took courses in Quantum Physics, Statistical Physics, and Mathematical Methods in Physics, and my thesis work was on image distance learning for probabilistic dose-volume histogram and spatial dose prediction. I also spent an exchange period at Zhejiang University working in an optics laboratory on laser trimming microring resonators for integrated photonic circuits. Earlier, I was part of Team Sweden at the International Young Physicists' Tournament, where I worked on open-ended experimental physics problems.
+
+\hspace*{2em}
+The NQCP listing appeals to me because it combines theory, simulation, and collaboration across teams. That is a good fit for how I prefer to work: start from a physical problem, build a model that is honest about its assumptions, and iterate with others who know the domain better than I do. My recent work in production ML has also taught me to own technical systems end to end, communicate clearly, and keep the implementation grounded in the actual workflow.
+
+\hspace*{2em}
+I would welcome the opportunity to discuss whether my background in physics, probabilistic modelling, and optimisation could be useful to NQCP's Theory \& Simulation team.
+
+\vspace*{2em}
+Yours sincerely,
+
+\vspace*{1em}
+Ivar Cashin Eriksson.
+
+\end{document}

@@ -45,4 +45,4 @@ cat prompts/candidate_evidence.md "$RUNTIME_DIR/application_context.md" > "$RUNT
 cat prompts/application_strategy.md "$RUNTIME_DIR/application_context.md" > "$RUNTIME_DIR/application_strategy_prompt.md"
 cat prompts/application_drafting.md "$RUNTIME_DIR/application_context.md" > "$RUNTIME_DIR/application_drafting_prompt.md"
 cat prompts/application_critic.md "$RUNTIME_DIR/application_context.md" > "$RUNTIME_DIR/application_critic_prompt.md"
-cat prompts/application_revision.md "$RUNTIME_DIR/application_context.md" > "$RUNTIME_DIR/revision_prompt.md"
+cat prompts/editorial_revision.md "$RUNTIME_DIR/application_context.md" > "$RUNTIME_DIR/editorial_revision_prompt.md"

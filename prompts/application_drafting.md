@@ -217,7 +217,6 @@ The CV must:
 - prioritise `reviewer_scan_priority`;
 - use the planned evidence for each section;
 - maximise evidence density and scanability;
-- avoid repeating the same role in both summary and detailed sections;
 - avoid long narrative paragraphs when concise bullets are clearer;
 - include dates consistently;
 - use role-appropriate section titles;
@@ -227,13 +226,9 @@ The CV must:
 
 The CV must not contain:
 
-- “Read more” links unless explicitly required by the strategy;
-- keyword footers;
-- duplicate selected and detailed experience sections;
 - generic adjective lists;
 - unsupported profile statements;
 - comments directed at the user;
-- self-referential text about the generation system;
 - unexplained internal project names;
 - placeholders.
 
@@ -323,8 +318,6 @@ Default expectations unless overridden by the strategy:
 - varied but controlled sentence structure;
 - concise paragraphs;
 - technical precision.
-
-Do not copy wording from previous applications.
 
 ## LaTeX instructions
 

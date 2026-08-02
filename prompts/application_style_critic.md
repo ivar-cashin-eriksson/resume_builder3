@@ -45,5 +45,5 @@ The YAML must include:
 - Be strict about alignment with the core narrative and previous examples.
 - Be strict about avoiding filler or overlong phrasing.
 - Do not browse the web, search the web, or open external URLs.
-- Use the briefing document and repository sources only.
+- Use the listing analysis document and repository sources only.
 - Do not read any other files in the repository.

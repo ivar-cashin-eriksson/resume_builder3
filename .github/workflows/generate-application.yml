@@ -54,23 +54,23 @@ jobs:
           OUTPUT_DIR: ${{ needs.vars.outputs.output_dir }}
         run: bash .github/scripts/prepare_application_prompts.sh
 
-      - name: Run listing briefing
+      - name: Run listing analysis
         uses: openai/codex-action@v1
         with:
           openai-api-key: ${{ secrets.OPENAI_API_KEY }}
-          prompt-file: .github/codex/runtime/briefing_prompt.md
+          prompt-file: .github/codex/runtime/listing_analysis_prompt.md
           model: gpt-5.4-mini
           effort: low
           codex-args: '--config web_search="live"'
           sandbox: workspace-write
-          output-file: .github/codex/runtime/briefing_summary.md
-          codex-home: .github/codex/home/briefing
+          output-file: .github/codex/runtime/listing_analysis_summary.md
+          codex-home: .github/codex/home/listing_analysis
           safety-strategy: unsafe
 
-      - name: Validate briefing output
+      - name: Validate listing analysis output
         env:
           OUTPUT_DIR: ${{ needs.vars.outputs.output_dir }}
-        run: bash .github/scripts/validate_application_outputs.sh briefing
+        run: bash .github/scripts/validate_application_outputs.sh listing_analysis
 
       # Each Codex step gets its own home so generated action config 
       # stays isolated. The first Codex step drops sudo for the rest of

@@ -30,7 +30,7 @@ Revise the draft application package once using the two critique reports.
 - Leave unsupported claims out, even if they would be attractive.
 - Do not add new claims that are not already supported by the repository.
 - Do not browse the web, search the web, or open external URLs.
-- Use the briefing document and repository sources only.
+- Use the listing analysis document and repository sources only.
 
 ## Prefer updating
 

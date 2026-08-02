@@ -46,7 +46,7 @@ Also generate any materials requested in the application, such as:
 - Preserve the existing LaTeX template structure as closely as possible.
 - Use only claims supported by the repository sources or prior approved examples.
 - Do not browse the web, search the web, or open external URLs.
-- Use the briefing document for company and role context.
+- Use the listing analysis document for company and role context.
 - If fit is weak, surface that honestly in the gap report rather than overstating it.
 - Write the supporting files so they can be used by later critique steps.
 - Do not compile PDFs yet.

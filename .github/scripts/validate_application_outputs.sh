@@ -1,15 +1,15 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-PHASE="${1:?usage: validate_application_outputs.sh briefing|critics}"
+PHASE="${1:?usage: validate_application_outputs.sh listing_analysis|critics}"
 RUNTIME_DIR=".github/codex/runtime"
 
 case "$PHASE" in
-  briefing)
+  listing_analysis)
     : "${OUTPUT_DIR:?OUTPUT_DIR is required}"
 
     if [ ! -f "$OUTPUT_DIR/job_analysis.md" ]; then
-      echo "Missing briefing output: $OUTPUT_DIR/job_analysis.md" >&2
+      echo "Missing listing analysis output: $OUTPUT_DIR/job_analysis.md" >&2
       exit 1
     fi
     ;;

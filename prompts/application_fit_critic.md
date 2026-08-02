@@ -45,5 +45,5 @@ Each list item should be concrete and refer to a specific claim, section, or fil
 - Be strict about source grounding, job relevance, unsupported claims, and seniority or tool overclaiming.
 - Be strict about missing important listing keywords or themes that are genuinely supported by the profile.
 - Do not browse the web, search the web, or open external URLs.
-- Use the briefing document and repository sources only.
+- Use the listing analysis document and repository sources only.
 - Do not read any other files in the repository.

@@ -97,17 +97,17 @@ jobs:
           codex-home: .github/codex/home/application_strategy
           safety-strategy: unsafe
 
-      - name: Generate draft package
+      - name: Generate application draft
         uses: openai/codex-action@v1
         with:
           openai-api-key: ${{ secrets.OPENAI_API_KEY }}
-          prompt-file: .github/codex/runtime/generator_prompt.md
+          prompt-file: .github/codex/runtime/application_drafting_prompt.md
           model: gpt-5.4-mini
           effort: medium
           codex-args: '--config web_search="disabled"'
           sandbox: workspace-write
-          output-file: .github/codex/runtime/generator_summary.md
-          codex-home: .github/codex/home/generator
+          output-file: .github/codex/runtime/application_drafting_summary.md
+          codex-home: .github/codex/home/application_drafting
           safety-strategy: unsafe
 
       - name: Run fit critic

@@ -76,6 +76,19 @@ jobs:
       # stays isolated. The first Codex step drops sudo for the rest of
       # this job. Later calls use unsafe so the action does not try to 
       # drop sudo again.
+      - name: Run candidate evidence mapping
+        uses: openai/codex-action@v1
+        with:
+          openai-api-key: ${{ secrets.OPENAI_API_KEY }}
+          prompt-file: .github/codex/runtime/candidate_evidence_prompt.md
+          model: gpt-5.4-mini
+          effort: medium
+          codex-args: '--config web_search="disabled"'
+          sandbox: workspace-write
+          output-file: .github/codex/runtime/candidate_evidence_summary.md
+          codex-home: .github/codex/home/candidate_evidence
+          safety-strategy: unsafe
+
       - name: Generate draft package
         uses: openai/codex-action@v1
         with:

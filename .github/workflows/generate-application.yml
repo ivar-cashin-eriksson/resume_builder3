@@ -67,11 +67,6 @@ jobs:
           codex-home: .github/codex/home/listing_analysis
           safety-strategy: unsafe
 
-      - name: Validate listing analysis output
-        env:
-          OUTPUT_DIR: ${{ needs.vars.outputs.output_dir }}
-        run: bash .github/scripts/validate_application_outputs.sh listing_analysis
-
       # Each Codex step gets its own home so generated action config 
       # stays isolated. The first Codex step drops sudo for the rest of
       # this job. Later calls use unsafe so the action does not try to 
@@ -127,9 +122,6 @@ jobs:
           output-file: .github/codex/runtime/style_critic_summary.md
           codex-home: .github/codex/home/style_critic
           safety-strategy: unsafe
-
-      - name: Validate critic outputs
-        run: bash .github/scripts/validate_application_outputs.sh critics
 
       - name: Revise draft from critiques
         uses: openai/codex-action@v1

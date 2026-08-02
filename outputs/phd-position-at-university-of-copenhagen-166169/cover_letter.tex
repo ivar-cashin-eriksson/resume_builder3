@@ -1,0 +1,54 @@
+% %--------------------------
+% %	CONFIGURATION
+% %--------------------------
+\documentclass[11pt,a4paper]{moderncv}
+\moderncvstyle{classic}
+\moderncvcolor{black}
+\definecolor{firstnamecolor}{rgb}{0,0,0}
+
+% Basic packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[Hscale=0.7, top=2cm, bottom=2cm]{geometry}
+
+\usepackage{microtype}
+
+% Configure font settings
+\renewcommand{\rmdefault}{ppl}
+\renewcommand{\sfdefault}{phv}
+\renewcommand*{\namefont}{\fontsize{26}{18}\mdseries}
+
+% Configure microtype
+\microtypesetup{expansion=false}
+
+% Load country-specific contact information after copying into outputs/<listing_slug>/.
+% Use personal_info_dk.tex for Denmark-facing applications and personal_info_se.tex for Sweden-facing applications.
+\input{../../secrets/personal_info_dk.tex}
+
+% %--------------------------
+\begin{document}
+\makecvtitle
+Dear Hiring Committee,
+
+\vspace*{2em}
+I am writing to apply for the PhD position in Mathematical Image Analysis for Sustainable Materials at the University of Copenhagen. The role is attractive to me because it combines image analysis, mathematical modelling, and scientific interpretation. My background is in Engineering Physics and Statistical Learning and Data Analytics, and most of my relevant work has been in medical image analysis and probabilistic modelling.
+
+\hspace*{2em}
+The sustainable materials context is especially appealing because it makes quantitative characterisation and benchmarking concrete, and that is the kind of methodological work I want to do.
+
+\hspace*{2em}
+At RaySearch Laboratories, I worked on automated radiotherapy planning using autoencoders, learned similarity metrics, and sparse Gaussian processes on segmented 3D CT scans. The work was not about building a larger model for its own sake. It was about getting a quantitative description of structure that could support prediction and decision-making in a scientifically meaningful way. My KTH degree project, \emph{Image Distance Learning for Probabilistic Dose-Volume Histogram and Spatial Dose Prediction in Radiation Therapy Treatment Planning}, sits in the same line of work.
+
+\hspace*{2em}
+In my later industry roles, I have continued to work on systems where evaluation, robustness, and implementation detail matter. At Signum, I maintain a pharmaceutical forecasting platform and work on embedding-based similarity search. At Valcon, I led an end-to-end production deep learning pipeline, mentored junior colleagues, and translated technical work for non-technical stakeholders. Those roles have made me careful about how a model behaves in practice, which is something I would bring to a research project that aims to be both technically rigorous and useful.
+
+\hspace*{2em}
+I am based in Copenhagen and would welcome the chance to contribute to the IMAGE section and the RAPTOR collaboration, where close work between modelling and scientific use cases is central. At RaySearch I worked closely with medical physicists and clinicians, so I am used to keeping methods aligned with domain requirements. Thank you for your consideration.
+
+\vspace*{2em}
+Regards,
+
+\vspace*{1em}
+Ivar Cashin Eriksson.
+
+\end{document}

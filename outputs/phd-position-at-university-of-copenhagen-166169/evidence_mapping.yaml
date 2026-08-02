@@ -1,0 +1,86 @@
+cv:
+  introduction:
+    claim: Quantitative researcher with a background in Engineering Physics and Statistical Learning and Data Analytics from KTH, plus an exchange in Applied Mathematics at ETH, and since 2019 has worked on machine learning in medical imaging, pharmaceutical analytics, and production systems.
+    sources:
+      - profile/profile.yaml
+      - profile/experience.yaml
+      - profile/claims.yaml
+  education:
+    claim: Engineering Physics background with MSc in Statistical Learning and Data Analytics from KTH, plus an Applied Mathematics exchange at ETH.
+    sources:
+      - profile/education.yaml
+      - profile/claims.yaml
+  coursework:
+    claim: Relevant mathematical and statistical coursework, including Statistical Machine Learning, Modern Methods of Statistical Learning, and Computational Statistics.
+    sources:
+      - profile/courses.yaml
+  raysearch:
+    claim: Research experience in medical image analysis, probabilistic modelling, and optimisation.
+    sources:
+      - profile/experience.yaml
+      - profile/claims.yaml
+      - profile/education.yaml
+  signum:
+    claim: Current work on production ML systems and embedding-based similarity search.
+    sources:
+      - profile/experience.yaml
+      - profile/claims.yaml
+      - profile/skills.yaml
+  valcon:
+    claim: Experience with end-to-end deep neural network pipelines, mentoring, stakeholder communication, and explainable AI.
+    sources:
+      - profile/experience.yaml
+      - profile/claims.yaml
+      - profile/awards_and_achievements.yaml
+  skills_and_other:
+    claim: Python, SQL, PyTorch, TensorFlow, Scikit-learn, autoencoders, sparse Gaussian processes, explainable AI, and relevant cloud/data tooling.
+    sources:
+      - profile/skills.yaml
+
+cover_letter:
+  opening:
+    claim: The application is to the PhD position in Mathematical Image Analysis for Sustainable Materials at UCPH.
+    sources:
+      - outputs/phd-position-at-university-of-copenhagen-166169/job_analysis.md
+      - outputs/phd-position-at-university-of-copenhagen-166169/listing.md
+  fit:
+    claim: The role’s emphasis on interpretable quantitative image analysis, benchmarking, and quantitative characterisation matches prior work at RaySearch and the KTH thesis.
+    sources:
+      - profile/experience.yaml
+      - profile/courses.yaml
+      - profile/education.yaml
+      - outputs/phd-position-at-university-of-copenhagen-166169/job_analysis.md
+      - outputs/phd-position-at-university-of-copenhagen-166169/listing.md
+  industry_support:
+    claim: Production ML experience at Signum and Valcon supports careful evaluation and implementation discipline.
+    sources:
+      - profile/experience.yaml
+      - profile/claims.yaml
+  motivation:
+    claim: The candidate is based in Copenhagen and would like to contribute to IMAGE and the RAPTOR collaboration.
+    sources:
+      - profile/profile.yaml
+      - outputs/phd-position-at-university-of-copenhagen-166169/job_analysis.md
+
+research_statement:
+  direction:
+    claim: The proposed research direction is segmentation-independent image analysis for complex materials, combining learned representations with mathematically grounded descriptors and benchmarking them against conventional baselines.
+    sources:
+      - outputs/phd-position-at-university-of-copenhagen-166169/job_analysis.md
+      - outputs/phd-position-at-university-of-copenhagen-166169/listing.md
+      - profile/experience.yaml
+      - profile/education.yaml
+  background:
+    claim: The research background comes from engineering physics, statistical learning, Applied Mathematics at ETH, and RaySearch work on 3D CT scans.
+    sources:
+      - profile/education.yaml
+      - profile/experience.yaml
+      - profile/courses.yaml
+  group_fit:
+    claim: The candidate is aligning the proposal to the IMAGE section and the RAPTOR collaboration at UCPH.
+    sources:
+      - outputs/phd-position-at-university-of-copenhagen-166169/job_analysis.md
+
+notes:
+  - All major claims in the generated source files are mapped to profile files or the supplied listing summary.
+  - The cover letter and research statement stay modest about materials-science background because the repository does not contain direct evidence of it.

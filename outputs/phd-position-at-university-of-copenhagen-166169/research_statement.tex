@@ -1,0 +1,79 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[scale=0.7]{geometry}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[colorlinks=true, urlcolor=DarkBlue, linkcolor=DarkBlue, citecolor=DarkBlue]{hyperref}
+\usepackage{microtype}
+
+\definecolor{DarkBlue}{RGB}{0, 0, 150}
+
+% Keep the same serif/sans pairing as the CV and cover letter.
+\renewcommand{\rmdefault}{ppl}
+\renewcommand{\sfdefault}{phv}
+\microtypesetup{expansion=false}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.55em}
+
+\newcommand{\statementtitle}[1]{%
+  \begin{center}
+    {\Large\bfseries #1}
+  \end{center}
+}
+
+\newcommand{\statementsubtitle}[1]{%
+  \begin{center}
+    {\normalsize #1}
+  \end{center}
+  \vspace{0.5em}
+}
+
+\newcommand{\source}[2]{\href{#2}{#1}}
+
+\begin{document}
+
+\statementtitle{Research Statement}
+\statementsubtitle{PhD Project in Mathematical Image Analysis for Sustainable Materials}
+
+\section{Research Direction}
+I would like to work on image analysis methods for complex materials that remain mathematically grounded and interpretable. As I read the listing, the central challenge is quantitative characterisation and benchmarking without depending too heavily on brittle segmentation pipelines. My interest is in combining learned visual representations with structural descriptors such as orientation fields and tensor-based methods, then evaluating them against more conventional image-analysis baselines.
+
+\section{Motivation and Background}
+My quantitative background comes from Engineering Physics at KTH, an exchange in Applied Mathematics at ETH, and a master's degree in Statistical Learning and Data Analytics. The most directly relevant research experience is at RaySearch Laboratories, where I worked on 3D CT image analysis, autoencoders, learned similarity metrics, and sparse Gaussian processes for dose prediction. That work was focused on turning complex image data into stable quantitative descriptions, which is close to the methodological challenge in the UCPH listing.
+
+\section{Proposed Project}
+I would start by asking when segmentation-independent methods are preferable to segmentation-dependent ones for quantitative characterisation of complex material images. A second question is which descriptor families best capture the relevant structure under limited annotation and noisy acquisition conditions. A third question is how to make the resulting methods easier to interpret for scientific users.
+
+\subsection{Research Questions}
+\begin{itemize}
+\item When do learned representations and structure-aware descriptors outperform segmentation-based pipelines on quantitative image-characterisation tasks?
+    \item Which descriptor families are most robust to noise, domain shift, and limited labels?
+    \item How can uncertainty and failure modes be presented in a way that is useful to scientific collaborators?
+\end{itemize}
+
+\subsection{Methodological Approach}
+I would build a benchmark workflow around a small set of image-characterisation tasks and compare several representation families: learned embeddings, orientation-field style descriptors, and tensor-based descriptors. I would evaluate them on predictive performance, stability under perturbation, and interpretability. Where possible, I would use ablations to separate the effect of segmentation dependence from the effect of descriptor design. My aim would be to identify which representations are most useful for scientific analysis, not only which ones perform best on a single metric.
+
+\subsubsection{Evaluation}
+Evaluation should include standard predictive measures, but also stability, uncertainty, and sensitivity to segmentation errors or missing boundaries. I would also want qualitative assessment with domain experts, because a method that is mathematically elegant but hard to interpret is less useful in this setting.
+
+\subsubsection{Expected Contributions}
+I would expect to contribute a clear benchmark, a comparison of representation families, and an analysis of when mathematically grounded descriptors add value over purely learned ones. If the project develops further, the longer-term contribution could be a more reliable and interpretable image-analysis pipeline for complex material characterisation.
+
+\section{Fit With the Group}
+The fit I see is with the IMAGE section and the RAPTOR collaboration, where the focus is on scientifically meaningful methods rather than general-purpose model building. That emphasis matches the way I have worked in medical image analysis and in production ML: keep the method grounded, test it carefully, and make sure the output is actually usable by the people who need it.
+
+\section{Selected Sources}
+The main sources I would build from are \cite{listing,thesis}.
+
+\begin{thebibliography}{99}
+\bibitem{listing}
+University of Copenhagen. PhD position / PhD Project in Mathematical Image Analysis for Sustainable Materials, listing 166169. \href{https://employment.ku.dk/phd/?show=166169}{https://employment.ku.dk/phd/?show=166169}.
+
+\bibitem{thesis}
+Ivar Cashin Eriksson. \emph{Image Distance Learning for Probabilistic Dose-Volume Histogram and Spatial Dose Prediction in Radiation Therapy Treatment Planning}. KTH Royal Institute of Technology thesis. \href{https://kth.diva-portal.org/smash/get/diva2:1431327/FULLTEXT02.pdf}{https://kth.diva-portal.org/smash/get/diva2:1431327/FULLTEXT02.pdf}.
+\end{thebibliography}
+
+\end{document}

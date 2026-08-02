@@ -1,0 +1,135 @@
+% %--------------------------
+% %	CONFIGURATION
+% %--------------------------
+\documentclass[11pt,a4paper]{moderncv}
+\moderncvstyle{classic}
+\moderncvcolor{black}
+\definecolor{firstnamecolor}{rgb}{0,0,0}
+
+% Basic packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[scale=0.85]{geometry}
+
+\usepackage{microtype}
+
+% Configure font settings
+\renewcommand{\rmdefault}{ppl}
+\renewcommand{\sfdefault}{phv}
+\renewcommand*{\namefont}{\fontsize{26}{18}\mdseries}
+
+% Configure microtype
+\microtypesetup{expansion=false}
+
+% Load country-specific contact information after copying into outputs/<listing_slug>/.
+% Use personal_info_dk.tex for Denmark-facing applications and personal_info_se.tex for Sweden-facing applications.
+\input{../../secrets/personal_info_dk.tex}
+
+% Title document
+\title{Curriculum Vitae}
+
+% %--------------------------
+
+\begin{document}
+\makecvtitle
+
+\section*{Introduction}
+Quantitative researcher with a background in Engineering Physics and Statistical Learning and Data Analytics from KTH, plus an exchange in Applied Mathematics at ETH. Since 2019, I have worked on machine learning in medical imaging, pharmaceutical analytics, and production systems. I am especially interested in mathematically grounded image analysis, quantitative characterisation, and benchmarking in scientific settings.
+
+\section{Education}
+
+\cventry{2015--2020}{Royal Institute of Technology, KTH -- Engineering Physics}{}{GPA: 5.0 (out of 5.0)}{}{Master of Science: Statistical Learning and Data Analytics; Bachelor of Science: Engineering Physics. \href{https://kth.diva-portal.org/smash/get/diva2:1431327/FULLTEXT02.pdf}{See thesis}. \newline Degree project: \emph{Image Distance Learning for Probabilistic Dose-Volume Histogram and Spatial Dose Prediction in Radiation Therapy Treatment Planning}. \newline Relevant coursework: Statistical Machine Learning; Modern Methods of Statistical Learning; Computational Statistics.}
+
+\cventry{2019}{Swiss Federal Institute of Technology, ETH -- Applied Mathematics}{Exchange}{}{}{}
+
+\cventry{2017--2022}{Stockholm University, SU -- Economics}{Supplementary Bachelor's Degree}{}{}{}
+
+% ---------------------------
+% Selected Work Experience
+% ---------------------------
+\section{Selected Work Experience}
+
+% ---------------------------
+\large{Researcher within Data Science @ RaySearch Laboratories}
+\normalsize
+\begin{itemize}
+\item Worked on automated radiotherapy planning using deep learning, probabilistic modelling, and multi-objective optimisation.
+\item Built autoencoder-based pipelines for latent anatomical features from segmented 3D CT scans and learned similarity metrics between patients.
+\item Predicted dose-volume histograms and spatial dose distributions with sparse Gaussian processes.
+\end{itemize}
+
+{\footnotesize\textit{Keywords: medical imaging, autoencoders, sparse Gaussian processes, optimisation, clinical collaboration}}
+
+\hfill{\small{\textit{\hyperref[sec:raysearch]{Read more...}}}}
+
+% ---------------------------
+\large{Full-Stack Data Scientist \& Project Manager @ Signum Life Science}
+\normalsize
+\begin{itemize}
+\item Maintain and develop a pharmaceutical forecasting platform covering price, demand, and patient population forecasts.
+\item Use LLM embeddings for downstream similarity search and matching workflows.
+\item Support commercialisation and internal collaboration through technical ownership and project management.
+\end{itemize}
+
+{\footnotesize\textit{Keywords: production ML, embeddings, similarity search, forecasting, Databricks, AWS}}
+
+\hfill{\small{\textit{\hyperref[sec:signum]{Read more...}}}}
+
+% ---------------------------
+\large{Principal Data Scientist @ Valcon}
+\normalsize
+\begin{itemize}
+\item Led data science projects across pharma, energy, IoT, and manufacturing.
+\item Helped build an end-to-end production pipeline for a real-time deep neural network.
+\item Mentored junior colleagues, led explainable AI and Git training, and presented technical work to non-technical stakeholders.
+\end{itemize}
+
+{\footnotesize\textit{Keywords: production ML, explainable AI, mentoring, stakeholder communication, deep neural networks}}
+
+\hfill{\small{\textit{\hyperref[sec:valcon]{Read more...}}}}
+
+% ---------------------------
+% Skills and Other
+% ---------------------------
+\section{Skills and Other}
+\normalsize
+\cvitem{Technology}{Python, SQL, PyTorch, TensorFlow, Scikit-learn, XGBoost, SHAP, autoencoders, CNNs, sparse Gaussian processes, Databricks, AWS, FastAPI, Docker, Qdrant}
+\cvitem{Languages}{\textit{Native}: English, Swedish. \textit{Intermediate}: Danish.}
+\cvitem{Other}{Valcon People's Choice Award; member of Mensa Sweden.}
+
+\newpage
+
+% ---------------------------
+% Detailed Work Experience
+% ---------------------------
+\section{Detailed Work Experience}
+
+% ---------------------------
+\phantomsection\label{sec:raysearch}
+\cventry{2019--2021}{Researcher within Data Science}{RaySearch Laboratories}{Stockholm}{}{
+    At RaySearch Laboratories, I worked on automating radiotherapy planning using deep learning, probabilistic modelling, and multi-objective optimisation. I developed a pipeline that extracted latent anatomical features from segmented 3D CT scans using autoencoders, and used those representations to identify similar patients via a learned similarity metric. Dose-volume histograms and spatial dose distributions were then predicted using sparse Gaussian processes, providing a probabilistic framework for dose planning conditioned on patient geometry.
+    \newline\hspace*{2em}
+    My degree project at KTH was \emph{Image Distance Learning for Probabilistic Dose-Volume Histogram and Spatial Dose Prediction in Radiation Therapy Treatment Planning}, which aligns closely with this work. I also collaborated closely with medical physicists and clinicians to keep the models aligned with oncological standards and practical workflow requirements.
+}{}
+
+% ---------------------------
+\phantomsection\label{sec:signum}
+\cventry{2024--Present}{Full-Stack Data Scientist \& Project Manager}{Signum Life Science}{Copenhagen}{}{
+    At Signum, I maintain and lead development on a pharmaceutical forecasting platform covering price, demand, and patient population forecasts. I work across architecture, project management, data science, ML engineering, and software engineering for the platform.
+    \newline\hspace*{2em}
+    In my current work, I am using LLMs to embed free text for downstream similarity search and matching workflows. I am also supporting commercialisation by helping sales representatives use the system in practice.
+    \newline\hspace*{2em}
+    Beyond model development, I organised an internal week-long hackathon with up to 40 participants.
+}{}
+
+% ---------------------------
+\phantomsection\label{sec:valcon}
+\cventry{2022--2024}{Principal Data Scientist}{Valcon}{Copenhagen}{}{
+    At Valcon, I led data science projects across pharmaceuticals, energy, IoT, and manufacturing. I also mentored junior colleagues, led explainable AI and Git trainings, and regularly presented technical topics to non-technical stakeholders.
+    \newline\hspace*{2em}
+    One project involved training a real-time deep neural network with a custom training pipeline and modular architecture. The training data consisted of natural-language inputs and high-dimensional multi-class labels, which made for a challenging prediction problem. I was responsible for the end-to-end production pipeline.
+    \newline\hspace*{2em}
+    I was awarded the Valcon People's Choice Award for exemplary work, leadership, team spirit, and scientific curiosity.
+}{}
+
+\end{document}

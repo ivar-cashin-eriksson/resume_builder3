@@ -110,30 +110,17 @@ jobs:
           codex-home: .github/codex/home/application_drafting
           safety-strategy: unsafe
 
-      - name: Run fit critic
+      - name: Run application critic
         uses: openai/codex-action@v1
         with:
           openai-api-key: ${{ secrets.OPENAI_API_KEY }}
-          prompt-file: .github/codex/runtime/fit_critic_prompt.md
+          prompt-file: .github/codex/runtime/application_critic_prompt.md
           model: gpt-5.4-mini
-          effort: low
+          effort: medium
           codex-args: '--config web_search="disabled"'
           sandbox: workspace-write
-          output-file: .github/codex/runtime/fit_critic_summary.md
-          codex-home: .github/codex/home/fit_critic
-          safety-strategy: unsafe
-
-      - name: Run style critic
-        uses: openai/codex-action@v1
-        with:
-          openai-api-key: ${{ secrets.OPENAI_API_KEY }}
-          prompt-file: .github/codex/runtime/style_critic_prompt.md
-          model: gpt-5.4-mini
-          effort: low
-          codex-args: '--config web_search="disabled"'
-          sandbox: workspace-write
-          output-file: .github/codex/runtime/style_critic_summary.md
-          codex-home: .github/codex/home/style_critic
+          output-file: .github/codex/runtime/application_critic_summary.md
+          codex-home: .github/codex/home/application_critic
           safety-strategy: unsafe
 
       - name: Revise draft from critiques

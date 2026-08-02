@@ -15,9 +15,6 @@ on:
       patch_artifact_name:
         required: true
         type: string
-      summary_artifact_name:
-        default: ""
-        type: string
       pr_title:
         required: true
         type: string
@@ -57,21 +54,11 @@ jobs:
           PATCH_PATH: /tmp/pr-patch/${{ inputs.patch_artifact_name }}
         run: git apply --index "$PATCH_PATH"
 
-      - name: Download summaries
-        if: inputs.summary_artifact_name != ''
-        uses: actions/download-artifact@v4
-        with:
-          name: ${{ inputs.summary_artifact_name }}
-          path: /tmp/pr-summaries
-
       - name: Build pull request body
         env:
           ISSUE_NUMBER: ${{ inputs.issue_number }}
           PR_BODY_PATH: /tmp/pr_body.md
-          INCLUDE_SUMMARIES: ${{ inputs.summary_artifact_name != '' }}
           RENDER_STATUS_MESSAGE: ${{ inputs.render_status_message }}
-          GENERATOR_SUMMARY_PATH: /tmp/pr-summaries/generator_summary.md
-          REVISION_SUMMARY_PATH: /tmp/pr-summaries/revision_summary.md
         run: bash .github/scripts/build_pr_body.sh
 
       - name: Create pull request

@@ -46,3 +46,4 @@ cat prompts/application_strategy.md "$RUNTIME_DIR/application_context.md" > "$RU
 cat prompts/application_drafting.md "$RUNTIME_DIR/application_context.md" > "$RUNTIME_DIR/application_drafting_prompt.md"
 cat prompts/application_critic.md "$RUNTIME_DIR/application_context.md" > "$RUNTIME_DIR/application_critic_prompt.md"
 cat prompts/editorial_revision.md "$RUNTIME_DIR/application_context.md" > "$RUNTIME_DIR/editorial_revision_prompt.md"
+cat prompts/revision_implementation.md "$RUNTIME_DIR/application_context.md" > "$RUNTIME_DIR/revision_implementation_prompt.md"

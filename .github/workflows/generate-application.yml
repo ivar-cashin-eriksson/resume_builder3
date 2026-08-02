@@ -135,6 +135,19 @@ jobs:
           output-file: .github/codex/runtime/editorial_revision_summary.md
           codex-home: .github/codex/home/editorial_revision
           safety-strategy: unsafe
+
+      - name: Apply revision plan
+        uses: openai/codex-action@v1
+        with:
+          openai-api-key: ${{ secrets.OPENAI_API_KEY }}
+          prompt-file: .github/codex/runtime/revision_implementation_prompt.md
+          model: gpt-5.4-mini
+          effort: medium
+          codex-args: '--config web_search="disabled"'
+          sandbox: workspace-write
+          output-file: .github/codex/runtime/revision_implementation_summary.md
+          codex-home: .github/codex/home/revision_implementation
+          safety-strategy: unsafe
       # ----------------------------------------------------------------
 
       - name: Create patch artifact

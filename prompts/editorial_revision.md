@@ -267,7 +267,6 @@ The CV should:
 
 - be scan-friendly;
 - contain high-density evidence;
-- avoid duplicate short and detailed sections;
 - use concise bullets;
 - show contribution, scope, methods, and outcomes;
 - follow role-appropriate structure.

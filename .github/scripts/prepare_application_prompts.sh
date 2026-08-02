@@ -42,6 +42,7 @@ EOF
 
 cat prompts/listing_analysis.md "$RUNTIME_DIR/application_context.md" > "$RUNTIME_DIR/listing_analysis_prompt.md"
 cat prompts/candidate_evidence.md "$RUNTIME_DIR/application_context.md" > "$RUNTIME_DIR/candidate_evidence_prompt.md"
+cat prompts/application_strategy.md "$RUNTIME_DIR/application_context.md" > "$RUNTIME_DIR/application_strategy_prompt.md"
 cat prompts/application_generator.md "$RUNTIME_DIR/application_context.md" > "$RUNTIME_DIR/generator_prompt.md"
 cat prompts/application_fit_critic.md "$RUNTIME_DIR/application_context.md" > "$RUNTIME_DIR/fit_critic_prompt.md"
 cat prompts/application_style_critic.md "$RUNTIME_DIR/application_context.md" > "$RUNTIME_DIR/style_critic_prompt.md"

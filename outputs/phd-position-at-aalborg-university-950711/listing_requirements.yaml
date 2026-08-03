@@ -1,0 +1,257 @@
+listing:
+  title: "PhD Stipend in AI:HARDWARE Lab for Secure Embedded AI"
+  organisation: "Aalborg University"
+  team: "AI:HARDWARE Lab; Cybersecurity Research Group"
+  department: "Department of Electronic Systems"
+  location: "Copenhagen"
+  employment_type: "Full time"
+  seniority: "PhD"
+  source_url: "https://www.vacancies.aau.dk/phd-positions/show-vacancy/vacancyId/950711"
+
+role_type:
+  primary: academic
+  subtype: PhD stipend / doctoral research position
+  confidence: high
+
+role_summary:
+  purpose: "Conduct doctoral research on secure and trustworthy AI for resource-constrained embedded systems, with applications in cyber-physical energy systems."
+  central_challenge: "Designing ML methods that remain reliable, secure, and efficient enough to run on constrained hardware in real-world cyber-physical settings."
+  likely_success_definition: "Produce research results that can be implemented and evaluated on embedded platforms, contribute to relevant publications, and progress through the PhD programme requirements."
+
+selection_criteria:
+  - id: C1
+    criterion: "Relevant Master's degree, completed or expected before the appointment start"
+    category: education
+    importance: critical
+    explicitness: explicit
+    evidence_type_expected:
+      - master's diploma
+      - transcript or grades
+      - confirmation of expected completion before start date
+    source_excerpt: "Applicants must have completed a Master’s degree in a relevant field or be expected to complete it before the start of the appointment."
+    source_url: "https://www.vacancies.aau.dk/phd-positions/show-vacancy/vacancyId/950711"
+  - id: C2
+    criterion: "Background in computer science, electrical engineering, artificial intelligence, edge computing, or a closely related field"
+    category: domain
+    importance: critical
+    explicitness: explicit
+    evidence_type_expected:
+      - degree title
+      - coursework or research focus in a related field
+      - prior project work in ML, embedded systems, or security
+    source_excerpt: "We are looking for a motivated and curious candidate with a background in computer science, electrical engineering, artificial intelligence, edge computing, or a closely related field."
+    source_url: "https://www.vacancies.aau.dk/phd-positions/show-vacancy/vacancyId/950711"
+  - id: C3
+    criterion: "Ability to design and conduct independent research within the project scope"
+    category: technical
+    importance: critical
+    explicitness: explicit
+    evidence_type_expected:
+      - prior research project or thesis
+      - examples of independent problem-solving
+      - research outputs or methodology-heavy work
+    source_excerpt: "You are able to design and conduct independent research within the scope of the project."
+    source_url: "https://www.vacancies.aau.dk/phd-positions/show-vacancy/vacancyId/950711"
+  - id: C4
+    criterion: "Clear English communication, written and oral"
+    category: communication
+    importance: critical
+    explicitness: explicit
+    evidence_type_expected:
+      - written samples such as thesis or publications
+      - interview performance
+      - evidence of presentations or academic writing
+    source_excerpt: "You communicate clearly in English, both in writing and orally."
+    source_url: "https://www.vacancies.aau.dk/phd-positions/show-vacancy/vacancyId/950711"
+  - id: C5
+    criterion: "Interest or experience in machine learning, AI security, trustworthy ML, or reliable deployment of ML systems"
+    category: technical
+    importance: important
+    explicitness: explicit
+    evidence_type_expected:
+      - project work applying ML
+      - security-focused ML research
+      - evidence of thinking about reliability or robustness
+    source_excerpt: "An interest in AI security, trustworthy ML, or the reliability of ML systems in safety-critical settings."
+    source_url: "https://www.vacancies.aau.dk/phd-positions/show-vacancy/vacancyId/950711"
+  - id: C6
+    criterion: "Programming ability, particularly Python, and familiarity with modern ML frameworks such as PyTorch or TensorFlow"
+    category: technical
+    importance: important
+    explicitness: explicit
+    evidence_type_expected:
+      - programming projects
+      - code samples or repositories
+      - thesis or coursework using Python and ML frameworks
+    source_excerpt: "A solid foundation in programming (particularly Python) and modern machine learning frameworks (e.g. PyTorch, TensorFlow)."
+    source_url: "https://www.vacancies.aau.dk/phd-positions/show-vacancy/vacancyId/950711"
+  - id: C7
+    criterion: "Interest in deploying ML on resource-constrained or embedded platforms"
+    category: technical
+    importance: important
+    explicitness: explicit
+    evidence_type_expected:
+      - embedded or edge deployment work
+      - hardware-constrained ML project experience
+      - practical evaluation on small devices
+    source_excerpt: "Some exposure to, or curiosity about, deploying ML on resource-constrained or embedded platforms."
+    source_url: "https://www.vacancies.aau.dk/phd-positions/show-vacancy/vacancyId/950711"
+  - id: C8
+    criterion: "Potential advantage from experience with embedded systems, real-time computing, hardware-software co-design, FPGA development, or hardware-accelerated computing"
+    category: technical
+    importance: optional
+    explicitness: explicit
+    evidence_type_expected:
+      - embedded systems project or employment experience
+      - real-time or FPGA coursework
+      - hardware/software co-design examples
+    source_excerpt: "Experience with embedded systems, real-time computing, hardware-software co-design, FPGA development, or hardware-accelerated computing will be considered a strong advantage."
+    source_url: "https://www.vacancies.aau.dk/phd-positions/show-vacancy/vacancyId/950711"
+  - id: C9
+    criterion: "Ability to work in an interdisciplinary environment and collaborate with colleagues from different scientific backgrounds"
+    category: communication
+    importance: important
+    explicitness: explicit
+    evidence_type_expected:
+      - cross-disciplinary project experience
+      - teamwork with researchers or engineers from different fields
+      - examples of collaborative research or development
+    source_excerpt: "You enjoy working in an interdisciplinary research environment, collaborating closely with colleagues from different scientific backgrounds."
+    source_url: "https://www.vacancies.aau.dk/phd-positions/show-vacancy/vacancyId/950711"
+
+responsibilities:
+  - id: R1
+    responsibility: "Develop secure and trustworthy AI for resource-constrained embedded systems in cyber-physical energy applications."
+    importance: core
+    source_excerpt: "The PhD position focuses on the development of secure and trustworthy AI for resource-constrained embedded systems."
+    source_url: "https://www.vacancies.aau.dk/phd-positions/show-vacancy/vacancyId/950711"
+  - id: R2
+    responsibility: "Design machine learning models that detect unusual, unsafe, or attacked operating conditions."
+    importance: core
+    source_excerpt: "Designing machine learning models that can detect unusual, unsafe, or attacked operating conditions."
+    source_url: "https://www.vacancies.aau.dk/phd-positions/show-vacancy/vacancyId/950711"
+  - id: R3
+    responsibility: "Develop data-driven models of fault and attack propagation to improve resilient monitoring and control."
+    importance: core
+    source_excerpt: "Developing data-driven models that capture how faults and attacks spread through a system, and using them to make AI-based monitoring and control more resilient."
+    source_url: "https://www.vacancies.aau.dk/phd-positions/show-vacancy/vacancyId/950711"
+  - id: R4
+    responsibility: "Study the security and integrity of deployed ML models so AI-based decisions remain trustworthy under failure or manipulation."
+    importance: core
+    source_excerpt: "Studying the security and integrity of deployed ML models, so that AI-based decisions stay trustworthy when something goes wrong or is deliberately manipulated."
+    source_url: "https://www.vacancies.aau.dk/phd-positions/show-vacancy/vacancyId/950711"
+  - id: R5
+    responsibility: "Build lightweight, efficient models that run in real time on constrained hardware."
+    importance: core
+    source_excerpt: "Building lightweight, efficient models that can run in real time on constrained hardware."
+    source_url: "https://www.vacancies.aau.dk/phd-positions/show-vacancy/vacancyId/950711"
+  - id: R6
+    responsibility: "Implement and evaluate methods on embedded platforms and hardware prototypes with a second PhD student."
+    importance: core
+    source_excerpt: "Implementing and evaluating the methods on embedded platforms and hardware prototypes, in collaboration with a second PhD student."
+    source_url: "https://www.vacancies.aau.dk/phd-positions/show-vacancy/vacancyId/950711"
+  - id: R7
+    responsibility: "Share results through publications in relevant AI, security, and systems venues."
+    importance: supporting
+    source_excerpt: "Sharing results through publications in relevant AI, security, and systems venues."
+    source_url: "https://www.vacancies.aau.dk/phd-positions/show-vacancy/vacancyId/950711"
+
+seniority_signals:
+  expected_scope: "Doctoral research scope with a clearly defined project, but requiring independent research and cross-group collaboration."
+  autonomy: "Moderate to high: the candidate is expected to design and conduct independent research."
+  ownership: "Owns a PhD research project within the AI:HARDWARE lab and contributes to methods, implementation, and dissemination."
+  leadership: "No formal people-management expectation stated."
+  stakeholder_level: "Research collaboration across departments and with another PhD student; publication-facing academic audience."
+  years_of_experience: null
+
+success_signals:
+  - outcome: "Research methods are implemented and evaluated on embedded platforms."
+    evidence: "A working evaluation on hardware prototypes or embedded devices."
+    explicitness: explicit
+    source_url: "https://www.vacancies.aau.dk/phd-positions/show-vacancy/vacancyId/950711"
+  - outcome: "Results are published in relevant AI, security, and systems venues."
+    evidence: "Conference or journal submissions and accepted publications."
+    explicitness: explicit
+    source_url: "https://www.vacancies.aau.dk/phd-positions/show-vacancy/vacancyId/950711"
+  - outcome: "The PhD progresses in line with doctoral school requirements."
+    evidence: "Completion of courses, teaching/dissemination experience, and regular progress assessment."
+    explicitness: explicit
+    source_url: "https://www.vacancies.aau.dk/phd-positions/show-vacancy/vacancyId/950711"
+
+organisation_context:
+  - fact: "The position is part of the AI:X initiative at Aalborg University, which plans nine labs in 2026 with 18 PhD stipends in total."
+    tailoring_relevance: medium
+    source_url: "https://www.vacancies.aau.dk/phd-positions/show-vacancy/vacancyId/950711"
+  - fact: "The AI:HARDWARE Lab is a collaboration between the Department of Electronic Systems, the Technical Faculty of IT & Design, and the Department of Energy."
+    tailoring_relevance: medium
+    source_url: "https://www.vacancies.aau.dk/phd-positions/show-vacancy/vacancyId/950711"
+  - fact: "The role is hosted in the Cybersecurity Research Group and collaborates closely with a second PhD in the Sustainable Power Electronics and Electrification Research Group."
+    tailoring_relevance: high
+    source_url: "https://www.vacancies.aau.dk/phd-positions/show-vacancy/vacancyId/950711"
+  - fact: "The work sits at the intersection of cybersecurity, embedded systems, AI, and power electronics for cyber-physical energy systems."
+    tailoring_relevance: high
+    source_url: "https://www.vacancies.aau.dk/phd-positions/show-vacancy/vacancyId/950711"
+
+application_requirements:
+  required_documents:
+    - type: other
+      required: true
+      evidence: "Application, stating reasons for applying and qualifications in relation to the position"
+    - type: cv
+      required: true
+      evidence: "Curriculum Vitae (CV)"
+    - type: certificates
+      required: true
+      evidence: "Diplomas (bachelor’s and master's degree diploma, including grades)"
+    - type: other
+      required: true
+      evidence: "Other relevant documents"
+    - type: cover_letter
+      required: false
+      evidence: null
+    - type: research_statement
+      required: false
+      evidence: null
+    - type: portfolio
+      required: false
+      evidence: null
+    - type: references
+      required: false
+      evidence: null
+    - type: transcript
+      required: false
+      evidence: null
+  requested_questions:
+    - "Reasons for applying"
+    - "Qualifications in relation to the position"
+  deadline: "11.08.2026"
+  submission_method: "Via Aalborg University’s recruitment system under the job advertisement on AAU’s website"
+  special_instructions:
+    - "Application assessment is by qualified experts."
+    - "Shortlisting will be applied before assessment."
+    - "The hiring process may include a risk assessment."
+    - "PhD enrolment at the Technical Doctoral School of IT and Design is a prerequisite for allocation of the stipend."
+    - "The PhD study includes 30 ECTS of PhD courses, teaching or other forms of knowledge dissemination, and an external research stay outside Aalborg University, preferably 3-6 months at a foreign research institution."
+
+employment_conditions:
+  location: "Copenhagen"
+  remote_policy: null
+  contract_type: "PhD stipend / fixed-term doctoral appointment"
+  travel: "External research stay outside Aalborg University is required, preferably 3-6 months at a foreign research institution."
+  salary: "In accordance with the AC collective agreement and the Appointment Order"
+  start_date: "15 September 2026 or soon hereafter"
+  duration: "Three years"
+  other:
+    - "Employment is in accordance with the Appointment Order and Job Structure Order for academic staff."
+    - "PhD stipends are allocated only to individuals who hold a Master's degree."
+    - "Progress of the PhD student is assessed at regular points in time."
+    - "Full time"
+
+uncertainties:
+  - issue: "The listing specifies Copenhagen, but the wider AAU context includes multiple campuses; the exact physical work location within Copenhagen is not further described."
+    impact: low
+    recommended_action: "Treat Copenhagen as the stated location and verify the detailed campus or worksite if needed before applying."
+
+sources:
+  - url: "https://www.vacancies.aau.dk/phd-positions/show-vacancy/vacancyId/950711"
+    source_type: listing

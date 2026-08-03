@@ -1,0 +1,585 @@
+listing_slug: phd-position-at-aalborg-university-950711
+
+editorial_judgement:
+  current_quality: good
+  revision_scope: light
+  central_argument_after_revision: >-
+    Present the candidate as a quantitatively trained ML researcher-engineer
+    whose strongest proof is independent probabilistic-modelling research plus
+    production ML delivery under practical constraints, making him a credible
+    adjacent entrant to doctoral work on trustworthy embedded AI.
+  reviewer_takeaway_after_revision: >-
+    This is still an adjacent rather than direct embedded-security profile, but
+    the application makes a sharper, more disciplined case that the candidate
+    already has the research depth, implementation maturity, and
+    interdisciplinary working style needed to grow into the PhD topic.
+  primary_revision_goal: >-
+    Sharpen the narrative so the package ends on concrete project contribution,
+    keeps supporting material subordinate, and strengthens the adjacent bridge
+    without adding unsupported embedded or security claims.
+
+critique_adjudication:
+  accepted:
+    - critique_reference: recommended_edits.1
+      reason: >-
+        The cover letter's implementation paragraph is slightly dense, and the
+        closing currently resolves into broad fit language rather than the most
+        concrete contribution claim available from the evidence.
+    - critique_reference: recommended_edits.2
+      reason: >-
+        The thesis is the strongest supporting document by a clear margin, so
+        the supporting-documents sheet should make Project iris visibly
+        secondary.
+    - critique_reference: criterion_assessment.C6
+      reason: >-
+        The package should preserve Python and framework coverage, but keep that
+        proof concise and tied to stronger delivery evidence rather than a long
+        tools inventory.
+    - critique_reference: criterion_assessment.C7
+      reason: >-
+        The embedded-platform gap remains the main risk, so the revised package
+        should make the adjacent bridge as clear as possible without turning the
+        gap into an explicit weakness statement.
+  modified:
+    - critique_reference: recommended_edits.3
+      original_recommendation: >-
+        If page space is tight, trim the Project iris wording and keep the
+        skills list focused on the tools most relevant to the PhD case.
+      revised_interpretation: >-
+        Compress Project iris and any excess tool-list density now, but do not
+        cut named framework or programming evidence so far that C6 becomes less
+        visible.
+      reason: >-
+        The CV benefits from tighter supporting material even without a proven
+        page emergency, but the revision must not weaken criterion coverage in
+        pursuit of neatness.
+    - critique_reference: recommended_edits.4
+      original_recommendation: >-
+        Shorten the portal text a little further while keeping the same proof
+        points.
+      revised_interpretation: >-
+        Make the portal text a clearly compressed variant of the cover-letter
+        argument, but keep the same evidence order and avoid stripping it down
+        to generic motivation.
+      reason: >-
+        The right revision is functional differentiation, not aggressive
+        compression for a character limit that has not been evidenced.
+    - critique_reference: recommended_edits.5
+      original_recommendation: >-
+        Remove any remaining generic framing that does not add selection value.
+      revised_interpretation: >-
+        Retain the direct first-sentence motivation, but trim only abstract
+        phrasing that is not anchored by the KTH background, thesis, or project
+        fit.
+      reason: >-
+        The opening is already directionally right; over-rewriting it would risk
+        making the letter flatter rather than sharper.
+  rejected:
+    - critique_reference: structural_assessment.template_artifacts.1
+      recommendation: >-
+        Treat the moderncv title block as a revision target so the letter feels
+        less CV-like.
+      reason: >-
+        This task is editorial rather than template-level, and the content is
+        already the real issue. Asking the implementation agent to solve a minor
+        template artefact would violate scope and consume effort without
+        improving the selection case.
+    - critique_reference: document_assessment.application_form_text.tex.issue_1
+      recommendation: >-
+        Tighten the portal text pre-emptively for a possibly strict field limit.
+      reason: >-
+        No portal character limit is evidenced in the inputs. The plan should
+        improve distinct function and concision, but not optimise around an
+        unverified administrative constraint.
+
+global_decisions:
+  preserve:
+    - >-
+      The adjacent-field framing that leads with research depth, quantitative
+      training, and practical ML delivery rather than pretending to be a direct
+      embedded-security specialist.
+    - >-
+      The research-first evidence order: eligibility and thesis/RaySearch
+      evidence before commercial ML breadth.
+    - >-
+      The restrained, factual tone and the absence of apology about missing
+      embedded experience.
+  remove:
+    - >-
+      Any broad closing language that gestures at trustworthy ML or
+      interdisciplinary fit without tying those themes back to E1, E4, and E5.
+    - >-
+      Any wording that makes Project iris look co-equal with the thesis,
+      RaySearch, or Valcon evidence.
+  reduce:
+    - >-
+      Tool-list density in the CV where it does not materially improve C6
+      coverage.
+    - >-
+      Valtech and stakeholder detail in narrative documents once it has done its
+      communication-support job.
+  strengthen:
+    - >-
+      The bridge from E4 to trustworthy and constrained-system relevance by
+      stressing implementation discipline, latency, and reliability rather than
+      generic production experience.
+    - >-
+      The final reviewer impression that the candidate would contribute research
+      rigour and implementation maturity to the PhD from day one.
+  reorder:
+    - >-
+      Keep the thesis unmistakably first in supporting materials, with Project
+      iris presented only as secondary breadth.
+    - >-
+      In the cover letter and portal text, keep research proof before
+      implementation translation, then close on contribution rather than broad
+      thematic fit.
+  do_not_add:
+    - Direct embedded-systems, FPGA, hardware-software co-design, or AI-security claims.
+    - Generic university praise, Denmark motivation, or AI:X initiative boilerplate.
+    - Publication, writing-sample, or administrative programme content not evidenced in the sources.
+    - Keyword-dump skills prose added only for listing coverage.
+
+document_revisions:
+  - document: cv.tex
+    revision_scope: light
+    objective_after_revision: >-
+      Keep the CV highly scan-friendly while making supporting material more
+      subordinate and preserving concise evidence for Python/framework
+      familiarity.
+    preserve:
+      - locator: cv.research_profile
+        reason: >-
+          This already states the central selection case clearly and honestly in
+          one sentence.
+      - locator: cv.research_experience.raysearch
+        reason: >-
+          This is the strongest research-readiness evidence and should remain the
+          most methodologically specific section in the CV.
+      - locator: cv.ml_engineering.valcon
+        reason: >-
+          This is the best direct proof of delivery under latency and quality
+          constraints and should stay prominent.
+    edits:
+      - edit_id: REV1
+        priority: should
+        locator: cv.methods_and_technical_skills
+        operation: reorder
+        issue: >-
+          The skills section is slightly list-like, which dilutes C6 coverage by
+          making important proof look like an undifferentiated inventory.
+        instruction: >-
+          Keep explicit mention of Python, C++, PyTorch, TensorFlow, and
+          Scikit-learn, but trim or de-emphasise lower-value tooling if needed
+          so the section reads as a concise criterion bridge rather than a broad
+          stack catalogue.
+        evidence_ids:
+          - E8
+          - E4
+        criterion_ids:
+          - C6
+        constraints:
+          - Do not remove Python or named ML-framework coverage.
+          - Do not imply framework use in a specific role unless that role is already evidenced elsewhere.
+          - Keep the section clearly secondary to project and experience evidence.
+        expected_effect: >-
+          C6 remains visible while the CV stays centred on stronger research and
+          delivery proof.
+      - edit_id: REV2
+        priority: should
+        locator: cv.projects.project_iris
+        operation: shorten
+        issue: >-
+          Project iris currently carries more descriptive detail than its
+          selection value warrants relative to the thesis and main experience
+          sections.
+        instruction: >-
+          Compress the Project iris description to one tighter supporting line
+          that preserves end-to-end computer-vision breadth without listing tools
+          so fully that it competes with primary evidence.
+        evidence_ids:
+          - E11
+        criterion_ids:
+          - C7
+        constraints:
+          - Keep it truthful as a personal project, not a deployed embedded system.
+          - Do not use it to imply direct edge or resource-constrained deployment.
+        expected_effect: >-
+          Supporting breadth remains available, but reviewer attention stays on
+          the stronger research and production ML evidence.
+    document_checks:
+      - The CV still leads with eligibility, research depth, and constrained delivery evidence.
+      - RaySearch and Valcon remain easier to scan than Project iris.
+      - No CV line implies direct embedded, FPGA, or AI-security experience.
+      - Python and modern ML frameworks remain explicitly visible.
+
+  - document: cover_letter.tex
+    revision_scope: moderate
+    objective_after_revision: >-
+      Keep the letter as one coherent adjacent-field argument, but make the
+      implementation bridge tighter and the close more specific about contribution.
+    preserve:
+      - locator: cover_letter.paragraph_2
+        reason: >-
+          This paragraph is the best interpretation of the RaySearch and thesis
+          evidence and already matches the intended voice.
+    edits:
+      - edit_id: REV3
+        priority: must
+        locator: cover_letter.paragraph_3
+        operation: shorten
+        issue: >-
+          The implementation paragraph is slightly overfull and gives too much
+          space to secondary supporting detail.
+        instruction: >-
+          Rebuild the paragraph around E4 as the main bridge from research to
+          real-world ML implementation, keep E6 as current continuity evidence,
+          and reduce E9 to a brief communication support role. Preserve the
+          point that the candidate moves between model design, implementation,
+          and explanation, but say it more economically.
+        evidence_ids:
+          - E4
+          - E6
+          - E9
+        criterion_ids:
+          - C5
+          - C7
+          - C9
+        constraints:
+          - Do not turn production latency or reliability evidence into an embedded-platform claim.
+          - Do not let Valtech occupy equal weight with Valcon.
+          - Keep the paragraph interpretive rather than CV-like.
+        expected_effect: >-
+          The letter will sound sharper and will make the adjacent bridge more
+          persuasive without overclaiming direct embedded experience.
+      - edit_id: REV4
+        priority: must
+        locator: cover_letter.paragraph_4
+        operation: reframe
+        issue: >-
+          The closing paragraph currently resolves into broad thematic fit rather
+          than the most concrete contribution claim available from the evidence.
+        instruction: >-
+          Reframe the paragraph so it states what the candidate would contribute
+          to the PhD environment now: quantitative training, independent
+          modelling research, and practical ML implementation maturity. Keep the
+          embedded/security move adjacent and forward-looking, but do not state
+          any lack explicitly and do not rely on generic trustworthy-ML
+          language as the main claim.
+        evidence_ids:
+          - E1
+          - E4
+          - E5
+        criterion_ids:
+          - C2
+          - C7
+          - C9
+        constraints:
+          - Do not apologise for missing embedded experience.
+          - Do not claim prior cyber-physical energy or AI-security work.
+          - End on contribution and readiness for doctoral collaboration, not broad enthusiasm.
+        expected_effect: >-
+          The letter will finish on a more memorable and evidence-grounded
+          selection argument.
+      - edit_id: REV5
+        priority: should
+        locator: cover_letter.paragraph_1
+        operation: shorten
+        issue: >-
+          The opening is directionally strong, but one clause is more generic
+          than the rest of the letter and can be tightened.
+        instruction: >-
+          Keep the direct statement of application, the KTH quantitative
+          background, and the thesis-based research motivation, but trim any
+          abstract phrasing that does not help establish project-specific fit
+          quickly.
+        evidence_ids:
+          - E1
+          - E2
+        criterion_ids:
+          - C1
+          - C2
+          - C3
+        constraints:
+          - Do not flatten the motivation into a generic career-change statement.
+          - Do not remove the thesis link between modelling and evaluation.
+        expected_effect: >-
+          The letter will enter the evidence faster and maintain a direct,
+          non-template tone.
+    document_checks:
+      - The letter remains a one-page, four-paragraph argument rather than a CV recap.
+      - Paragraph 2 stays the main research-readiness proof.
+      - The closing claim is more specific than "trustworthy ML and interdisciplinary collaboration".
+      - No paragraph explicitly states the embedded gap or claims direct security expertise.
+
+  - document: application_form_text.tex
+    revision_scope: light
+    objective_after_revision: >-
+      Make the portal text a clearly shorter functional variant of the letter
+      while preserving the same evidence hierarchy and truthful adjacent framing.
+    preserve:
+      - locator: application_form_text.paragraph_1
+        reason: >-
+          This paragraph already establishes application purpose and degree fit
+          efficiently for a text-field context.
+    edits:
+      - edit_id: REV6
+        priority: should
+        locator: application_form_text.paragraph_2
+        operation: shorten
+        issue: >-
+          The research paragraph can be more compressed without losing its proof
+          of independent, methodology-heavy work.
+        instruction: >-
+          Tighten the RaySearch and thesis material into a shorter research-proof
+          paragraph that still shows probabilistic modelling, careful problem
+          formulation, and work with domain specialists.
+        evidence_ids:
+          - E5
+          - E2
+        criterion_ids:
+          - C3
+          - C9
+        constraints:
+          - Keep both the thesis and RaySearch present.
+          - Do not add publication or writing-sample claims.
+        expected_effect: >-
+          The form text stays substantive while becoming more clearly distinct
+          from the full letter.
+      - edit_id: REV7
+        priority: should
+        locator: application_form_text.paragraph_3
+        operation: reframe
+        issue: >-
+          The final paragraph currently compresses several ideas but can end more
+          decisively on the candidate's contribution to the lab.
+        instruction: >-
+          Keep Valcon as the main implementation example, retain Signum as
+          current ML continuity, and reduce stakeholder wording to brief support.
+          End the paragraph on the contribution mix the candidate would bring to
+          the lab, not on a generic summary of experience.
+        evidence_ids:
+          - E4
+          - E6
+          - E9
+        criterion_ids:
+          - C5
+          - C7
+          - C9
+        constraints:
+          - Do not introduce embedded, security, or hardware claims.
+          - Keep the paragraph shorter than the equivalent cover-letter material.
+        expected_effect: >-
+          The portal text will read as an intentional concise application
+          statement rather than a lightly trimmed duplicate of the letter.
+    document_checks:
+      - The text remains three short paragraphs.
+      - The evidence order stays degree fit, research proof, then implementation bridge.
+      - The application-form text is shorter and more functional than the cover letter.
+      - No new claims appear that are absent from the letter or CV evidence base.
+
+  - document: certificates.tex
+    revision_scope: none
+    objective_after_revision: >-
+      Keep the certificates sheet focused on formal eligibility and degree facts
+      only.
+    preserve:
+      - locator: certificates.degree_1
+        reason: >-
+          This is the key master's qualification evidence and is already clear.
+      - locator: certificates.degree_2
+        reason: >-
+          This supports the quantitative engineering background cleanly.
+      - locator: certificates.degree_3
+        reason: >-
+          This is factual supplementary degree information and does not need
+          editorial adjustment.
+    edits: []
+    document_checks:
+      - Only degree facts are listed.
+      - No narrative justification or ranking language is added.
+      - The master's qualification remains immediately visible.
+
+  - document: relevant_supporting_documents.tex
+    revision_scope: light
+    objective_after_revision: >-
+      Keep the thesis unmistakably primary and present any extra project
+      evidence as clearly optional supporting breadth.
+    preserve:
+      - locator: supporting_documents.thesis
+        reason: >-
+          The thesis is the strongest additional document and should remain the
+          centre of this sheet.
+    edits:
+      - edit_id: REV8
+        priority: should
+        locator: supporting_documents.project_iris
+        operation: reframe
+        issue: >-
+          Project iris is useful breadth, but its current treatment risks giving
+          it more selection weight than it merits for this PhD.
+        instruction: >-
+          Keep Project iris only as a short secondary supporting item after the
+          thesis, with wording that emphasises end-to-end ML breadth rather than
+          detailed tooling. If the document needs to feel more selective, make
+          its optional or supplementary status clearer through phrasing.
+        evidence_ids:
+          - E11
+        criterion_ids:
+          - C7
+        constraints:
+          - Do not imply the project is research output or embedded deployment evidence.
+          - Do not let its description exceed the thesis item in prominence.
+        expected_effect: >-
+          The supporting-documents page will better match the listing's research
+          priorities and the package's evidence hierarchy.
+    document_checks:
+      - The thesis is visibly the main supporting item.
+      - Project iris reads as secondary breadth only.
+      - No unsupported claim of embedded or research equivalence is introduced.
+
+gap_controls:
+  - criterion_id: C4
+    treatment_after_revision: bridge
+    maximum_mentions: 0
+    permitted_documents: []
+    exact_control: >-
+      Do not mention the absence of a writing sample or publications. Let the
+      application's own clarity and the existing stakeholder-facing evidence
+      carry the communication criterion implicitly.
+  - criterion_id: C6
+    treatment_after_revision: bridge
+    maximum_mentions: 0
+    permitted_documents: []
+    exact_control: >-
+      Do not state that framework proof is limited. Bridge through a concise
+      skills section plus concrete ML delivery evidence, and avoid inflating
+      self-reported tools into role-specific claims.
+  - criterion_id: C7
+    treatment_after_revision: bridge
+    maximum_mentions: 0
+    permitted_documents: []
+    exact_control: >-
+      Do not explicitly acknowledge the lack of embedded deployment history.
+      Bridge only by emphasising real-time and reliability-constrained ML
+      implementation, quantitative engineering training, and credible motivation
+      to deepen this area within the PhD.
+  - criterion_id: C8
+    treatment_after_revision: omit
+    maximum_mentions: 0
+    permitted_documents: []
+    exact_control: >-
+      Omit direct reference to embedded systems, FPGA, hardware-software
+      co-design, and hardware acceleration experience unless the statement is
+      purely negative, which should also be avoided.
+
+evidence_controls:
+  primary_evidence:
+    - evidence_id: E5
+      required_role: Anchor independent research ability and interdisciplinary scientific work.
+      minimum_visibility: high
+    - evidence_id: E4
+      required_role: Anchor reliable ML implementation under practical constraints.
+      minimum_visibility: high
+    - evidence_id: E1
+      required_role: Establish eligibility and the quantitative engineering foundation.
+      minimum_visibility: high
+  secondary_evidence:
+    - evidence_id: E2
+      required_role: Add thesis-specific research detail without overtaking E5.
+      minimum_visibility: medium
+    - evidence_id: E6
+      required_role: Show current continuity in applied ML systems work.
+      minimum_visibility: medium
+    - evidence_id: E9
+      required_role: Support communication and stakeholder-translation claims briefly.
+      minimum_visibility: low
+    - evidence_id: E8
+      required_role: Provide explicit Python and framework coverage as a concise bridge.
+      minimum_visibility: medium
+    - evidence_id: E11
+      required_role: Remain a secondary breadth signal only.
+      minimum_visibility: low
+  prohibited_evidence:
+    - evidence_id: E10
+      reason: >-
+        A peer nomination quote is too weak for the written application and
+        would lower evidentiary discipline.
+    - evidence_id: E12
+      reason: >-
+        The workflow-automation project is too far from the listing's core
+        research case to justify space in this package.
+
+claim_controls:
+  remove_or_correct:
+    - document: cover_letter.tex
+      locator: cover_letter.paragraph_4
+      issue: >-
+        The closing claim should not rest on broad trustworthy-ML or embedded
+        language without being tied back to the candidate's actual research and
+        implementation evidence.
+      evidence_ids:
+        - E1
+        - E4
+        - E5
+    - document: relevant_supporting_documents.tex
+      locator: supporting_documents.project_iris
+      issue: >-
+        Project iris must not read as evidence of embedded deployment or as a
+        research contribution equivalent to the thesis.
+      evidence_ids:
+        - E11
+  preserve_exactly:
+    - document: cover_letter.tex
+      locator: cover_letter.paragraph_2
+      reason: >-
+        This is the strongest piece of interpretive prose in the package and
+        already captures research depth, precision, and interdisciplinary work.
+    - document: cv.tex
+      locator: cv.ml_engineering.valcon
+      reason: >-
+        The latency and recall details are the best grounded proof of practical
+        implementation constraints and should not be diluted.
+  interpretation_boundaries:
+    - evidence_id: E1
+      permitted_interpretation: >-
+        Completed master's-level eligibility and a strong quantitative
+        engineering foundation closely related to the project.
+      prohibited_interpretation: >-
+        A direct computer-science, electrical-engineering, or embedded-systems
+        specialisation.
+    - evidence_id: E4
+      permitted_interpretation: >-
+        Production ML delivery under real-time, latency, and reliability
+        constraints, with stakeholder communication.
+      prohibited_interpretation: >-
+        Prior embedded deployment, constrained-hardware implementation, or AI
+        security expertise.
+    - evidence_id: E5
+      permitted_interpretation: >-
+        Independent research, probabilistic modelling, and collaboration with
+        domain specialists in a scientific setting.
+      prohibited_interpretation: >-
+        Prior research in cybersecurity, secure ML, or embedded AI.
+    - evidence_id: E8
+      permitted_interpretation: >-
+        Self-reported familiarity with Python and standard ML frameworks that
+        can support, but not replace, project evidence.
+      prohibited_interpretation: >-
+        Direct proof of named framework use in a specific employment entry.
+    - evidence_id: E11
+      permitted_interpretation: >-
+        Supporting breadth in end-to-end applied ML system building.
+      prohibited_interpretation: >-
+        Evidence of embedded, edge, or resource-constrained deployment.
+
+final_quality_checks:
+  - Critique recommendations are adjudicated independently rather than copied through.
+  - The revised plan keeps the central argument adjacent, credible, and evidence-grounded.
+  - No planned edit exists only to satisfy keyword coverage.
+  - C4, C6, C7, and C8 each have an explicit post-revision gap treatment and mention limit.
+  - E5, E4, and E1 remain the most visible evidence across the package.
+  - Project iris stays secondary wherever it appears.
+  - No edit instructs the implementation agent to add unsupported embedded, security, publication, or hardware claims.
+  - Certificates remain untouched apart from confirmation of no needed revision.
+  - The implementation agent can execute every edit without making new strategic judgements.

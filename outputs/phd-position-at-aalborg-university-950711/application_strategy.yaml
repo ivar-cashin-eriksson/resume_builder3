@@ -1,0 +1,412 @@
+listing_slug: phd-position-at-aalborg-university-950711
+
+strategic_assessment:
+  overall_fit: stretch
+  fit_summary: "Strong on degree fit, independent ML research, and real-world ML deployment; materially weaker on embedded, hardware, and AI security specifics, so the case should be framed as adjacent and credible rather than direct domain match."
+  principal_advantage: "A rare combination of quantitative academic training, thesis-level probabilistic modelling, and hands-on delivery of production ML systems under practical reliability and latency constraints."
+  principal_concern: "No direct evidence of embedded ML deployment, hardware-oriented implementation, or prior AI security research."
+  application_risk: medium
+
+positioning:
+  central_argument: "Position the candidate as a quantitatively trained ML researcher-engineer who has already done independent modelling research and delivered ML systems in real settings, and who is therefore a credible adjacent-field entrant for doctoral work on trustworthy embedded AI."
+  reviewer_takeaway: "This is not an embedded-security specialist already, but a serious ML researcher-engineer with enough research depth, deployment maturity, and interdisciplinary experience to grow into this PhD topic."
+  differentiators:
+    - "Engineering Physics background plus an MSc specialisation in Statistical Learning and Data Analytics."
+    - "Independent research experience in probabilistic modelling for radiotherapy planning."
+    - "Production ML delivery with real-time and quality constraints, not only coursework or toy projects."
+    - "Comfort working across technical and domain boundaries in research and applied settings."
+  avoid_positioning:
+    - "Do not claim existing expertise in embedded systems, FPGA work, or hardware-software co-design."
+    - "Do not present the candidate as an established AI security researcher."
+    - "Do not centre generic enthusiasm for AI, academia, or Denmark."
+    - "Do not spend space on workflow-automation side projects unless directly useful as supporting evidence of rigour."
+
+evidence_strategy:
+  primary_evidence:
+    - evidence_id: E5
+      role_in_argument: "Anchors the case for independent research ability and cross-disciplinary scientific work."
+      reason: "It is the strongest direct evidence of research design, modelling, and collaboration with domain specialists."
+    - evidence_id: E4
+      role_in_argument: "Anchors the case for reliable ML implementation under practical constraints."
+      reason: "It shows the candidate can move beyond modelling into deployed systems with latency and quality requirements."
+    - evidence_id: E1
+      role_in_argument: "Establishes eligibility and the quantitative engineering foundation for the project."
+      reason: "It directly covers the master's requirement and supports a closely related technical background."
+  secondary_evidence:
+    - evidence_id: E2
+      role_in_argument: "Strengthens the independent-research narrative with thesis-specific modelling work."
+      reason: "It adds project-level detail to the research case without competing with the broader RaySearch evidence."
+    - evidence_id: E6
+      role_in_argument: "Shows current continued engagement with applied ML systems."
+      reason: "It keeps the profile current and demonstrates that ML implementation remains active rather than historical."
+    - evidence_id: E9
+      role_in_argument: "Supports communication and stakeholder translation."
+      reason: "It helps bridge the communication criterion without overclaiming academic writing output."
+  supporting_evidence:
+    - evidence_id: E8
+      role_in_argument: "Provides explicit Python and ML-framework coverage."
+      reason: "Needed for criterion coverage, but it is weaker than project-based proof and should stay supporting."
+    - evidence_id: E7
+      role_in_argument: "Supports English-language confidence."
+      reason: "Useful corroboration, but the application's own clarity should carry more weight."
+    - evidence_id: E11
+      role_in_argument: "Adds breadth in end-to-end ML system building."
+      reason: "Helpful as a short supporting project, but less central than research and deployed work."
+  omit_or_deprioritise:
+    - evidence_id: E12
+      reason: "Interesting, but too far from the listing's research and embedded focus to earn core space."
+    - evidence_id: E10
+      reason: "A peer quote is weak evidence compared with direct experience and should not be relied on in the written application."
+    - evidence_id: E3
+      reason: "Summary-level contextual evidence should only backstop stronger direct evidence, not replace it."
+
+criterion_strategy:
+  - criterion_id: C1
+    importance: critical
+    current_match: strong
+    treatment: demonstrate
+    evidence_ids:
+      - E1
+    message: "Make eligibility unmistakable early through the completed master's qualification and quantitative engineering training."
+    explicit_in_application: true
+    documents:
+      - cv
+      - cover_letter
+  - criterion_id: C2
+    importance: critical
+    current_match: strong
+    treatment: demonstrate
+    evidence_ids:
+      - E1
+      - E5
+    message: "Frame the background as closely related and technically rigorous, with statistical learning and engineering as the main bridge into the project."
+    explicit_in_application: true
+    documents:
+      - cv
+      - cover_letter
+  - criterion_id: C3
+    importance: critical
+    current_match: strong
+    treatment: demonstrate
+    evidence_ids:
+      - E5
+      - E2
+    message: "Use the thesis and research role to show the candidate has already done methodology-heavy, self-directed work rather than only implementation support."
+    explicit_in_application: true
+    documents:
+      - cv
+      - cover_letter
+      - interview
+  - criterion_id: C4
+    importance: critical
+    current_match: moderate
+    treatment: demonstrate
+    evidence_ids:
+      - E7
+      - E4
+      - E9
+    message: "Let concise, technically clear writing carry the written-communication case, with stakeholder-facing experience as supporting proof."
+    explicit_in_application: false
+    documents:
+      - cover_letter
+      - interview
+  - criterion_id: C5
+    importance: important
+    current_match: strong
+    treatment: demonstrate
+    evidence_ids:
+      - E4
+      - E6
+    message: "Emphasise ML system reliability, real-time constraints, and applied modelling interest rather than claiming prior security specialism."
+    explicit_in_application: true
+    documents:
+      - cv
+      - cover_letter
+  - criterion_id: C6
+    importance: important
+    current_match: moderate
+    treatment: bridge
+    evidence_ids:
+      - E8
+      - E4
+    message: "Cover Python and framework familiarity in the CV, then back it with concrete ML delivery examples rather than a long tools list."
+    explicit_in_application: true
+    documents:
+      - cv
+      - interview
+  - criterion_id: C7
+    importance: important
+    current_match: weak
+    treatment: bridge
+    evidence_ids:
+      - E4
+      - E11
+      - E1
+    message: "Present real-time ML delivery and the engineering foundation as adjacent preparation for embedded deployment, while expressing genuine interest without claiming prior embedded practice."
+    explicit_in_application: true
+    documents:
+      - cv
+      - cover_letter
+      - interview
+  - criterion_id: C8
+    importance: optional
+    current_match: weak
+    treatment: omit
+    evidence_ids:
+      - E4
+    message: "Do not spend scarce space trying to turn adjacent real-time experience into a hardware-specialist claim."
+    explicit_in_application: false
+    documents: []
+  - criterion_id: C9
+    importance: important
+    current_match: strong
+    treatment: demonstrate
+    evidence_ids:
+      - E5
+      - E4
+    message: "Show repeated work across scientific, technical, and stakeholder boundaries to support fit for a joint lab environment."
+    explicit_in_application: true
+    documents:
+      - cv
+      - cover_letter
+      - interview
+
+gap_strategy:
+  - criterion_id: C4
+    gap: "No explicit writing sample or publication excerpt is present in the repository."
+    severity: minor
+    treatment: bridge
+    adjacent_evidence_ids:
+      - E7
+      - E4
+      - E9
+    rationale: "Do not mention the absence directly; rely on the quality of the application statement itself and on stakeholder-facing experience."
+    maximum_mentions: 0
+    permitted_documents: []
+  - criterion_id: C6
+    gap: "No project-specific citation of Python, PyTorch, or TensorFlow use appears in the experience or project entries; the framework familiarity is self-reported in the skills file."
+    severity: minor
+    treatment: bridge
+    adjacent_evidence_ids:
+      - E8
+      - E4
+      - E10
+    rationale: "Bridge through concise skills coverage plus specific ML implementation bullets, without drawing attention to the evidentiary limitation."
+    maximum_mentions: 0
+    permitted_documents: []
+  - criterion_id: C7
+    gap: "No direct embedded, edge, or resource-constrained deployment project is evidenced."
+    severity: material
+    treatment: bridge
+    adjacent_evidence_ids:
+      - E4
+      - E11
+      - E1
+    rationale: "This is the main risk, but it should be handled through adjacent evidence and project-specific motivation rather than an explicit deficit statement."
+    maximum_mentions: 0
+    permitted_documents: []
+  - criterion_id: C8
+    gap: "No direct embedded systems, FPGA, hardware-software co-design, or hardware-accelerated computing project is evidenced."
+    severity: minor
+    treatment: omit
+    adjacent_evidence_ids:
+      - E3
+      - E1
+      - E4
+    rationale: "Because the criterion is optional and direct evidence is absent, acknowledgement would only weaken the case."
+    maximum_mentions: 0
+    permitted_documents: []
+
+document_plan:
+  required_documents:
+    - type: other
+      generate: true
+      reason: "The listing explicitly requires an application stating reasons for applying and qualifications in relation to the position."
+    - type: cv
+      generate: true
+      reason: "The CV is explicitly required and must carry most of the evidence density."
+    - type: certificates
+      generate: true
+      reason: "Diplomas and grades are explicitly required to prove eligibility."
+    - type: other
+      generate: true
+      reason: "The listing explicitly asks for other relevant documents; include only existing materials that directly strengthen research readiness."
+    - type: cover_letter
+      generate: true
+      reason: "Use the cover-letter workflow output to fulfil the required narrative application statement, not as an extra optional document."
+    - type: research_statement
+      generate: false
+      reason: "A research statement is not explicitly required for this listing."
+    - type: portfolio
+      generate: false
+      reason: "A portfolio is optional and not central to an academic PhD evaluation here."
+    - type: references
+      generate: false
+      reason: "References are not explicitly requested at application stage."
+    - type: transcript
+      generate: false
+      reason: "The listing asks for diplomas including grades under certificates, so a separate transcript should not be generated unless later requested."
+
+  cv:
+    objective: "Give a shortlisting reviewer rapid proof of eligibility, research capacity, and adjacent-fit evidence for trustworthy ML on constrained systems."
+    target_length: "2 pages"
+    reviewer_scan_priority:
+      - "Completed master's qualification in a closely related quantitative field."
+      - "Independent research experience in probabilistic and applied ML."
+      - "Real-world ML implementation with reliability or latency constraints."
+      - "Interdisciplinary collaboration across technical and domain experts."
+      - "Python and ML-framework familiarity kept concise and credible."
+    section_order:
+      - "Research Profile"
+      - "Education"
+      - "Research Experience"
+      - "Selected ML Engineering Experience"
+      - "Selected Projects"
+      - "Methods and Technical Skills"
+      - "Languages"
+    evidence_by_section:
+      "Research Profile":
+        - E1
+        - E5
+        - E4
+      "Education":
+        - E1
+        - E2
+      "Research Experience":
+        - E5
+        - E2
+      "Selected ML Engineering Experience":
+        - E4
+        - E6
+        - E9
+      "Selected Projects":
+        - E11
+      "Methods and Technical Skills":
+        - E8
+      "Languages":
+        - E7
+    content_to_remove_or_avoid:
+      - "Do not foreground generic consulting or stakeholder-management bullets unless they support interdisciplinary research fit."
+      - "Do not create a publication section if there are no publications to list."
+      - "Do not over-expand personal or side projects that do not strengthen the PhD case."
+      - "Do not use a long undifferentiated skills inventory."
+    structural_rules:
+      - "Order entries by relevance to doctoral research and trustworthy ML, not by a generic template."
+      - "Use bullets that show methods, constraints, and outcomes rather than broad responsibilities."
+      - "Make the RaySearch and thesis evidence easier to scan than commercial product breadth."
+      - "Keep embedded-adjacent signals modest; never label them as direct embedded systems experience."
+
+  cover_letter:
+    generate: true
+    objective: "Deliver the required application narrative by turning adjacent evidence into one clear case for why this candidate can contribute to the project and grow into its embedded-security context."
+    target_length: "1 page or 500-700 words"
+    opening_function: "State the application directly, establish the KTH statistical-learning and engineering background, and position the move as a deliberate return to deeper methodological research."
+    paragraph_plan:
+      - paragraph: 1
+        function: "Introduce the candidature, degree fit, and project-specific motivation."
+        evidence_ids:
+          - E1
+          - E2
+        key_point: "The role fits a quantitative ML candidate seeking doctoral work on rigorous, real-world trustworthy AI problems."
+      - paragraph: 2
+        function: "Prove independent research ability and methodological depth."
+        evidence_ids:
+          - E5
+          - E2
+        key_point: "Prior research in probabilistic modelling and clinically grounded ML shows readiness for self-directed PhD research."
+      - paragraph: 3
+        function: "Translate deployed ML experience into relevance for reliability, efficiency, and implementation."
+        evidence_ids:
+          - E4
+          - E6
+          - E9
+        key_point: "Production ML work under practical constraints strengthens the case for trustworthy-system thinking, even though the domain was not embedded hardware."
+      - paragraph: 4
+        function: "Explain fit for the interdisciplinary lab environment and calibrate the adjacent-domain move."
+        evidence_ids:
+          - E5
+          - E4
+          - E1
+        key_point: "The value proposition is rigorous ML research plus implementation maturity, paired with honest readiness to deepen embedded and security-specific expertise within the PhD."
+    closing_function: "Restate the contribution succinctly and signal readiness for doctoral training and collaboration without sales language."
+    content_to_avoid:
+      - "Do not repeat the CV chronologically."
+      - "Do not claim direct embedded, cyber-physical energy, or AI security expertise."
+      - "Do not apologise for gaps or dwell on what is missing."
+      - "Do not use generic enthusiasm about innovation, excellence, or the university."
+
+  research_statement:
+    generate: false
+    objective: null
+    target_length: null
+    structure: []
+    proposed_research_angle: null
+    evidence_ids: []
+    boundaries:
+      - "Do not generate a research statement unless the university later requests one."
+
+  other_documents:
+    - type: application_form_text
+      generate: true
+      objective: "If the portal uses text fields rather than a separate letter upload, reuse the same cover-letter argument in slightly compressed form."
+      structure:
+        - "One short paragraph on project-specific motivation and background fit."
+        - "One short paragraph on independent research evidence."
+        - "One short paragraph on deployed ML, interdisciplinary collaboration, and contribution to the lab."
+    - type: certificates
+      generate: true
+      objective: "Establish formal eligibility immediately through clear, complete degree documents with grades."
+      structure:
+        - "Master's diploma or completion proof with grades."
+        - "Bachelor's diploma with grades."
+        - "Any required translation or official formatting only if already needed by the institution."
+    - type: relevant_supporting_documents
+      generate: true
+      objective: "Include only existing supporting material that directly strengthens the research case; omit filler attachments."
+      structure:
+        - "Prioritise thesis-related material if available in a form suitable for submission."
+        - "Include only directly relevant evidence of research or technical work already available."
+        - "Do not create speculative add-ons merely because the listing says other relevant documents."
+
+style_strategy:
+  tone:
+    - "direct"
+    - "technical"
+    - "curious"
+    - "sincere"
+    - "British English"
+  preferred_language_patterns:
+    - "Lead with evidence before interpretation."
+    - "Use problem-method-result framing when describing research or engineering work."
+    - "Prefer plain verbs and restrained modifiers."
+    - "Connect motivation to the specific project intersection of trustworthy ML, embedded systems, and interdisciplinary collaboration."
+  prohibited_patterns:
+    - "Hype, buzzwords, or corporate jargon."
+    - "Generic claims of passion, excellence, or innovation."
+    - "Any wording that implies direct embedded-security expertise not evidenced."
+    - "A full CV recap in the narrative document."
+  confidence_level: balanced
+  narrative_density: moderate
+
+quality_bar:
+  must_communicate:
+    - "The candidate clearly meets the master's-level eligibility requirement."
+    - "There is real prior independent research experience, not only industry implementation."
+    - "The candidate has delivered ML systems under practical constraints and can connect modelling to working systems."
+    - "The application is an adjacent-field case into secure embedded AI, presented honestly and deliberately."
+    - "Interdisciplinary collaboration is already part of the candidate's track record."
+  must_not_imply:
+    - "That the candidate already has direct embedded deployment experience."
+    - "That there is a publication record, writing sample, or AI security track record if none is evidenced."
+    - "That cyber-physical energy systems expertise is already established."
+    - "That optional supporting materials contain facts not already grounded in the repository."
+  likely_reviewer_questions:
+    - "Can this candidate adapt quickly enough from general ML and medical-imaging research to embedded trustworthy AI?"
+    - "Is there enough evidence of hands-on programming beyond a skills list?"
+    - "Why this PhD now, and why this project specifically rather than a general wish to return to academia?"
+    - "How much of the candidate's strength is research versus commercial ML delivery?"
+  success_test:
+    - "A reviewer can summarise the candidate in one sentence as a quantitatively strong ML researcher-engineer entering the embedded-security domain from adjacent but relevant work."
+    - "The written application feels credible because it is specific about strengths and restrained about gaps."
+    - "The CV makes the research and constrained-deployment evidence easy to find within the first page."
+    - "Nothing in the package forces the reviewer to question unsupported hardware or security claims."

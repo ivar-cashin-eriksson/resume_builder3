@@ -1,0 +1,57 @@
+\documentclass[11pt,a4paper]{moderncv}
+\moderncvstyle{classic}
+\moderncvcolor{black}
+\definecolor{firstnamecolor}{rgb}{0,0,0}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[scale=0.85]{geometry}
+\usepackage{microtype}
+\usepackage{hyperref}
+
+\renewcommand{\rmdefault}{ppl}
+\renewcommand{\sfdefault}{phv}
+\renewcommand*{\namefont}{\fontsize{26}{18}\mdseries}
+\microtypesetup{expansion=false}
+
+\input{../../secrets/personal_info_dk.tex}
+
+\title{Curriculum Vitae}
+
+\begin{document}
+\makecvtitle
+
+\section*{Research Profile}
+\cvitem{}{Quantitatively trained ML researcher-engineer with an MSc specialisation in Statistical Learning and Data Analytics from KTH, a BSc in Engineering Physics, thesis-level research in probabilistic dose prediction for radiotherapy planning, and recent delivery of production ML systems under latency and quality constraints.}
+
+\section{Education}
+\cventry{2015--2020}{Royal Institute of Technology (KTH)}{MSc and BSc in Engineering Physics}{Stockholm, Sweden}{}{MSc specialisation: Statistical Learning and Data Analytics; GPA 5.0/5.0. BSc in Engineering Physics; GPA 5.0/5.0. Thesis: \href{https://kth.diva-portal.org/smash/get/diva2:1431327/FULLTEXT02.pdf}{Image Distance Learning for Probabilistic Dose-Volume Histogram and Spatial Dose Prediction in Radiation Therapy Treatment Planning}.}
+
+\section{Research Experience}
+\cventry{2019--2021}{Researcher within Data Science}{RaySearch Laboratories}{Stockholm, Sweden}{}{Worked on automating radiotherapy planning using deep learning, probabilistic modelling, and multi-objective optimisation.\newline
+\hspace*{2em}Built pipelines for latent anatomical features from segmented 3D CT scans using autoencoders, and predicted dose-volume histograms and spatial dose distributions using sparse Gaussian processes.\newline
+\hspace*{2em}Collaborated with medical physicists and clinicians to align the models with oncological standards and practical workflows.}
+
+\section{Selected ML Engineering Experience}
+\cventry{2024--Present}{Full-Stack Data Scientist, Project Manager}{Signum Life Science}{Copenhagen, Denmark}{}{Maintains a pharmaceutical price forecasting platform and current embedding-based similarity search and matching workflows.\newline
+\hspace*{2em}Works across architecture, data science, ML engineering, and software engineering on production systems.}
+
+\cventry{2022--2024}{Principal Data Scientist, Consultant}{Valcon}{Copenhagen, Denmark}{}{Architected and implemented an end-to-end production pipeline for a real-time deep neural network.\newline
+\hspace*{2em}Built an invoice quality-control ML system with around two-second response time and 100\% recall in the first two weeks of production.\newline
+\hspace*{2em}Regularly presented technical topics to non-technical stakeholders.}
+
+\cventry{2021--2022}{Data Scientist, Consultant}{Valtech}{Copenhagen, Denmark}{}{Built time-series forecasts and clustering models for e-commerce use cases, and worked closely with business stakeholders to keep outputs actionable.}
+
+\section{Selected Projects}
+\cventry{2025--Present}{\texttt{Project iris}}{}{Solo project}{}{End-to-end computer vision system for making product images interactive, with real-time clickable link overlays.}
+
+\section{Methods and Technical Skills}
+\cvitem{Programming}{Python, SQL, C++, Matlab}
+\cvitem{ML}{PyTorch, TensorFlow, Scikit-learn, XGBoost, OpenCLIP, Facebook Prophet}
+\cvitem{Engineering}{FastAPI, MongoDB, Qdrant, AWS, GitHub Actions}
+\cvitem{Methods}{Autoencoders, CNNs, sparse Gaussian processes, time series forecasting, clustering, explainable AI}
+
+\section{Languages}
+\cvitem{}{English (native), Swedish (native), Danish (intermediate)}
+
+\end{document}

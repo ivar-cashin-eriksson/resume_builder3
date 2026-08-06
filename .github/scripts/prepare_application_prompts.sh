@@ -11,10 +11,17 @@ ISSUE_BODY="${ISSUE_BODY:-}"
 RUNTIME_DIR=".github/codex/runtime"
 mkdir -p "$RUNTIME_DIR"
 
-cat > "$RUNTIME_DIR/application_context.md" <<EOF
-# Application Context
+cat > "$RUNTIME_DIR/context.md" <<EOF
+# Context
 
-## GitHub Issue
+Derived Repository Targets
+
+- listing_slug: $LISTING_SLUG
+- output_dir: $OUTPUT_DIR
+EOF
+
+cat > "$RUNTIME_DIR/issue_context.md" <<EOF
+# Github Issue Context
 
 Title: $ISSUE_TITLE
 
@@ -22,28 +29,14 @@ Body:
 $ISSUE_BODY
 
 Labels: $ISSUE_LABELS
-
-## Derived Repository Targets
-
-- listing_slug: $LISTING_SLUG
-- output_dir: $OUTPUT_DIR
-
-## Hard Rules
-
-- Use only facts found in the repository or the approved listing material.
-- Do not invent experience, publications, grades, tools, employers, dates, awards, or achievements.
-- Keep the tone direct, personal, factual, modest, and in British English.
-- Make no changes outside \`$OUTPUT_DIR/\`.
-- Every major claim in the CV and cover letter must be traceable to a profile YAML file or previous application example.
-- Prefer omission over unsupported claims.
-- Compile PDFs when possible.
-- Only the listing analysis step may use web search. Later steps must not browse the web.
 EOF
 
-cat prompts/listing_analysis.md "$RUNTIME_DIR/application_context.md" > "$RUNTIME_DIR/listing_analysis_prompt.md"
-cat prompts/candidate_evidence.md "$RUNTIME_DIR/application_context.md" > "$RUNTIME_DIR/candidate_evidence_prompt.md"
-cat prompts/application_strategy.md "$RUNTIME_DIR/application_context.md" > "$RUNTIME_DIR/application_strategy_prompt.md"
-cat prompts/application_drafting.md "$RUNTIME_DIR/application_context.md" > "$RUNTIME_DIR/application_drafting_prompt.md"
-cat prompts/application_critic.md "$RUNTIME_DIR/application_context.md" > "$RUNTIME_DIR/application_critic_prompt.md"
-cat prompts/editorial_revision.md "$RUNTIME_DIR/application_context.md" > "$RUNTIME_DIR/editorial_revision_prompt.md"
-cat prompts/revision_implementation.md "$RUNTIME_DIR/application_context.md" > "$RUNTIME_DIR/revision_implementation_prompt.md"
+cat prompts/listing_analysis.md "$RUNTIME_DIR/context.md" "$RUNTIME_DIR/issue_context.md" > "$RUNTIME_DIR/listing_analysis_prompt.md"
+cat prompts/candidate_evidence.md "$RUNTIME_DIR/context.md" > "$RUNTIME_DIR/candidate_evidence_prompt.md"
+cat prompts/application_strategy.md "$RUNTIME_DIR/context.md" > "$RUNTIME_DIR/application_strategy_prompt.md"
+cat prompts/application_drafting.md "$RUNTIME_DIR/context.md" > "$RUNTIME_DIR/application_drafting_prompt.md"
+cat prompts/application_critic.md "$RUNTIME_DIR/context.md" > "$RUNTIME_DIR/application_critic_prompt.md"
+cat prompts/editorial_revision.md "$RUNTIME_DIR/context.md" > "$RUNTIME_DIR/editorial_revision_prompt.md"
+cat prompts/revision_implementation.md "$RUNTIME_DIR/context.md" > "$RUNTIME_DIR/revision_implementation_prompt.md"
+
+echo "Prepared application prompts in $RUNTIME_DIR"

@@ -15,7 +15,9 @@ Analyse the job listing and produce a structured, source-grounded description of
 - what the role is;
 - what the selected candidate will be expected to do;
 - what evidence the employer is likely to use when selecting candidates;
-- what application materials and submission requirements are explicitly requested;
+- what the applicant must submit;
+- which submission items must be authored by the workflow;
+- which submission items must instead be attached as existing documents;
 - what employment conditions or practical constraints are stated;
 - what important uncertainties remain.
 
@@ -92,12 +94,18 @@ organisation_context:
     source_url: string
 
 application_requirements:
-  required_documents:
-    - type: cv | cover_letter | research_statement | portfolio | references | transcript | certificates | other
-      required: true | false
-      evidence: string | null
-  requested_questions:
-    - string
+  submission_items:
+    - id: A1
+      source_label: string
+      canonical_type: cv | cover_letter | research_statement | portfolio | references | diplomas_and_grades | transcript | certificates | publications | supporting_documents | other
+      requirement: required | optional | conditional | unclear
+      fulfilment: generate | attach_existing | attach_existing_if_relevant | verify_only
+      delivery_format: upload_document | email | physical | unknown
+      requested_content:
+        - string
+      source_excerpt: string
+      source_url: string
+
   deadline: string | null
   submission_method: string | null
   special_instructions:
@@ -261,20 +269,68 @@ Exclude generic marketing language such as:
 
 unless the wording reveals a concrete role expectation.
 
-### 9. Detect required application materials exactly
+### 9. Classify application submission items exactly
 
-Do not assume that a cover letter, research statement, references, portfolio, transcript, or certificates are required.
+Classify what the applicant must submit separately from what the workflow must generate.
 
-For every document:
+`requirement` describes whether the applicant must provide the item.
 
-- mark it required only when the listing explicitly requests it;
-- record the supporting wording under `evidence`;
-- mark it false when it is mentioned as optional;
-- omit documents not mentioned unless the schema requires an explicit false entry for clarity.
+`fulfilment` describes what the workflow should do about it.
 
-Later agents must be able to determine exactly what to generate from this section.
+A required submission item is not necessarily a document that should be authored.
 
-### 10. Keep employment conditions separate
+Use:
+
+- `required` when the listing explicitly says the applicant must provide the item;
+- `optional` when the listing explicitly presents the item as optional;
+- `conditional` when the item is required only if relevant, applicable, available, shortlisted, or requested later;
+- `unclear` when the requirement cannot be determined reliably.
+
+Use:
+
+- `generate` for authored application materials such as a CV, cover letter, research statement, research proposal, portfolio text, or written questionnaire response;
+- `attach_existing` for existing evidence such as diplomas, transcripts, certificates, publications, references, writing samples, identity documents, or proof of eligibility;
+- `attach_existing_if_relevant` for broad attachment categories such as “other relevant documents”, “supporting documents”, or “additional material”;
+- `verify_only` when the item is an eligibility or procedural condition rather than something to author or attach during the current application stage.
+
+Do not convert an upload request for diplomas, transcripts, certificates, publications, references, writing samples, or supporting documents into a newly authored summary document.
+
+Do not create a certificate summary, diploma summary, attachment cover sheet, supporting-document summary, or application-form document unless the listing explicitly requests such authored material.
+
+### 10. Normalise application-document terminology
+
+Map semantically equivalent listing terms to a canonical type.
+
+Use `cover_letter` when the listing requests an authored document that explains motivation, reasons for applying, suitability, or qualifications, including terms such as:
+
+- cover letter;
+- application letter;
+- motivated application;
+- motivation letter;
+- letter of motivation;
+- application stating reasons for applying;
+- application explaining qualifications in relation to the position.
+
+Do not mark `cover_letter` as optional or absent merely because the listing calls it an “application” rather than a “cover letter”.
+
+### 11. Treat generic supporting-document language cautiously
+
+Phrases such as:
+
+- other relevant documents;
+- additional supporting documents;
+- supporting material;
+- other attachments;
+
+normally mean the applicant may attach existing relevant evidence.
+
+Unless the listing names a specific required item:
+
+- use `requirement: conditional`;
+- use `fulfilment: attach_existing_if_relevant`;
+- do not treat the phrase as an instruction to generate a new document.
+
+### 12. Keep employment conditions separate
 
 Place practical or contractual details under `employment_conditions`, including:
 
@@ -296,7 +352,7 @@ Place practical or contractual details under `employment_conditions`, including:
 
 Do not turn these into application themes unless the listing clearly treats them as selection criteria.
 
-### 11. Record important uncertainties
+### 13. Record important uncertainties
 
 Examples:
 
@@ -326,9 +382,11 @@ Do not resolve uncertainty by guessing.
 ## Output quality requirements
 
 - Keep the YAML concise but complete.
-- Use stable IDs: `C1`, `C2`, ... and `R1`, `R2`, ...
+- Use stable IDs: `C1`, `C2`, ...; `R1`, `R2`, ...; and `A1`, `A2`, ...
 - Order selection criteria by importance, then by likely hiring relevance.
 - Order responsibilities by centrality to the role.
+- Order submission items as they appear in the listing.
+- Avoid duplicate submission items that describe the same underlying requirement.
 - Avoid duplicate or near-duplicate criteria.
 - Combine overlapping tools into a broader criterion when the listing treats them as alternatives.
 - Preserve distinctions when separate expertise is genuinely required.
@@ -337,6 +395,10 @@ Do not resolve uncertainty by guessing.
 - Produce valid YAML.
 - Do not wrap the YAML in Markdown fences.
 - Do not include prose before or after the file content.
+- Split listing statements into separate selection criteria when they have different importance levels, evidence expectations, or strategic treatments.
+- In particular, do not combine a baseline requirement with a separately stated “advantage”, “preferred”, or “nice-to-have” qualification.
+- Do not combine communication ability, collaboration ability, motivation, and technical expertise into one criterion merely because they appear in the same paragraph.
+- Avoid repeating procedural information under both application_requirements and employment_conditions.
 
 ## Final validation before completion
 
@@ -345,7 +407,13 @@ Confirm that:
 - every critical selection criterion has a supporting source excerpt and URL;
 - responsibilities are not automatically duplicated as selection criteria;
 - administrative or contractual conditions are not misclassified as selection criteria;
-- required documents are based only on explicit listing instructions;
+- every submission item has a source excerpt and URL;
+- `requirement` and `fulfilment` are classified independently;
+- authored materials use `generate`;
+- diplomas, transcripts, certificates, publications, references, and similar evidence use `attach_existing`;
+- generic supporting-document categories use `attach_existing_if_relevant` unless a specific document is named;
+- a motivation or qualification letter is normalised to `cover_letter`;
+- the same narrative requirement is not duplicated as both a cover letter and portal text;
 - inferred claims are labelled as inferred;
 - generic organisation marketing has been excluded;
 - no candidate information or personal-fit analysis appears;

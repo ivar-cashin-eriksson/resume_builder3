@@ -97,6 +97,58 @@ pdflatex research_statement.tex
 
 Skip files that are not part of the application. The templates assume they are rendered from `outputs/<listing_slug>/`, because their private-material paths are relative to that location.
 
+## 🧪 Generate prompts locally
+
+The workflow prompts can be prepared locally without running any Codex agents. This is useful for inspecting prompt changes, testing individual workflow stages, or sending a generated prompt through the Codex interface in VS Code.
+
+First define the required issue and output context:
+
+```bash
+export ISSUE_TITLE="PhD position at Aalborg University (950711)"
+export ISSUE_LABELS="job-application"
+export LISTING_SLUG="phd-position-at-aalborg-university-950711"
+export OUTPUT_DIR="outputs/$LISTING_SLUG"
+export ISSUE_BODY="$(cat <<'EOF'
+## Listing
+
+- **Title:** PhD position at Aalborg University
+- **Direct link:** https://example.com/listing
+
+## Notes
+
+Add the full GitHub issue body here.
+EOF
+)"
+```
+
+Generate the runtime prompts from the repository root:
+
+```bash
+bash .github/scripts/prepare_application_prompts.sh
+```
+
+The generated files are written to:
+
+```text
+.github/codex/runtime/
+|-- context.md
+|-- issue_context.md
+|-- listing_analysis_prompt.md
+|-- candidate_evidence_prompt.md
+|-- application_strategy_prompt.md
+|-- application_drafting_prompt.md
+|-- application_critic_prompt.md
+|-- editorial_revision_prompt.md
+`-- revision_implementation_prompt.md
+```
+
+Each runtime prompt combines the reusable agent instructions with the relevant repository and issue context.
+
+To test one stage through Codex in VS Code, open the corresponding runtime prompt and copy it to Codex through the UI in VSCode.
+
+This makes it possible to test prompt changes one stage at a time without running the complete GitHub Actions workflow. This is especially useful to limit token usage through the API and lets you use the subscription model instead.
+
+
 ## 🛠️ Project notes
 
 Current strengths:

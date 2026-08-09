@@ -1,37 +1,56 @@
+% %--------------------------
+% %	CONFIGURATION
+% %--------------------------
 \documentclass[11pt,a4paper]{moderncv}
 \moderncvstyle{classic}
 \moderncvcolor{black}
 \definecolor{firstnamecolor}{rgb}{0,0,0}
 
+% Basic packages
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[hscale=0.7, top=2cm, bottom=2cm]{geometry}
+\usepackage[scale=0.8, top=1.5cm, bottom=1.5cm]{geometry}
 \usepackage{microtype}
-\usepackage{hyperref}
 
+% Configure font settings
 \renewcommand{\rmdefault}{ppl}
 \renewcommand{\sfdefault}{phv}
 \renewcommand*{\namefont}{\fontsize{26}{18}\mdseries}
+
+% Configure microtype
 \microtypesetup{expansion=false}
 
+% Load sensitive information
 \input{../../secrets/personal_info_dk.tex}
 
+% %--------------------------
 \begin{document}
 \makecvtitle
+Dear Members of the Selection Committee,
 
-Dear members of the hiring committee,
+\vspace*{2em}
+I am applying for the PhD Stipend in AI:HARDWARE Lab for Secure Embedded AI. My background combines Engineering Physics, statistical machine learning, safety-critical medical AI, and the deployment of real-time production systems. I am particularly interested in a question that connects these experiences: how can machine-learning models remain reliable when they operate under computational constraints, changing physical conditions, or deliberate manipulation?
 
-I am applying for the PhD position in the AI:HARDWARE Lab because it matches the work I want to do next: rigorous machine learning research under real implementation constraints. My background at KTH combines Engineering Physics with an MSc specialisation in Statistical Learning and Data Analytics, and my degree project on \href{https://kth.diva-portal.org/smash/get/diva2:1431327/FULLTEXT02.pdf}{probabilistic dose-volume histogram and spatial dose prediction} gave me experience of formulating a modelling problem, testing assumptions, and working through evaluation in detail.
+\hspace*{2em}
+My interest in trustworthy machine learning developed at RaySearch Laboratories, where I researched methods for automated radiotherapy planning. I built latent anatomical representations from segmented 3D CT scans using autoencoders and used sparse Gaussian processes to predict dose-volume histograms and spatial dose distributions. I also redesigned lexicographic optimisation algorithms to better represent clinical decision hierarchies. Because the models supported safety-critical treatment planning, their value depended on more than predictive performance. Their behaviour had to be evaluated in relation to physical constraints, oncological standards, and the decisions of medical physicists and clinicians. This experience taught me to treat reliability and evaluation as central parts of the modelling problem.
 
-At RaySearch, I worked as a researcher on automated radiotherapy planning using deep learning, probabilistic modelling, and multi-objective optimisation. That work included pipelines for latent anatomical features from segmented 3D CT scans, as well as sparse Gaussian-process models for dose prediction. The important part for me was not only the modelling, but the way the work had to be grounded in clinical practice. Collaborating with medical physicists and clinicians forced me to be precise, to justify modelling choices, and to keep the research tied to a real decision process. That is the sort of research setting I am looking for in a PhD.
+\hspace*{2em}
+My subsequent work has reinforced the same lesson from a production perspective. At Valcon, I deployed real-time machine-learning systems where latency, integration, and failure modes were as important as model performance, working across energy, IoT, pharmaceutical, and manufacturing projects. At Signum Life Science, I now work on the architecture and development of a large-scale forecasting platform built around many independently trained models. Together, these experiences have taught me how system-level constraints shape whether machine-learning models can be maintained and trusted in practice.
 
-My more recent industry work strengthens the implementation side of the same profile. At Valcon I architected and implemented an end-to-end production pipeline for a real-time deep neural network, and I built an invoice quality-control system with around two-second response time and 100\% recall in the first two weeks of production. At Signum I currently work on embedding-based similarity search and matching workflows, which keeps me close to applied ML system design. At Valtech, I worked with business stakeholders on forecasting and clustering outputs. Across these roles, I have had to move between model design, implementation, and explanation.
+\hspace*{2em}
+The AI:HARDWARE project is a compelling next step because it extends the kinds of reliability questions I have worked with in software systems into settings where the model is part of a physical process. I am particularly interested in how we can design systems that remain dependable when inputs are noisy, conditions drift, or the system is actively stressed, without relying on excessive computational overhead. More broadly, I want to understand what it means for a model to fail safely once it is embedded in a real-time environment, and how that behaviour can be analysed and improved in practice.
 
-I would bring a strong quantitative base, independent research experience, and practical ML implementation maturity to the PhD environment. That combination is relevant to reliable system work, and I would value the chance to contribute it while developing further within your group.
+\hspace*{2em}
+My experience has primarily been on the machine-learning and software side rather than embedded hardware or hardware security. However, my academic foundation in Engineering Physics and Applied Mathematics gives me a strong basis for developing in this direction. I am comfortable moving between mathematical modelling, software implementation, and physical applications, and I have repeatedly entered unfamiliar technical domains and worked closely with specialists to develop useful systems. I would bring strong Python, PyTorch, TensorFlow, probabilistic modelling, optimisation, and production ML experience to the project while developing deeper expertise in embedded platforms, AI security, and hardware-software co-design.
 
-Thank you for considering my application. I would welcome the opportunity to discuss how my background could contribute to the project.
+\hspace*{2em}
+The opportunity to implement and evaluate methods on hardware prototypes, collaborate across scientific disciplines, and publish research with practical relevance is extremely exciting and it would be a privilege to develop as a researcher in this environment.
 
-Yours sincerely,
+\hspace*{2em}
+I would welcome the opportunity to contribute my experience in safety-critical and deployed machine learning to the AI:HARDWARE Lab and to develop new methods for secure, efficient, and trustworthy AI in cyber-physical energy systems.
+
+\vspace{2em}
+Kind regards, 
 
 Ivar Cashin Eriksson
 

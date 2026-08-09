@@ -23,6 +23,8 @@ Do not edit CVs, cover letters, research statements, templates, or generated dra
 
 The output will be used by a later Application Strategy agent.
 
+Do not inspect examples/ by default. Inspect an example only after identifying a material gap for a critical or important criterion and only when there is a concrete reason to believe the example contains a source-backed claim missing from the profile.
+
 ## Output
 
 Write one YAML file to:
@@ -36,50 +38,37 @@ Do not write any other files.
 ```yaml
 listing_slug: string
 
-candidate_summary:
-  strongest_domains:
-    - string
-  strongest_capabilities:
-    - string
-  distinctive_assets:
-    - string
+evidence_catalog:
+  - evidence_id: E1
+    claim: string
+    source_file: string
+    source_path: string
+    specificity: high | medium | low
+    quantified: true | false
+    recency: current | recent | older
+    demonstrated_outcomes:
+      - string
+    factual_caveats:
+      - string
 
 criterion_matches:
   - criterion_id: C1
     criterion: string
     importance: critical | important | optional
     overall_match: strong | moderate | weak | none
-    evidence:
+    evidence_links:
       - evidence_id: E1
-        claim: string
-        source_file: string
-        source_path: string
         evidence_type: direct | transferable | contextual
         relevance: high | medium | low
         strength: strong | moderate | weak
-        specificity: high | medium | low
-        quantified: true | false
-        recency: current | recent | older
-        supported_outcomes:
+        criterion_fit: string
+        criterion_caveats:
           - string
-        caveats:
-          - string
-        recommended_use:
-          - cv
-          - cover_letter
-          - research_statement
-          - interview
     best_evidence_ids:
       - E1
     missing_evidence:
       - string
     gap_severity: none | minor | material | critical
-    gap_treatment_options:
-      - demonstrate
-      - bridge_with_adjacent_evidence
-      - acknowledge_once
-      - omit_unless_needed
-      - disqualifying
 
 responsibility_matches:
   - responsibility_id: R1
@@ -90,33 +79,13 @@ responsibility_matches:
 
 unmatched_strengths:
   - evidence_id: E20
-    claim: string
-    source_file: string
-    source_path: string
     potential_value: string
-    likely_use:
-      - cv
-      - cover_letter
-      - research_statement
-      - interview
 
 evidence_conflicts:
   - issue: string
     affected_evidence_ids:
       - E1
     recommended_action: string
-
-gaps:
-  - criterion_id: C4
-    gap: string
-    severity: minor | material | critical
-    treatment_options:
-      - bridge_with_adjacent_evidence
-      - acknowledge_once
-      - omit_unless_needed
-      - disqualifying
-    adjacent_evidence_ids:
-      - E1
 
 source_inventory:
   - source_file: string
@@ -238,6 +207,7 @@ Do not recommend `acknowledge_once` merely because evidence is absent.
 ## Source-grounding rules
 
 - Every evidence item must include an exact repository source file and a precise YAML path, heading, identifier, or stable textual locator.
+- Point to the narrowest field that contains the supporting claim. A whole object such as `experience[1]` is insufficient when the claim appears in a nested field.
 - Use claims from profile files as the primary source of truth.
 - Use previous approved examples only when they contain a claim that is clearly source-backed but absent or unclear in the profile.
 - Do not infer achievements, tools, dates, publications, grades, scale, ownership, seniority, or outcomes that are not supported.
@@ -287,32 +257,6 @@ Do not copy:
 
 If an example claim cannot be traced to a source, omit it and record the issue under `evidence_conflicts`.
 
-## Candidate summary
-
-The candidate summary must be derived from the strongest evidence found during matching.
-
-Keep it compact.
-
-Do not write a personal brand statement or application narrative.
-
-Good:
-
-```yaml
-strongest_capabilities:
-  - probabilistic machine learning
-  - production ML system architecture
-  - translating open-ended problems into deployed systems
-```
-
-Avoid:
-
-```yaml
-strongest_capabilities:
-  - ideal candidate for the position
-  - passionate innovator
-  - uniquely suited researcher
-```
-
 ## Unmatched strengths
 
 Include high-value evidence not directly requested by the listing when it could:
@@ -324,6 +268,8 @@ Include high-value evidence not directly requested by the listing when it could:
 - compensate for a weaker criterion.
 
 Do not include every unused profile item.
+
+Include an item under unmatched_strengths only when its evidence ID is not referenced by any criterion or responsibility. Evidence that supports a criterion may still be strategically distinctive, but the strategy agent should identify that later.
 
 ## Responsibility matching
 
@@ -348,6 +294,8 @@ Do not create new evidence items solely to repeat evidence already recorded unde
 - Keep caveats explicit.
 - Do not write application text.
 - Do not modify any files outside `<output_dir>/candidate_evidence.yaml`.
+- Exclude informal praise, nomination language, testimonials, and broad subjective descriptions unless they contain a specific, independently verifiable factual claim.
+- A technology named only in a general skills inventory may support familiarity, but not project experience, production use, ownership, or proficiency level.
 
 ## Final validation before completion
 
@@ -361,4 +309,5 @@ Confirm that:
 - no unsupported claim was added;
 - repeated evidence uses the same evidence ID;
 - the YAML parses successfully;
-- no other files were written.
+- no other files were written;
+- every evidence item points to the narrowest available source field rather than only to a parent object.

@@ -1,0 +1,57 @@
+% %--------------------------
+% %	CONFIGURATION
+% %--------------------------
+\documentclass[11pt,a4paper]{moderncv}
+\moderncvstyle{classic}
+\moderncvcolor{black}
+\definecolor{firstnamecolor}{rgb}{0,0,0}
+
+% Basic packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[scale=0.8, top=1.5cm, bottom=1.5cm]{geometry}
+\usepackage{microtype}
+
+% Configure font settings
+\renewcommand{\rmdefault}{ppl}
+\renewcommand{\sfdefault}{phv}
+\renewcommand*{\namefont}{\fontsize{26}{18}\mdseries}
+
+% Configure microtype
+\microtypesetup{expansion=false}
+
+% Load sensitive information
+\input{../../secrets/personal_info_dk.tex}
+
+% %--------------------------
+\begin{document}
+\makecvtitle
+Dear Members of the Selection Committee,
+
+\vspace*{2em}
+I am applying for the PhD Stipend in AI:HARDWARE Lab for Secure Embedded AI. My background combines Engineering Physics, statistical machine learning, safety-critical medical AI, and the deployment of real-time production systems. I am particularly interested in a question that connects these experiences: how can machine-learning models remain reliable when they operate under computational constraints, changing physical conditions, or deliberate manipulation?
+
+\hspace*{2em}
+My interest in trustworthy machine learning developed at RaySearch Laboratories, where I researched methods for automated radiotherapy planning. I built latent anatomical representations from segmented 3D CT scans using autoencoders and used sparse Gaussian processes to predict dose-volume histograms and spatial dose distributions. I also redesigned lexicographic optimisation algorithms to better represent clinical decision hierarchies. Because the models supported safety-critical treatment planning, their value depended on more than predictive performance. Their behaviour had to be evaluated in relation to physical constraints, oncological standards, and the decisions of medical physicists and clinicians. This experience taught me to treat reliability and evaluation as central parts of the modelling problem.
+
+\hspace*{2em}
+My subsequent work has reinforced the same lesson from a production perspective. At Valcon, I deployed real-time machine-learning systems where latency, integration, and failure modes were as important as model performance, working across energy, IoT, pharmaceutical, and manufacturing projects. At Signum Life Science, I now work on the architecture and development of a large-scale forecasting platform built around many independently trained models. Together, these experiences have taught me how system-level constraints shape whether machine-learning models can be maintained and trusted in practice.
+
+\hspace*{2em}
+The AI:HARDWARE project is a compelling next step because it extends the kinds of reliability questions I have worked with in software systems into settings where the model is part of a physical process. I am particularly interested in how we can design systems that remain dependable when inputs are noisy, conditions drift, or the system is actively stressed, without relying on excessive computational overhead. More broadly, I want to understand what it means for a model to fail safely once it is embedded in a real-time environment, and how that behaviour can be analysed and improved in practice.
+
+\hspace*{2em}
+My experience has primarily been on the machine-learning and software side rather than embedded hardware or hardware security. However, my academic foundation in Engineering Physics and Applied Mathematics gives me a strong basis for developing in this direction. I am comfortable moving between mathematical modelling, software implementation, and physical applications, and I have repeatedly entered unfamiliar technical domains and worked closely with specialists to develop useful systems. I would bring strong Python, PyTorch, TensorFlow, probabilistic modelling, optimisation, and production ML experience to the project while developing deeper expertise in embedded platforms, AI security, and hardware-software co-design.
+
+\hspace*{2em}
+The opportunity to implement and evaluate methods on hardware prototypes, collaborate across scientific disciplines, and publish research with practical relevance is extremely exciting and it would be a privilege to develop as a researcher in this environment.
+
+\hspace*{2em}
+I would welcome the opportunity to contribute my experience in safety-critical and deployed machine learning to the AI:HARDWARE Lab and to develop new methods for secure, efficient, and trustworthy AI in cyber-physical energy systems.
+
+\vspace{2em}
+Kind regards, 
+
+Ivar Cashin Eriksson
+
+\end{document}

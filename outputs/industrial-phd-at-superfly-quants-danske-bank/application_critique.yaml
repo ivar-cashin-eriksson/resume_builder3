@@ -1,0 +1,192 @@
+listing_slug: industrial-phd-at-superfly-quants-danske-bank
+
+verdict:
+  status: revise
+  score: 80
+  summary: "The package is source-grounded and coherent, with strong quantitative and production evidence, but the selection argument is still a little generic for a finance research PhD and should lean more explicitly on the research-to-pricing bridge."
+
+committee_takeaway:
+  current: "A mathematically strong applied ML engineer who can work in production and explain technical work clearly, but whose link to the finance/pricing remit is still somewhat implicit."
+  intended: "A quantitative researcher-builder whose mathematical depth, modelling judgement, and implementation experience make them credible for research-heavy industrial PhD work on high-dimensional pricing."
+  alignment: partial
+
+positioning_assessment:
+  central_argument_present: true
+  central_argument_clear: true
+  central_argument_credible: true
+  strongest_available_argument_used: true
+  competing_narratives:
+    - "The package can read as a broad ML-engineering application rather than a finance-research application."
+    - "The Signum evidence is useful, but it risks sounding like general commercial forecasting rather than a direct analogue for pricing research."
+  better_positioning: "Keep production ML as proof of implementation discipline, but lean harder on RaySearch's probabilistic modelling and optimisation as the closest transferable research analogue."
+
+evidence_assessment:
+  primary_evidence_used_well:
+    - evidence_id: E1
+      assessment: "The KTH, ETH, and economics background is used cleanly to establish quantitative breadth without padding."
+    - evidence_id: E2
+      assessment: "RaySearch is the strongest research-style evidence and is interpreted as modelling depth rather than merely listed."
+    - evidence_id: E3
+      assessment: "Valcon adds production implementation and stakeholder communication, which supports the implementation side of the argument."
+    - evidence_id: E4
+      assessment: "Signum usefully shows current ownership of Python systems and an adjacent pricing/forecasting context."
+    - evidence_id: E5
+      assessment: "The skills section supports the implementation case and stays secondary to the experience narrative."
+  high_value_evidence_omitted: []
+  low_value_evidence_overemphasised:
+    - evidence_id: E5
+      issue: "The tools list is useful but slightly broad for the role; it edges towards keyword density where one or two methods-based lines would do more work."
+  unsupported_or_overstated_claims: []
+  repetitive_evidence: []
+
+criterion_assessment:
+  - criterion_id: C1
+    importance: critical
+    planned_treatment: demonstrate
+    actual_treatment: demonstrate
+    coverage: strong
+    assessment: "The draft establishes quantitative preparation clearly through KTH, ETH, economics, and the maths-heavy coursework. This is one of the package's strongest and most credible elements."
+    action_needed: none
+  - criterion_id: C2
+    importance: critical
+    planned_treatment: demonstrate
+    actual_treatment: demonstrate
+    coverage: strong
+    assessment: "RaySearch gives the reviewer a concrete research-to-model-building story: autoencoders, sparse Gaussian processes, and optimisation are all relevant and well calibrated."
+    action_needed: none
+  - criterion_id: C3
+    importance: important
+    planned_treatment: demonstrate
+    actual_treatment: demonstrate
+    coverage: strong
+    assessment: "Valcon and Signum together show production ML, Python ownership, and explanation to non-specialists. The evidence is persuasive and remains subordinate to the research argument."
+    action_needed: none
+  - criterion_id: C4
+    importance: important
+    planned_treatment: bridge
+    actual_treatment: bridge
+    coverage: adequate
+    assessment: "The draft avoids claiming direct derivatives-pricing experience and instead relies on adjacent forecasting and optimisation evidence. That is honest, but it is the weakest and least differentiated part of the case."
+    action_needed: strengthen
+
+gap_assessment:
+  - criterion_id: C4
+    planned_treatment: bridge
+    actual_treatment: bridge
+    mention_count: 0
+    maximum_mentions: 0
+    assessment: "The gap is handled implicitly rather than by disclaimer. That works, but the bridge depends on the reviewer making the finance/pricing transfer themselves."
+    action_needed: strengthen
+
+document_assessment:
+  - document: cv.tex
+    purpose_clear: true
+    strategy_adherence: strong
+    strengths:
+      - "The CV is highly scannable and keeps the evidence hierarchy clear."
+      - "It foregrounds the strongest academic and modelling evidence without long argumentative prose."
+      - "The experience section gives good density on production ML and research work."
+    issues:
+      - locator: "cv.profile"
+        category: concision
+        severity: low
+        issue: "The profile sentence is somewhat abstract and overlaps with the evidence already shown below."
+        recommended_action: "Trim this line so the sections do the work."
+      - locator: "cv.skills"
+        category: specificity
+        severity: low
+        issue: "The tools list is a little broad for the role and reads slightly keyword-heavy."
+        recommended_action: "Keep only the most relevant tools or move more weight onto methods and outcomes."
+  - document: cover_letter.tex
+    purpose_clear: true
+    strategy_adherence: partial
+    strengths:
+      - "It makes one coherent argument and does not fall into a chronological CV recap."
+      - "The RaySearch, Valcon, and Signum examples are ordered sensibly from research depth to production delivery."
+      - "The tone is direct and modest."
+    issues:
+      - locator: "cover_letter.paragraph_1"
+        category: positioning
+        severity: medium
+        issue: "The opening is competent but still somewhat generic; it states fit in broad terms before the role-specific research/pricing bridge is established."
+        recommended_action: "Lead a little more quickly with the modelling and research-to-pricing transfer."
+      - locator: "cover_letter.paragraph_3"
+        category: positioning
+        severity: medium
+        issue: "The Signum paragraph helps with implementation credibility, but it is the least distinctive part of the argument and could overstate how directly price forecasting maps to pricing research."
+        recommended_action: "Keep it secondary to the research evidence and make the transfer logic more explicit."
+
+style_assessment:
+  overall_match: strong
+  tone_issues: []
+  concision_issues:
+    - document: "cover_letter.tex"
+      locator: "line 30"
+      issue: "The first paragraph compresses several abstractions into one long sentence, which softens the opening impact."
+    - document: "cv.tex"
+      locator: "line 27"
+      issue: "The profile sentence is efficient, but it is still more abstract than the source evidence beneath it."
+  generic_or_promotional_phrasing:
+    - document: "cover_letter.tex"
+      locator: "line 30"
+      phrase_summary: "“That combination is what draws me to this project” and “without losing sight of a practical result”"
+      issue: "These phrases are serviceable but generic; they do not add much beyond the surrounding evidence."
+    - document: "cover_letter.tex"
+      locator: "line 34"
+      phrase_summary: "“That mix of ownership, practical delivery, and technical range”"
+      issue: "A polished summary, but slightly promotional compared with the rest of the draft."
+  british_english_issues: []
+
+structural_assessment:
+  cv_scanability: strong
+  cv_duplicate_content: false
+  cover_letter_single_argument: true
+  documents_have_distinct_functions: true
+  unnecessary_documents_generated: []
+  template_artifacts: []
+
+must_fix:
+  - rank: 1
+    document: "cover_letter.tex"
+    locator: "paragraphs 2-3"
+    issue: "The main selection argument is still slightly generic for this role: the draft shows strong ML and production capability, but the research-to-pricing fit does not yet read as the headline."
+    reason: "A reviewer for an industrial PhD in quant finance needs to see immediately why this candidate belongs in a research-heavy pricing project, not just that they are a strong applied ML engineer."
+    required_change: "Reorder the argument so RaySearch's probabilistic modelling and optimisation carry the most weight, with Signum used as secondary implementation evidence."
+
+recommended_edits:
+  - rank: 1
+    document: "cover_letter.tex"
+    locator: "paragraph 2"
+    change: "Move RaySearch's modelling and optimisation work before the Valcon material and make the transfer to tensor-network/pricing research more explicit."
+    expected_effect: "Strengthens the core selection argument and makes the role-specific fit easier to see."
+  - rank: 2
+    document: "cover_letter.tex"
+    locator: "paragraph 1"
+    change: "Replace the abstract fit language with one concrete sentence about why the project's modelling-and-implementation remit matches your background."
+    expected_effect: "Improves credibility and reduces generic phrasing at the opening."
+  - rank: 3
+    document: "cv.tex"
+    locator: "profile"
+    change: "Shorten the profile line or remove one abstraction, since the subsequent experience sections already establish the same case."
+    expected_effect: "Improves scanability and frees space for evidence."
+  - rank: 4
+    document: "cv.tex"
+    locator: "technical skills"
+    change: "Trim the tool list slightly if space is tight, keeping the most role-relevant tools and methods."
+    expected_effect: "Reduces keyword density and increases evidence density."
+
+revision_guidance:
+  keep:
+    - "The quantitative academic base from KTH, ETH, and economics."
+    - "RaySearch as the strongest modelling and optimisation evidence."
+    - "The clear separation between CV evidence and cover-letter interpretation."
+  remove:
+    - "Broad abstraction where a concrete transfer claim would do more work."
+    - "Any implication that Signum is a direct substitute for finance-specific research."
+  rewrite:
+    - "The opening cover-letter sentence so it reaches the role-specific argument faster."
+    - "The Signum bridge so it supports, rather than competes with, the research case."
+  do_not_do:
+    - "Do not add unsupported derivatives-pricing experience."
+    - "Do not turn the CV into a second cover letter."
+    - "Do not pad the letter with extra keyword lists."

@@ -1,0 +1,70 @@
+\documentclass[11pt,a4paper]{moderncv}
+\moderncvstyle{classic}
+\moderncvcolor{black}
+\definecolor{firstnamecolor}{rgb}{0,0,0}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[scale=0.85]{geometry}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{PaleBlue}{RGB}{76, 151, 215}
+\usepackage[colorlinks=true, urlcolor=PaleBlue, linkcolor=PaleBlue]{hyperref}
+\usepackage{microtype}
+
+\renewcommand{\rmdefault}{ppl}
+\renewcommand{\sfdefault}{phv}
+\renewcommand*{\namefont}{\fontsize{26}{18}\mdseries}
+\microtypesetup{expansion=false}
+
+\input{../../secrets/personal_info_dk.tex}
+
+\title{Curriculum Vitae}
+
+\begin{document}
+\makecvtitle
+
+\section{Profile}
+Quantitative researcher and data scientist trained in engineering physics, statistical learning, economics, and applied mathematics. I work across probabilistic modelling, optimisation, and Python-based machine-learning systems.
+
+\section{Education}
+
+\cventry{2015--2020}{Royal Institute of Technology (KTH), Stockholm}{MSc Statistical Learning and Data Analytics; BSc Engineering Physics}{GPA: 5.0 / 5.0}{}{Thesis: \href{https://kth.diva-portal.org/smash/get/diva2:1431327/FULLTEXT02.pdf}{See thesis}. \newline Relevant coursework: Quantum Physics; Mathematical Methods in Physics; Probability Theory.}
+
+\cventry{2017--2022}{Stockholm University, Stockholm}{Supplementary Bachelor's Degree in Economics}{}{}{Complemented the engineering background with economic theory and quantitative methods.}
+
+\cventry{2019}{Swiss Federal Institute of Technology (ETH), Zurich}{Exchange, Applied Mathematics}{}{}{}
+
+\section{Experience}
+
+\cventry{2024--Present}{Full-Stack Data Scientist, Project Manager}{Signum Life Science}{Copenhagen, Denmark}{}{
+\begin{itemize}
+\item Maintain and extend a pharmaceutical price forecasting platform and the Kwarts next-best-action engine.
+\item Own and extend Kwarts with explainable AI features, and use embedding-based representations for downstream similarity search and matching workflows.
+\item Organise internal knowledge-sharing, including a week-long hackathon with up to 40 participants.
+\end{itemize}
+}
+
+\cventry{2022--2024}{Principal Data Scientist, Consultant}{Valcon}{Copenhagen, Denmark}{}{
+\begin{itemize}
+\item Led data science projects across pharmaceuticals, energy, IoT, and manufacturing.
+\item Implemented an end-to-end production pipeline for a real-time deep neural network.
+\item Presented complex technical topics to non-technical stakeholders, mentored junior colleagues, and led xAI and Git training sessions.
+\item Received Valcon's People's Choice Award for exemplary work, leadership, team spirit, and scientific curiosity.
+\end{itemize}
+}
+
+\cventry{2019--2021}{Data Scientist, Researcher}{RaySearch Laboratories}{Stockholm, Sweden}{}{
+\begin{itemize}
+\item Developed pipelines for extracting latent anatomical features from segmented 3D CT scans using autoencoders.
+\item Predicted dose-volume histograms and spatial dose distributions using sparse Gaussian processes.
+\item Redesigned lexicographic optimisation algorithms and collaborated with medical physicists and clinicians on practical workflow fit.
+\end{itemize}
+}
+
+\section{Technical Skills}
+\cvitem{Programming}{Python, SQL, C++, Matlab}
+\cvitem{Methods}{Deep learning, autoencoders, CNNs, sparse Gaussian processes, optimisation, explainable AI, time series forecasting}
+\cvitem{Tools}{PyTorch, TensorFlow, Scikit-learn, Docker, FastAPI, Databricks, AWS, Qdrant}
+\cvitem{Languages}{English (native), Swedish (native), Danish (intermediate)}
+
+\end{document}

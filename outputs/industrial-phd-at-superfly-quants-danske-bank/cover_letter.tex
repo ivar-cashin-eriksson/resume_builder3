@@ -1,42 +1,75 @@
+% Personal cover letter for the Industrial PhD at SuperFly Quants
+% %--------------------------
+% % CONFIGURATION
+% %--------------------------
 \documentclass[11pt,a4paper]{moderncv}
 \moderncvstyle{classic}
 \moderncvcolor{black}
 \definecolor{firstnamecolor}{rgb}{0,0,0}
 
+
+% Basic packages
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[scale=0.7, top=2cm, bottom=2cm]{geometry}
+\usepackage[hscale=0.7, top=2cm, bottom=2cm]{geometry}
 \usepackage[dvipsnames]{xcolor}
-\definecolor{DarkBlue}{RGB}{0, 0, 150}
-\usepackage[colorlinks=true, urlcolor=DarkBlue, linkcolor=DarkBlue, citecolor=DarkBlue]{hyperref}
+\definecolor{PaleBlue}{RGB}{76, 151, 215}
+\usepackage[colorlinks=true, urlcolor=PaleBlue, linkcolor=PaleBlue]{hyperref}
+
+
 \usepackage{microtype}
 
+
+% Configure font settings
 \renewcommand{\rmdefault}{ppl}
 \renewcommand{\sfdefault}{phv}
 \renewcommand*{\namefont}{\fontsize{26}{18}\mdseries}
+
+
+% Configure microtype
 \microtypesetup{expansion=false}
 
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{0.55em}
 
+% Load sensitive information
 \input{../../secrets/personal_info_dk.tex}
 
+
+% %--------------------------
 \begin{document}
-
 \makecvtitle
-Hello Thomas Norman Dam and Michael Kastoryano,
+Hello,
 
-\vspace*{1.5em}
-I am applying for the Industrial PhD at SuperFly Quants. The project appeals to me because it combines mathematical modelling with implementation in a setting where both matter. My background in engineering physics, statistical learning, economics, and applied mathematics gives me the quantitative base to work through new theory and turn it into practical code.
 
-At RaySearch Laboratories, I worked on radiotherapy planning with autoencoders, sparse Gaussian processes, and optimisation methods for 3D CT data. That is the closest analogue in my background to research-heavy work: it involved probabilistic modelling, optimisation, and collaboration with medical physicists and clinicians to keep the models aligned with how they would be used. At Valcon, I added a different kind of proof that I can implement and explain complex models by building an end-to-end production pipeline for a real-time deep neural network, presenting technical topics to non-technical stakeholders, and leading xAI and Git training sessions.
+\vspace*{2em}
+I am applying for the Industrial PhD at SuperFly Quants as the project appealed to me. I like the idea of using structure to make an impossibly large problem tractable. Tensor networks are new to me, but close enough to physics, linear algebra, and machine learning that I can see where my background fits. The combination of a difficult mathematical problem and a real pricing system is particularly appealing.
 
-In my current role at Signum Life Science, I maintain and extend production systems in Python, including a pharmaceutical price forecasting platform and the Kwarts next-best-action engine. This gives me current experience of owning deployed software in an adjacent commercial forecasting context.
 
-I would welcome the opportunity to discuss the role further. Thank you for your consideration.
+\hspace*{2em}
+I tend to move towards the boundaries between subjects. I studied Engineering Physics, specialised in Statistical Learning, and took a second degree in economics alongside it. Since graduating, I have moved between research, machine learning, software engineering, and project leadership. The path is not perfectly linear, but it has made me comfortable entering unfamiliar fields, asking basic questions, and staying with a problem until I understand both the theory and its implications.
 
-Regards,
 
-Ivar Cashin Eriksson
+\hspace*{2em}
+The work I enjoyed most at RaySearch had this character. I represented complicated patient anatomy in a form that made prediction and optimisation transparent. Though the methods were not the same as used in quantum algorithms, the focus on solving complicated problems, finding useful structure in higher dimensions, then testing whether the model survived contact with reality. Working with medical physicists also taught me that an elegant model is only valuable if its users can understand and trust it.
+
+
+\hspace*{2em}
+Since then, I have spent several years on the less glamorous parts of applied modelling: unclear data, brittle pipelines, domain assumptions, and systems that need to keep working after the initial experiment. I have learned that I enjoy this part too. It is also what attracts me to doing the PhD inside the team building SuperFly rather than as a purely theoretical project.
+
+
+\hspace*{2em}
+Outside work, I climb, spend time in nature, and build things through woodworking and 3D printing. I like hobbies where I can use my creative side as well as my hands. The same combination of curiosity and practical problem-solving is what I enjoy about technical work.
+
+
+\hspace*{2em}
+I am aware that I am not the typical recent graduate described in the listing. I finished my master's in 2020 and have since built a fairly established career. Applying is not an attempt to start over, but I do wish to trade some breadth for depth and spend several years properly understanding one difficult subject. I would enter with more practical experience than most PhD candidates, but also with humility about how much of the theory I still need to learn.
+
+
+\vspace*{2em}
+Thank you for your consideration. I would be happy to discuss the project and whether my somewhat unusual path could be useful to it. Regards,
+
+
+\vspace*{1em}
+Ivar Cashin Eriksson.
+
 
 \end{document}

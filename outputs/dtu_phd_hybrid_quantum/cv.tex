@@ -1,0 +1,172 @@
+% ---------------------------
+% CONFIGURATION
+% ---------------------------
+\documentclass[11pt,a4paper]{moderncv}
+\moderncvstyle{classic}
+\moderncvcolor{black}
+\definecolor{firstnamecolor}{rgb}{0,0,0}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[scale=0.9]{geometry}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{PaleBlue}{RGB}{76, 151, 215}
+\usepackage[colorlinks=true, urlcolor=PaleBlue, linkcolor=PaleBlue]{hyperref}
+\usepackage{microtype}
+
+\renewcommand{\rmdefault}{ppl}
+\renewcommand{\sfdefault}{phv}
+\renewcommand*{\namefont}{\fontsize{26}{18}\mdseries}
+
+\microtypesetup{expansion=false}
+
+\input{../../secrets/personal_info_dk.tex}
+
+\title{Curriculum Vitae}
+
+% ---------------------------
+
+\begin{document}
+\makecvtitle
+
+% ---------------------------
+% Introduction
+% ---------------------------
+\section*{Introduction}
+
+Engineering Physics graduate with a strong mathematical foundation and seven years of experience developing computational methods in research and industry.
+\newline\hspace*{2em}
+At RaySearch Laboratories, I researched probabilistic dose prediction and optimisation for radiotherapy planning, working with medical physicists and clinicians.
+
+% ---------------------------
+% Education
+% ---------------------------
+\section{Education}
+
+\cventry{2015--2020}{KTH Royal Institute of Technology -- Engineering Physics}{}{GPA: 5.0 (out of 5.0)}{}{Master: Statistical Learning and Data Analytics, Bachelor: Engineering Physics. Thesis: \href{https://kth.diva-portal.org/smash/get/diva2:1431327/FULLTEXT02.pdf}{Image Distance Learning for Probabilistic Dose--Volume Histogram and Spatial Dose Prediction in Radiation Therapy Treatment Planning}.
+\newline
+Relevant coursework: Quantum Physics; Solid State Physics; Linear Algebra; Mathematical Methods in Physics; Applied Numerical Methods; Optimization.}
+
+\cventry{2019}{ETH Zürich, Swiss Federal Institute of Technology}{Exchange in Applied Mathematics}{}{}{}
+
+\cventry{2017--2022}{SU, Stockholm University}{Supplementary Bachelor's Degree in Economics}{}{}{}
+
+\cventry{2017}{ZJU Zhejiang University}{Summer research programme}{}{}{}
+
+% ---------------------------
+% Selected Experience
+% ---------------------------
+\section{Selected Experience}
+
+% ---------------------------
+\large{Researcher within Data Science @ RaySearch Laboratories}
+\normalsize
+\begin{itemize}
+    \item Researched computational methods for automated radiotherapy planning using 3D medical data.
+    \item Combined learned anatomical representations with sparse Gaussian processes for dose prediction.
+    \item Redesigned lexicographic optimisation methods with clinicians to reflect clinical priorities.
+\end{itemize}
+
+{\footnotesize\textit{Keywords: computational research, probabilistic modelling, Gaussian processes, optimisation}}
+
+\hfill{\small{\textit{\hyperref[sec:raysearch]{Read more...}}}}
+
+% ---------------------------
+\large{Principal Data Scientist @ Valcon}
+\normalsize
+\begin{itemize}
+    \item Led machine learning projects from problem formulation and model development to evaluation and deployment.
+    \item Designed and implemented a modular neural network and training pipeline for high-dimensional prediction.
+    \item Owned debugging, testing, and performance optimisation; mentored colleagues and delivered training.
+\end{itemize}
+
+{\footnotesize\textit{Keywords: Python, algorithm implementation, experimental evaluation, software engineering, mentoring}}
+
+\hfill{\small{\textit{\hyperref[sec:valcon]{Read more...}}}}
+
+% ---------------------------
+\large{Solo Project @ Project \texttt{iris}}
+\normalsize
+\begin{itemize}
+    \item Independently designed and built a complete image-retrieval system, from models to application.
+    \item Integrated pretrained models, vector indexing, and similarity search with backend APIs and a custom built browser extension.
+\end{itemize}
+
+{\footnotesize\textit{Keywords: independent development, high-dimensional representations, similarity search, software integration}}
+
+\hfill{\small{\textit{\hyperref[sec:iris]{Read more...}}}}
+
+% ---------------------------
+% Skills
+% ---------------------------
+\section{Skills and Other}
+
+\cvitem
+{Methods}
+{Probabilistic modelling, Gaussian processes, optimisation, deep learning, model evaluation.}
+
+\cvitem
+{Technology}
+{Python, PyTorch, TensorFlow, scikit-learn, Linux, Git, Docker, MLflow, SQL, Databricks.}
+
+\cvitem
+{Soft-Skills}
+{Independent research and problem solving, interdisciplinary collaboration, technical communication, mentoring and training.}
+
+\newpage
+
+% ---------------------------
+% Detailed Work Experience
+% ---------------------------
+\section{Detailed Work Experience}
+
+% ---------------------------
+\phantomsection\label{sec:signum}
+\cventry{2024--Present}{Data Scientist / ML Engineer}{Signum Life Science}{Copenhagen}{} {
+    At Signum, I work across machine learning, software architecture, and project management, translating loosely defined problems in pharmaceutical analytics into maintainable production systems.
+    \newline\hspace*{2em}
+    I lead architecture and development of a forecasting platform for pharmaceutical prices, demand, and patient populations. The platform uses Databricks and is designed to support thousands of independently trained models and concurrent forecasts. My work includes ML architecture, model development, productionisation, and coordination across technical and domain stakeholders.
+    \newline\hspace*{2em}
+    I also develop embedding-based retrieval and matching workflows for domain-specific text. This involves evaluating semantic similarity, analysing retrieval failures, and improving matching reliability.
+}{}
+
+% ---------------------------
+\phantomsection\label{sec:valcon}
+\cventry{2022--2024}{Principal Data Scientist}{Valcon}{Copenhagen}{}{
+    At Valcon, I led machine-learning projects across energy, IoT, pharmaceutical, and manufacturing domains, taking projects from problem formulation and model development through production deployment. I also mentored junior colleagues and delivered training in explainable AI, Git, and software architecture.
+    \newline\hspace*{2em}
+    For one project, I designed and deployed an end-to-end pipeline for a real-time neural network. The model processed natural-language inputs and produced high-dimensional multi-class outputs using transfer learning. I was responsible for the training pipeline, modular model architecture, evaluation, and production integration.
+    \newline\hspace*{2em}
+    I received the Valcon People's Choice Award for exemplary work, leadership, team spirit, and scientific curiosity.
+}{}
+
+% ---------------------------
+\phantomsection\label{sec:valtech}
+\cventry{2021--2022}{Data Scientist}{Valtech}{Copenhagen}{} {
+    At Valtech, I developed machine-learning solutions for e-commerce, including time-series forecasting and customer-behaviour modelling. I built forecasting pipelines using Prophet and applied clustering to behavioural data to support personalisation and customer segmentation.
+    \newline\hspace*{2em}
+    I worked with technical and commercial stakeholders to translate modelling results into operational recommendations and presented findings to senior decision-makers.
+}{}
+
+% ---------------------------
+\phantomsection\label{sec:raysearch}
+\cventry{2019--2021}{Researcher within Data Science}{RaySearch Laboratories}{Stockholm}{}{
+    At RaySearch Laboratories, I researched machine-learning and optimisation methods for automated radiotherapy planning. The work combined deep learning, probabilistic modelling, and multi-objective optimisation in a safety-critical clinical setting.
+    \newline\hspace*{2em}
+    I developed a pipeline that learned latent anatomical representations from segmented 3D CT scans using autoencoders. These representations were used to identify similar patients through a learned similarity metric and to predict dose-volume histograms and spatial dose distributions using sparse Gaussian processes.
+    \newline\hspace*{2em}
+    I also redesigned lexicographic optimisation algorithms to better represent clinical decision hierarchies. I collaborated with medical physicists and clinicians to define requirements, evaluate model behaviour, and ensure that the resulting methods aligned with oncological standards and practical workflows.
+}{}
+
+% ---------------------------
+% Projects
+% ---------------------------
+\section{Projects}
+
+\cvitem{\phantomsection\label{sec:iris}Project \texttt{iris}}{
+An independently developed retrieval system for e-commerce imagery. I implemented the complete pipeline: object detection, OpenCLIP embeddings, vector indexing, similarity search, backend APIs, persistence, web scraping, and a Chromium extension.
+\newline\hspace*{2em}
+The work combined high-dimensional representations and similarity metrics with modular software development and integration of pretrained models.
+}
+
+\end{document}

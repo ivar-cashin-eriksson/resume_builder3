@@ -1,0 +1,60 @@
+% %--------------------------
+% %	CONFIGURATION
+% %--------------------------
+\documentclass[11pt,a4paper]{moderncv}
+\moderncvstyle{classic}
+\moderncvcolor{black}
+\definecolor{firstnamecolor}{rgb}{0,0,0}
+
+% Basic packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[scale=0.8, top=2cm, bottom=2cm]{geometry}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{PaleBlue}{RGB}{76, 151, 215}
+\usepackage[colorlinks=true, urlcolor=PaleBlue, linkcolor=PaleBlue]{hyperref}
+\usepackage{microtype}
+
+% Configure font settings
+\renewcommand{\rmdefault}{ppl}
+\renewcommand{\sfdefault}{phv}
+\renewcommand*{\namefont}{\fontsize{26}{18}\mdseries}
+
+% Configure microtype
+\microtypesetup{expansion=false}
+
+% Load sensitive information
+\input{../../secrets/personal_info_dk.tex}
+
+% %--------------------------
+\begin{document}
+\makecvtitle
+Dear Members of the Selection Committee,
+
+\vspace*{2em}
+I am applying for the PhD scholarship in 3D Egocentric Vision at DTU Compute. I am drawn to the challenge of learning useful representations of the real world. Egocentric vision brings together computer vision and representation learning which connects closely to where I first became interested in ML research.
+
+\hspace*{2em}
+At RaySearch Laboratories, I researched methods for automated cancer treatment using deep learning, and probabilistic modelling. I built a modular pipeline that extracted latent anatomical representations from segmented 3D CT scans using autoencoders. The representations were used to identify geometrically similar patients and, together with sparse Gaussian processes, to predict dose-volume histograms and spatial dose distributions. Although the application differs from egocentric vision, the underlying problems are similar, building latent representations from vision that encapsulate information needed for downstream reasoning. This work taught me how to design experiments, evaluate models, and investigate open-ended problems.
+
+\hspace*{2em}
+After RaySearch, I moved to industry. Here I learned how to turn models into systems. At Valcon, I developed and deployed ML solutions across many domains, including a real-time neural network with a custom training pipeline and modular production architecture. I now design and build a large-scale forecasting platform covering feature engineering, experiment tracking, and inference. This has made me a stronger engineer. I am used to implementing ideas end-to-end, debugging difficult data, and building reproducible systems that others can maintain.
+
+\hspace*{2em}
+Although my work became broader, I have come back to computer vision in my own projects. In Project \texttt{iris}, I built an end-to-end visual retrieval system that detects products in e-commerce images with YOLOv8, represents them using OpenCLIP embeddings, and retrieves visually similar items through vector search. I also built the surrounding data collection, APIs, persistence layer, and browser extension. Developing the complete system gave me practical experience with modern visual representations while confirming that computer vision is an area which I want to work with more.
+
+\hspace*{2em}
+The idea of building representations that connect visual appearance, 3D structure, and interaction is particularly interesting to me. I am curious to explore how observations collected whilst moving through an environment can be integrated into a persistent spatial understanding, and how that can support autonomous agents. This feels like a natural extension to the problems I have worked on in the past.
+
+\hspace*{2em}
+Over the past several years, I have understood that what I enjoy most is working on problems where the answer is not known in advance. I enjoy learning about a new problem, reading literature, designing solutions, and figuring out why something does or does not work. Industry has made me a better engineer, but it has also made me want to return to research. I bring a strong background in statistical learning, previous research experience with 3D spatial data, and seven years of practical ML engineering experience. I see this PhD as an opportunity to combine these parts of my background whilst developing deep expertise in computer vision.
+
+\vspace*{2em}
+I am excited to further discuss how my background could contribute to the project.
+
+\vspace*{1em}
+Kind regards,
+
+Ivar Cashin Eriksson
+
+\end{document}

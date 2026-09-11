@@ -1,0 +1,47 @@
+% --------------------------
+% CONFIGURATION
+% --------------------------
+\documentclass[11pt,a4paper]{moderncv}
+\moderncvstyle{classic}
+\moderncvcolor{black}
+\definecolor{firstnamecolor}{rgb}{0,0,0}
+
+% Basic packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[scale=0.7]{geometry}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{PaleBlue}{RGB}{76, 151, 215}
+\usepackage[colorlinks=true, urlcolor=PaleBlue, linkcolor=PaleBlue]{hyperref}
+\usepackage{microtype}
+
+% Configure font settings
+\renewcommand{\rmdefault}{ppl}
+\renewcommand{\sfdefault}{phv}
+\renewcommand*{\namefont}{\fontsize{26}{18}\mdseries}
+
+% Configure microtype
+\microtypesetup{expansion=false}
+
+% Load country-specific contact information
+\input{../../secrets/personal_info_dk.tex}
+
+% Title document
+\title{References}
+
+% %--------------------------
+\begin{document}
+
+\section*{References}
+
+\cvitem{Tianfang Zhang}{%
+Master's thesis supervisor, KTH Royal Institute of Technology and RaySearch Laboratories.
+\newline
+\href{mailto:tianfang@kth.se}{tianfang@kth.se}}
+
+\cvitem{Morten Mørup}{%
+Professor, DTU Compute; research collaborator on a proposed project using graph representation learning to identify new indications for existing pharmaceuticals.
+\newline
+\href{mailto:mmor@dtu.dk}{mmor@dtu.dk}}
+
+\end{document}

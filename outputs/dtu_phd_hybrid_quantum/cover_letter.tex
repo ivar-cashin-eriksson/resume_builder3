@@ -1,0 +1,54 @@
+% %--------------------------
+% %	CONFIGURATION
+% %--------------------------
+\documentclass[11pt,a4paper]{moderncv}
+\moderncvstyle{classic}
+\moderncvcolor{black}
+\definecolor{firstnamecolor}{rgb}{0,0,0}
+
+% Basic packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[scale=0.8, top=1.5cm, bottom=1.5cm]{geometry}
+\usepackage{microtype}
+
+% Configure font settings
+\renewcommand{\rmdefault}{ppl}
+\renewcommand{\sfdefault}{phv}
+\renewcommand*{\namefont}{\fontsize{26}{18}\mdseries}
+
+% Configure microtype
+\microtypesetup{expansion=false}
+
+% Load sensitive information
+\input{../../secrets/personal_info_dk.tex}
+
+% %--------------------------
+\begin{document}
+\makecvtitle
+Dear Members of the Selection Committee,
+
+\vspace*{2em}
+I am applying for the PhD scholarship in Hybrid Quantum Algorithms for Computational X-ray Spectroscopy at DTU Chemistry. My background combines Engineering Physics, applied mathematics, computational research in radiotherapy planning, and the development of production software. I am particularly interested in how quantum algorithms can be designed to produce scientifically useful predictions while operating within the constraints of near-term and emerging quantum hardware.
+
+\hspace*{2em}
+My interest in developing computational methods for physical applications grew at RaySearch Laboratories, where I researched methods for automated radiotherapy planning. I built latent anatomical representations from segmented 3D CT scans using autoencoders and used sparse Gaussian processes to predict dose-volume histograms and spatial dose distributions. I also redesigned lexicographic optimisation algorithms to better represent clinical decision hierarchies. Because the models supported safety-critical treatment planning, their value depended on more than predictive performance. Their behaviour had to be evaluated in relation to physical constraints, oncological standards, and the decisions of medical physicists and clinicians. This experience taught me to treat reliability and evaluation as central parts of the modelling problem.
+
+\hspace*{2em}
+My subsequent work has reinforced the same lesson from a production perspective. At Valcon, I deployed real-time machine-learning systems where latency, integration, and failure modes were as important as model performance, working across energy, IoT, pharmaceutical, and manufacturing projects. At Signum Life Science, I now work on the architecture and development of a large-scale forecasting platform built around many independently trained models. Together, these experiences have strengthened my ability to implement, debug, and evaluate computational methods under practical constraints.
+
+\hspace*{2em}
+My experience has primarily been in machine learning and scientific software rather than quantum chemistry or quantum algorithm development. However, my academic foundation in Engineering Physics and Applied Mathematics, including courses in quantum physics, solid state physics, and applied numerical methods, gives me a strong basis for developing in this direction. I am comfortable moving between mathematical modelling, software implementation, and physical applications, and I have repeatedly entered unfamiliar technical domains and worked closely with specialists to develop useful systems. I would bring strong Python programming, probabilistic modelling, optimisation, and software development experience to the project while developing deeper expertise in quantum chemistry, computational spectroscopy, and quantum computing algorithms.
+
+\hspace*{2em}
+The opportunity to implement and evaluate methods on simulators and quantum computers, collaborate across scientific disciplines, and publish research with practical relevance is especially appealing. I would also welcome the planned secondment at the University of Southampton and the opportunity to support students through teaching and supervision.
+
+\hspace*{2em}
+I would welcome the opportunity to contribute my mathematical and software development experience to Professor Coriani's group and to develop as a researcher at the interface of quantum computing and quantum chemistry.
+
+\vspace{2em}
+Kind regards, 
+
+Ivar Cashin Eriksson
+
+\end{document}

@@ -1,0 +1,53 @@
+% %--------------------------
+% %	CONFIGURATION
+% %--------------------------
+\documentclass[11pt,a4paper]{moderncv}
+\moderncvstyle{classic}
+\moderncvcolor{black}
+\definecolor{firstnamecolor}{rgb}{0,0,0}
+
+% Basic packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[scale=0.8, top=1.5cm, bottom=1.5cm]{geometry}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{PaleBlue}{RGB}{76, 151, 215}
+\usepackage[colorlinks=true, urlcolor=PaleBlue, linkcolor=PaleBlue]{hyperref}
+\usepackage{microtype}
+
+% Configure font settings
+\renewcommand{\rmdefault}{ppl}
+\renewcommand{\sfdefault}{phv}
+\renewcommand*{\namefont}{\fontsize{26}{18}\mdseries}
+
+% Configure microtype
+\microtypesetup{expansion=false}
+
+% Load sensitive information
+\input{../../secrets/personal_info_dk.tex}
+
+% %--------------------------
+\begin{document}
+\makecvtitle
+\section*{Iris: a project I am proud of}
+
+\href{https://github.com/ivar-cashin-eriksson/iris}{github.com/ivar-cashin-eriksson/iris}
+
+\vspace{1em}
+Iris is a personal project I developed to make products within e-commerce images identifiable and clickable. For example, a visitor looking at a photograph containing several items can use the browser extension to click directly on objects and navigate to other products in the shop's catalogue.
+
+\vspace{4pt}
+\hspace*{2em}
+I built the pipeline from data collection to the browser interface: scraping product information and images, localising objects, generating image and text embeddings with OpenCLIP, and matching detected objects to catalogue products using Qdrant. MongoDB stores product and image metadata, and a FastAPI backend serves the results to a Chromium extension. The image analysis is performed ahead of time and in runtime the extension looks up image localisations and queries closest matches on-the-fly.
+
+\vspace{4pt}
+\hspace*{2em}
+I am proud of taking the idea through to a complete application and working through the details needed to connect its parts. The project uses existing vision models, with my contribution in the pipeline, data handling, retrieval logic, and application code, as well as some model fine-tuning. I separated localisation, embedding, and storage behind reusable interfaces so that I could try different components. For example, the embedding pipeline batches image and text processing, reuses stored embeddings, and computes missing ones before returning results in the requested order.
+
+\vspace{4pt}
+\hspace*{2em}
+For a focused look at the code, I suggest starting with \href{https://github.com/ivar-cashin-eriksson/iris/blob/main/iris/embedding_pipeline/embedder.py}{\texttt{embedder.py}} and \href{https://github.com/ivar-cashin-eriksson/iris/blob/main/iris/embedding_pipeline/embedding_handler.py}{\texttt{embedding\_handler.py}}. Together they show how I connect model inference with the surrounding data workflow. Iris demonstrates my ability to develop computer-vision software independently and carry an idea beyond a model into a usable system.
+
+\vspace{2em}
+Ivar Cashin Eriksson
+\end{document}

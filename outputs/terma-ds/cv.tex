@@ -1,6 +1,6 @@
-% %--------------------------
-% %	CONFIGURATION
-% %--------------------------
+% --------------------------
+% CONFIGURATION
+% --------------------------
 \documentclass[11pt,a4paper]{moderncv}
 \moderncvstyle{classic}
 \moderncvcolor{black}
@@ -13,7 +13,6 @@
 \usepackage[dvipsnames]{xcolor}
 \definecolor{PaleBlue}{RGB}{76, 151, 215}
 \usepackage[colorlinks=true, urlcolor=PaleBlue, linkcolor=PaleBlue]{hyperref}
-
 \usepackage{microtype}
 
 % Configure font settings
@@ -33,12 +32,63 @@
 % %--------------------------
 
 \begin{document}
+
 \makecvtitle
 
 \section*{Introduction}
-Machine-learning (ML) researcher and engineer with seven years of experience developing computational methods and software in research and industry. Background in physics, mathematics, and statistical learning from KTH. My research experience includes learning latent representations of high-dimensional medical data, making probabilistic predictions using sparse Gaussian processes, and developing numerical optimisation methods. Strong Python experience and an interest in developing ML methods and reproducible workflows for quantum chemistry and complex molecular reactions.
 
+Data Scientist and ML Engineer with seven years of experience developing and deploying machine-learning systems for complex real-world problems. I combine a strong foundation in engineering physics, mathematics, statistics, and deep learning with practical ownership of data pipelines, model evaluation, and production deployment. My work spans healthcare, pharmaceutical analytics, energy, IoT, and manufacturing, including safety-critical clinical applications and real-time ML systems.
+
+
+% ---------------------------
+% Selected Work Experience
+% ---------------------------
+\section{Selected Work Experience}
+
+% ---------------------------
+\large{Data Scientist / ML Engineer @ Signum Life Science}
+\normalsize
+\begin{itemize}
+    \item Develop automated ML workflows for pharmaceutical forecasting, from data validation and training to experiment tracking and batch inference.
+    \item Design maintainable ML architecture supporting thousands of independently trained models and reproducible evaluation.
+    \item Work with technical and domain stakeholders to turn ambiguous operational needs into reliable data products.
+\end{itemize}
+
+{\footnotesize\textit{Keywords: Python, deep learning and ML, data pipelines, model evaluation, Databricks, MLflow, Docker}}
+
+\hfill{\small{\textit{\hyperref[sec:signum]{Read more...}}}}
+
+% ---------------------------
+\large{Principal Data Scientist @ Valcon}
+\normalsize
+\begin{itemize}
+    \item Built an end-to-end production pipeline for a real-time neural network using NLP, high-dimensional labels, and transfer learning.
+    \item Led ML projects across energy, IoT, and manufacturing, from problem formulation and data analysis to deployment.
+    \item Mentored data scientists and delivered training in explainable AI, Git, and software architecture.
+\end{itemize}
+
+{\footnotesize\textit{Keywords: real-time ML, neural networks, production deployment, AI/ML architecture, technical leadership}}
+
+\hfill{\small{\textit{\hyperref[sec:valcon]{Read more...}}}}
+
+% ---------------------------
+\large{Researcher within Data Science @ RaySearch Laboratories}
+\normalsize
+\begin{itemize}
+    \item Developed autoencoder-based patient embeddings and learned similarity from segmented 3D CT scans.
+    \item Predicted dose-volume histograms and spatial dose distributions using sparse Gaussian processes.
+    \item Redesigned optimisation algorithms to reflect clinical decision hierarchies, validated with clinicians.
+\end{itemize}
+
+{\footnotesize\textit{Keywords: deep learning, probabilistic modelling, representation learning, numerical optimisation, safety-critical domain}}
+
+\hfill{\small{\textit{\hyperref[sec:raysearch]{Read more...}}}}
+
+% ---------------------------
+% Education
+% ---------------------------
 \section{Education}
+
 \cventry{2015--2020}{KTH, Royal Institute of Technology -- MSc. in Engineering Physics}{}{GPA: 5.0 / 5.0}{}{Specialisation: Applied Mathematics, Statistical Learning and Data Analytics. \newline Relevant coursework: Statistical Learning, Quantum Physics, Optimisation, Numerical Methods. \newline Thesis: \href{https://kth.diva-portal.org/smash/get/diva2:1431327/FULLTEXT02.pdf}{Probabilistic Dose Prediction for Radiation Therapy Planning}}
 
 \cventry{2019}{ETH Zürich, Swiss Federal Institute of Technology -- Applied Mathematics}{Exchange}{}{}{}
@@ -48,56 +98,13 @@ Machine-learning (ML) researcher and engineer with seven years of experience dev
 \cventry{2017}{ZJU, Zhejiang University}{Research exchange}{}{Laser trimming of microring resonators.}{}
 
 % ---------------------------
-% Selected Work Experience
-% ---------------------------
-\section{Selected Work Experience}
-
-% ---------------------------
-\large{Researcher within Data Science @ RaySearch Laboratories}
-\normalsize
-\begin{itemize}
-\item Developed autoencoder-based patient embeddings and learned similarity from segmented 3D CT scans.
-\item Predicted dose-volume histograms and spatial dose distributions using sparse Gaussian processes.
-\item Redesigned optimisation algorithms to reflect clinical decision hierarchies, validated with clinicians.
-\end{itemize}
-
-{\footnotesize\textit{Keywords: method development, deep learning, probabilistic modelling, representation learning, numerical optimisation}}
-
-\hfill{\small{\textit{\hyperref[sec:raysearch]{Read more...}}}}
-
-% ---------------------------
-\large{Data Scientist / ML Engineer @ Signum Life Science}
-\normalsize
-\begin{itemize}
-\item Develop automated forecasting workflows covering training, experiment tracking, and inference.
-\item Design maintainable ML architecture supporting thousands of independently trained models.
-\end{itemize}
-
-{\footnotesize\textit{Keywords: automated workflows, reproducible evaluation, model development, Python, MLflow, Databricks}}
-
-\hfill{\small{\textit{\hyperref[sec:signum]{Read more...}}}}
-
-% ---------------------------
-\large{Principal Data Scientist @ Valcon}
-\normalsize
-\begin{itemize}
-\item Built an end-to-end production pipeline for a real-time neural network using NLP, high-dimensional labels and transfer learning.
-\item Led ML projects across energy, IoT, and manufacturing, from problem formulation to deployment.
-\item Mentored data scientists and delivered training in explainable AI, Git, and software architecture.
-\end{itemize}
-
-{\footnotesize\textit{Keywords: real-time ML, neural networks, production deployment, explainable AI, MLOps, technical leadership}}
-
-\hfill{\small{\textit{\hyperref[sec:valcon]{Read more...}}}}
-
-
-% ---------------------------
 % Skills and Other
 % ---------------------------
 \section{Skills and Other}
+
 \normalsize
-\cvitem{Technology}{Python, PyTorch, TensorFlow, scikit-learn, SQL, Git, Linux, MLflow, Docker, Databricks}
-\cvitem{Methods}{Representation learning, probabilistic modelling, sparse Gaussian processes, numerical optimisation, similarity learning, autoencoders, model evaluation}
+\cvitem{Technology}{Python, PyTorch, TensorFlow, scikit-learn, SQL, Git, Linux, Docker, MLflow, Databricks, Java}
+\cvitem{Methods}{Statistical analysis, deep learning, representation learning, probabilistic modelling, sparse Gaussian processes, numerical optimisation, model evaluation, data visualisation}
 \cvitem{Language}{Native English and Swedish, intermediate Danish}
 
 \newpage
@@ -109,7 +116,7 @@ Machine-learning (ML) researcher and engineer with seven years of experience dev
 
 % ---------------------------
 \phantomsection\label{sec:signum}
-\cventry{2024--Present}{Data Scientist / ML Engineer}{Signum Life Science}{Copenhagen}{} {
+\cventry{2024--Present}{Data Scientist / ML Engineer}{Signum Life Science}{Copenhagen}{}{
     At Signum, I work across ML, software architecture, and project management, translating loosely defined problems in pharmaceutical analytics into maintainable production systems.
     \newline\hspace*{2em}
     I lead architecture and development of a forecasting platform for pharmaceutical prices, demand, and patient populations. The platform combines data validation, model training, experiment tracking, and batch inference in Databricks, supporting thousands of independently trained models. My work includes reproducible evaluation, maintainable software design, and coordination with technical and domain stakeholders.
@@ -129,7 +136,7 @@ Machine-learning (ML) researcher and engineer with seven years of experience dev
 
 % ---------------------------
 \phantomsection\label{sec:valtech}
-\cventry{2021--2022}{Data Scientist}{Valtech}{Copenhagen}{} {
+\cventry{2021--2022}{Data Scientist}{Valtech}{Copenhagen}{}{
     At Valtech, I developed ML solutions for e-commerce, including time-series forecasting and customer-behaviour modelling. I built forecasting pipelines using Prophet and applied clustering to behavioural data to support personalisation and customer segmentation.
     \newline\hspace*{2em}
     I worked with technical and commercial stakeholders to translate modelling results into operational recommendations and presented findings to senior decision-makers.

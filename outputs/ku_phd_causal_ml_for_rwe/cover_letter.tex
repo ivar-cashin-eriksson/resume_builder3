@@ -1,0 +1,61 @@
+% --------------------------
+% CONFIGURATION
+% --------------------------
+\documentclass[11pt,a4paper]{moderncv}
+\moderncvstyle{classic}
+\moderncvcolor{black}
+\definecolor{firstnamecolor}{rgb}{0,0,0}
+
+% Basic packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[scale=0.8, top=1.5cm, bottom=1.5cm]{geometry}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{PaleBlue}{RGB}{76, 151, 215}
+\usepackage[colorlinks=true, urlcolor=PaleBlue, linkcolor=PaleBlue]{hyperref}
+\usepackage{microtype}
+
+% Configure font settings
+\renewcommand{\rmdefault}{ppl}
+\renewcommand{\sfdefault}{phv}
+\renewcommand*{\namefont}{\fontsize{26}{18}\mdseries}
+
+% Configure microtype
+\microtypesetup{expansion=false}
+
+% Load sensitive information
+\input{../../secrets/personal_info_dk.tex}
+
+% --------------------------
+\begin{document}
+\makecvtitle
+Dear AI \& Advanced Analytics team,
+
+\vspace*{2em}
+I am applying for the Data Scientist position in S\o borg. Over seven years in research and industry, I have worked on both developing machine-learning methods and building the systems needed to use them. I enjoy difficult technical problems, particularly when solving them requires learning new things. This job at Terma interests me because it combines model development, responsibility for the resulting software, and direct contact with the people who use it.
+
+\vspace{4pt}
+\hspace*{2em}
+In my previous work at RaySearch Laboratories, I researched methods for automated radiotherapy planning, first through my master's thesis and then as a full-time researcher. I used autoencoders to represent patient anatomy and sparse Gaussian processes to predict radiation dose distributions. I also worked on optimisation methods to better reflect clinical priorities. Working with medical physicists and clinicians taught me to examine how modelling choices relate to the decisions a system needs to support. I enjoyed the combination of mathematical work, practical constraints, and discussion with specialists.
+
+\vspace{4pt}
+\hspace*{2em}
+Since then, I have taken responsibility for larger ML systems. At Valcon, I led projects from problem formulation through deployment, including a real-time neural-network pipeline combining text and categorical data. At Signum Life Science, I now lead the architecture and development of a forecasting platform supporting thousands of independently trained models. This involves data validation, reproducible evaluation, experiment tracking, and batch inference. These roles have taught me to structure complex software, investigate failures, and make technical decisions together with colleagues and domain experts.
+
+\vspace{4pt}
+\hspace*{2em}
+I also enjoy building things independently. My personal project, \href{https://github.com/ivar-cashin-eriksson/iris}{Iris}, combines computer vision and similarity search to make products within webshop images searchable. I built the workflow from object detection and image embeddings through to backend APIs and a browser extension. It gives me room to explore unfamiliar methods and tools, and to work through the details of turning an idea into a complete application.
+
+\vspace{4pt}
+\hspace*{2em}
+My degree in Engineering Physics, specialising in Statistical Learning and Data Analytics, provides the mathematical foundation for this work. My strongest programming language is Python, and I am familiar with Linux and have deployed ML solutions using Docker. At Terma, I would bring experience developing models, evaluating their limitations, and integrating them into working software. I would like to build on that experience in a team where I can learn from other engineers and end users while contributing to systems with a clear operational purpose.
+
+\vspace*{2em}
+I would welcome the opportunity to discuss the role and how I could contribute to the team.
+
+\vspace{2em}
+Kind regards,
+
+Ivar Cashin Eriksson
+
+\end{document}

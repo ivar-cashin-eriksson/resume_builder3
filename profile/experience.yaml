@@ -123,3 +123,18 @@ experience:
   - radiotherapy planning
   - medical imaging
   - clinical decision support
+
+- organisation: Ampfield Aktiebolag AB
+  location: Stockholm, Sweden
+  period: 2015--2018
+  title: Trading Supervisor
+  summary: Student job at trading company, responsible for supervising automated trading systems and managing risk. Implemented small parts of the trading system in C++.
+  responsibilities:
+  - supervising automated trading models
+  - developing optimisation algorithms for trading strategies in C++
+  technologies:
+  - C++
+  - optimisation
+  domains:
+  - finance
+  - trading

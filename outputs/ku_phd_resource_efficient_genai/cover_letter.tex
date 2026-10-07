@@ -1,0 +1,58 @@
+% --------------------------
+% CONFIGURATION
+% --------------------------
+\documentclass[11pt,a4paper]{moderncv}
+\moderncvstyle{classic}
+\moderncvcolor{black}
+\definecolor{firstnamecolor}{rgb}{0,0,0}
+
+% Basic packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[scale=0.8, top=1.5cm, bottom=1.5cm]{geometry}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{PaleBlue}{RGB}{76, 151, 215}
+\usepackage[colorlinks=true, urlcolor=PaleBlue, linkcolor=PaleBlue]{hyperref}
+\usepackage{microtype}
+
+% Configure font settings
+\renewcommand{\rmdefault}{ppl}
+\renewcommand{\sfdefault}{phv}
+\renewcommand*{\namefont}{\fontsize{26}{18}\mdseries}
+
+% Configure microtype
+\microtypesetup{expansion=false}
+
+% Load sensitive information
+\input{../../secrets/personal_info_dk.tex}
+
+% --------------------------
+\begin{document}
+\makecvtitle
+
+Dear Professor Lioma,
+
+\vspace*{2em}
+I am applying for the PhD fellowship in Resource Efficiency for Generative AI at the University of Copenhagen. After seven years working with machine learning in research and industry, I wish to return to research and spend my time diving deep into methods and investigating their underlying questions. This project attracts me because it connects questions about computation and uncertainty with the practical challenge of making AI systems more efficient and usable.
+
+\vspace{4pt}
+\hspace*{2em}
+The research direction I would like to pursue is how generative AI systems can estimate whether further computation is likely to improve an answer or not. How can a system assess the difficulty of a problem without first solving it? This issue is reminiscent of the famous halting problem, stating that if any given algorithm will halt or not is unknowable. The direction I would like to pursue is learning inexpensive, probabilistic estimates of the benefit of additional reasoning, and understanding when those estimates are reliable enough to guide decisions.
+
+\vspace{4pt}
+\hspace*{2em}
+A starting point would be to study adaptive stopping in language-model reasoning. Using tasks with verifiable answers, I would investigate whether signals from intermediate outputs can predict the improvement expected from further computation. The challenge is to distinguish uncertainty that additional reasoning can resolve from cases where it is unlikely to help. I would compare learned stopping policies with fixed computational budgets, evaluating answer quality, latency, and measured energy consumption, including the overhead of the stopping mechanism itself. I would also examine how these policies behave on unfamiliar tasks, and where estimates learned during training may become unreliable.
+
+\vspace{4pt}
+\hspace*{2em}
+My MSc in Engineering Physics, specialising in Statistical Learning and Data Analytics, provides a mathematical foundation for this work. At RaySearch Laboratories, I researched automated radiotherapy planning, using autoencoders for patient representations, sparse Gaussian processes for dose prediction, and optimisation methods to reflect clinical priorities. Since then, I have led ML projects from problem formulation through deployment. At Signum Life Science, I lead the development of a forecasting platform supporting thousands of independently trained models and work on embedding-based text retrieval. These roles have given me experience designing reproducible evaluations, investigating model failures, and building the software needed to test ideas in practice.
+
+\vspace*{2em}
+I welcome the opportunity to refine this direction with the team and look forward to seeing how both my mathematical background and practical engineering experience can contribute to this research.
+
+\vspace{2em}
+Kind regards,
+
+Ivar Cashin Eriksson
+
+\end{document}

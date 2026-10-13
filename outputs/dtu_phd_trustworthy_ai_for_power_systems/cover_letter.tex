@@ -1,0 +1,58 @@
+% --------------------------
+% CONFIGURATION
+% --------------------------
+\documentclass[11pt,a4paper]{moderncv}
+\moderncvstyle{classic}
+\moderncvcolor{black}
+\definecolor{firstnamecolor}{rgb}{0,0,0}
+
+% Basic packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[scale=0.8, top=1.5cm, bottom=1.5cm]{geometry}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{PaleBlue}{RGB}{76, 151, 215}
+\usepackage[colorlinks=true, urlcolor=PaleBlue, linkcolor=PaleBlue]{hyperref}
+\usepackage{microtype}
+
+% Configure font settings
+\renewcommand{\rmdefault}{ppl}
+\renewcommand{\sfdefault}{phv}
+\renewcommand*{\namefont}{\fontsize{26}{18}\mdseries}
+
+% Configure microtype
+\microtypesetup{expansion=false}
+
+% Load sensitive information
+\input{../../secrets/personal_info_dk.tex}
+
+% --------------------------
+\begin{document}
+\makecvtitle
+
+Dear Professor Chatzivasileiadis,
+
+\vspace*{2em}
+I am applying specifically for the PhD position developing trustworthy AI foundation models for the secure operation and planning of transmission and distribution grids at DTU Wind and Energy Systems. After several years in industry, I want to return to research and build a career in machine learning. What I have enjoyed most in my work is investigating methods, examining their limitations, and discussing difficult questions with colleagues. This project appeals to me because it connects those interests to the reliability of essential infrastructure.
+
+\vspace{4pt}
+\hspace*{2em}
+My background in Engineering Physics, specialising in Statistical Learning and Data Analytics, provides a strong mathematical foundation for this work. At RaySearch Laboratories, I researched automated radiotherapy planning using deep learning, sparse Gaussian processes, and numerical optimisation. I developed probabilistic dose-prediction models and redesigned optimisation algorithms to reflect clinical priorities, working with medical physicists and clinicians to evaluate the methods. This gave me experience investigating uncertainty and model behaviour in a safety-critical setting, where evaluation needed to reflect the decisions the methods would support.
+
+\vspace{4pt}
+\hspace*{2em}
+At Signum Life Science, I now lead the development of a forecasting platform supporting thousands of independently trained models. My work spans data validation, experiment tracking, model evaluation, and production implementation. At Valcon, I also led ML projects in sectors including energy and delivered training in explainable AI. I would bring experience designing reproducible experiments, investigating failures, and collaborating with domain specialists to turn loosely defined problems into testable methods.
+
+\vspace{4pt}
+\hspace*{2em}
+For this opportunity, I am particularly interested in how foundation models can generalise across operating conditions, and how to recognise when their predictions should not be trusted. I would like to investigate how uncertainty estimates and checks against physical constraints can help identify unreliable outputs when network topology or demand differs from the training data. A central question for me is how to evaluate these safeguards beyond average predictive accuracy, particularly in situations where errors could affect operational decisions.
+
+\vspace*{2em}
+Your group's work on neural-network verification and worst-case performance guarantees is especially appealing to me, as is GENAISIS's combination of methodological research and large-scale pilot demonstrations. I would value the opportunity to contribute my experience in probabilistic modelling, optimisation, and ML engineering while developing a deeper understanding of power systems. Working closely with the supervisory team, fellow researchers, and industry partners would provide the setting in which I want to build my research career.
+
+\vspace{2em}
+Kind regards,
+
+Ivar Cashin Eriksson
+
+\end{document}

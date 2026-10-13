@@ -1,0 +1,66 @@
+
+% --------------------------
+% CONFIGURATION
+% --------------------------
+\documentclass[11pt,a4paper]{moderncv}
+\moderncvstyle{classic}
+\moderncvcolor{black}
+\definecolor{firstnamecolor}{rgb}{0,0,0}
+
+% Basic packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[scale=0.8, top=1.5cm, bottom=1.5cm]{geometry}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{PaleBlue}{RGB}{76, 151, 215}
+\usepackage[colorlinks=true, urlcolor=PaleBlue, linkcolor=PaleBlue]{hyperref}
+\usepackage{microtype}
+
+% Configure font settings
+\renewcommand{\rmdefault}{ppl}
+\renewcommand{\sfdefault}{phv}
+\renewcommand*{\namefont}{\fontsize{26}{18}\mdseries}
+
+% Configure microtype
+\microtypesetup{expansion=false}
+
+% Load sensitive information
+\input{../../secrets/personal_info_dk.tex}
+
+% --------------------------
+\begin{document}
+\makecvtitle
+
+
+\section*{Research Statement}
+
+\textbf{Transferable and trustworthy foundation models for power systems}
+
+I am interested in understanding how foundation models learn representations of power systems and how these remain useful when transferred to new power networks, operating conditions, or downstream tasks. In particular, the way a model is pretrained affects what is captured in its embeddings and how reliably that knowledge transfers. This is something I would like to study in this project.
+
+\vspace{4pt}
+\hspace*{2em}
+Foundation models are interesting since they offer generalisable representations rather than being a specialised model for a particular task. However, good performance during pretraining does not necessarily mean useful transfer. A model trained primarily to reconstruct typical grid states may learn correlations that work well for networks similar to those seen during training, without learning the relationships that are most useful when the network structure changes. I have personally experienced this in the past when designing models for measuring anatomical distance between patients. I pretrained models to reconstruct patient anatomy since it does not require labelled data, whilst the downstream task was to predict probability distributions of optimal cancer treatments. In this project we did not have time to explore how well the learned embeddings transferred from pretraining, but it shows how common and important this problem is. For power systems, where predictions may ultimately support important operational decisions, I think understanding this distinction is particularly important.
+
+\vspace{4pt}
+\hspace*{2em}
+One research direction I would like to explore is therefore the design and evaluation of pretraining objectives for grid foundation models. A starting point would be to compare reconstruction-based objectives with objectives that require the model to predict how a system responds to controlled changes. For example, rather than only reconstructing missing measurements, the model could be asked to predict how voltages and power flows change when demand, generation, or network connectivity changes.
+
+\vspace{4pt}
+\hspace*{2em}
+I would investigate training comparable models using different objectives and evaluating them on networks that are completely excluded during pretraining. The models could then be adapted to several downstream tasks using increasingly small amounts of data from the new network. This would make it possible to study not only predictive performance, but also the efficiency of adapting each solution. Additionally, I would be interested in analysing the learned latent space itself to understand whether it captures interpretable properties of the system and how it changes across networks.
+
+\vspace{4pt}
+\hspace*{2em}
+Trustworthiness would form an important part of the evaluation. Average prediction error alone is unlikely to be enough when a model is intended for operational use. Thus, I would also investigate when transferred models fail, whether uncertainty estimates can identify unfamiliar or unreliable situations, and whether some pretraining approaches produce better calibrated models than others.
+
+\vspace{4pt}
+\hspace*{2em}
+My background is primarily in machine learning rather than power systems, and I see that as both something I would need to develop and an important part of the appeal of the project. As mentioned, my previous research involved representation learning, probabilistic modelling, and optimisation in radiotherapy planning, including learning latent representations from medical images and evaluating models in a safety-critical setting. Since then, I have worked with production machine learning, model evaluation, and transfer learning. I would like to bring this perspective to power systems while developing the domain knowledge needed to formulate useful and realistic research questions.
+
+\vspace{4pt}
+\hspace*{2em}
+I see the ideas above as a starting point for discussion. I would be very interested in refining the direction together with the team and building on the models, datasets, and research questions already being developed within the group. What particularly motivates me is the broader question of how we can make powerful machine-learning models generalise beyond the situations in which they were trained, while maintaining an understanding of when their predictions can and cannot be trusted.
+
+\end{document}
+

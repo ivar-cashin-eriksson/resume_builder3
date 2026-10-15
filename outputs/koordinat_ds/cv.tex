@@ -36,20 +36,8 @@
 \makecvtitle
 
 \section*{Introduction}
-ML researcher and engineer with an MSc in Engineering Physics and seven years of experience developing and evaluating machine-learning systems. I want to return to research and build a career focused on modern AI and reinforcement learning. My background combines representation learning, probabilistic modelling, transfer learning, and production ML, with particular experience designing reproducible experiments. I am especially interested in agentic systems, and how they can improve through interaction.
+Data scientist and ML engineer with an MSc in Engineering Physics and seven years of experience spanning research and production ML. My background combines deep learning, computer vision, and probabilistic modelling, including custom neural networks and representation learning from 3D medical images. I have led projects from problem formulation and experimentation through deployment, with an emphasis on understanding model behaviour and evaluating results critically. I am keen to apply this experience to challenging problems in environmental monitoring.
 
-% ---------------------------
-% Education
-% ---------------------------
-\section{Education}
-
-\cventry{2015--2020}{KTH, Royal Institute of Technology -- MSc. in Engineering Physics}{}{GPA: 5.0 / 5.0}{}{Specialisation: Applied Mathematics, Statistical Learning and Data Analytics. \newline Relevant coursework: Statistical Machine Learning, Reinforcement Learning, Optimisation. \newline Thesis: \href{https://kth.diva-portal.org/smash/get/diva2:1431327/FULLTEXT02.pdf}{Probabilistic Dose Prediction for Radiation Therapy Planning}}
-
-\cventry{2019}{ETH Zürich, Swiss Federal Institute of Technology -- Applied Mathematics}{Exchange}{}{}{}
-
-\cventry{2017--2022}{SU, Stockholm University -- BSc. in Economics}{Additional Bachelor's Degree}{}{}{}
-
-\cventry{2017}{ZJU, Zhejiang University}{Research exchange}{}{Laser trimming of microring resonators.}{}
 
 % ---------------------------
 % Selected Work Experience
@@ -57,28 +45,18 @@ ML researcher and engineer with an MSc in Engineering Physics and seven years of
 \section{Selected Experience}
 
 % ---------------------------
-\large{Data Scientist / ML Engineer @ Signum Life Science}
-\normalsize
-\begin{itemize}
-    \item Develop automated ML workflows for pharmaceutical forecasting, from data validation and training to experiment tracking, batch inference, and reproducible evaluation.
-    \item Design maintainable ML architecture supporting thousands of independently trained models.
-    \item Develop embedding-based retrieval and matching workflows for domain-specific text, evaluating semantic similarity and analysing retrieval failures.
-\end{itemize}
-
-{\footnotesize\textit{Keywords: Python, machine learning, data pipelines, model evaluation, Databricks, MLflow, Docker, Linux}}
-
-\hfill{\small{\textit{\hyperref[sec:signum]{Read more...}}}}
-
-% ---------------------------
 \large{Researcher within Data Science @ RaySearch Laboratories}
+
 \normalsize
+
 \begin{itemize}
-    \item Researched representation learning and probabilistic prediction for automated radiotherapy planning.
-    \item Developed patient representations and Gaussian-process models for predicting treatment distributions.
+    \item Developed autoencoder-based patient embeddings and learned patient similarity metrics for end-to-end automated cancer treatment planning.
+    \item Combined computer vision with Gaussian processes to predict probabilistic spatial dose distributions.
     \item Worked with medical physicists to define requirements and evaluate methods in safety-critical settings.
+
 \end{itemize}
 
-{\footnotesize\textit{Keywords: representation learning, probabilistic modelling, deep learning, optimisation, experimental evaluation}}
+{\footnotesize\textit{Keywords: deep learning, 3D image analysis, representation learning, Gaussian processes, probabilistic modelling, optimisation}}
 
 \hfill{\small{\textit{\hyperref[sec:raysearch]{Read more...}}}}
 
@@ -87,13 +65,42 @@ ML researcher and engineer with an MSc in Engineering Physics and seven years of
 \normalsize
 \begin{itemize}
     \item Led ML projects from problem formulation and experimentation through production deployment.
-    \item Designed and deployed real-time neural net using transfer learning with text and categorical inputs.
-    \item Built modular training and evaluation pipelines and mentored junior data scientists.
+    \item Designed and deployed a custom, modular, real-time neural network using transfer learning with textual and high-dimensional categorical inputs.
+    \item Mentored junior data scientists in ML development and software engineering.
 \end{itemize}
 
-{\footnotesize\textit{Keywords: transfer learning, neural networks, experimentation, production ML, technical leadership}}
+{\footnotesize\textit{Keywords: deep learning, transfer learning, model architecture, production ML, technical leadership}}
 
 \hfill{\small{\textit{\hyperref[sec:valcon]{Read more...}}}}
+
+
+% ---------------------------
+
+\large{\texttt{iris} -- Personal Computer Vision Project}
+\normalsize
+\begin{itemize}
+    \item Developed a CV system to detect products in webshop images and match them to catalogue items.
+    \item Fine-tuned YOLOv8 and combined OpenCLIP image embeddings with vector search for retrieval.
+\end{itemize}
+
+{\footnotesize\textit{Keywords: computer vision, object detection, transfer learning, representation learning, vector similarity search, ml engineering}}
+
+\hfill{\small{\textit{\href{https://github.com/ivar-cashin-eriksson/iris}{GitHub}}}; \quad \small{\textit{\hyperref[sec:iris]{Read more...}}}}
+
+% ---------------------------
+% Education
+% ---------------------------
+\section{Education}
+
+\cventry{2015--2020}{KTH, Royal Institute of Technology -- MSc. in Engineering Physics}{}{GPA: 5.0 / 5.0}{}{
+    Specialisation: Applied Mathematics, Statistical Learning and Data Analytics. 
+    \newline Relevant coursework: Statistical Machine Learning, Probability Theory, Optimisation. 
+    \newline Thesis: \href{https://kth.diva-portal.org/smash/get/diva2:1431327/FULLTEXT02.pdf}{Probabilistic Dose Prediction for Radiation Therapy Planning}}
+\cventry{2019}{ETH Zürich, Swiss Federal Institute of Technology -- Applied Mathematics}{Exchange}{}{}{}
+
+\cventry{2017--2022}{SU, Stockholm University -- BSc. in Economics}{Additional Bachelor's Degree}{}{}{}
+
+\cventry{2017}{ZJU, Zhejiang University}{Research exchange}{}{Laser trimming of microring resonators.}{}
 
 
 % ---------------------------
@@ -102,8 +109,8 @@ ML researcher and engineer with an MSc in Engineering Physics and seven years of
 \section{Skills and Other}
 
 \normalsize
-\cvitem{Technology}{Python, PyTorch, TensorFlow, Git, Linux, Docker, SQL, MLflow, Databricks, C++}
-\cvitem{Methods}{Representation learning, reinforcement learning, transfer learning, model evaluation}
+\cvitem{Technology}{Python, PyTorch, TensorFlow, scikit-learn, Git, Linux, Docker, Databricks, MLflow, SQL}
+\cvitem{Methods}{Deep learning, computer vision, probabilistic modelling, representation learning}
 \cvitem{Language}{Native English and Swedish, intermediate Danish}
 
 \newpage
@@ -120,7 +127,7 @@ ML researcher and engineer with an MSc in Engineering Physics and seven years of
     \newline\hspace*{2em}
     I develop embedding-based retrieval and matching workflows for domain-specific text. This involves designing evaluation methods, analysing semantic similarity and retrieval failures, and iterating on modelling approaches based on observed errors.
     \newline\hspace*{2em}
-    I also lead architecture and development of a forecasting platform for pharmaceutical prices, demand, and patient populations. The platform combines data validation, model training, experiment tracking, evaluation, and batch inference in Databricks, supporting thousands of independently trained models. My work includes reproducible experimentation, maintainable software design, and coordination with technical and domain stakeholders.
+    I also lead the architecture and development of a forecasting platform for pharmaceutical prices, demand, and patient populations. This involves defining modelling approaches, designing reproducible training and evaluation workflows, and building an architecture supporting thousands of independently trained models. The work combines statistical modelling, software engineering, and close collaboration with technical and domain stakeholders.
 }{}
 \vspace*{8pt}
 
@@ -129,7 +136,7 @@ ML researcher and engineer with an MSc in Engineering Physics and seven years of
 \cventry{2022--2024}{Principal Data Scientist}{Valcon}{Copenhagen}{}{
     At Valcon, I led ML projects across energy, IoT, pharmaceutical, and manufacturing domains, taking projects from problem formulation and model development through production deployment. I also mentored junior colleagues and delivered training.
     \newline\hspace*{2em}
-    For one project, I designed and deployed an end-to-end pipeline for a real-time neural network. Using transfer learning, the model combined natural-language and high-dimensional categorical inputs to predict high-dimensional categorical outputs. I was responsible for the training pipeline, modular model architecture, evaluation, and production integration.
+    For one project, I designed and deployed a custom neural network for real-time prediction. Using transfer learning, the model combined natural-language and high-dimensional categorical inputs to predict high-dimensional categorical outputs. I was responsible for the model architecture, training and evaluation pipelines, and production integration.
     \newline\hspace*{2em}
     I received the Valcon People's Choice Award for exemplary work, leadership, team spirit, and scientific curiosity.
 }{}
@@ -160,8 +167,9 @@ ML researcher and engineer with an MSc in Engineering Physics and seven years of
 % ---------------------------
 \section{Personal Projects}
 \cvitem{\phantomsection\label{sec:iris}Project \texttt{iris}}{
-    Developed a visual product retrieval system that detects products within webshop images and matches them to catalogue items. Combined YOLOv8 object detection with OpenCLIP embeddings and Qdrant vector similarity search. Built the supporting data collection pipeline, backend APIs, and Chromium extension to display product links within images.
-    \href{https://github.com/ivar-cashin-eriksson/iris}{GitHub repository}.
+    Independently developed a computer vision system that detects products in webshop images and matches them to catalogue items. The system combines YOLOv8 object detection, OpenCLIP embeddings, and Qdrant vector similarity search.
+    \newline\hspace*{2em}
+    Built the complete application, including data collection and processing pipelines, a FastAPI backend, and a Chromium extension that displays product links directly within images. GitHub repository can be found \href{https://github.com/ivar-cashin-eriksson/iris}{here}.
 }
 
 \end{document}

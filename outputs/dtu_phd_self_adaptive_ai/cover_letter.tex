@@ -1,0 +1,58 @@
+% --------------------------
+% CONFIGURATION
+% --------------------------
+\documentclass[11pt,a4paper]{moderncv}
+\moderncvstyle{classic}
+\moderncvcolor{black}
+\definecolor{firstnamecolor}{rgb}{0,0,0}
+
+% Basic packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[scale=0.8, top=1.5cm, bottom=1.5cm]{geometry}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{PaleBlue}{RGB}{76, 151, 215}
+\usepackage[colorlinks=true, urlcolor=PaleBlue, linkcolor=PaleBlue]{hyperref}
+\usepackage{microtype}
+
+% Configure font settings
+\renewcommand{\rmdefault}{ppl}
+\renewcommand{\sfdefault}{phv}
+\renewcommand*{\namefont}{\fontsize{26}{18}\mdseries}
+
+% Configure microtype
+\microtypesetup{expansion=false}
+
+% Load sensitive information
+\input{../../secrets/personal_info_dk.tex}
+
+% --------------------------
+\begin{document}
+\makecvtitle
+
+Dear Dr Morabito and Professor Fafoutis,
+
+\vspace*{2em}
+I am applying for the PhD scholarship in Self-Adaptive AI Systems and Embedded Intelligence at DTU Compute. After several years in industry, I want to return to research and build a career in machine learning. What I have enjoyed most in my work is investigating methods, examining their limitations, and discussing difficult questions with colleagues. REGAIN-AI appeals to me because it connects probabilistic modelling with the practical question of how an AI-enabled system should adapt its behaviour when its predictions are uncertain and computational resources are limited?
+
+\vspace{4pt}
+\hspace*{2em}
+My background in Engineering Physics, specialising in Statistical Learning and Data Analytics, provides a strong mathematical foundation for this work. At RaySearch Laboratories, I researched automated radiotherapy planning using deep learning, sparse Gaussian processes, and numerical optimisation. I developed probabilistic dose-prediction models and redesigned optimisation algorithms to reflect clinical priorities, working with medical physicists and clinicians to evaluate the methods. This gave me experience investigating uncertainty and model behaviour in a safety-critical setting, where evaluation needed to reflect the decisions the methods would support.
+
+\vspace{4pt}
+\hspace*{2em}
+At Signum Life Science, I now lead the development of a forecasting platform supporting thousands of independently trained models. My work spans data validation, experiment tracking, model evaluation, and production implementation. At Valcon, I designed and deployed a real-time neural network, taking responsibility for its training pipeline, modular architecture, evaluation, and production integration. These roles have given me experience building working systems around ML models and organising reproducible evaluation. I would bring this practical foundation to developing research prototypes and testing their behaviour.
+
+\vspace{4pt}
+\hspace*{2em}
+For this opportunity, I am particularly interested in whether uncertainty estimates can reliably guide the allocation of computation. For example, when should a system spend more resources on a prediction, invoke a more capable model, or use a conservative fallback? I would like to investigate how such decisions can account for both predictive uncertainty and computational cost. Evaluating these mechanisms would require examining whether uncertainty estimates remain informative under changing inputs, whether additional computation improves reliability, and what costs this introduces in latency and resource use.
+
+\vspace*{2em}
+REGAIN-AI's combination of theoretical research and experimental validation is especially appealing to me. It would allow me to build on my background in probabilistic modelling, optimisation, and ML engineering while developing expertise in embedded and distributed computing. I would value the opportunity to develop these research questions with the supervisory team and fellow researchers in Embedded Systems Engineering. Having mentored colleagues and delivered technical training, I would also welcome contributing to teaching and the wider research environment.
+
+\vspace{2em}
+Kind regards,
+
+Ivar Cashin Eriksson
+
+\end{document}

@@ -1,0 +1,46 @@
+% %--------------------------
+% %	CONFIGURATION
+% %--------------------------
+\documentclass[11pt,a4paper]{moderncv}
+\moderncvstyle{classic}
+\moderncvcolor{black}
+\definecolor{firstnamecolor}{rgb}{0,0,0}
+
+% Basic packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[scale=0.7]{geometry}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{DarkBlue}{RGB}{0, 0, 150}
+\usepackage[colorlinks=true, urlcolor=DarkBlue, linkcolor=DarkBlue]{hyperref}
+
+\usepackage{microtype}
+
+% Configure font settings
+\renewcommand{\rmdefault}{ppl}
+\renewcommand{\sfdefault}{phv}
+\renewcommand*{\namefont}{\fontsize{26}{18}\mdseries}
+
+% Configure microtype
+\microtypesetup{expansion=false}
+
+% Load country-specific contact information
+\input{../../secrets/personal_info_dk.tex}
+
+% Title document
+\title{Curriculum Vitae}
+
+% %--------------------------
+
+\begin{document}
+
+\makecvtitle
+
+\section*{References}
+
+\begin{itemize}
+    \item \textbf{Prof. Morten Mørup}, Department of Applied Mathematics and Computer Science, Technical University of Denmark (DTU): \href{mailto:mmor@dtu.dk}{mmor@dtu.dk}.
+    \item \textbf{Laura Hortvath-Perge}, Data \& AI Specialist at Google Cloud: \href{mailto:laurahp@google.com}{laurahp@google.com}.
+\end{itemize}
+
+\end{document}
